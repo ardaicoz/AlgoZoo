@@ -8,5 +8,5 @@
  Ayberk Yaşa 21801847, 
  Görkem Ayten 21802399, 
  Kerem Erdal 21901596, 
- Alp Tuğrul Ağçalı, 
+ Alp Tuğrul Ağçalı 21801799, 
  Arda İçöz 21901443
