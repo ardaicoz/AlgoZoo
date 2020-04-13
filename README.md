@@ -5,7 +5,7 @@
  
  Doğa Ece Ersoy, 
  Esra Genç 21901962, 
- Ayberk Yaşa, 
+ Ayberk Yaşa 21801847, 
  Görkem Ayten, 
  Kerem Erdal, 
  Alp Tuğrul Ağçalı, 
