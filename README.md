@@ -9,4 +9,4 @@
  Görkem Ayten 21802399, 
  Kerem Erdal 21901596, 
  Alp Tuğrul Ağçalı, 
- Arda İçöz
+ Arda İçöz 21901443
