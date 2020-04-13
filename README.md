@@ -7,6 +7,6 @@
  Esra Genç 21901962, 
  Ayberk Yaşa 21801847, 
  Görkem Ayten, 
- Kerem Erdal, 
+ Kerem Erdal 21901596, 
  Alp Tuğrul Ağçalı, 
  Arda İçöz
