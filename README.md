@@ -1,5 +1,5 @@
 # AlgoZoo
- CS Project
+ CS102 Project
 
  Group Members:
  
