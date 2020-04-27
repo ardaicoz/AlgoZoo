@@ -7,7 +7,7 @@ package algoZoo;
 
 /**
  *
- * @author Ayberk
+ * @author Project
  */
 public class AlgoZoo {
    
