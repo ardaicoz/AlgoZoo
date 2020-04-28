@@ -53,6 +53,10 @@ public class AlgoZoo {
     public void addMovementPattern(char c) {
         movementPattern.add(c);     
     }
+    
+    public void resetMovementPattern() {
+        movementPattern = new ArrayList<Character>();
+    }
      
     public boolean isGameOver() {
         return true;

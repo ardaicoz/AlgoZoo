@@ -4,11 +4,40 @@
  * and open the template in the editor.
  */
 package algoZoo.learn;
+import algoZoo.game.*;
+import java.util.ArrayList;
 
 /**
  *
- * @author dogaersoy
+ * @author dogaersoy, esragenç
  */
-public class LearnModeModel {
+public class LearnModeModel extends AlgoZooModel {
+    // properties
+    int noOfMovements;
     
+    // constructors
+    public LearnModeModel() {
+        super();
+        noOfMovements = 0; 
+    }
+    
+    // methods
+    public int getNoOfMovements() {
+        return noOfMovements;
+    }
+    
+    public void setNoOfMovements( int noOfMovements) {
+        this.noOfMovements = noOfMovements;
+    }
+    
+    public void increaseNoOfMovements() {
+        noOfMovements++;
+    }
+    
+    @Override
+    public void initNewGame() {
+        resetMovementPattern();
+        noOfMovements = 0;
+        // reset the location of animal
+    }
 }
