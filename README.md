@@ -19,13 +19,13 @@ _Include a concise description of your project here. Be sure to include the prop
 
 [Group Meetings Log](group/meetingslog.md)
 #### Group Members
-- Doğa Ece Ersoy     21902487   (group/member1_log.md)    
-- Esra Genç          21901962   (group/member2_log.md)
-- Ayberk Yaşa        21801847   (group/member3_log.md)
-- Kerem Erdal		 21901596   (group/member4_log.md)
-- Arda İçöz          21901443   (group/member5_log.md)
-- Alp Tuğrul Ağçalı  21801799   (group/member6_log.md)
-- Görkem Ayten       21802399   (group/member7_log.md)
+- [Doğa Ece Ersoy     21902487]   (group/member1_log.md)    
+- [Esra Genç          21901962]   (group/member2_log.md)
+- [Ayberk Yaşa        21801847]  (group/member3_log.md)
+- [Kerem Erdal		 21901596]   (group/member4_log.md)
+- [Arda İçöz          21901443]   (group/member5_log.md)
+- [Alp Tuğrul Ağçalı  21801799]   (group/member6_log.md)
+- [Görkem Ayten       21802399]   (group/member7_log.md)
 
 
 ****
