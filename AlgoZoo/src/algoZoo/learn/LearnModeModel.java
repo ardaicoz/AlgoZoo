@@ -14,11 +14,20 @@ import java.util.ArrayList;
 public class LearnModeModel extends AlgoZooModel {
     // properties
     int noOfMovements;
+    int startX;
+    int startY;
+    int currentX;
+    int currentY;
     
     // constructors
     public LearnModeModel() {
         super();
         noOfMovements = 0; 
+        startX = 0;
+        startY = 0;
+        currentX = 0;
+        currentY = 0;
+        
     }
     
     // methods
@@ -38,6 +47,7 @@ public class LearnModeModel extends AlgoZooModel {
     public void initNewGame() {
         resetMovementPattern();
         noOfMovements = 0;
-        // reset the location of animal
+        currentX = startX;
+        currentY = startY;
     }
 }
