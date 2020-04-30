@@ -106,22 +106,27 @@ public class SelectionController extends javax.swing.JPanel {
 
     private void upButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upButtonActionPerformed
         azm.addMovementPattern('w');
+        azm.update();
     }//GEN-LAST:event_upButtonActionPerformed
 
     private void downButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downButtonActionPerformed
         azm.addMovementPattern('s');
+        azm.update();
     }//GEN-LAST:event_downButtonActionPerformed
 
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
         azm.addMovementPattern('d');
+        azm.update();
     }//GEN-LAST:event_rightButtonActionPerformed
 
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
         azm.addMovementPattern('a');
+        azm.update();
     }//GEN-LAST:event_leftButtonActionPerformed
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
         azm.resetMovementPattern();
+        azm.update();
     }//GEN-LAST:event_resetButtonActionPerformed
 
 
