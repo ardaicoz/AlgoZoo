@@ -23,28 +23,43 @@ public abstract class AlgoZooModel extends AlgoZoo{
     }
             
     //methods
+    @Override
     public boolean goUp() {
         super.goUp();
         update();
         return true;
     }
     
+    @Override
     public boolean goDown() {
         super.goDown();
         update();
         return true;
     }
     
+    @Override
     public boolean goRight() {
         super.goRight();
         update();
         return true;
     }
     
+    @Override
     public boolean goLeft() {
         super.goLeft();
         update();
         return true;
+    }
+    @Override
+    public void addMovementPattern(char c) {
+        super.addMovementPattern(c);
+        update();
+    }
+    
+    @Override
+    public void resetMovementPattern() {
+      super.resetMovementPattern();
+      update();
     }
     
     public void initNewGame() {
@@ -52,6 +67,7 @@ public abstract class AlgoZooModel extends AlgoZoo{
         currentX = startX;
         currentY = startY;
     }
+    
     
     public void update() {
         if(!views.isEmpty()) {

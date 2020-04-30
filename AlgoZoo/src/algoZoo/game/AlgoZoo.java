@@ -59,7 +59,7 @@ public class AlgoZoo {
     }
     
     public void addMovementPattern(char c) {
-        movementPattern.add(c);     
+        movementPattern.add(c); 
     }
     
     public void resetMovementPattern() {
