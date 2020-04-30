@@ -47,7 +47,11 @@ public abstract class AlgoZooModel extends AlgoZoo{
         return true;
     }
     
-    public abstract void initNewGame();
+    public void initNewGame() {
+        resetMovementPattern();
+        currentX = startX;
+        currentY = startY;
+    }
     
     public void update() {
         if(!views.isEmpty()) {

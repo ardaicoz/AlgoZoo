@@ -14,11 +14,19 @@ public class AlgoZoo {
     //properties
     Animal animal;
     ArrayList<Character> movementPattern;
+    int startX;
+    int startY;
+    int currentX;
+    int currentY;
 
     //constructors
     public AlgoZoo() {
         movementPattern = new ArrayList<Character>();
         animal = null;
+        startX = 0;
+        startY = 0;
+        currentX = startX;
+        currentY = startY;
     }
          
     //methods
@@ -64,6 +72,38 @@ public class AlgoZoo {
     
     public boolean hasWon() {
         return true;
+    }
+    
+    public int getStartX() {
+        return startX;
+    }
+
+    public void setStartX(int startX) {
+        this.startX = startX;
+    }
+
+    public int getStartY() {
+        return startY;
+    }
+
+    public void setStartY(int startY) {
+        this.startY = startY;
+    }
+
+    public int getCurrentX() {
+        return currentX;
+    }
+
+    public void setCurrentX(int currentX) {
+        this.currentX = currentX;
+    }
+
+    public int getCurrentY() {
+        return currentY;
+    }
+
+    public void setCurrentY(int currentY) {
+        this.currentY = currentY;
     }
     
 }

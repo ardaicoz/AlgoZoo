@@ -15,12 +15,7 @@ public class ChallengeModeModel extends AlgoZooModel {
     int minRequiredMovements;
     int efficiency;
     int minRequiredTime;
-    int usedTime;
-    int startX;
-    int startY;
-    int currentX;
-    int currentY;
-    
+    int usedTime; 
     
     // constructors
     public ChallengeModeModel() {
@@ -30,10 +25,6 @@ public class ChallengeModeModel extends AlgoZooModel {
         efficiency = 0;
         minRequiredTime = 0;
         usedTime = 0;
-        startX = 0;
-        startY = 0;
-        currentX = 0;
-        currentY = 0;
 }
     // methods
     public int getNoOfMovements() {
@@ -76,40 +67,6 @@ public class ChallengeModeModel extends AlgoZooModel {
         usedTime++;
     }
 
-    public int getStartX() {
-        return startX;
-    }
-
-    public void setStartX(int startX) {
-        this.startX = startX;
-    }
-
-    public int getStartY() {
-        return startY;
-    }
-
-    public void setStartY(int startY) {
-        this.startY = startY;
-    }
-
-    public int getCurrentX() {
-        return currentX;
-    }
-
-    public void setCurrentX(int currentX) {
-        this.currentX = currentX;
-    }
-
-    public int getCurrentY() {
-        return currentY;
-    }
-
-    public void setCurrentY(int currentY) {
-        this.currentY = currentY;
-    }
-    
-    
-    
     public void computeEfficiency() {
         if ( !hasWon()) {
             efficiency = 0;
@@ -125,15 +82,10 @@ public class ChallengeModeModel extends AlgoZooModel {
     
     @Override
     public void initNewGame() {
-        resetMovementPattern();
+        super.initNewGame();
         noOfMovements = 0;
         usedTime = 0;
-        efficiency = 0;
-        currentX = startX;
-        currentY = startY;
-        
-        
+        efficiency = 0;       
     }
-            
-    
+              
 }
