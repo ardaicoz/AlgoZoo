@@ -4,20 +4,34 @@
  * and open the template in the editor.
  */
 package algoZoo.game;
+import java.awt.image.*;
+import javax.imageio.*;
+import java.io.File;
+import java.io.IOException;
+
 
 /**
  *
- * @author Esra, Doğa
+ * @author Esra, Doğa, Kerem, Arda
  */
 public class Animal {
     //properties
-    int x;
-    int y;
-    //ImageIcon image??;
-    
+    private String name;
+    private BufferedImage image;
+        
     //constructors
-    
+    public Animal(String name) throws IOException{
+        this.name = name;
+        this.image = ImageIO.read(new File(name + ".png"));
+    }
+
     //methods 
-    //get ve set metodları
+    public String getName () {
+        return name;
+    }
+
+    public BufferedImage getImage () {
+        return image;
+    }
     
 }
