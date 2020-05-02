@@ -15,12 +15,17 @@ import java.util.Iterator;
 public abstract class AlgoZooModel extends AlgoZoo{
     //properties
     ArrayList<IAlgoZooView> views;
+    boolean gameOver;
+    boolean hasWon ;
     
     //constructors
     public AlgoZooModel() {
         super();
         views = new ArrayList<IAlgoZooView>();
+        gameOver = false;
+        hasWon = false;
     }
+    
             
     //methods
     @Override
@@ -83,5 +88,40 @@ public abstract class AlgoZooModel extends AlgoZoo{
         this.views.add(view);
         view.updateView(this);
     }
-    
+     public void play() {
+      
+      
+      Iterator itr = movementPattern.iterator();
+      
+      while ( itr.hasNext() ) {
+         if ( (char)itr.next() == 'w' ) {
+            goUp();
+         }
+         else if (  (char)itr.next() == 'a' ) {
+            goLeft();
+         }
+         else if (  (char)itr.next() == 's' ) {
+            goDown();
+         }
+         else if (  (char)itr.next() == 'd' ) {
+            goRight();
+         }
+         
+      }
+      gameOver = true;
+      if(getStartX()== getFinishX() && getStartY() == getFinishY() )
+         hasWon = true;
+      
+   }
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public boolean isHasWon() {
+        return hasWon;
+    }
+   
 }
+    
+
