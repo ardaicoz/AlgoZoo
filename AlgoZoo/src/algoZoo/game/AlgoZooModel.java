@@ -15,36 +15,56 @@ import java.util.Iterator;
 public abstract class AlgoZooModel extends AlgoZoo{
     //properties
     ArrayList<IAlgoZooView> views;
+    boolean gameOver;
+    boolean hasWon ;
     
     //constructors
     public AlgoZooModel() {
         super();
         views = new ArrayList<IAlgoZooView>();
+        gameOver = false;
+        hasWon = false;
     }
+    
             
     //methods
+    @Override
     public boolean goUp() {
         super.goUp();
         update();
         return true;
     }
     
+    @Override
     public boolean goDown() {
         super.goDown();
         update();
         return true;
     }
     
+    @Override
     public boolean goRight() {
         super.goRight();
         update();
         return true;
     }
     
+    @Override
     public boolean goLeft() {
         super.goLeft();
         update();
         return true;
+    }
+    @Override
+    public void addMovementPattern(char c) {
+        super.addMovementPattern(c);
+        update();
+    }
+    
+    @Override
+    public void resetMovementPattern() {
+      super.resetMovementPattern();
+      update();
     }
     
     public void initNewGame() {
@@ -52,6 +72,7 @@ public abstract class AlgoZooModel extends AlgoZoo{
         currentX = startX;
         currentY = startY;
     }
+    
     
     public void update() {
         if(!views.isEmpty()) {
@@ -67,5 +88,40 @@ public abstract class AlgoZooModel extends AlgoZoo{
         this.views.add(view);
         view.updateView(this);
     }
-    
+     public void play() {
+      
+      
+      Iterator itr = movementPattern.iterator();
+      
+      while ( itr.hasNext() ) {
+         if ( (char)itr.next() == 'w' ) {
+            goUp();
+         }
+         else if (  (char)itr.next() == 'a' ) {
+            goLeft();
+         }
+         else if (  (char)itr.next() == 's' ) {
+            goDown();
+         }
+         else if (  (char)itr.next() == 'd' ) {
+            goRight();
+         }
+         
+      }
+      gameOver = true;
+      if(getStartX()== getFinishX() && getStartY() == getFinishY() )
+         hasWon = true;
+      
+   }
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public boolean isHasWon() {
+        return hasWon;
+    }
+   
 }
+    
+

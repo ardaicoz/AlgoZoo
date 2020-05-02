@@ -18,6 +18,10 @@ public class AlgoZoo {
     int startY;
     int currentX;
     int currentY;
+    int finishX;
+    int finishY;
+    
+    
 
     //constructors
     public AlgoZoo() {
@@ -27,6 +31,24 @@ public class AlgoZoo {
         startY = 0;
         currentX = startX;
         currentY = startY;
+        finishX = 0;
+        finishY = 0;
+    }
+
+    public int getFinishX() {
+        return finishX;
+    }
+
+    public void setFinishX(int finishX) {
+        this.finishX = finishX;
+    }
+
+    public int getFinishY() {
+        return finishY;
+    }
+
+    public void setFinishY(int finishY) {
+        this.finishY = finishY;
     }
          
     //methods
@@ -59,20 +81,13 @@ public class AlgoZoo {
     }
     
     public void addMovementPattern(char c) {
-        movementPattern.add(c);     
+        movementPattern.add(c); 
     }
     
     public void resetMovementPattern() {
         movementPattern = new ArrayList<Character>();
     }
      
-    public boolean isGameOver() {
-        return true;
-    }
-    
-    public boolean hasWon() {
-        return true;
-    }
     
     public int getStartX() {
         return startX;
