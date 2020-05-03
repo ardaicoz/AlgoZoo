@@ -15,46 +15,93 @@ import javax.swing.*;
 public class SelectionController extends javax.swing.JPanel {
     
     //properties
-    AlgoZooModel azm;
-    ArrayList<JLabel> list1;
-    ArrayList<JLabel> list2;
-    ArrayList<JLabel> list3;
+    private TestModeModel tmm;
+    private ArrayList<Character> listA;
+    private ArrayList<Character> listB;
+    private ArrayList<Character> listC;
 
     //constructors
-    public SelectionController() {
-        this.azm = azm;
+    public SelectionController(TestModeModel tmm, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
+        this.tmm = tmm;
+        listA = list1;
+        listB = list2;
+        listC = list3;
         initComponents();
-        listAdder();
+        labelInitialize();
     }
     
     //methods
-    public void listAdder(){
-        
-        //creates list1
-        list1.add(jLabel1);
-        list1.add(jLabel2);
-        list1.add(jLabel3);
-        list1.add(jLabel4);
-        list1.add(jLabel5);
-        list1.add(jLabel6);
-        
-        //creates list2
-        list2.add(jLabel7);
-        list2.add(jLabel8);
-        list2.add(jLabel9);
-        list2.add(jLabel10);
-        list2.add(jLabel11);
-        list2.add(jLabel12);
-        
-        //creates list3
-        list3.add(jLabel13);
-        list3.add(jLabel14);
-        list3.add(jLabel15);
-        list3.add(jLabel16);
-        list3.add(jLabel17);
-        list3.add(jLabel18);
-    }
-            
+     public void labelInitialize()
+     {
+         ArrayList<JLabel> list1;
+         list1 = new ArrayList<JLabel>();
+         list1.add(jLabel1);
+         list1.add(jLabel2);
+         list1.add(jLabel3);
+         list1.add(jLabel4);
+         list1.add(jLabel5);
+         list1.add(jLabel6);
+         ArrayList<JLabel> list2;
+         list2 = new ArrayList<JLabel>();
+         list2.add(jLabel7);
+         list2.add(jLabel8);
+         list2.add(jLabel9);
+         list2.add(jLabel10);
+         list2.add(jLabel11);
+         list2.add(jLabel12);
+         ArrayList<JLabel> list3;
+         list3 = new ArrayList<JLabel>();
+         list3.add(jLabel13);
+         list3.add(jLabel14);
+         list3.add(jLabel15);
+         list3.add(jLabel16);
+         list3.add(jLabel17);
+         list3.add(jLabel18);
+         for(int i = 0; i < listA.size(); i++ ){
+             if(listA.get(i) == 'w'){
+             list1.get(i).setText("UP");
+             }
+             if(listA.get(i) == 'a'){
+             list1.get(i).setText("LEFT");
+             }
+             if(listA.get(i) == 'd'){
+             list1.get(i).setText("RIGHT");
+             }
+             if(listA.get(i) == 's'){
+             list1.get(i).setText("DOWN");
+             }      
+         }
+         for(int i = 0; i < listB.size(); i++ ){
+             if(listB.get(i) == 'w'){
+             list2.get(i).setText("UP");
+             }
+             if(listB.get(i) == 'a'){
+             list2.get(i).setText("LEFT");
+             }
+             if(listB.get(i) == 'd'){
+             list2.get(i).setText("RIGHT");
+             }
+             if(listB.get(i) == 's'){
+             list2.get(i).setText("DOWN");
+             }      
+         }
+         for(int i = 0; i < listC.size(); i++ ){
+             if(listC.get(i) == 'w'){
+             list3.get(i).setText("UP");
+             }
+             if(listC.get(i) == 'a'){
+             list3.get(i).setText("LEFT");
+             }
+             if(listC.get(i) == 'd'){
+             list3.get(i).setText("RIGHT");
+             }
+             if(listC.get(i) == 's'){
+             list3.get(i).setText("DOWN");
+             }      
+         }
+         
+     }
+             
         
 
     /**
@@ -238,54 +285,24 @@ public class SelectionController extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            for(JLabel i: list1){
-                if(i.getText().equals("UP")){
-                    azm.addMovementPattern('w');
-                }
-                else if(i.getText().equals("DOWN")){
-                    azm.addMovementPattern('s');
-                }
-                else if(i.getText().equals("RIGHT")){
-                    azm.addMovementPattern('d');
-                }
-                else if(i.getText().equals("LEFT")){
-                    azm.addMovementPattern('a');
-                }
-            }                   
+            for(char i: listA){
+            tmm.addMovementPattern(i); 
+            }
+            tmm.play();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            for(JLabel i: list3){
-                if(i.getText().equals("UP")){
-                    azm.addMovementPattern('w');
-                }
-                else if(i.getText().equals("DOWN")){
-                    azm.addMovementPattern('s');
-                }
-                else if(i.getText().equals("RIGHT")){
-                    azm.addMovementPattern('d');
-                }
-                else if(i.getText().equals("LEFT")){
-                    azm.addMovementPattern('a');
-                }
-            }            
+            for(char i: listC){
+            tmm.addMovementPattern(i); 
+            }
+            tmm.play();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        for(JLabel i: list2){
-                if(i.getText().equals("UP")){
-                    azm.addMovementPattern('w');
-                }
-                else if(i.getText().equals("DOWN")){
-                    azm.addMovementPattern('s');
-                }
-                else if(i.getText().equals("RIGHT")){
-                    azm.addMovementPattern('d');
-                }
-                else if(i.getText().equals("LEFT")){
-                    azm.addMovementPattern('a');
-                }
-            }            
+        for(char i: listB){
+            tmm.addMovementPattern(i); 
+        }
+            tmm.play();
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
