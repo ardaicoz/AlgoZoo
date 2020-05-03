@@ -10,5 +10,5 @@ package algoZoo.game;
  * @author Esra, Doğa
  */
 public interface IAlgoZooView {
-    void updateView(AlgoZoo az);
+    void updateView(AlgoZooModel azm);
 }

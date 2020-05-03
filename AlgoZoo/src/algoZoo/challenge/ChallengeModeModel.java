@@ -18,8 +18,8 @@ public class ChallengeModeModel extends AlgoZooModel {
     int usedTime; 
     
     // constructors
-    public ChallengeModeModel() {
-        super();
+    public ChallengeModeModel(Animal animal, int startX, int startY, int finishX, int finishY) {
+        super(animal, startX, startY, finishX, finishY);
         noOfMovements = 0;
         minRequiredMovements = 0;
         efficiency = 0;

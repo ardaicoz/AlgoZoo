@@ -15,8 +15,8 @@ public class TestModeModel extends AlgoZooModel{
     //properties
     
     //constructors
-    public TestModeModel() {
-        
+    public TestModeModel(Animal animal, int startX, int startY, int finishX, int finishY) {
+       super(animal, startX, startY, finishX, finishY);
     }
     
     //methods

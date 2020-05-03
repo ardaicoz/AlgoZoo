@@ -16,8 +16,8 @@ public class LearnModeModel extends AlgoZooModel {
     int noOfMovements;
     
     // constructors
-    public LearnModeModel() {
-        super();
+    public LearnModeModel(Animal animal, int startX, int startY, int finishX, int finishY) {
+        super(animal, startX, startY, finishX, finishY);
         noOfMovements = 0;      
     }
     
