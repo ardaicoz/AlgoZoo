@@ -68,7 +68,7 @@ public class ChallengeModeModel extends AlgoZooModel {
     }
 
     public void computeEfficiency() {
-        if ( !hasWon()) {
+        if ( !isHasWon()) {
             efficiency = 0;
         }
         else {
