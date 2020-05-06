@@ -12,7 +12,7 @@ import javax.swing.*;
  *
  * @author Arda, Kerem
  */
-public class SelectionController extends javax.swing.JPanel {
+public class SelectionButtonsController extends javax.swing.JPanel {
     
     //properties
     private TestModeModel tmm;
@@ -21,7 +21,7 @@ public class SelectionController extends javax.swing.JPanel {
     private ArrayList<Character> listC;
 
     //constructors
-    public SelectionController(TestModeModel tmm, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
+    public SelectionButtonsController(TestModeModel tmm, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
         this.tmm = tmm;
         listA = list1;
         listB = list2;
