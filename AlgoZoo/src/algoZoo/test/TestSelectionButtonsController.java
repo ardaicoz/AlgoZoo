@@ -21,7 +21,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     private ArrayList<Character> listC;
 
     //constructors
-    public SelectionButtonsController(TestModeModel tmm, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
+    public TestSelectionButtonsController(TestModeModel tmm, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
         this.tmm = tmm;
         listA = list1;
         listB = list2;
