@@ -12,7 +12,7 @@ import javax.swing.*;
  *
  * @author Arda, Kerem
  */
-public class SelectionButtonsController extends javax.swing.JPanel {
+public class TestSelectionButtonsController extends javax.swing.JPanel {
     
     //properties
     private TestModeModel tmm;
