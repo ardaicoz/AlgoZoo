@@ -17,21 +17,15 @@ import java.io.IOException;
 public class Animal {
     //properties
     private String name;
-    private BufferedImage image;
+   
         
     //constructors
-    public Animal(String name) throws IOException{
+    public Animal(String name) {
         this.name = name;
-        this.image = ImageIO.read(new File(name + ".png"));
     }
 
     //methods 
     public String getName () {
         return name;
     }
-
-    public BufferedImage getImage () {
-        return image;
-    }
-    
 }

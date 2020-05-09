@@ -12,7 +12,7 @@ import java.util.Iterator;
  *
  * @author Esra, Doğa
  */
-public abstract class AlgoZooModel extends AlgoZoo {
+public class AlgoZooModel extends AlgoZoo {
    //properties
 
    ArrayList<IAlgoZooView> views;
