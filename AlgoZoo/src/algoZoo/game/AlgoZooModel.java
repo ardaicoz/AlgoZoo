@@ -14,7 +14,6 @@ import java.util.Iterator;
  */
 public class AlgoZooModel extends AlgoZoo {
    //properties
-
    ArrayList<IAlgoZooView> views;
    boolean gameOver;
    boolean hasWon;

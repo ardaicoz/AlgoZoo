@@ -5,6 +5,7 @@
  */
 package algoZoo.challenge;
 import algoZoo.game.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -14,48 +15,20 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     
     // properties
     ChallengeModeModel cmm;
-    MapView mv;
-    SelectionController sc;
-    TimerController tc;
-    PlayButtonController pbc;
+    MapView mapView;
+    SelectionController selectionController;
+    TimerController timer;
+    CodeView codeView;
 
     /**
      * Creates new form ChallengeModeGUI
      */
-    public ChallengeModeGUI( Animal animal, int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime) {
-        cmm = new ChallengeModeModel( animal, startX, startY, finishX, finishY, minRequiredMovements, minRequiredTime);
+    public ChallengeModeGUI() {
+        initMyComponents();
         initComponents();
         
-        mv = new MapView( cmm);
-        mv.setPreferredSize(new java.awt.Dimension( 630, 630));
-        mv.setBounds( 50, 60, 630, 630);
-        mv.setLayout( null);
-        mv.setVisible( true);
-        add( mv);
-        
-        sc = new SelectionController( cmm);
-        sc.setPreferredSize(new java.awt.Dimension( 250, 800));
-        sc.setBounds( 1150, 0, 250, 800);
-        sc.setLayout( null);
-        sc.setVisible( true);
-        add( sc);
-        
-        tc = new TimerController( cmm);
-        tc.setPreferredSize(new java.awt.Dimension( 150, 70));
-        tc.setBounds( 290, 710, 150, 70);
-        tc.setLayout( null);
-        tc.setVisible( true);
-        add( tc);
-        
-        pbc = new PlayButtonController( cmm);
-        pbc.setPreferredSize(new java.awt.Dimension( 200, 70));
-        pbc.setBounds( 815, 710, 200, 70);
-        pbc.setLayout( null);
-        pbc.setVisible( true);
-        add( pbc);
     }
-
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,22 +38,47 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        codeView1 = new algoZoo.game.CodeView();
         background = new javax.swing.JLabel();
+        codeView1 = new algoZoo.game.CodeView();
 
         setLayout(null);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
+        add(background);
+        background.setBounds(0, 0, 1400, 800);
 
         codeView1.setPreferredSize(new java.awt.Dimension(350, 630));
         add(codeView1);
         codeView1.setBounds(740, 60, 350, 630);
-
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
-        background.setBounds(new java.awt.Rectangle(0, 0, 1400, 800));
-        background.setPreferredSize(new java.awt.Dimension(1400, 800));
-        add(background);
-        background.setBounds(0, 0, 1400, 800);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void initMyComponents() {
+      // initialize components
+      cmm = new ChallengeModeModel(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, 120, 120);
+      mapView = new MapView( cmm);
+      codeView = new CodeView();
+      selectionController = new SelectionController( cmm);
+      timer = new TimerController( cmm);
+      
+      // place components to panel and setVisible
+      add(mapView);
+      mapView.setBounds(50, 60, 630, 630);
+      add(codeView);
+      codeView.setBounds(740, 60, 350, 630);
+      add(selectionController);
+      selectionController.setBounds(1150, 0, 250, 800);
+      add(timer);
+      timer.setBounds(290, 710, 150, 70);
+      
+      // initialize game
+      cmm.addView(mapView);
+      cmm.addView(codeView);
+      
+      
+      if ( cmm.HasWon()) {
+         System.out.println("won");
+      }  
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;

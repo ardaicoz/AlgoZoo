@@ -25,8 +25,8 @@ public class TimerController extends javax.swing.JPanel {
      */
     public TimerController(ChallengeModeModel cmm) {
         this.cmm = cmm;
-        remainingTime.setText(minute + ":" + second);
-        resetTimer();    
+        initComponents();
+        resetTimer();  
     }
     
     //methods
@@ -58,9 +58,6 @@ public class TimerController extends javax.swing.JPanel {
         timer.cancel();  
     }
 
-    
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
