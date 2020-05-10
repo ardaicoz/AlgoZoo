@@ -25,11 +25,11 @@ public class AlgoZoo {
    //constructors
    public AlgoZoo(Animal animal, int startX, int startY, int finishX, int finishY) {
       movementPattern = new ArrayList<Character>();
-      animal = null;
+      this.animal = animal;
       this.startX = startX;
       this.startY = startY;
-      currentX = this.startX;
-      currentY = this.startY;
+      this.currentX = this.startX;
+      this.currentY = this.startY;
       this.finishX = finishX;
       this.finishY = finishY;
    }
@@ -51,24 +51,20 @@ public class AlgoZoo {
       this.finishY = finishY;
    }
 
-   public boolean goUp() {
+   public void goUp() {
       currentY -= 64;
-      return true;
    }
 
-   public boolean goDown() {
+   public void goDown() {
       currentY += 64;
-      return true;
    }
 
-   public boolean goRight() {
+   public void goRight() {
       currentX += 64;
-      return true;
    }
 
-   public boolean goLeft() {
+   public void goLeft() {
       currentX -= 64;
-      return true;
    }
 
    public Animal getAnimal() {
@@ -88,7 +84,7 @@ public class AlgoZoo {
    }
 
    public void resetMovementPattern() {
-      movementPattern = new ArrayList<Character>();
+      movementPattern.removeAll(movementPattern);
    }
 
    public int getStartX() {

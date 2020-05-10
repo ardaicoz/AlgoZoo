@@ -29,49 +29,49 @@ public class AlgoZooModel extends AlgoZoo {
 
    //methods
    @Override
-   public boolean goUp() {
+   public void goUp() {
       super.goUp();
       update();
-      return true;
+
    }
 
    @Override
-   public boolean goDown() {
+   public void goDown() {
       super.goDown();
       update();
-      return true;
+
    }
 
    @Override
-   public boolean goRight() {
+   public void goRight() {
       super.goRight();
       update();
-      return true;
+
    }
 
    @Override
-   public boolean goLeft() {
+   public void goLeft() {
       super.goLeft();
       update();
-      return true;
+
    }
 
    @Override
    public void addMovementPattern(char c) {
       super.addMovementPattern(c);
-      update();
+      views.get(1).updateView(this); // update only codeView because mapView shouldn't be updated before pressing play button
    }
 
    @Override
    public void resetMovementPattern() {
       super.resetMovementPattern();
-      update();
    }
 
    public void initNewGame() {
       resetMovementPattern();
       currentX = startX;
       currentY = startY;
+      update();
    }
 
    public void update() {
@@ -86,26 +86,36 @@ public class AlgoZooModel extends AlgoZoo {
 
    public void addView(IAlgoZooView view) {
       this.views.add(view);
-      view.updateView(this);
+      //view.updateView(this);
    }
 
    public void play() {
-
+      /*
       Iterator itr = movementPattern.iterator();
 
       while (itr.hasNext()) {
-         if ((char) itr.next() == 'w') {
+         if ((char)itr.next() == 'w') {
             goUp();
-         } else if ((char) itr.next() == 'a') {
+         }
+         else if ((char)itr.next() == 'a') {
             goLeft();
-         } else if ((char) itr.next() == 's') {
+         }
+         else if ((char)itr.next() == 's') {
             goDown();
-         } else if ((char) itr.next() == 'd') {
+         }
+         else if ((char)itr.next() == 'd') {
             goRight();
          }
       }
+      */
+      for ( int i = 0; i < movementPattern.size(); i++) {
+         if ( movementPattern.get(i).equals('w')) { goUp(); }
+         else if ( movementPattern.get(i).equals('a')) { goLeft(); }
+         else if ( movementPattern.get(i).equals('s')) { goDown(); }
+         else if ( movementPattern.get(i).equals('d')) { goRight(); }
+      }
       gameOver = true;
-      if (getStartX() == getFinishX() && getStartY() == getFinishY()) {
+      if (getCurrentX() == getFinishX() && getCurrentY() == getFinishY()) {
          hasWon = true;
       }
    }
@@ -114,7 +124,7 @@ public class AlgoZooModel extends AlgoZoo {
       return gameOver;
    }
 
-   public boolean isHasWon() {
+   public boolean HasWon() {
       return hasWon;
    }
 

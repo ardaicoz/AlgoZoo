@@ -7,6 +7,7 @@ package algoZoo.game;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -14,20 +15,28 @@ import javax.swing.Timer;
  * @author Ayberk, Görkem
  */
 public class MapView extends javax.swing.JPanel implements IAlgoZooView {
+
    // properties
    AlgoZooModel azm;
    Timer timer;
-   
+   final int WIDTH = 640;
+   final int HEIGHT = 640;
+   final int ANIMAL_WIDTH = 48;
+   final int ANIMAL_HEIGHT = 40;
+   final int NUMBER_OF_SQUARE = 10;
+   final int SQUARE = WIDTH / NUMBER_OF_SQUARE;
+
    // constructors
    public MapView(AlgoZooModel azm) {
       this.azm = azm;
       initComponents();
-      animal.setBounds(azm.startX, azm.startY, 64, 64);
-      timer = new Timer(40, new TimerListener());
-      //Azm'deki Animal'ın içinden iconu alıp buradaki animal labelına setlemeliyiz.
+      animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+      timer = new Timer(10, new TimerListener());
+
+      animal.setIcon(azm.getAnimal().getIcon());
       //Levellara göre mapBackground setlenmeli.
    }
-   
+
    // methods
    /**
     * This method is called from within the constructor to initialize the form.
@@ -43,49 +52,79 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
 
       setLayout(null);
       add(animal);
-      animal.setBounds(0, 0, 64, 64);
+      animal.setBounds(0, 0, 48, 40);
 
       mapBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png"))); // NOI18N
       add(mapBackground);
       mapBackground.setBounds(0, 0, 640, 640);
    }// </editor-fold>//GEN-END:initComponents
 
+   public void goUpView() {
+      animal.setBounds(animal.getX(), animal.getY() - 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+   }
+
+   public void goDownView() {
+      animal.setBounds(animal.getX(), animal.getY() + 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+   }
+
+   public void goRightView() {
+      animal.setBounds(animal.getX() + 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
+   }
+
+   public void goLeftView() {
+      animal.setBounds(animal.getX() - 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
+   }
+
    @Override
    public void updateView(AlgoZooModel azm) {
-      if ( animal.getX() < this.getX() && animal.getY() < this.getY()) {
-         timer.start();
-      }
+      timer.start();
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel animal;
    private javax.swing.JLabel mapBackground;
    // End of variables declaration//GEN-END:variables
-   
+
    // inner class
    public class TimerListener implements ActionListener {
-
+      int counter = 0;
+      int index = 0;
       @Override
       public void actionPerformed(ActionEvent e) {
-         if (animal.getX() != azm.getCurrentX()) {
-            if (animal.getX() < azm.getCurrentX()) {
-               animal.setBounds(animal.getX() + 1, animal.getY(), 64, 64);
-            }
-            else {
-               animal.setBounds(animal.getX() - 1, animal.getY(), 64, 64);
-            }
-         }
-         else if (animal.getY() != azm.getCurrentY()) {
-            if (animal.getY() < azm.getCurrentY()) {
-               animal.setBounds(animal.getX(), animal.getY() + 1, 64, 64);
-            }
-            else {
-               animal.setBounds(animal.getX(), animal.getY() - 1, 64, 64);
-            }
+         if ( azm.getMovementPattern().isEmpty()) {
+            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
          }
          else {
-            timer.stop();
+            if ( azm.getMovementPattern().size() > index) {
+               if( azm.getMovementPattern().get(index).equals('w')) {
+                  if ( animal.getY() > (SQUARE - ANIMAL_HEIGHT) / 2 ) 
+                     goUpView();
+               }
+               else if( azm.getMovementPattern().get(index).equals('a')) {
+                  if ( animal.getX() > (SQUARE - ANIMAL_WIDTH) / 2 )
+                     goLeftView(); 
+               }
+               else if( azm.getMovementPattern().get(index).equals('s')) {
+                  if ( animal.getY() < (HEIGHT - SQUARE) + (SQUARE - ANIMAL_HEIGHT) / 2)
+                     goDownView(); 
+               }
+               else if( azm.getMovementPattern().get(index).equals('d')) {
+                  if ( animal.getX() < (WIDTH - SQUARE) + (SQUARE - ANIMAL_WIDTH) / 2)
+                     goRightView(); 
+               }
+            }
+            else {
+               index = 0;
+               counter = 0;
+               timer.stop();
+            }
          }
+         
+         counter++;
+            
+         if ( counter % 64 == 0) {
+            index++;
+         }  
       }
    }
 }

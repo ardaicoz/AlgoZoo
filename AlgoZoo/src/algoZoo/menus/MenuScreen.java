@@ -5,6 +5,9 @@
  */
 package algoZoo.menus;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Ayberk
@@ -19,6 +22,7 @@ public class MenuScreen extends javax.swing.JFrame {
       initComponents();
       setInvisible();
       updateReturnButton();
+      addActionListeners();
       
    }
 
@@ -32,6 +36,7 @@ public class MenuScreen extends javax.swing.JFrame {
    private void initComponents() {
 
       returnButton = new javax.swing.JButton();
+      jButton1 = new javax.swing.JButton();
       welcomeScreen = new javax.swing.JPanel();
       playButton = new javax.swing.JButton();
       exitButton = new javax.swing.JButton();
@@ -45,6 +50,7 @@ public class MenuScreen extends javax.swing.JFrame {
       learnModeLevelScreen = new algoZoo.learn.LearnModeLevelsGUI();
       testModeLevelScreen = new algoZoo.test.TestModeLevelsGUI();
       challengeModeLevelScreen = new algoZoo.challenge.ChallengeModeLevelsGUI();
+      learnModeGUI = new algoZoo.learn.LearnModeGUI();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setUndecorated(true);
@@ -70,6 +76,15 @@ public class MenuScreen extends javax.swing.JFrame {
       });
       getContentPane().add(returnButton);
       returnButton.setBounds(10, 730, 90, 65);
+
+      jButton1.setText("jButton1");
+      jButton1.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton1ActionPerformed(evt);
+         }
+      });
+      getContentPane().add(jButton1);
+      jButton1.setBounds(1310, 10, 77, 32);
 
       welcomeScreen.setPreferredSize(new java.awt.Dimension(1400, 800));
       welcomeScreen.setLayout(null);
@@ -214,6 +229,8 @@ public class MenuScreen extends javax.swing.JFrame {
 
       getContentPane().add(challengeModeLevelScreen);
       challengeModeLevelScreen.setBounds(0, 0, 1400, 800);
+      getContentPane().add(learnModeGUI);
+      learnModeGUI.setBounds(0, 0, 1400, 800);
 
       pack();
       setLocationRelativeTo(null);
@@ -225,7 +242,7 @@ public class MenuScreen extends javax.swing.JFrame {
       learnModeLevelScreen.setVisible(false);
       testModeLevelScreen.setVisible(false);
       challengeModeLevelScreen.setVisible(false);
-      
+      learnModeGUI.setVisible(false);      
    }
    
    private void updateReturnButton() {
@@ -235,6 +252,17 @@ public class MenuScreen extends javax.swing.JFrame {
       else {
          returnButton.setVisible(true);  
       } 
+   }
+   
+   private void addActionListeners() {
+      learnModeLevelScreen.getjButton1().addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            learnModeLevelScreen.setVisible(false);
+            learnModeGUI.setVisible(true);
+         }
+      });
+      
    }
    
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
@@ -316,7 +344,10 @@ public class MenuScreen extends javax.swing.JFrame {
          challengeModeLevelScreen.setVisible(false);
          modeScreen.setVisible(true);
       }
-      
+      else if ( learnModeGUI.isVisible()) {
+         learnModeGUI.setVisible(false);
+         learnModeLevelScreen.setVisible(true);
+      }
       updateReturnButton();
    }//GEN-LAST:event_returnButtonActionPerformed
 
@@ -327,6 +358,10 @@ public class MenuScreen extends javax.swing.JFrame {
    private void returnButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnButtonMouseExited
       returnButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Return_Button.png")));
    }//GEN-LAST:event_returnButtonMouseExited
+
+   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      System.exit(0);
+   }//GEN-LAST:event_jButton1ActionPerformed
 
    /**
     * @param args the command line arguments
@@ -371,7 +406,9 @@ public class MenuScreen extends javax.swing.JFrame {
    private algoZoo.challenge.ChallengeModeLevelsGUI challengeModeLevelScreen;
    private javax.swing.JButton exitButton;
    private javax.swing.JButton infoButton;
+   private javax.swing.JButton jButton1;
    private javax.swing.JButton learnButton;
+   private algoZoo.learn.LearnModeGUI learnModeGUI;
    private algoZoo.learn.LearnModeLevelsGUI learnModeLevelScreen;
    private javax.swing.JPanel modeScreen;
    private javax.swing.JButton playButton;

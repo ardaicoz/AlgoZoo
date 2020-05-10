@@ -16,10 +16,13 @@ import javax.swing.*;
 public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
    // properties
    ArrayList<JLabel> jlabels;
+   int updated;
+   
    // constructor
    public CodeView() {
       initComponents();
       jlabels = new ArrayList<>();
+      updated = 0;
    }
    
    // methods
@@ -32,11 +35,13 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
+      setBackground(new java.awt.Color(51, 204, 255));
       setLayout(null);
    }// </editor-fold>//GEN-END:initComponents
 
    @Override
    public void updateView(AlgoZooModel azm) {
+      /*
       Iterator itr = azm.getMovementPattern().iterator();
 
       while (itr.hasNext()) {
@@ -60,7 +65,67 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
             //jlabels.get(jlabels.size() - 1).setIcon(icon);
             //jlabels.get(jlabels.size() - 1).setBounds(x,y,100,50);
          }
+      }*/
+      if ( azm.getMovementPattern().isEmpty()) {
+         jlabels.removeAll(jlabels);
+         this.removeAll();
+         this.repaint();
+         updated = 0;
       }
+      else {
+         for ( int i = updated; i < azm.getMovementPattern().size(); i++) {
+            if ( azm.getMovementPattern().get(i).equals('w')) {
+               jlabels.add(new JLabel());
+               add(jlabels.get(jlabels.size() - 1));
+               jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Up_Button.png")));
+               if ( jlabels.size() >= 2) {
+                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 50, 70);
+               }
+               else {
+                  jlabels.get(jlabels.size() - 1).setBounds(50,20,50,70);
+               }
+               updated++;
+            }
+            else if ( azm.getMovementPattern().get(i).equals('a')) {
+               jlabels.add(new JLabel());
+               add(jlabels.get(jlabels.size() - 1));
+               jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Left_Button.png")));
+               if ( jlabels.size() >= 2) {
+                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 70, 50);
+               }
+               else {
+                  jlabels.get(jlabels.size() - 1).setBounds(50,20,70,50);
+               }
+               updated++;
+            }
+            else if ( azm.getMovementPattern().get(i).equals('s')) {
+               jlabels.add(new JLabel());
+               add(jlabels.get(jlabels.size() - 1));
+               jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
+               if ( jlabels.size() >= 2) {
+                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 50, 70);
+               }
+               else {
+                  jlabels.get(jlabels.size() - 1).setBounds(50,20,50,70);
+               }
+               updated++;
+            }
+            else if ( azm.getMovementPattern().get(i).equals('d')) {
+               jlabels.add(new JLabel());
+               add(jlabels.get(jlabels.size() - 1));
+               jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Right_Button.png")));
+               if ( jlabels.size() >= 2) {
+                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 70, 50);
+               }
+               else {
+                  jlabels.get(jlabels.size() - 1).setBounds(50,20,70,50);
+               }
+               updated++;
+            }
+            
+         }
+      }
+      
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
