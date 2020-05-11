@@ -70,6 +70,8 @@ public class AlgoZooModel extends AlgoZoo {
       resetMovementPattern();
       currentX = startX;
       currentY = startY;
+      gameOver = false;
+      hasWon = false;
       update();
    }
 

@@ -39,23 +39,32 @@ public class TimerController extends javax.swing.JPanel {
         task = new TimerTask() {
             @Override
             public void run() {
-                remainingTime.setText(minute + ":" + second);
-                second--;
-                if(second < 0) {
-                    second = 59;
-                    minute--;
-                }
-                if(minute < 0) {
+                if(cmm.isGameOver()) {
                     timer.cancel();
                 }
-                cmm.increaseUsedTime();
+                else {
+                    remainingTime.setText(minute + ":" + second);
+                    second--;
+                    if(second < 0) {
+                        second = 59;
+                        minute--;
+                    }
+                    if(minute < 0) {
+                        timer.cancel();
+                    }
+                    cmm.increaseUsedTime();
+                }
             }
         };
-        timer.scheduleAtFixedRate(task, 0, 1000);
+        //timer.scheduleAtFixedRate(task, 0, 1000);
     }
     
     public void stopTimer() {
         timer.cancel();  
+    }
+    
+    public void startTimer() {
+        timer.scheduleAtFixedRate(task, 0, 1000);  
     }
 
 

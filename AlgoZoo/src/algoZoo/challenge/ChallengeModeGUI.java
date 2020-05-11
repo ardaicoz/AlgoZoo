@@ -26,7 +26,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     public ChallengeModeGUI() {
         initMyComponents();
         initComponents();
-        
     }
     
     /**
@@ -79,6 +78,16 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
          System.out.println("won");
       }  
    }
+    
+    public void startTimer() {
+        timer.startTimer();
+    }
+    
+    public void initNewGame() {
+        cmm.initNewGame();
+        timer.resetTimer();
+        selectionController.resetSelectionController();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;

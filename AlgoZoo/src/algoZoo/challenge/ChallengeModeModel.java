@@ -87,5 +87,10 @@ public class ChallengeModeModel extends AlgoZooModel {
         usedTime = 0;
         efficiency = 0;       
     }
-              
+    
+    @Override
+    public void play() {
+        super.play();
+        computeEfficiency();
+    }
 }

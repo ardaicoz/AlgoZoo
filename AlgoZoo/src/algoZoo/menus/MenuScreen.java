@@ -266,6 +266,7 @@ public class MenuScreen extends javax.swing.JFrame {
          public void actionPerformed(ActionEvent e) {
             learnModeLevelScreen.setVisible(false);
             learnModeGUI.setVisible(true);
+            learnModeGUI.initNewGame();
          }
       });
       
@@ -274,6 +275,8 @@ public class MenuScreen extends javax.swing.JFrame {
          public void actionPerformed(ActionEvent e) {
             challengeModeLevelScreen.setVisible(false);
             challengeModeGUI.setVisible(true);
+            challengeModeGUI.initNewGame();
+            challengeModeGUI.startTimer();
          }
       });
       

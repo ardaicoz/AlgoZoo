@@ -69,8 +69,11 @@ public class LearnModeGUI extends javax.swing.JPanel {
       if ( lmm.HasWon()) {
          System.out.println("won");
       }
-      
-      
+    }
+   
+   public void initNewGame() {
+        lmm.initNewGame();
+        selectionController.resetSelectionController();
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables

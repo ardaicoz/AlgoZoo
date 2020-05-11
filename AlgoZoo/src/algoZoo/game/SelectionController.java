@@ -130,6 +130,7 @@ public class SelectionController extends javax.swing.JPanel {
       buttons.add(leftButton);
       buttons.add(rightButton);
       buttons.add(upButton);
+      buttons.add(resetButton);
       
     }
     
@@ -164,6 +165,11 @@ public class SelectionController extends javax.swing.JPanel {
       
    }//GEN-LAST:event_jButton1ActionPerformed
 
+   public void resetSelectionController() {
+       for ( JButton b : buttons) {
+          b.setEnabled(true);
+       }
+   }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JButton downButton;
