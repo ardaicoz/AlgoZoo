@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package algoZoo.test;
+import javax.swing.*;
 
 /**
  *
@@ -115,7 +116,45 @@ public class TestModeLevelsGUI extends javax.swing.JPanel {
       add(background);
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
+public JButton getjButton1() {
+      return jButton1;
+   }
 
+   public JButton getjButton10() {
+      return jButton10;
+   }
+
+   public JButton getjButton2() {
+      return jButton2;
+   }
+
+   public JButton getjButton3() {
+      return jButton3;
+   }
+
+   public JButton getjButton4() {
+      return jButton4;
+   }
+
+   public JButton getjButton5() {
+      return jButton5;
+   }
+
+   public JButton getjButton6() {
+      return jButton6;
+   }
+
+   public JButton getjButton7() {
+      return jButton7;
+   }
+
+   public JButton getjButton8() {
+      return jButton8;
+   }
+
+   public JButton getjButton9() {
+      return jButton9;
+   }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel background;
