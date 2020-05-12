@@ -23,9 +23,11 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     /**
      * Creates new form ChallengeModeGUI
      */
-    public ChallengeModeGUI() {
+    public ChallengeModeGUI(Animal animal, int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime) {
+        cmm = new ChallengeModeModel(animal, startX, startY, finishX, finishY, minRequiredMovements, minRequiredTime);
         initMyComponents();
         initComponents();
+        
     }
     
     /**
@@ -53,7 +55,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
     private void initMyComponents() {
       // initialize components
-      cmm = new ChallengeModeModel(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, 120, 120);
       mapView = new MapView( cmm);
       codeView = new CodeView();
       selectionController = new SelectionController( cmm);
@@ -74,7 +75,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       cmm.addView(codeView);
       
       
-      if ( cmm.HasWon()) {
+      if ( cmm.hasWon()) {
          System.out.println("won");
       }  
    }
@@ -87,6 +88,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
         cmm.initNewGame();
         timer.resetTimer();
         selectionController.resetSelectionController();
+    }
+    
+    public ChallengeModeModel getModel() {
+        return cmm;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

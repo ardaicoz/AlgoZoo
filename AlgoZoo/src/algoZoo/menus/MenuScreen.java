@@ -5,8 +5,10 @@
  */
 package algoZoo.menus;
 
+import algoZoo.game.Animal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -51,7 +53,8 @@ public class MenuScreen extends javax.swing.JFrame {
         testModeLevelScreen = new algoZoo.test.TestModeLevelsGUI();
         challengeModeLevelScreen = new algoZoo.challenge.ChallengeModeLevelsGUI();
         learnModeGUI = new algoZoo.learn.LearnModeGUI();
-        challengeModeGUI = new algoZoo.challenge.ChallengeModeGUI();
+        challengeModeGUI1 = new algoZoo.challenge.ChallengeModeGUI(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, 10, 120);
+        challengeModeGUI2 = new algoZoo.challenge.ChallengeModeGUI(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 72, 76, 136, 140, 10, 180);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -233,9 +236,13 @@ public class MenuScreen extends javax.swing.JFrame {
         getContentPane().add(learnModeGUI);
         learnModeGUI.setBounds(0, 0, 1400, 800);
 
-        challengeModeGUI.setPreferredSize(new java.awt.Dimension(1400, 800));
-        getContentPane().add(challengeModeGUI);
-        challengeModeGUI.setBounds(0, 0, 1400, 800);
+        challengeModeGUI1.setPreferredSize(new java.awt.Dimension(1400, 800));
+        getContentPane().add(challengeModeGUI1);
+        challengeModeGUI1.setBounds(0, 0, 1400, 800);
+
+        challengeModeGUI2.setPreferredSize(new java.awt.Dimension(1400, 800));
+        getContentPane().add(challengeModeGUI2);
+        challengeModeGUI2.setBounds(0, 0, 1400, 800);
 
         pack();
         setLocationRelativeTo(null);
@@ -248,7 +255,8 @@ public class MenuScreen extends javax.swing.JFrame {
       testModeLevelScreen.setVisible(false);
       challengeModeLevelScreen.setVisible(false);
       learnModeGUI.setVisible(false); 
-      challengeModeGUI.setVisible(false);      
+      challengeModeGUI1.setVisible(false);   
+      challengeModeGUI2.setVisible(false);    
    }
    
    private void updateReturnButton() {
@@ -274,9 +282,19 @@ public class MenuScreen extends javax.swing.JFrame {
          @Override
          public void actionPerformed(ActionEvent e) {
             challengeModeLevelScreen.setVisible(false);
-            challengeModeGUI.setVisible(true);
-            challengeModeGUI.initNewGame();
-            challengeModeGUI.startTimer();
+            challengeModeGUI1.setVisible(true);
+            challengeModeGUI1.initNewGame();
+            challengeModeGUI1.startTimer();
+         }
+      });
+
+      challengeModeLevelScreen.getjButton2().addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            challengeModeLevelScreen.setVisible(false);
+            challengeModeGUI2.setVisible(true);
+            challengeModeGUI2.initNewGame();
+            challengeModeGUI2.startTimer();
          }
       });
       
@@ -365,8 +383,16 @@ public class MenuScreen extends javax.swing.JFrame {
          learnModeGUI.setVisible(false);
          learnModeLevelScreen.setVisible(true);
       }
-      else if ( challengeModeGUI.isVisible()) {
-         challengeModeGUI.setVisible(false);
+      else if ( challengeModeGUI1.isVisible()) {
+         challengeModeGUI1.setVisible(false);
+         challengeModeLevelScreen.setVisible(true);
+         if(challengeModeGUI1.getModel().hasWon()) {
+             challengeModeLevelScreen.setJButtonIcon(challengeModeLevelScreen.getjButton2(), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/2.png")));
+             challengeModeLevelScreen.getjButton2().setEnabled(true);
+         }
+      }
+      else if ( challengeModeGUI2.isVisible()) {
+         challengeModeGUI2.setVisible(false);
          challengeModeLevelScreen.setVisible(true);
       }
       updateReturnButton();
@@ -424,7 +450,8 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel background2;
     private javax.swing.JButton challengeButton;
-    private algoZoo.challenge.ChallengeModeGUI challengeModeGUI;
+    private algoZoo.challenge.ChallengeModeGUI challengeModeGUI1;
+    private algoZoo.challenge.ChallengeModeGUI challengeModeGUI2;
     private algoZoo.challenge.ChallengeModeLevelsGUI challengeModeLevelScreen;
     private javax.swing.JButton exitButton;
     private javax.swing.JButton infoButton;

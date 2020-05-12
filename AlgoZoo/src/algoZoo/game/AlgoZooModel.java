@@ -10,11 +10,11 @@ import java.util.Iterator;
 
 /**
  *
- * @author Esra, Doğa
+ * @author Esra, DoÄŸa
  */
 public class AlgoZooModel extends AlgoZoo {
    //properties
-   ArrayList<IAlgoZooView> views;
+   public ArrayList<IAlgoZooView> views;
    boolean gameOver;
    boolean hasWon;
 
@@ -125,7 +125,7 @@ public class AlgoZooModel extends AlgoZoo {
       return gameOver;
    }
 
-   public boolean HasWon() {
+   public boolean hasWon() {
       return hasWon;
    }
 

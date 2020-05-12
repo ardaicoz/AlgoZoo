@@ -66,7 +66,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
       lmm.addView(mapView);
       lmm.addView(codeView);
       
-      if ( lmm.HasWon()) {
+      if ( lmm.hasWon()) {
          System.out.println("won");
       }
     }

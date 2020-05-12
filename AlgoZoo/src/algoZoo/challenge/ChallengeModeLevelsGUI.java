@@ -5,6 +5,7 @@
  */
 package algoZoo.challenge;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
@@ -18,6 +19,15 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
     */
    public ChallengeModeLevelsGUI() {
       initComponents();
+      jButton2.setEnabled(false);
+      jButton3.setEnabled(false);
+      jButton4.setEnabled(false);
+      jButton5.setEnabled(false);
+      jButton6.setEnabled(false);
+      jButton7.setEnabled(false);
+      jButton8.setEnabled(false);
+      jButton9.setEnabled(false);
+      jButton10.setEnabled(false);
    }
    
    public JButton getjButton1() {
@@ -58,6 +68,10 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
 
    public JButton getjButton9() {
       return jButton9;
+   }
+   
+   public void setJButtonIcon(JButton jb, ImageIcon i) {
+       jb.setIcon(i);
    }
 
    /**
