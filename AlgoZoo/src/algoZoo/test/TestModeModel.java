@@ -6,10 +6,11 @@
 package algoZoo.test;
 
 import algoZoo.game.*;
+import java.util.ArrayList;
 
 /**
  *
- * @author esra
+ * @author esra, Kerem
  */
 public class TestModeModel extends AlgoZooModel{
     //properties
@@ -22,9 +23,15 @@ public class TestModeModel extends AlgoZooModel{
     //methods
     @Override
     public void initNewGame() {
-        super.initNewGame();
+      
+      super.initNewGame();
+      getMovementPattern().add('n');
     }
-    
-    
+    @Override
+   public void addMovementPattern(char c) {
+      
+      getMovementPattern().add(c);
+      views.get(0).updateView(this); 
+   }
     
 }
