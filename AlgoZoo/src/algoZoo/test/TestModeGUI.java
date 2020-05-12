@@ -19,7 +19,7 @@ public class TestModeGUI extends javax.swing.JPanel {
 
     TestSelectionButtonsController options;
     MapView map;
-    TestModeModel tmm;
+    public TestModeModel tmm;
     CodeView codeView;
     /**
      * Creates new form TestModeLevelsGUI
@@ -27,7 +27,7 @@ public class TestModeGUI extends javax.swing.JPanel {
     public TestModeGUI() {
         initMyComponents();
         initComponents();
-        this.map = map;
+
     }
     private void initMyComponents(){
         ArrayList<Character> list1 = new ArrayList<Character>();
@@ -67,6 +67,7 @@ public class TestModeGUI extends javax.swing.JPanel {
         list3.add('d');
         
         tmm = new TestModeModel(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))),8, 12, 72, 76);
+        
         map = new MapView(tmm);
         options = new TestSelectionButtonsController(tmm, list1, list2, list3);
         add(map);
@@ -80,8 +81,11 @@ public class TestModeGUI extends javax.swing.JPanel {
         }
     }
     public void initNewGame() {
-        tmm.initNewGame();        
-        
+        options.A.setEnabled(true);
+        options.B.setEnabled(true);
+        options.C.setEnabled(true);
+        tmm.initNewGame(); 
+     
     }
    
    
