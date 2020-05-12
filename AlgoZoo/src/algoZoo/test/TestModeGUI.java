@@ -26,7 +26,6 @@ public class TestModeGUI extends javax.swing.JPanel {
      */
     public TestModeGUI() {
         initMyComponents();
-        
         initComponents();
         this.map = map;
     }
@@ -37,19 +36,19 @@ public class TestModeGUI extends javax.swing.JPanel {
         list1.add('s');
         list1.add('d');
         list1.add('w');
-        list1.add('a');
+        list1.add('s');
         list1.add('d');
-        list1.add('w');
-        list1.add('a');
-        list1.add('a');
+        list1.add('d');
+        list1.add('s');
+        list1.add('s');
         
         ArrayList<Character> list2 = new ArrayList<Character>();
         list2.add('d');
         list2.add('d');
-        list2.add('a');
+        list2.add('s');
         list2.add('d');
         list2.add('w');
-        list2.add('a');
+        list2.add('s');
         list2.add('d');
         list2.add('d');
         list2.add('a');
@@ -57,22 +56,21 @@ public class TestModeGUI extends javax.swing.JPanel {
         
         ArrayList<Character> list3 = new ArrayList<Character>();
         list3.add('s');
-        list3.add('a');
-        list3.add('w');
+        list3.add('d');
+        list3.add('s');
         list3.add('d');
         list3.add('w');
         list3.add('a');
         list3.add('s');
-        list3.add('a');
+        list3.add('d');
         list3.add('w');
         list3.add('d');
         
         tmm = new TestModeModel(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))),8, 12, 72, 76);
         map = new MapView(tmm);
         options = new TestSelectionButtonsController(tmm, list1, list2, list3);
-        
         add(map);
-        map.setBounds(50, 60, 630, 630);
+        map.setBounds(50, 50, 640, 640);
         add(options);
         options.setBounds(700, 0, 700, 800);
         tmm.addView(map);
@@ -82,8 +80,10 @@ public class TestModeGUI extends javax.swing.JPanel {
         }
     }
     public void initNewGame() {
-        tmm.initNewGame();
+        tmm.initNewGame();        
+        
     }
+   
    
     /**
      * This method is called from within the constructor to initialize the form.

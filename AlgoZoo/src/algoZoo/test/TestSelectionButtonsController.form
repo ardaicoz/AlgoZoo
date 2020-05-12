@@ -26,18 +26,18 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="A" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel6" alignment="1" pref="141" max="32767" attributes="0"/>
-                      <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jLabel5" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jLabel5" alignment="1" pref="141" max="32767" attributes="0"/>
+                      <Component id="jLabel4" alignment="1" max="32767" attributes="0"/>
                       <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
                       <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel7" alignment="1" pref="141" max="32767" attributes="0"/>
-                      <Component id="jLabel11" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jLabel10" alignment="1" pref="141" max="32767" attributes="0"/>
                       <Component id="jLabel9" alignment="1" max="32767" attributes="0"/>
                       <Component id="jLabel8" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jLabel4" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jLabel7" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jLabel6" alignment="1" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="50" max="32767" attributes="0"/>
@@ -45,29 +45,29 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel14" alignment="1" pref="141" max="32767" attributes="0"/>
-                          <Component id="jLabel13" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel12" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel19" alignment="1" pref="141" max="32767" attributes="0"/>
                           <Component id="jLabel18" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel15" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel19" alignment="1" max="32767" attributes="0"/>
                           <Component id="jLabel17" alignment="1" max="32767" attributes="0"/>
                           <Component id="jLabel16" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel20" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel10" max="32767" attributes="0"/>
+                          <Component id="jLabel14" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel13" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel12" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel11" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel15" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel20" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel24" alignment="1" pref="141" max="32767" attributes="0"/>
-                          <Component id="jLabel23" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel22" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel29" alignment="1" pref="141" max="32767" attributes="0"/>
                           <Component id="jLabel28" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel30" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel25" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel29" alignment="1" max="32767" attributes="0"/>
                           <Component id="jLabel27" alignment="1" max="32767" attributes="0"/>
                           <Component id="jLabel26" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jLabel21" max="32767" attributes="0"/>
+                          <Component id="jLabel25" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel24" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel23" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel22" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel21" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabel30" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -92,38 +92,28 @@
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <Component id="jLabel1" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel11" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jLabel10" min="-2" pref="61" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jLabel16" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel17" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel19" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel15" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel20" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel18" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jLabel11" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel12" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -131,20 +121,20 @@
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel14" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jLabel15" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel16" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel17" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel18" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel19" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel20" min="-2" pref="61" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jLabel26" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel27" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel29" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel25" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel30" min="-2" pref="61" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel28" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jLabel21" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel22" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -152,7 +142,17 @@
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jLabel24" min="-2" pref="61" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jLabel21" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="jLabel25" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel26" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel27" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel28" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel29" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="jLabel30" min="-2" pref="61" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="56" max="32767" attributes="0"/>
@@ -185,17 +185,19 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+    </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="jLabel6">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="jLabel3">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="jLabel10">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
     </Component>
@@ -203,19 +205,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel12">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel14">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel15">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="jLabel20">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel17">
     </Component>
@@ -223,19 +213,19 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel19">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel20">
+    <Component class="javax.swing.JLabel" name="jLabel14">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel21">
+    <Component class="javax.swing.JLabel" name="jLabel11">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel22">
+    <Component class="javax.swing.JLabel" name="jLabel12">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel23">
+    <Component class="javax.swing.JLabel" name="jLabel16">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel24">
+    <Component class="javax.swing.JLabel" name="jLabel13">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel25">
+    <Component class="javax.swing.JLabel" name="jLabel15">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel26">
+    <Component class="javax.swing.JLabel" name="jLabel30">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel27">
     </Component>
@@ -243,7 +233,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel29">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel30">
+    <Component class="javax.swing.JLabel" name="jLabel24">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel21">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel22">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel26">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel23">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel25">
     </Component>
   </SubComponents>
 </Form>
