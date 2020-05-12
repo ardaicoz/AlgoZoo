@@ -312,6 +312,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
        
         tmm.getMovementPattern().add('n');
         tmm.getMovementPattern().add('n');
+        tmm.getMovementPattern().add('n');
         A.setEnabled(false);
         B.setEnabled(false);
         C.setEnabled(false);
@@ -324,6 +325,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
 
         tmm.getMovementPattern().add('n');
         tmm.getMovementPattern().add('n');
+        tmm.getMovementPattern().add('n');
         A.setEnabled(false);
         B.setEnabled(false);
         C.setEnabled(false);
@@ -334,6 +336,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
 
     private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
  
+        tmm.getMovementPattern().add('n');
         tmm.getMovementPattern().add('n');
         tmm.getMovementPattern().add('n');
         A.setEnabled(false);
