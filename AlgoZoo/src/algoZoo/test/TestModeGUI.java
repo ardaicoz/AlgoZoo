@@ -75,7 +75,7 @@ public class TestModeGUI extends javax.swing.JPanel {
         options.setBounds(700, 0, 700, 800);
         tmm.addView(map);
         
-        if(tmm.HasWon()){
+        if(tmm.hasWon()){
             System.out.println("won");
         }
     }
