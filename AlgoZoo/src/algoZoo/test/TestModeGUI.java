@@ -19,56 +19,20 @@ public class TestModeGUI extends javax.swing.JPanel {
 
     TestSelectionButtonsController options;
     MapView map;
-    TestModeModel tmm;
+    public TestModeModel tmm;
     CodeView codeView;
     /**
      * Creates new form TestModeLevelsGUI
      */
-    public TestModeGUI() {
-        initMyComponents();
-        initComponents();
-        this.map = map;
-    }
-    private void initMyComponents(){
-        ArrayList<Character> list1 = new ArrayList<Character>();
-        list1.add('s');
-        list1.add('s');
-        list1.add('s');
-        list1.add('d');
-        list1.add('w');
-        list1.add('s');
-        list1.add('d');
-        list1.add('d');
-        list1.add('s');
-        list1.add('s');
-        
-        ArrayList<Character> list2 = new ArrayList<Character>();
-        list2.add('d');
-        list2.add('d');
-        list2.add('s');
-        list2.add('d');
-        list2.add('w');
-        list2.add('s');
-        list2.add('d');
-        list2.add('d');
-        list2.add('a');
-        list2.add('d');
-        
-        ArrayList<Character> list3 = new ArrayList<Character>();
-        list3.add('s');
-        list3.add('d');
-        list3.add('s');
-        list3.add('d');
-        list3.add('w');
-        list3.add('a');
-        list3.add('s');
-        list3.add('d');
-        list3.add('w');
-        list3.add('d');
-        
-        tmm = new TestModeModel(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))),8, 12, 72, 76);
+    public TestModeGUI(Animal animal, int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
+        tmm = new TestModeModel(animal, startX, startY, finishX, finishY);
         map = new MapView(tmm);
         options = new TestSelectionButtonsController(tmm, list1, list2, list3);
+        initMyComponents();
+        initComponents();
+
+    }
+    private void initMyComponents(){
         add(map);
         map.setBounds(50, 50, 640, 640);
         add(options);
@@ -80,8 +44,11 @@ public class TestModeGUI extends javax.swing.JPanel {
         }
     }
     public void initNewGame() {
-        tmm.initNewGame();        
-        
+        options.A.setEnabled(true);
+        options.B.setEnabled(true);
+        options.C.setEnabled(true);
+        tmm.initNewGame(); 
+     
     }
    
    

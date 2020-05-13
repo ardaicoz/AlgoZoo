@@ -9,6 +9,7 @@ import algoZoo.game.Animal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import java.util.*;
 
 /**
  *
@@ -55,7 +56,7 @@ public class MenuScreen extends javax.swing.JFrame {
         learnModeGUI = new algoZoo.learn.LearnModeGUI();
         challengeModeGUI1 = new algoZoo.challenge.ChallengeModeGUI(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, 10, 120);
         challengeModeGUI2 = new algoZoo.challenge.ChallengeModeGUI(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 72, 76, 136, 140, 10, 180);
-        testModeGUI = new algoZoo.test.TestModeGUI();
+        testModeGUI = new algoZoo.test.TestModeGUI(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))),8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);

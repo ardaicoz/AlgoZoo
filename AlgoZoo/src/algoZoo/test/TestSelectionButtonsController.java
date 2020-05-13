@@ -22,6 +22,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     //constructors
     public TestSelectionButtonsController(TestModeModel tmm, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
         this.tmm = tmm;
+        tmm.initNewGame();
         listA = list1;
         listB = list2;
         listC = list3;
@@ -203,6 +204,10 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(B, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(C, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
@@ -226,11 +231,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
                             .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(B, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(C, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(38, 46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -308,39 +309,50 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
-        tmm.initNewGame();
-    
+       
+        tmm.getMovementPattern().add('n');
+        tmm.getMovementPattern().add('n');
+        tmm.getMovementPattern().add('n');
+        A.setEnabled(false);
         B.setEnabled(false);
+        C.setEnabled(false);
         for(char i: listB){
            tmm.addMovementPattern(i); 
         }
-           tmm.play(); 
     }//GEN-LAST:event_BActionPerformed
 
     private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
-        tmm.initNewGame();
-      
+
+        tmm.getMovementPattern().add('n');
+        tmm.getMovementPattern().add('n');
+        tmm.getMovementPattern().add('n');
         A.setEnabled(false);
+        B.setEnabled(false);
+        C.setEnabled(false);
         for(char i: listA){
            tmm.addMovementPattern(i); 
         }
-           tmm.play();       
     }//GEN-LAST:event_AActionPerformed
 
     private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
-       tmm.initNewGame();
+ 
+        tmm.getMovementPattern().add('n');
+        tmm.getMovementPattern().add('n');
+        tmm.getMovementPattern().add('n');
+        A.setEnabled(false);
+        B.setEnabled(false);
         C.setEnabled(false);
         for(char i: listC){
            tmm.addMovementPattern(i); 
         }
-           tmm.play(); 
+         //  tmm.play(); 
     }//GEN-LAST:event_CActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton A;
-    private javax.swing.JButton B;
-    private javax.swing.JButton C;
+    public javax.swing.JButton A;
+    public javax.swing.JButton B;
+    public javax.swing.JButton C;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
