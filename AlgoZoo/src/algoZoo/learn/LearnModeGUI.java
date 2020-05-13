@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 /**
  *
  * @author Ayberk, Görkem
+ * @version 1.0
  */
 public class LearnModeGUI extends javax.swing.JPanel {
 
@@ -54,6 +55,9 @@ public class LearnModeGUI extends javax.swing.JPanel {
    }// </editor-fold>//GEN-END:initComponents
 
    // methods
+   /**
+    *
+    */
    private void initMyComponents() {
       // initialize components  
 
@@ -152,14 +156,22 @@ public class LearnModeGUI extends javax.swing.JPanel {
       lmm.initNewGame();
       selectionController.resetSelectionController();
    }
-   
+
+   /**
+    *
+    * @return
+    */
    public LearnModeModel getModel() {
-        return lmm;
-    }
-    
-    public int getLevel() {
-        return currentLevel.getLevel();
-    }
+      return lmm;
+   }
+
+   /**
+    *
+    * @return
+    */
+   public int getLevel() {
+      return currentLevel.getLevel();
+   }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel background;

@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-
 /**
  *
  * @author Ayberk, Görkem
+ * @version 1.0
  */
 public class LearnModeLevelsGUI extends javax.swing.JPanel {
-
    // properties
    ArrayList<JButton> buttons;
 
@@ -24,7 +23,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
     * Creates new form LearnModeLevelsGUI
     */
    public LearnModeLevelsGUI() {
-      initComponents();      
+      initComponents();
       jButton2.setEnabled(false);
       jButton3.setEnabled(false);
       jButton4.setEnabled(false);
@@ -37,7 +36,8 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       buttons = new ArrayList<JButton>();
       addButtons();
    }
-      /*public JButton getjButton1() {
+
+   /*public JButton getjButton1() {
       return jButton1;
    }
 
@@ -75,7 +75,11 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
 
    public JButton getjButton9() {
       return jButton9;
+   // methods
    }*/
+   /**
+    * 
+    */
    public void addButtons() {
       buttons.add(jButton1);
       buttons.add(jButton2);
@@ -89,15 +93,25 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       buttons.add(jButton10);
    }
 
+   /**
+    * 
+    * @param levelNo
+    * @return 
+    */
    public JButton getJButton(int levelNo) {
       return buttons.get(levelNo - 1);
    }
 
+   /**
+    * 
+    * @param jb
+    * @param i 
+    */
    public void setJButtonIcon(JButton jb, ImageIcon i) {
       jb.setIcon(i);
    }
 
-   // methods
+   
    /**
     * This method is called from within the constructor to initialize the form.
     * WARNING: Do NOT modify this code. The content of this method is always
@@ -195,8 +209,6 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       add(background);
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
-
-
 
 
    // Variables declaration - do not modify//GEN-BEGIN:variables

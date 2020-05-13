@@ -31,12 +31,12 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    public MapView(AlgoZooModel azm) {
       this.azm = azm;
       initComponents();
-      animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);      
+      animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
       timer = new Timer(10, new TimerListener());
 
       animal.setIcon(azm.getAnimal().getIcon());
       //Levellara göre mapBackground setlenmeli.
-      
+
    }
 
    // methods
@@ -61,32 +61,47 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       mapBackground.setBounds(0, 0, 640, 640);
    }// </editor-fold>//GEN-END:initComponents
 
+   /**
+    * 
+    */
    public void goUpView() {
       animal.setBounds(animal.getX(), animal.getY() - 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
+   /**
+    * 
+    */
    public void goDownView() {
       animal.setBounds(animal.getX(), animal.getY() + 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
+   /**
+    * 
+    */
    public void goRightView() {
       animal.setBounds(animal.getX() + 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
+   /**
+    * 
+    */
    public void goLeftView() {
       animal.setBounds(animal.getX() - 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
+   /**
+    * 
+    * @param azm 
+    */
    @Override
    public void updateView(AlgoZooModel azm) {
       timer.start();
    }
 
-    public JLabel getMapBackground() {
-        return mapBackground;
-    }
-   
-   
+   public JLabel getMapBackground() {
+      return mapBackground;
+   }
+
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel animal;
@@ -95,44 +110,45 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
 
    // inner class
    public class TimerListener implements ActionListener {
+
       int counter = 0;
       int index = 0;
+
       @Override
       public void actionPerformed(ActionEvent e) {
-         if ( azm.getMovementPattern().isEmpty()) {
-            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);            
-         }
-         else {
-            if ( azm.getMovementPattern().size() > index) {
-               if( azm.getMovementPattern().get(index).equals('w')) {
-                  if ( animal.getY() > (SQUARE - ANIMAL_HEIGHT) / 2 ) 
+         if (azm.getMovementPattern().isEmpty()) {
+            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+         } else {
+            if (azm.getMovementPattern().size() > index) {
+               if (azm.getMovementPattern().get(index).equals('w')) {
+                  if (animal.getY() > (SQUARE - ANIMAL_HEIGHT) / 2) {
                      goUpView();
+                  }
+               } else if (azm.getMovementPattern().get(index).equals('a')) {
+                  if (animal.getX() > (SQUARE - ANIMAL_WIDTH) / 2) {
+                     goLeftView();
+                  }
+               } else if (azm.getMovementPattern().get(index).equals('s')) {
+                  if (animal.getY() < (HEIGHT - SQUARE) + (SQUARE - ANIMAL_HEIGHT) / 2) {
+                     goDownView();
+                  }
+               } else if (azm.getMovementPattern().get(index).equals('d')) {
+                  if (animal.getX() < (WIDTH - SQUARE) + (SQUARE - ANIMAL_WIDTH) / 2) {
+                     goRightView();
+                  }
                }
-               else if( azm.getMovementPattern().get(index).equals('a')) {
-                  if ( animal.getX() > (SQUARE - ANIMAL_WIDTH) / 2 )
-                     goLeftView(); 
-               }
-               else if( azm.getMovementPattern().get(index).equals('s')) {
-                  if ( animal.getY() < (HEIGHT - SQUARE) + (SQUARE - ANIMAL_HEIGHT) / 2)
-                     goDownView(); 
-               }
-               else if( azm.getMovementPattern().get(index).equals('d')) {
-                  if ( animal.getX() < (WIDTH - SQUARE) + (SQUARE - ANIMAL_WIDTH) / 2)
-                     goRightView(); 
-               }
-            }
-            else {
+            } else {
                index = 0;
                counter = 0;
                timer.stop();
             }
          }
-         
+
          counter++;
-            
-         if ( counter % 64 == 0) {
+
+         if (counter % 64 == 0) {
             index++;
-         }  
+         }
       }
    }
 }

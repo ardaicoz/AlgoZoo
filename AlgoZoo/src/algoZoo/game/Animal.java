@@ -23,10 +23,17 @@ public class Animal {
    }
 
    //methods 
+   /**
+    * 
+    * @return 
+    */
    public String getName() {
       return name;
    }
-   
+   /**
+    * 
+    * @return 
+    */
    public ImageIcon getIcon() {
       return icon;
    }

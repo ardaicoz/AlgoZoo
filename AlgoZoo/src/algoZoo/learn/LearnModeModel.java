@@ -4,52 +4,56 @@
  * and open the template in the editor.
  */
 package algoZoo.learn;
+
 import algoZoo.game.*;
 
 /**
  *
- * @author dogaersoy, esragenç
+ * @author Ayberk, Görkem
+ * @version 1.0
  */
 public class LearnModeModel extends AlgoZooModel {
-    // properties
-    int noOfMovements;
-    
-    // constructors
-    public LearnModeModel(Animal animal, int startX, int startY, int finishX, int finishY) {
-        super(animal, startX, startY, finishX, finishY);
-        noOfMovements = 0;      
-    }
-    
-    // methods
-    /**
-     * Gets the number of movements a player has made in a level.
-     * @return 
-     */
-    public int getNoOfMovements() {
-        return noOfMovements;
-    }
-    
-    /**
-     * Sets the number of movements 
-     * @param noOfMovements 
-     */
-    public void setNoOfMovements( int noOfMovements) {
-        this.noOfMovements = noOfMovements;
-    }
-    
-    /**
-     * Increases the number of movements in every movement made.
-     */
-    public void increaseNoOfMovements() {
-        noOfMovements++;
-    }
-    
-    /**
-     * Ititializes the new Learn Mode game.
-     */
-    @Override
-    public void initNewGame() {
-        super.initNewGame();
-        noOfMovements = 0;
-    }
+   // properties
+   int noOfMovements;
+
+   // constructors
+   public LearnModeModel(Animal animal, int startX, int startY, int finishX, int finishY) {
+      super(animal, startX, startY, finishX, finishY);
+      noOfMovements = 0;
+   }
+
+   // methods
+   /**
+    * Gets the number of movements a player has made in a level.
+    *
+    * @return
+    */
+   public int getNoOfMovements() {
+      return noOfMovements;
+   }
+
+   /**
+    * Sets the number of movements
+    *
+    * @param noOfMovements
+    */
+   public void setNoOfMovements(int noOfMovements) {
+      this.noOfMovements = noOfMovements;
+   }
+
+   /**
+    * Increases the number of movements in every movement made.
+    */
+   public void increaseNoOfMovements() {
+      noOfMovements++;
+   }
+
+   /**
+    * Ititializes the new Learn Mode game.
+    */
+   @Override
+   public void initNewGame() {
+      super.initNewGame();
+      noOfMovements = 0;
+   }
 }
