@@ -11,15 +11,22 @@ import javax.swing.JButton;
  *
  * @author A.T.A
  */
-public class LevelButton extends JButton{
-    int levelNo;
-    public LevelButton(int levelNo) {
-        this.levelNo = levelNo;
-    }
+public class LevelButton extends JButton {
 
-    public int getLevelNo() {
-        return levelNo;
-    }
-    
-    
+   // properties
+   int levelNo;
+
+   // constructor
+   public LevelButton(int levelNo) {
+      this.levelNo = levelNo;
+   }
+
+   /**
+    *
+    * @return
+    */
+   public int getLevelNo() {
+      return levelNo;
+   }
+
 }
