@@ -5,6 +5,7 @@
  */
 package algoZoo.test;
 
+import algoZoo.challenge.ChallengeLevels;
 import algoZoo.game.*;
 import java.util.*;
 import javax.swing.*;
@@ -16,12 +17,13 @@ import javax.swing.*;
 public class TestModeGUI extends javax.swing.JPanel {
 
     //properties
-
     TestSelectionButtonsController options;
     MapView map;
-    public TestModeModel tmm;
+    TestModeModel tmm;
     TestLevels currentLevel;
     ArrayList<TestLevels> levelContainer;
+    ChallengeLevels challengeLevel; //as "currentLevel" in ChallangeModeGUI
+    
     /**
      * Creates new form TestModeLevelsGUI
      */
@@ -85,7 +87,7 @@ public class TestModeGUI extends javax.swing.JPanel {
     * Get method to get the model of Test mode.
     * @return the model as TestModeModel class
     */
-   public TestModeModel getTestModeModel() {
+   public TestModeModel getModel() {
       return tmm;
    }
 
@@ -118,7 +120,14 @@ public class TestModeGUI extends javax.swing.JPanel {
         options.resetSelectionController();
    }
    
-   
+   /**
+    * Get method to get current level.
+    * @return 
+    */
+   public int getLevel() {
+      return challengeLevel.getLevel();
+   }
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

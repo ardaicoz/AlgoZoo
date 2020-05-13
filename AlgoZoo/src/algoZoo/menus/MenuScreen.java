@@ -295,14 +295,16 @@ public class MenuScreen extends javax.swing.JFrame {
          });
       }
 
-      testModeLevelScreen.getjButton1().addActionListener(new ActionListener() {
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            testModeLevelScreen.setVisible(false);
-            testModeGUI.setVisible(true);
-            testModeGUI.initNewGame();
-         }
-      });
+      for (int i = 1; i <= 10; i++) {
+        testModeLevelScreen.getJButton(i).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                testModeLevelScreen.setVisible(false);
+                testModeGUI.setVisible(true);
+                testModeGUI.initNewGame();
+            }
+        });
+      }
    }
 
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
@@ -403,6 +405,12 @@ public class MenuScreen extends javax.swing.JFrame {
       } else if (testModeGUI.isVisible()) {
          testModeGUI.setVisible(false);
          testModeLevelScreen.setVisible(true);
+         if ( testModeGUI.getModel().hasWon() ) {
+             if ( testModeGUI.getLevel() != 10 ) {
+               testModeLevelScreen.setJButtonIcon(testModeLevelScreen.getJButton(testModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (testModeGUI.getLevel() + 1) + ".png")));
+               testModeLevelScreen.getJButton( testModeGUI.getLevel() + 1 ).setEnabled( true );
+            }
+         }
       }
       updateReturnButton();
    }//GEN-LAST:event_returnButtonActionPerformed
