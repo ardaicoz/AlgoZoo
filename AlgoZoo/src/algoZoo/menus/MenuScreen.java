@@ -18,17 +18,16 @@ import javax.swing.JButton;
  * @author Ayberk
  */
 public class MenuScreen extends javax.swing.JFrame {
-   
-   
+
    /**
     * Creates new form WelcomeScreen
-    */    
+    */
    public MenuScreen() {
       initComponents();
       setInvisible();
       updateReturnButton();
       addActionListeners();
-      
+
    }
 
    /**
@@ -249,50 +248,53 @@ public class MenuScreen extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-   
+
    private void setInvisible() {
       // set invisible all panels except for welcomeScreen at first
       modeScreen.setVisible(false);
       learnModeLevelScreen.setVisible(false);
       testModeLevelScreen.setVisible(false);
       challengeModeLevelScreen.setVisible(false);
-      learnModeGUI.setVisible(false); 
-      challengeModeGUI.setVisible(false);      
+      learnModeGUI.setVisible(false);
+      challengeModeGUI.setVisible(false);
       testModeGUI.setVisible(false);
    }
-   
+
    private void updateReturnButton() {
       if (welcomeScreen.isVisible()) {
          returnButton.setVisible(false);
+      } else {
+         returnButton.setVisible(true);
       }
-      else {
-         returnButton.setVisible(true);  
-      } 
    }
-   
+
    private void addActionListeners() {
-      learnModeLevelScreen.getjButton1().addActionListener(new ActionListener() {
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            learnModeLevelScreen.setVisible(false);
-            learnModeGUI.setVisible(true);
-            learnModeGUI.initNewGame();
-         }
-      });
-      
-      for(int i = 1; i <= 10; i++) {
+      for (int i = 1; i <= 10; i++) {
+         learnModeLevelScreen.getJButton(i).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               learnModeLevelScreen.setVisible(false);
+               learnModeGUI.setCurrentLevel(((LevelButton) e.getSource()).getLevelNo());
+               learnModeGUI.setVisible(true);
+               learnModeGUI.initNewGame();
+            }
+         });
+
+      }
+
+      for (int i = 1; i <= 10; i++) {
          challengeModeLevelScreen.getJButton(i).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                challengeModeLevelScreen.setVisible(false);
-                challengeModeGUI.setCurrentLevel(((LevelButton)e.getSource()).getLevelNo());
-                challengeModeGUI.setVisible(true);
-                challengeModeGUI.initNewGame();
-                challengeModeGUI.startTimer();
-         }
+               challengeModeLevelScreen.setVisible(false);
+               challengeModeGUI.setCurrentLevel(((LevelButton) e.getSource()).getLevelNo());
+               challengeModeGUI.setVisible(true);
+               challengeModeGUI.initNewGame();
+               challengeModeGUI.startTimer();
+            }
          });
-     }
-      
+      }
+
       testModeLevelScreen.getjButton1().addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
@@ -302,7 +304,7 @@ public class MenuScreen extends javax.swing.JFrame {
          }
       });
    }
-   
+
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
       welcomeScreen.setVisible(false);
       modeScreen.setVisible(true);
@@ -375,28 +377,24 @@ public class MenuScreen extends javax.swing.JFrame {
       if (modeScreen.isVisible()) {
          modeScreen.setVisible(false);
          welcomeScreen.setVisible(true);
-      }
-      else if ( learnModeLevelScreen.isVisible() || testModeLevelScreen.isVisible() || challengeModeLevelScreen.isVisible()) {
+      } else if (learnModeLevelScreen.isVisible() || testModeLevelScreen.isVisible() || challengeModeLevelScreen.isVisible()) {
          learnModeLevelScreen.setVisible(false);
          testModeLevelScreen.setVisible(false);
          challengeModeLevelScreen.setVisible(false);
          modeScreen.setVisible(true);
-      }
-      else if ( learnModeGUI.isVisible()) {
+      } else if (learnModeGUI.isVisible()) {
          learnModeGUI.setVisible(false);
          learnModeLevelScreen.setVisible(true);
-      }
-      else if ( challengeModeGUI.isVisible()) {
+      } else if (challengeModeGUI.isVisible()) {
          challengeModeGUI.setVisible(false);
          challengeModeLevelScreen.setVisible(true);
-         if(challengeModeGUI.getModel().hasWon()) {
-             if(challengeModeGUI.getLevel() != 10) {
-                challengeModeLevelScreen.setJButtonIcon(challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (challengeModeGUI.getLevel() + 1) +".png")));
-                challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1).setEnabled(true);
-             }
+         if (challengeModeGUI.getModel().hasWon()) {
+            if (challengeModeGUI.getLevel() != 10) {
+               challengeModeLevelScreen.setJButtonIcon(challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (challengeModeGUI.getLevel() + 1) + ".png")));
+               challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1).setEnabled(true);
+            }
          }
-      }
-      else if ( testModeGUI.isVisible()) {
+      } else if (testModeGUI.isVisible()) {
          testModeGUI.setVisible(false);
          testModeLevelScreen.setVisible(true);
       }

@@ -21,15 +21,21 @@ public class LearnLevels {
    int finishX;
    int finishY;
    ImageIcon mapBackground;
+   int level;
 
    // constructor    
-   public LearnLevels(Animal animal, int startX, int startY, int finishX, int finishY, ImageIcon mapBackground) {
+   public LearnLevels(Animal animal, int startX, int startY, int finishX, int finishY, ImageIcon mapBackground, int level) {
       this.animal = animal;
       this.startX = startX;
       this.startY = startY;
       this.finishX = finishX;
       this.finishY = finishY;
       this.mapBackground = mapBackground;
+      this.level = level;
+   }
+
+   public int getLevel() {
+      return level;
    }
 
    // methods
