@@ -31,6 +31,9 @@ public class TestModeGUI extends javax.swing.JPanel {
         initComponents();
     }
     
+    /**
+     * A method to initialise all components of the GUI.
+     */
     private void initMyComponents(){
         initLevels();
         currentLevel = levelContainer.get(0);
@@ -48,6 +51,10 @@ public class TestModeGUI extends javax.swing.JPanel {
             System.out.println("won");
         }
     }
+    
+    /**
+     * A method to initialise every level of the game.
+     */
     public void initLevels() {
       TestLevels level1 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
      /* TestLevels level2 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
@@ -73,16 +80,17 @@ public class TestModeGUI extends javax.swing.JPanel {
        levelContainer.add(level10);      
        */
    }
+    
     /**
-    * Getter method
-    * @return LearnModeModel
+    * Get method to get the model of Test mode.
+    * @return the model as TestModeModel class
     */
    public TestModeModel getTestModeModel() {
       return tmm;
    }
 
    /**
-    * Initialize new Learn Mode level.
+    * A method to initialise specific level.
     */
    public void initNewLevel() {
       tmm.setAnimal(currentLevel.getAnimal());
@@ -101,10 +109,14 @@ public class TestModeGUI extends javax.swing.JPanel {
       currentLevel = levelContainer.get(level - 1);
       initNewLevel();
    }
-    public void initNewGame() {
+   
+   /**
+    * A method to initialise current level.
+    */
+   public void initNewGame() {
         tmm.initNewGame(); 
         options.resetSelectionController();
-    }
+   }
    
    
     /**
