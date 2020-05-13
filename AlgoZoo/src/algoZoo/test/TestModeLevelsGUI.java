@@ -13,7 +13,7 @@ import javax.swing.*;
 public class TestModeLevelsGUI extends javax.swing.JPanel {
 
    /**
-    * Creates new form TestModeLevelsGUI
+    * Creates new form TestModeLevelsGUI.
     */
    public TestModeLevelsGUI() {
       initComponents();
@@ -116,42 +116,83 @@ public class TestModeLevelsGUI extends javax.swing.JPanel {
       add(background);
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
-public JButton getjButton1() {
+    
+   /**
+    * Get method for JButton1.
+    * @return JButton1 as JButton instance
+    */
+   public JButton getjButton1() {
       return jButton1;
    }
-
+   
+   /**
+    * Get method for JButton10.
+    * @return JButton10 as JButton instance
+    */
    public JButton getjButton10() {
       return jButton10;
    }
-
+   
+   /**
+    * Get method for JButton2.
+    * @return JButton2 as JButton instance
+    */
    public JButton getjButton2() {
       return jButton2;
    }
-
+   
+   /**
+    * Get method for JButton3.
+    * @return JButton3 as JButton instance
+    */
    public JButton getjButton3() {
       return jButton3;
    }
-
+   
+   /**
+    * Get method for JButton4.
+    * @return JButton4 as JButton instance
+    */
    public JButton getjButton4() {
       return jButton4;
    }
-
+   
+   /**
+    * Get method for JButton5.
+    * @return JButton5 as JButton instance
+    */
    public JButton getjButton5() {
       return jButton5;
    }
-
+   
+   /**
+    * Get method for JButton6.
+    * @return JButton6 as JButton instance
+    */
    public JButton getjButton6() {
       return jButton6;
    }
-
+   
+   /**
+    * Get method for JButton7.
+    * @return JButton7 as JButton instance
+    */
    public JButton getjButton7() {
       return jButton7;
    }
-
+   
+   /**
+    * Get method for JButton8.
+    * @return JButton8 as JButton instance
+    */
    public JButton getjButton8() {
       return jButton8;
    }
-
+   
+   /**
+    * Get method for JButton9.
+    * @return JButton9 as JButton instance
+    */
    public JButton getjButton9() {
       return jButton9;
    }

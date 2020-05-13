@@ -21,10 +21,18 @@ public class TestModeModel extends AlgoZooModel{
     }
     
     //methods
+    /**
+     * A method to initialise current level.
+     */
     @Override
     public void initNewGame() {
       super.initNewGame();
     }
+    
+    /**
+     * A method add animal's movement pattern to an ArrayList.
+     * @param c is the single pattern of movement
+     */
     @Override
    public void addMovementPattern(char c) {
       

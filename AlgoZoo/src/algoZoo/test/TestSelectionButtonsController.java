@@ -31,6 +31,9 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     }
     
      //methods
+    /**
+     * A method to initialise all JLabels.
+     */
      public void labelInitialize()
      {
          ArrayList<JLabel> list1;
@@ -307,6 +310,10 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * ActionPerformed method for Option B.
+     * @param evt is the action, performed by the user
+     */
     private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
        
         tmm.getMovementPattern().add('n');
@@ -320,6 +327,10 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_BActionPerformed
 
+    /**
+     * ActionPerformed method for Option A.
+     * @param evt is the action, performed by the user
+     */
     private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
 
         tmm.getMovementPattern().add('n');
@@ -333,6 +344,10 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_AActionPerformed
 
+    /**
+     * ActionPerformed method for Option C.
+     * @param evt is the action, performed by the user
+     */
     private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
  
         tmm.getMovementPattern().add('n');
@@ -346,6 +361,10 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         }
          //  tmm.play(); 
     }//GEN-LAST:event_CActionPerformed
+    
+    /**
+     * A method to make all options clickable.
+     */
     public void resetSelectionController(){
         A.setEnabled(true);
         B.setEnabled(true);
