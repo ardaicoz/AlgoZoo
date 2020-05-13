@@ -10,17 +10,20 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author Ayberk
+ * @author Ayberk, Görkem
  */
 public class LearnModeLevelsGUI extends javax.swing.JPanel {
+   // properties
    
+   // constructor
    /**
     * Creates new form LearnModeLevelsGUI
     */
    public LearnModeLevelsGUI() {
       initComponents();
-      
    }
+   
+   // methods
 
    /**
     * This method is called from within the constructor to initialize the form.
@@ -119,8 +122,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       add(background);
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
-   
-   
+
    public JButton getjButton1() {
       return jButton1;
    }
@@ -160,8 +162,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
    public JButton getjButton9() {
       return jButton9;
    }
-   
-   
+
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel background;

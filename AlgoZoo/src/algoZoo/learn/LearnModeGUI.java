@@ -5,22 +5,28 @@
  */
 package algoZoo.learn;
 
-import algoZoo.game.AlgoZooModel;
 import algoZoo.game.Animal;
 import algoZoo.game.CodeView;
 import algoZoo.game.MapView;
 import algoZoo.game.SelectionController;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
  *
- * @author Ayberk
+ * @author Ayberk, Görkem
  */
 public class LearnModeGUI extends javax.swing.JPanel {
+
+   // properties
    MapView mapView;
    CodeView codeView;
    LearnModeModel lmm;
    SelectionController selectionController;
+   LearnLevels currentLevel;
+   ArrayList<LearnLevels> levelContainer;
+
+   // constructor
    /**
     * Creates new form LearnModeGUI
     */
@@ -47,13 +53,20 @@ public class LearnModeGUI extends javax.swing.JPanel {
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
 
+   // methods
    private void initMyComponents() {
-      // initialize components
-      lmm = new LearnModeModel(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+      // initialize components  
+
+      initLevels();
+      currentLevel = levelContainer.get(0);
+      lmm = new LearnModeModel(currentLevel.getAnimal(), currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY());
+
       mapView = new MapView(lmm);
       codeView = new CodeView();
       selectionController = new SelectionController(lmm);
-      
+      initNewLevel();
+      mapView.getMapBackground().setIcon(currentLevel.getMapBackground());
+
       // place components to panel and setVisible
       add(mapView);
       mapView.setBounds(50, 50, 640, 640);
@@ -61,19 +74,81 @@ public class LearnModeGUI extends javax.swing.JPanel {
       codeView.setBounds(845, 50, 200, 640);
       add(selectionController);
       selectionController.setBounds(1200, 0, 200, 800);
-      
+
       // initialize game
       lmm.addView(mapView);
       lmm.addView(codeView);
-      
-      if ( lmm.hasWon()) {
+
+      if (lmm.hasWon()) {
          System.out.println("won");
       }
-    }
-   
+   }
+
+   /**
+    * Initialize each level of the Learn Mode.
+    */
+   public void initLevels() {
+      LearnLevels level1 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      LearnLevels level2 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 136, 76, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level2.png")));
+      /*LearnLevels level3 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+       LearnLevels level4 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+       LearnLevels level5 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+       LearnLevels level6 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+       LearnLevels level7 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+       LearnLevels level8 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+       LearnLevels level9 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+       LearnLevels level10 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
+       */
+      levelContainer = new ArrayList<>();
+      levelContainer.add(level1);
+      levelContainer.add(level2);
+      /*levelContainer.add(level3);
+       levelContainer.add(level4);
+       levelContainer.add(level5);
+       levelContainer.add(level6);
+       levelContainer.add(level7);
+       levelContainer.add(level8);
+       levelContainer.add(level9);
+       levelContainer.add(level10);      
+       */
+   }
+
+   /**
+    * Getter method
+    * @return LearnModeModel
+    */
+   public LearnModeModel getLearnModeModel() {
+      return lmm;
+   }
+
+   /**
+    * Initialize new Learn Mode level.
+    */
+   public void initNewLevel() {
+      lmm.setAnimal(currentLevel.getAnimal());
+      lmm.setStartX(currentLevel.getStartX());
+      lmm.setStartY(currentLevel.getStartY());
+      lmm.setFinishX(currentLevel.getFinishX());
+      lmm.setFinishY(currentLevel.getFinishY());
+      lmm.setNoOfMovements(0);
+      mapView.getMapBackground().setIcon(currentLevel.getMapBackground());
+   }
+
+   /**
+    * Determines which level will start.
+    * @param level level number.
+    */
+   public void setCurrentLevel(int level) {
+      currentLevel = levelContainer.get(level - 1);
+      initNewLevel();
+   }
+
+   /**
+    * Initializes the new game.
+    */
    public void initNewGame() {
-        lmm.initNewGame();
-        selectionController.resetSelectionController();
+      lmm.initNewGame();
+      selectionController.resetSelectionController();
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables

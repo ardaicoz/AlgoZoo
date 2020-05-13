@@ -7,6 +7,7 @@ package algoZoo.game;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -30,11 +31,12 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    public MapView(AlgoZooModel azm) {
       this.azm = azm;
       initComponents();
-      animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+      animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);      
       timer = new Timer(10, new TimerListener());
 
       animal.setIcon(azm.getAnimal().getIcon());
       //Levellara göre mapBackground setlenmeli.
+      
    }
 
    // methods
@@ -80,6 +82,12 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       timer.start();
    }
 
+    public JLabel getMapBackground() {
+        return mapBackground;
+    }
+   
+   
+
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel animal;
    private javax.swing.JLabel mapBackground;
@@ -92,7 +100,8 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       @Override
       public void actionPerformed(ActionEvent e) {
          if ( azm.getMovementPattern().isEmpty()) {
-            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);             
+            timer.stop();
          }
          else {
             if ( azm.getMovementPattern().size() > index) {

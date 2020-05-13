@@ -21,18 +21,32 @@ public class LearnModeModel extends AlgoZooModel {
     }
     
     // methods
+    /**
+     * Gets the number of movements a player has made in a level.
+     * @return 
+     */
     public int getNoOfMovements() {
         return noOfMovements;
     }
     
+    /**
+     * Sets the number of movements 
+     * @param noOfMovements 
+     */
     public void setNoOfMovements( int noOfMovements) {
         this.noOfMovements = noOfMovements;
     }
     
+    /**
+     * Increases the number of movements in every movement made.
+     */
     public void increaseNoOfMovements() {
         noOfMovements++;
     }
     
+    /**
+     * Ititializes the new Learn Mode game.
+     */
     @Override
     public void initNewGame() {
         super.initNewGame();
