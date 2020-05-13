@@ -325,6 +325,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         for(char i: listB){
            tmm.addMovementPattern(i); 
         }
+        tmm.play();
     }//GEN-LAST:event_BActionPerformed
 
     /**
@@ -342,6 +343,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         for(char i: listA){
            tmm.addMovementPattern(i); 
         }
+        tmm.play();
     }//GEN-LAST:event_AActionPerformed
 
     /**
@@ -359,7 +361,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         for(char i: listC){
            tmm.addMovementPattern(i); 
         }
-         //  tmm.play(); 
+        tmm.play(); 
     }//GEN-LAST:event_CActionPerformed
     
     /**

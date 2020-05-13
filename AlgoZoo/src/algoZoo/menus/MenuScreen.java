@@ -300,6 +300,7 @@ public class MenuScreen extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 testModeLevelScreen.setVisible(false);
+                testModeGUI.setCurrentLevel(((LevelButton) e.getSource()).getLevelNo());
                 testModeGUI.setVisible(true);
                 testModeGUI.initNewGame();
             }
@@ -407,7 +408,7 @@ public class MenuScreen extends javax.swing.JFrame {
          testModeLevelScreen.setVisible(true);
          if ( testModeGUI.getModel().hasWon() ) {
              if ( testModeGUI.getLevel() != 10 ) {
-               testModeLevelScreen.setJButtonIcon(testModeLevelScreen.getJButton(testModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (testModeGUI.getLevel() + 1) + ".png")));
+               testModeLevelScreen.setJButtonIcon(testModeLevelScreen.getJButton(testModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/" + (testModeGUI.getLevel() + 1) + ".png")));
                testModeLevelScreen.getJButton( testModeGUI.getLevel() + 1 ).setEnabled( true );
             }
          }

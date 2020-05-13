@@ -24,9 +24,10 @@ public class TestLevels {
    ArrayList<Character> list1;
    ArrayList<Character> list2;
    ArrayList<Character> list3;
+   int level;
 
    // constructor    
-   public TestLevels(Animal animal, int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground) {
+   public TestLevels(Animal animal, int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground, int level) {
       this.animal = animal;
       this.startX = startX;
       this.startY = startY;
@@ -36,6 +37,7 @@ public class TestLevels {
       this.list1 = list1;
       this.list2 = list2;
       this.list3 = list3;
+      this.level = level;
    }
 
    // methods
@@ -109,5 +111,9 @@ public class TestLevels {
     */
    public ArrayList<Character> getList3(){
        return list3;
+   }
+   
+   public int getLevel() {
+      return level;
    }
 }
