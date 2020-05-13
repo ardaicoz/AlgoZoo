@@ -14,9 +14,16 @@ Below is a record of our project group meetings. This page will be submitted tog
 
 **Present:** Arda, Alp, Ayberk, Doğa, Esra, Görkem, Kerem  
 
-**Discussion:** We met over Zoom to discussed about the design of the project, and we talked about the User Interface Stage. We shared our opinions about how to make this game more attractive, and gave a decision about its design. To be able to complete User Interface Report succesfully, we distributed the whole work.
+**Discussion:** We met over Zoom to discussed about the design of the project, and we talked about the User Interface Stage. We shared our opinions about how to make this game more attractive, and gave a decision about its design. To be able to complete User Interface Report successfully, we distributed the whole work.
 
 **ToDo:** Ayberk will create the designs of each mode until 29.03.2020 /  Arda, Kerem and Görkem will explain site map, creative mode, the menus and write conclusion until 30.03.2020 / Doğa, Esra and Alp will explain general map, learn, challenge and test modes until 30.03.2020
+
+
+### Meeting ~ (29.03.2020, 2 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We discussed about how to explain the functions of general map, learn mode, challenge mode and test mode for the User Interface Report. We shared our opinions about their design and functions. We tried to show the features of each mode separately and showed them in a detailed way. Esra wrote the learn and challenge modes, Doğa wrote the test mode and Alp wrote the general map.
 
 
 ### Meeting ~ (29.03.2020, 2 hours)
@@ -33,6 +40,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** We discussed about how to design our project according to MVC, and talked about which classes are needed, and what sorts of methods are required.
 
 **ToDo:** Esra and Doğa will write the classes, their parameters and methods to be discussed on 28.04.2020 / Ayberk, Kerem, Alp, Arda and Görkem will search about MVC patterns and share what they found, and if any other classes are required until 28.04.2020
+
+
+### Meeting ~ (26.04.2020, 3 hours)
+
+**Present:** Esra, Doğa
+
+**Discussion:** We brainstormed ideas for MVC design of our project. We shared our opinions about which classes we need and how to connect model, view and controller classes to each other. We discussed about the properties and the methods of each class. We wrote our final ideas on a piece of paper.
 
 
 ### Meeting ~ (27.04.2020, 2 hours)
@@ -60,6 +74,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **ToDo:** Ayberk and Görkem will deal with learn mode of the game/ Esra, Doğa and Alp will deal with challenge mode of the game/ Kerem and Arda will deal with test mode of the game
 
 
+### Meeting ~ (01.05.2020, 3 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We created and updated AlgoZoo, AlgoZooModel, LearnModeModel, ChallengeModeModel and TestModeModel classes. We discussed about how to improve our MVC design.
+ 
+
 ### Meeting ~ (01.05.2020, 2 hours)
 
 **Present:** Kerem, Arda
@@ -71,7 +92,7 @@ Below is a record of our project group meetings. This page will be submitted tog
 
 **Present:** Ayberk, Görkem
 
-**Discussion:** Choosing the type of layout to be used in the project. Trials with different layouts. Furthermore, deciding how the project can be resizable using null layout. How to fix errors on the MenuCcreen class was discussed.
+**Discussion:** Choosing the type of layout to be used in the project. Trials with different layouts. Furthermore, deciding how the project can be resizable using null layout. How to fix errors on the MenuScreen class was discussed.
 
 **ToDo:** Ayberk will rearrange the design of project using null layout. / Görkem will thoroughly investigate what needs to be done for the game to work in all sizes. 
 
@@ -81,6 +102,15 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Present:** Arda, Alp, Ayberk, Doğa, Esra, Görkem, Kerem  
 
 **Discussion:** We discussed whether we can make our game resizable or not, and shared our ideas accordingly. We talked about some resolution problems, and did some related research.
+
+
+### Meeting ~ (02.05.2020, 2 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We talked about how to create controller classes for the game package, and how its design would be more appealing. We made some changes and additions to AlgoZooModel and AlgoZoo classes.
+
+**ToDo:** Esra will create the TimerController class. / Doğa will create the SelectionController class. / Alp will create the PlayButtonController class and the play method in AlgoZooModel.
 
 
 ### Meeting ~ (02.05.2020, 2 hours)
@@ -120,6 +150,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** We talked about how to create the interface for the test mode, we decided the locations of each element, then wrote the TestModeGUI class with its required methods.
 
 
+### Meeting ~ (08.05.2020, 3 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We fixed the bugs in TimerController class. We designed the basic structure of the challenge mode in the ChallengeModeGUI class and updated MenuScreen class to add ChallengeModeGUI class.
+
+
 ### Meeting ~ (09.05.2020, 2 hours)
 
 **Present:** Ayberk, Görkem
@@ -127,6 +164,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** Discussed about how map design should be. Map features are determined such as dimension. Moreover, tiled selections to be used in map design are made. LearnModeGUI and LearnModeModel classes were written.
 
 **ToDo:** Ayberk will rescale the determined images with Photoshop CC and make some corrections. / Görkem will start map designs using the corrections made by Ayberk.
+
+
+### Meeting ~ (10.05.2020, 2 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We changed the ChallengeModeGUI class by removing the parameters from its constructor and fixed some minor bugs. 
 
 
 ### Meeting ~ (11.05.2020, 2 hours)
@@ -159,6 +203,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** We talked about how to implement the new discussed ideas to the test model, decided on which methods and classes should be created, and wrote the appropriate classes. 
 
 **ToDo:** Kerem will create the TestLevels class, change the TestModeGUI. / Arda will change the TestModeSelectionController and MenuScreen classes accordingly.
+
+
+### Meeting ~ (13.05.2020, 5 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We added and updated the ChallengeLevels class. We tried to create a more efficient code by forming a loop for adding each levelButton actionPerformed() methods in the MenuScreen class. Therefore, we created a LevelButton class by sub-classing JButton. We added a levelNo property to this class so that each levelButton will be special to the specific level. We created an algorithm for enabling level buttons only when the previous level completed successfully in the returnButtonActionPerformed() method.
 
 
 

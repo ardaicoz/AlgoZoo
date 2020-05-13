@@ -20,7 +20,7 @@ This week I created a Github account and joined our repository. Also, I learned 
 This week I learned more about MVC by watching videos and reading the course book. Also, I thought about how we can implement MVC to our project. 
 
 ### ~ 27.04.2020 - 03.05.2020 ~
-This week I helped Esra brainstorm ideas for MVC design of our project. We We did three-hour zoom meeting. 
+This week I helped Esra brainstorm ideas for MVC design of our project. We did a three-hour zoom meeting. 
 Then, we added and updated game package, learn package and challenge package. We again did a three-hour zoom meeting.
 Next day, Esra, Alp and I made some changes and additions to TimerController, LearnModeModel and ChallengeModeModel classes. We did a two-hour zoom meeting.
 I created and updated the SelectionController class for learn and challenge modes.
