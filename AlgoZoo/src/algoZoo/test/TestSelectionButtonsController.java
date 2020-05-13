@@ -28,7 +28,6 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         listC = list3;
         initComponents();
         labelInitialize();
-
     }
     
      //methods
@@ -347,7 +346,11 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         }
          //  tmm.play(); 
     }//GEN-LAST:event_CActionPerformed
-
+    public void resetSelectionController(){
+        A.setEnabled(true);
+        B.setEnabled(true);
+        C.setEnabled(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton A;
