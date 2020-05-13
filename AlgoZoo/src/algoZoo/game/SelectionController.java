@@ -132,51 +132,78 @@ public class SelectionController extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addAllButtons() {
+   private void addAllButtons() {
       buttons.add(jButton1);
       buttons.add(downButton);
       buttons.add(leftButton);
       buttons.add(rightButton);
       buttons.add(upButton);
       buttons.add(resetButton);
-      
-    }
-    
+
+   }
+
+   /**
+    *
+    * @param evt
+    */
     private void upButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upButtonActionPerformed
        azm.addMovementPattern('w');
     }//GEN-LAST:event_upButtonActionPerformed
 
+   /**
+    *
+    * @param evt
+    */
     private void downButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downButtonActionPerformed
        azm.addMovementPattern('s');
     }//GEN-LAST:event_downButtonActionPerformed
 
+   /**
+    *
+    * @param evt
+    */
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
        azm.addMovementPattern('d');
     }//GEN-LAST:event_rightButtonActionPerformed
 
+   /**
+    *
+    * @param evt
+    */
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
        azm.addMovementPattern('a');
     }//GEN-LAST:event_leftButtonActionPerformed
 
+   /**
+    *
+    * @param evt
+    */
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
        azm.initNewGame();
-       for ( JButton b : buttons) {
+       for (JButton b : buttons) {
           b.setEnabled(true);
        }
     }//GEN-LAST:event_resetButtonActionPerformed
 
+   /**
+    *
+    * @param evt
+    */
    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       azm.play();
-      for ( JButton b : buttons) {
-          b.setEnabled(false);
-       }
-      
+      for (JButton b : buttons) {
+         b.setEnabled(false);
+      }
+
    }//GEN-LAST:event_jButton1ActionPerformed
 
+   /**
+    *
+    */
    public void resetSelectionController() {
-       for ( JButton b : buttons) {
-          b.setEnabled(true);
-       }
+      for (JButton b : buttons) {
+         b.setEnabled(true);
+      }
    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,26 +5,113 @@
  */
 package algoZoo.learn;
 
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 
 /**
  *
  * @author Ayberk, Görkem
+ * @version 1.0
  */
 public class LearnModeLevelsGUI extends javax.swing.JPanel {
    // properties
-   
+   ArrayList<JButton> buttons;
+
    // constructor
    /**
     * Creates new form LearnModeLevelsGUI
     */
    public LearnModeLevelsGUI() {
       initComponents();
+      jButton2.setEnabled(false);
+      jButton3.setEnabled(false);
+      jButton4.setEnabled(false);
+      jButton5.setEnabled(false);
+      jButton6.setEnabled(false);
+      jButton7.setEnabled(false);
+      jButton8.setEnabled(false);
+      jButton9.setEnabled(false);
+      jButton10.setEnabled(false);
+      buttons = new ArrayList<JButton>();
+      addButtons();
    }
-   
-   // methods
 
+   /*public JButton getjButton1() {
+      return jButton1;
+   }
+
+   public JButton getjButton10() {
+      return jButton10;
+   }
+
+   public JButton getjButton2() {
+      return jButton2;
+   }
+
+   public JButton getjButton3() {
+      return jButton3;
+   }
+
+   public JButton getjButton4() {
+      return jButton4;
+   }
+
+   public JButton getjButton5() {
+      return jButton5;
+   }
+
+   public JButton getjButton6() {
+      return jButton6;
+   }
+
+   public JButton getjButton7() {
+      return jButton7;
+   }
+
+   public JButton getjButton8() {
+      return jButton8;
+   }
+
+   public JButton getjButton9() {
+      return jButton9;
+   // methods
+   }*/
+   /**
+    * 
+    */
+   public void addButtons() {
+      buttons.add(jButton1);
+      buttons.add(jButton2);
+      buttons.add(jButton3);
+      buttons.add(jButton4);
+      buttons.add(jButton5);
+      buttons.add(jButton6);
+      buttons.add(jButton7);
+      buttons.add(jButton8);
+      buttons.add(jButton9);
+      buttons.add(jButton10);
+   }
+
+   /**
+    * 
+    * @param levelNo
+    * @return 
+    */
+   public JButton getJButton(int levelNo) {
+      return buttons.get(levelNo - 1);
+   }
+
+   /**
+    * 
+    * @param jb
+    * @param i 
+    */
+   public void setJButtonIcon(JButton jb, ImageIcon i) {
+      jb.setIcon(i);
+   }
+
+   
    /**
     * This method is called from within the constructor to initialize the form.
     * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,16 +121,16 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
-      jButton1 = new javax.swing.JButton();
-      jButton2 = new javax.swing.JButton();
-      jButton3 = new javax.swing.JButton();
-      jButton4 = new javax.swing.JButton();
-      jButton5 = new javax.swing.JButton();
-      jButton6 = new javax.swing.JButton();
-      jButton7 = new javax.swing.JButton();
-      jButton8 = new javax.swing.JButton();
-      jButton9 = new javax.swing.JButton();
-      jButton10 = new javax.swing.JButton();
+      jButton1 = new algoZoo.game.LevelButton(1);
+      jButton2 = new algoZoo.game.LevelButton(2);
+      jButton3 = new algoZoo.game.LevelButton(3);
+      jButton4 = new algoZoo.game.LevelButton(4);
+      jButton5 = new algoZoo.game.LevelButton(5);
+      jButton6 = new algoZoo.game.LevelButton(6);
+      jButton7 = new algoZoo.game.LevelButton(7);
+      jButton8 = new algoZoo.game.LevelButton(8);
+      jButton9 = new algoZoo.game.LevelButton(9);
+      jButton10 = new algoZoo.game.LevelButton(10);
       background = new javax.swing.JLabel();
 
       setLayout(null);
@@ -123,58 +210,18 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
 
-   public JButton getjButton1() {
-      return jButton1;
-   }
-
-   public JButton getjButton10() {
-      return jButton10;
-   }
-
-   public JButton getjButton2() {
-      return jButton2;
-   }
-
-   public JButton getjButton3() {
-      return jButton3;
-   }
-
-   public JButton getjButton4() {
-      return jButton4;
-   }
-
-   public JButton getjButton5() {
-      return jButton5;
-   }
-
-   public JButton getjButton6() {
-      return jButton6;
-   }
-
-   public JButton getjButton7() {
-      return jButton7;
-   }
-
-   public JButton getjButton8() {
-      return jButton8;
-   }
-
-   public JButton getjButton9() {
-      return jButton9;
-   }
-
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel background;
-   private javax.swing.JButton jButton1;
-   private javax.swing.JButton jButton10;
-   private javax.swing.JButton jButton2;
-   private javax.swing.JButton jButton3;
-   private javax.swing.JButton jButton4;
-   private javax.swing.JButton jButton5;
-   private javax.swing.JButton jButton6;
-   private javax.swing.JButton jButton7;
-   private javax.swing.JButton jButton8;
-   private javax.swing.JButton jButton9;
+   private algoZoo.game.LevelButton jButton1;
+   private algoZoo.game.LevelButton jButton10;
+   private algoZoo.game.LevelButton jButton2;
+   private algoZoo.game.LevelButton jButton3;
+   private algoZoo.game.LevelButton jButton4;
+   private algoZoo.game.LevelButton jButton5;
+   private algoZoo.game.LevelButton jButton6;
+   private algoZoo.game.LevelButton jButton7;
+   private algoZoo.game.LevelButton jButton8;
+   private algoZoo.game.LevelButton jButton9;
    // End of variables declaration//GEN-END:variables
 }

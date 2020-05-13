@@ -15,9 +15,9 @@ import javax.swing.JButton;
  */
 public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
 
-    // properties
-    ArrayList<JButton> buttons;
-   
+   // properties
+   ArrayList<JButton> buttons;
+
    // constructor
    /**
     * Creates new form ChallengeModeLevelsGUI
@@ -36,7 +36,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
       buttons = new ArrayList<JButton>();
       addButtons();
    }
-   
+
    /*   
    public JButton getjButton1() {
       return jButton1;
@@ -77,28 +77,26 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    public JButton getjButton9() {
       return jButton9;
    }
-   */
-   
+    */
    public void addButtons() {
-       buttons.add(jButton1);
-       buttons.add(jButton2);
-       buttons.add(jButton3);
-       buttons.add(jButton4);
-       buttons.add(jButton5);
-       buttons.add(jButton6);
-       buttons.add(jButton7);
-       buttons.add(jButton8);
-       buttons.add(jButton9);
-       buttons.add(jButton10);
+      buttons.add(jButton1);
+      buttons.add(jButton2);
+      buttons.add(jButton3);
+      buttons.add(jButton4);
+      buttons.add(jButton5);
+      buttons.add(jButton6);
+      buttons.add(jButton7);
+      buttons.add(jButton8);
+      buttons.add(jButton9);
+      buttons.add(jButton10);
    }
-   
-   
+
    public JButton getJButton(int levelNo) {
-       return buttons.get(levelNo - 1);
+      return buttons.get(levelNo - 1);
    }
-   
+
    public void setJButtonIcon(JButton jb, ImageIcon i) {
-       jb.setIcon(i);
+      jb.setIcon(i);
    }
 
    /**

@@ -13,7 +13,8 @@ import javax.swing.ImageIcon;
  * @author dogaersoy
  */
 public class ChallengeLevels {
-    // properties
+   // properties
+
    Animal animal;
    int startX;
    int startY;
@@ -36,7 +37,6 @@ public class ChallengeLevels {
       this.mapBackground = mapBackground;
       this.level = level;
    }
-
 
    // methods
    public ImageIcon getMapBackground() {
@@ -63,15 +63,15 @@ public class ChallengeLevels {
       return finishY;
    }
 
-    public int getMinRequiredMovements() {
-        return minRequiredMovements;
-    }
+   public int getMinRequiredMovements() {
+      return minRequiredMovements;
+   }
 
-    public int getMinRequiredTime() {
-        return minRequiredTime;
-    }
-    
-    public int getLevel() {
-        return level;
-    }
+   public int getMinRequiredTime() {
+      return minRequiredTime;
+   }
+
+   public int getLevel() {
+      return level;
+   }
 }

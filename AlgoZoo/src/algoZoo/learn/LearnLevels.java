@@ -10,7 +10,9 @@ import javax.swing.ImageIcon;
 
 /**
  * It was created to create level objects in learn mode.
+ *
  * @author Görkem, Ayberk
+ * @version 1.0
  */
 public class LearnLevels {
 
@@ -21,18 +23,23 @@ public class LearnLevels {
    int finishX;
    int finishY;
    ImageIcon mapBackground;
+   int level;
 
    // constructor    
-   public LearnLevels(Animal animal, int startX, int startY, int finishX, int finishY, ImageIcon mapBackground) {
+   public LearnLevels(Animal animal, int startX, int startY, int finishX, int finishY, ImageIcon mapBackground, int level) {
       this.animal = animal;
       this.startX = startX;
       this.startY = startY;
       this.finishX = finishX;
       this.finishY = finishY;
       this.mapBackground = mapBackground;
+      this.level = level;
    }
 
    // methods
+   /*
+   
+   */
    public ImageIcon getMapBackground() {
       return mapBackground;
    }
@@ -55,5 +62,9 @@ public class LearnLevels {
 
    public int getFinishY() {
       return finishY;
+   }
+
+   public int getLevel() {
+      return level;
    }
 }

@@ -40,6 +40,9 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
    }// </editor-fold>//GEN-END:initComponents
 
    @Override
+   /**
+    * 
+    */
    public void updateView(AlgoZooModel azm) {
       /*
       Iterator itr = azm.getMovementPattern().iterator();

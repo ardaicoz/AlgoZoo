@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- *
- * @author Esra, DoÄŸa
+ * This class is for basic functional structure of the game
+ * @author Esra, Doğa, Alp
+ * @version 1.0
  */
 public class AlgoZooModel extends AlgoZoo {
    //properties
@@ -27,6 +28,9 @@ public class AlgoZooModel extends AlgoZoo {
    }
 
    //methods
+   /**
+    * overrides AlgoZoo's goUp() method and updates the views
+    */
    @Override
    public void goUp() {
       super.goUp();
@@ -34,6 +38,9 @@ public class AlgoZooModel extends AlgoZoo {
 
    }
 
+   /**
+    * overrides AlgoZoo's goDown() method and updates the views
+    */
    @Override
    public void goDown() {
       super.goDown();
@@ -41,6 +48,9 @@ public class AlgoZooModel extends AlgoZoo {
 
    }
 
+   /**
+    * overrides AlgoZoo's goRight() method and updates the views
+    */
    @Override
    public void goRight() {
       super.goRight();
@@ -48,6 +58,9 @@ public class AlgoZooModel extends AlgoZoo {
 
    }
 
+   /**
+    * overrides AlgoZoo's goLeft() method and updates the views
+    */
    @Override
    public void goLeft() {
       super.goLeft();
@@ -55,17 +68,26 @@ public class AlgoZooModel extends AlgoZoo {
 
    }
 
+   /**
+    * overrides AlgoZoo's addMovementPattern(char c) method and updates the views
+    */
    @Override
    public void addMovementPattern(char c) {
       super.addMovementPattern(c);
       views.get(1).updateView(this); // update only codeView because mapView shouldn't be updated before pressing play button
    }
 
+   /**
+    * overrides AlgoZoo's resetMovementPattern() method and updates the views
+    */
    @Override
    public void resetMovementPattern() {
       super.resetMovementPattern();
    }
 
+   /**
+    * initialize a new game by resetting the movementPattern, setting current X and Y locations to the starting location etc. and updates the views accordingly
+    */
    public void initNewGame() {
       resetMovementPattern();
       currentX = startX;
@@ -75,6 +97,9 @@ public class AlgoZooModel extends AlgoZoo {
       update();
    }
 
+   /**
+    * updates the views
+    */
    public void update() {
       if (!views.isEmpty()) {
          Iterator i = this.views.iterator();
@@ -85,11 +110,18 @@ public class AlgoZooModel extends AlgoZoo {
       }
    }
 
+   /**
+    * adds necessary views to the game
+    * @param view 
+    */
    public void addView(IAlgoZooView view) {
       this.views.add(view);
       //view.updateView(this);
    }
-
+   
+   /**
+    * moves the animal according to the movement algorithm
+    */
    public void play() {
       /*
       Iterator itr = movementPattern.iterator();
@@ -121,10 +153,18 @@ public class AlgoZooModel extends AlgoZoo {
       }
    }
 
+   /**
+    * checks if the game is over
+    * @return true if the game is over, otherwise false
+    */
    public boolean isGameOver() {
       return gameOver;
    }
 
+   /**
+    * checks if the user has won the game
+    * @return true if the user has won the game, otherwise false
+    */
    public boolean hasWon() {
       return hasWon;
    }
