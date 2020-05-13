@@ -385,6 +385,12 @@ public class MenuScreen extends javax.swing.JFrame {
       } else if (learnModeGUI.isVisible()) {
          learnModeGUI.setVisible(false);
          learnModeLevelScreen.setVisible(true);
+         if (learnModeGUI.getModel().hasWon()) {
+            if (learnModeGUI.getLevel() != 10) {
+               learnModeLevelScreen.setJButtonIcon(learnModeLevelScreen.getJButton(learnModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/" + (learnModeGUI.getLevel() + 1) + ".png")));
+               learnModeLevelScreen.getJButton(learnModeGUI.getLevel() + 1).setEnabled(true);
+            }
+         }
       } else if (challengeModeGUI.isVisible()) {
          challengeModeGUI.setVisible(false);
          challengeModeLevelScreen.setVisible(true);
