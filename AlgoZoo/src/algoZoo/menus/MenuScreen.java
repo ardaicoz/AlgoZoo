@@ -57,7 +57,7 @@ public class MenuScreen extends javax.swing.JFrame {
         challengeModeLevelScreen = new algoZoo.challenge.ChallengeModeLevelsGUI();
         learnModeGUI = new algoZoo.learn.LearnModeGUI();
         challengeModeGUI = new algoZoo.challenge.ChallengeModeGUI();
-        testModeGUI = new algoZoo.test.TestModeGUI(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))),8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')));
+        testModeGUI = new algoZoo.test.TestModeGUI();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);

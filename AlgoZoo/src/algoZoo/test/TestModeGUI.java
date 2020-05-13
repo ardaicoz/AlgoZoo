@@ -6,7 +6,7 @@
 package algoZoo.test;
 
 import algoZoo.game.*;
-import java.util.ArrayList;
+import java.util.*;
 import javax.swing.*;
 
 /**
@@ -20,35 +20,90 @@ public class TestModeGUI extends javax.swing.JPanel {
     TestSelectionButtonsController options;
     MapView map;
     public TestModeModel tmm;
-    CodeView codeView;
+    TestLevels currentLevel;
+    ArrayList<TestLevels> levelContainer;
     /**
      * Creates new form TestModeLevelsGUI
      */
-    public TestModeGUI(Animal animal, int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
-        tmm = new TestModeModel(animal, startX, startY, finishX, finishY);
-        map = new MapView(tmm);
-        options = new TestSelectionButtonsController(tmm, list1, list2, list3);
+    public TestModeGUI(){
+       
         initMyComponents();
         initComponents();
-
     }
+    
     private void initMyComponents(){
+        initLevels();
+        currentLevel = levelContainer.get(0);
+        tmm = new TestModeModel(currentLevel.getAnimal(), currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY());
+        options = new TestSelectionButtonsController(tmm, currentLevel.getList1(), currentLevel.getList2(), currentLevel.getList3());
+        map = new MapView(tmm);
         add(map);
         map.setBounds(50, 50, 640, 640);
         add(options);
         options.setBounds(700, 0, 700, 800);
+        initNewLevel();
         tmm.addView(map);
-        
+        map.getMapBackground().setIcon(currentLevel.getMapBackground());
         if(tmm.hasWon()){
             System.out.println("won");
         }
     }
+    public void initLevels() {
+      TestLevels level1 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+     /* TestLevels level2 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      TestLevels level3 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      TestLevels level4 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      TestLevels level5 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      TestLevels level6 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      TestLevels level7 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      TestLevels level8 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      TestLevels level9 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      TestLevels level10 = new TestLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
+      */
+      levelContainer = new ArrayList<>();
+      levelContainer.add(level1);
+      //levelContainer.add(level2);
+      /*levelContainer.add(level3);
+       levelContainer.add(level4);
+       levelContainer.add(level5);
+       levelContainer.add(level6);
+       levelContainer.add(level7);
+       levelContainer.add(level8);
+       levelContainer.add(level9);
+       levelContainer.add(level10);      
+       */
+   }
+    /**
+    * Getter method
+    * @return LearnModeModel
+    */
+   public TestModeModel getTestModeModel() {
+      return tmm;
+   }
+
+   /**
+    * Initialize new Learn Mode level.
+    */
+   public void initNewLevel() {
+      tmm.setAnimal(currentLevel.getAnimal());
+      tmm.setStartX(currentLevel.getStartX());
+      tmm.setStartY(currentLevel.getStartY());
+      tmm.setFinishX(currentLevel.getFinishX());
+      tmm.setFinishY(currentLevel.getFinishY());
+      map.getMapBackground().setIcon(currentLevel.getMapBackground());
+   }
+
+   /**
+    * Determines which level will start.
+    * @param level level number.
+    */
+   public void setCurrentLevel(int level) {
+      currentLevel = levelContainer.get(level - 1);
+      initNewLevel();
+   }
     public void initNewGame() {
-        options.A.setEnabled(true);
-        options.B.setEnabled(true);
-        options.C.setEnabled(true);
         tmm.initNewGame(); 
-     
+        options.resetSelectionController();
     }
    
    
@@ -62,7 +117,6 @@ public class TestModeGUI extends javax.swing.JPanel {
     private void initComponents() {
 
         background = new javax.swing.JLabel();
-        codeView1 = new algoZoo.game.CodeView();
 
         setMaximumSize(new java.awt.Dimension(1400, 800));
         setMinimumSize(new java.awt.Dimension(1400, 800));
@@ -71,12 +125,9 @@ public class TestModeGUI extends javax.swing.JPanel {
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
         add(background);
         background.setBounds(0, 0, 1400, 800);
-        add(codeView1);
-        codeView1.setBounds(740, 60, 350, 630);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
-    private javax.swing.JPanel codeView1;
     // End of variables declaration//GEN-END:variables
 }

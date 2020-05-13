@@ -100,8 +100,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       @Override
       public void actionPerformed(ActionEvent e) {
          if ( azm.getMovementPattern().isEmpty()) {
-            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);             
-            timer.stop();
+            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);            
          }
          else {
             if ( azm.getMovementPattern().size() > index) {
