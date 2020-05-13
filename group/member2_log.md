@@ -7,7 +7,7 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 
 ### ~ 23.03.2020 - 29.03.2020 ~
 This week I focused on how to improve our game with the help of feedbacks that other groups and TAs gave us again. Also, I downloaded Netbeans and watched videos about how to use this IDE.
-Then, Esra, Alp and I explained the details about the user interface of the learn mode, challenge mode, test mode and general map of the game for the User Interface Report.
+Then, Doğa, Alp and I explained the details about the user interface of the learn mode, challenge mode, test mode and general map of the game for the User Interface Report.
 
 ### ~ 30.03.2020 - 05.04.2020 ~
 This week I started to learn about NetBeans' Swing Tool.
