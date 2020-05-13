@@ -43,16 +43,6 @@ We met over Zoom to discussed about the design of the project, and we talked abo
 
 **ToDo:** 
 
-
-### Meeting ~ (27.04.2020, 2 hours)
-
-**Present:** Arda, Alp, Ayberk, Doğa, Esra, Görkem, Kerem  
-
-**Discussion:** 
-
-**ToDo:** 
-
-
 ### Meeting ~ (28.04.2020, 2 hours)
 
 **Present:** Arda, Alp, Ayberk, Doğa, Esra, Görkem, Kerem  
@@ -69,4 +59,53 @@ We met over Zoom to discussed about the design of the project, and we talked abo
 **Discussion:** 
 
 **ToDo:** 
+
+
+### Meeting ~ (01.05.2020, 2 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:** Choosing the type of layout to be used in the project. Trials with different layouts. Furthermore, deciding how the project can be resizable using null layout. How to fix errors on the MenuCcreen class was discussed.
+
+**ToDo:** Ayberk will rearrange the design of project using null layout. / Görkem will thoroughly investigate what needs to be done for the game to work in all sizes. 
+
+### Meeting ~ (02.05.2020, 3 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:** Starting to work on MapView class. Necessary methods for game dynamics are written and tested. Some test are done for ensuring that the animal character slides forward. Moreover, we started working on Learn Mode.
+
+
+### Meeting ~ (07.05.2020, 3 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:** SelectionController class was edited for the game to work more effectively. CodeView class that shows player's movement on the screen was written. Solutions to the problems encountered in the coding process were discussed.
+
+
+### Meeting ~ (09.05.2020, 2 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:** Discussed about how map design should be. Map features are determined such as dimension. Moreover, tiled selections to be used in map design are made. LearnModeGUI and LearnModeModel classes were written.
+
+**ToDo:** Ayberk will rescale the determined images with Photoshop CC and make some corrections. / Görkem will start map designs using the corrections made by Ayberk.
+
+
+### Meeting ~ (12.05.2020, 2 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:** LearnLevels, LearnModeGUI and LearnModeModel classes were arranged for the development of the game. Some errors have been solved. 
+
+
+### Meeting ~ (12.05.2020, 1 hours)
+
+**Present:** Esra, Doğa, Görkem
+
+**Discussion:** How to create and use the levels of the game was discussed. Therefore, new methods have been written to solve this problem.
+
+
+
+
 
