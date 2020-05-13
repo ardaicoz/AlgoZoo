@@ -89,7 +89,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
     */
    public void initLevels() {
       LearnLevels level1 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")));
-      LearnLevels level2 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 136, 76, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level2.png")));
+      //LearnLevels level2 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 136, 76, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level2.png")));
       /*LearnLevels level3 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
        LearnLevels level4 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
        LearnLevels level5 = new LearnLevels(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76);
@@ -101,7 +101,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
        */
       levelContainer = new ArrayList<>();
       levelContainer.add(level1);
-      levelContainer.add(level2);
+      //levelContainer.add(level2);
       /*levelContainer.add(level3);
        levelContainer.add(level4);
        levelContainer.add(level5);
