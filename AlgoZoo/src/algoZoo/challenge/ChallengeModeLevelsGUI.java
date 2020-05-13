@@ -5,6 +5,7 @@
  */
 package algoZoo.challenge;
 
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -14,6 +15,10 @@ import javax.swing.JButton;
  */
 public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
 
+    // properties
+    ArrayList<JButton> buttons;
+   
+   // constructor
    /**
     * Creates new form ChallengeModeLevelsGUI
     */
@@ -28,8 +33,11 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
       jButton8.setEnabled(false);
       jButton9.setEnabled(false);
       jButton10.setEnabled(false);
+      buttons = new ArrayList<JButton>();
+      addButtons();
    }
    
+   /*   
    public JButton getjButton1() {
       return jButton1;
    }
@@ -69,6 +77,25 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    public JButton getjButton9() {
       return jButton9;
    }
+   */
+   
+   public void addButtons() {
+       buttons.add(jButton1);
+       buttons.add(jButton2);
+       buttons.add(jButton3);
+       buttons.add(jButton4);
+       buttons.add(jButton5);
+       buttons.add(jButton6);
+       buttons.add(jButton7);
+       buttons.add(jButton8);
+       buttons.add(jButton9);
+       buttons.add(jButton10);
+   }
+   
+   
+   public JButton getJButton(int levelNo) {
+       return buttons.get(levelNo - 1);
+   }
    
    public void setJButtonIcon(JButton jb, ImageIcon i) {
        jb.setIcon(i);
@@ -83,16 +110,16 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        jButton1 = new algoZoo.game.LevelButton(1);
+        jButton2 = new algoZoo.game.LevelButton(2);
+        jButton3 = new algoZoo.game.LevelButton(3);
+        jButton4 = new algoZoo.game.LevelButton(4);
+        jButton5 = new algoZoo.game.LevelButton(5);
+        jButton6 = new algoZoo.game.LevelButton(6);
+        jButton7 = new algoZoo.game.LevelButton(7);
+        jButton8 = new algoZoo.game.LevelButton(8);
+        jButton9 = new algoZoo.game.LevelButton(9);
+        jButton10 = new algoZoo.game.LevelButton(10);
         background = new javax.swing.JLabel();
 
         setLayout(null);
@@ -175,15 +202,15 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private algoZoo.game.LevelButton jButton1;
+    private algoZoo.game.LevelButton jButton10;
+    private algoZoo.game.LevelButton jButton2;
+    private algoZoo.game.LevelButton jButton3;
+    private algoZoo.game.LevelButton jButton4;
+    private algoZoo.game.LevelButton jButton5;
+    private algoZoo.game.LevelButton jButton6;
+    private algoZoo.game.LevelButton jButton7;
+    private algoZoo.game.LevelButton jButton8;
+    private algoZoo.game.LevelButton jButton9;
     // End of variables declaration//GEN-END:variables
 }

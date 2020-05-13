@@ -6,10 +6,12 @@
 package algoZoo.menus;
 
 import algoZoo.game.Animal;
+import algoZoo.game.LevelButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import java.util.*;
+import javax.swing.JButton;
 
 /**
  *
@@ -54,8 +56,7 @@ public class MenuScreen extends javax.swing.JFrame {
         testModeLevelScreen = new algoZoo.test.TestModeLevelsGUI();
         challengeModeLevelScreen = new algoZoo.challenge.ChallengeModeLevelsGUI();
         learnModeGUI = new algoZoo.learn.LearnModeGUI();
-        challengeModeGUI1 = new algoZoo.challenge.ChallengeModeGUI(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, 10, 120);
-        challengeModeGUI2 = new algoZoo.challenge.ChallengeModeGUI(new Animal("Bee",new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 72, 76, 136, 140, 10, 180);
+        challengeModeGUI = new algoZoo.challenge.ChallengeModeGUI();
         testModeGUI = new algoZoo.test.TestModeGUI(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))),8, 12, 72, 76, new ArrayList<Character>(Arrays. asList('s', 's', 'd', 'd', 's', 'a', 'd', 's', 'w', 's')), new ArrayList<Character>(Arrays. asList('d', 'd', 'a', 's', 's', 's', 'd', 'w', 'd', 'a')), new ArrayList<Character>(Arrays. asList('s', 's', 's', 's', 'd', 'd', 'a', 'w', 'w', 's')));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -238,13 +239,9 @@ public class MenuScreen extends javax.swing.JFrame {
         getContentPane().add(learnModeGUI);
         learnModeGUI.setBounds(0, 0, 1400, 800);
 
-        challengeModeGUI1.setPreferredSize(new java.awt.Dimension(1400, 800));
-        getContentPane().add(challengeModeGUI1);
-        challengeModeGUI1.setBounds(0, 0, 1400, 800);
-
-        challengeModeGUI2.setPreferredSize(new java.awt.Dimension(1400, 800));
-        getContentPane().add(challengeModeGUI2);
-        challengeModeGUI2.setBounds(0, 0, 1400, 800);
+        challengeModeGUI.setPreferredSize(new java.awt.Dimension(1400, 800));
+        getContentPane().add(challengeModeGUI);
+        challengeModeGUI.setBounds(0, 0, 1400, 800);
 
         getContentPane().add(testModeGUI);
         testModeGUI.setBounds(0, 0, 1400, 800);
@@ -260,8 +257,7 @@ public class MenuScreen extends javax.swing.JFrame {
       testModeLevelScreen.setVisible(false);
       challengeModeLevelScreen.setVisible(false);
       learnModeGUI.setVisible(false); 
-      challengeModeGUI1.setVisible(false);   
-      challengeModeGUI2.setVisible(false);       
+      challengeModeGUI.setVisible(false);      
       testModeGUI.setVisible(false);
    }
    
@@ -284,25 +280,18 @@ public class MenuScreen extends javax.swing.JFrame {
          }
       });
       
-      challengeModeLevelScreen.getjButton1().addActionListener(new ActionListener() {
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            challengeModeLevelScreen.setVisible(false);
-            challengeModeGUI1.setVisible(true);
-            challengeModeGUI1.initNewGame();
-            challengeModeGUI1.startTimer();
+      for(int i = 1; i <= 10; i++) {
+         challengeModeLevelScreen.getJButton(i).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                challengeModeLevelScreen.setVisible(false);
+                challengeModeGUI.setCurrentLevel(((LevelButton)e.getSource()).getLevelNo());
+                challengeModeGUI.setVisible(true);
+                challengeModeGUI.initNewGame();
+                challengeModeGUI.startTimer();
          }
-      });
-
-      challengeModeLevelScreen.getjButton2().addActionListener(new ActionListener() {
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            challengeModeLevelScreen.setVisible(false);
-            challengeModeGUI2.setVisible(true);
-            challengeModeGUI2.initNewGame();
-            challengeModeGUI2.startTimer();
-         }
-      });
+         });
+     }
       
       testModeLevelScreen.getjButton1().addActionListener(new ActionListener() {
          @Override
@@ -397,17 +386,15 @@ public class MenuScreen extends javax.swing.JFrame {
          learnModeGUI.setVisible(false);
          learnModeLevelScreen.setVisible(true);
       }
-      else if ( challengeModeGUI1.isVisible()) {
-         challengeModeGUI1.setVisible(false);
+      else if ( challengeModeGUI.isVisible()) {
+         challengeModeGUI.setVisible(false);
          challengeModeLevelScreen.setVisible(true);
-         if(challengeModeGUI1.getModel().hasWon()) {
-             challengeModeLevelScreen.setJButtonIcon(challengeModeLevelScreen.getjButton2(), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/2.png")));
-             challengeModeLevelScreen.getjButton2().setEnabled(true);
+         if(challengeModeGUI.getModel().hasWon()) {
+             if(challengeModeGUI.getLevel() != 10) {
+                challengeModeLevelScreen.setJButtonIcon(challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (challengeModeGUI.getLevel() + 1) +".png")));
+                challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1).setEnabled(true);
+             }
          }
-      }
-      else if ( challengeModeGUI2.isVisible()) {
-         challengeModeGUI2.setVisible(false);
-         challengeModeLevelScreen.setVisible(true);
       }
       else if ( testModeGUI.isVisible()) {
          testModeGUI.setVisible(false);
@@ -464,12 +451,12 @@ public class MenuScreen extends javax.swing.JFrame {
       });
    }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JLabel background2;
     private javax.swing.JButton challengeButton;
-    private algoZoo.challenge.ChallengeModeGUI challengeModeGUI1;
-    private algoZoo.challenge.ChallengeModeGUI challengeModeGUI2;
+    private algoZoo.challenge.ChallengeModeGUI challengeModeGUI;
     private algoZoo.challenge.ChallengeModeLevelsGUI challengeModeLevelScreen;
     private javax.swing.JButton exitButton;
     private javax.swing.JButton infoButton;
