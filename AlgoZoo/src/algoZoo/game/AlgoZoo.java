@@ -72,28 +72,37 @@ public class AlgoZoo {
     * sets the animal's location 64 pixels up
     */
    public void goUp() {
-      currentY -= 64;
+      if ( currentY != 12) {
+         currentY -= 64;
+      }
    }
    
    /**
     * sets the animal's location 64 pixels down
     */
    public void goDown() {
-      currentY += 64;
+      if ( currentY != 588) {
+       currentY += 64;
+      }
    }
    
    /**
     * sets the animal's location 64 pixels right
     */
    public void goRight() {
-      currentX += 64;
+      if ( currentX != 584) {
+          currentX += 64;
+      }
    }
+   
    
    /**
     * sets the animal's location 64 pixels left
     */
    public void goLeft() {
-      currentX -= 64;
+       if ( currentX != 8) {
+          currentX -= 64;
+       }
    }
    
    /**
