@@ -402,6 +402,7 @@ public class MenuScreen extends javax.swing.JFrame {
                challengeModeLevelScreen.setJButtonIcon(challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (challengeModeGUI.getLevel() + 1) + ".png")));
                challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1).setEnabled(true);
             }
+            challengeModeLevelScreen.setEfficiencyStarts(challengeModeGUI.getEfficiency());
          }
       } else if (testModeGUI.isVisible()) {
          testModeGUI.setVisible(false);

@@ -52,6 +52,8 @@ public class TimerController extends javax.swing.JPanel {
                }
                if (minute < 0) {
                   timer.cancel();
+                  cmm.setGameOver(true);
+                  cmm.update();
                }
                cmm.increaseUsedTime();
             }

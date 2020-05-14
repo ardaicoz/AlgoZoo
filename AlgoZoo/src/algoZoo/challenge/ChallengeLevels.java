@@ -14,8 +14,6 @@ import javax.swing.ImageIcon;
  */
 public class ChallengeLevels {
    // properties
-
-   Animal animal;
    int startX;
    int startY;
    int finishX;
@@ -26,8 +24,7 @@ public class ChallengeLevels {
    int level;
 
    // constructor    
-   public ChallengeLevels(Animal animal, int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ImageIcon mapBackground, int level) {
-      this.animal = animal;
+   public ChallengeLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ImageIcon mapBackground, int level) {
       this.startX = startX;
       this.startY = startY;
       this.finishX = finishX;
@@ -41,10 +38,6 @@ public class ChallengeLevels {
    // methods
    public ImageIcon getMapBackground() {
       return mapBackground;
-   }
-
-   public Animal getAnimal() {
-      return animal;
    }
 
    public int getStartX() {

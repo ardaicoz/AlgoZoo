@@ -6,6 +6,7 @@
 package algoZoo.game;
 
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  * This class focuses on keeping track of the current status of the game
@@ -24,9 +25,9 @@ public class AlgoZoo {
    int finishY;
 
    //constructors
-   public AlgoZoo(Animal animal, int startX, int startY, int finishX, int finishY) {
+   public AlgoZoo(int startX, int startY, int finishX, int finishY) {
       movementPattern = new ArrayList<Character>();
-      this.animal = animal;
+      animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png")));
       this.startX = startX;
       this.startY = startY;
       this.currentX = this.startX;

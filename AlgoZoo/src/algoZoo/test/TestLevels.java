@@ -15,7 +15,6 @@ import javax.swing.ImageIcon;
  */
 public class TestLevels {
     // properties
-   Animal animal;
    int startX;
    int startY;
    int finishX;
@@ -27,8 +26,7 @@ public class TestLevels {
    int level;
 
    // constructor    
-   public TestLevels(Animal animal, int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground, int level) {
-      this.animal = animal;
+   public TestLevels(int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground, int level) {
       this.startX = startX;
       this.startY = startY;
       this.finishX = finishX;
@@ -47,14 +45,6 @@ public class TestLevels {
     */
    public ImageIcon getMapBackground() {
       return mapBackground;
-   }
-   
-   /**
-    * Get method for animal.
-    * @return Animal class
-    */
-   public Animal getAnimal() {
-      return animal;
    }
    
    /**

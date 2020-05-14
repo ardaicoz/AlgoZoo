@@ -98,6 +98,15 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    public void setJButtonIcon(JButton jb, ImageIcon i) {
       jb.setIcon(i);
    }
+   
+   public void setEfficiencyStarts(int efficiency) {
+       if(efficiency == 3)
+           jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/Lock.png")));
+       else if(efficiency == 2) 
+           jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/Lock.png")));
+       else if(efficiency == 1)
+           jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png")));
+   }
 
    /**
     * This method is called from within the constructor to initialize the form.
@@ -118,6 +127,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
         jButton8 = new algoZoo.game.LevelButton(8);
         jButton9 = new algoZoo.game.LevelButton(9);
         jButton10 = new algoZoo.game.LevelButton(10);
+        jLabel1 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setLayout(null);
@@ -192,6 +202,12 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
         add(jButton10);
         jButton10.setBounds(1055, 550, 95, 95);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(48, 40));
+        add(jLabel1);
+        jLabel1.setBounds(280, 290, 48, 40);
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Challenge_Mode_Levels_Background.png"))); // NOI18N
         add(background);
         background.setBounds(0, 0, 1400, 800);
@@ -210,5 +226,6 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
     private algoZoo.game.LevelButton jButton7;
     private algoZoo.game.LevelButton jButton8;
     private algoZoo.game.LevelButton jButton9;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

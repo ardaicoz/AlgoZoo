@@ -63,7 +63,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
       initLevels();
       currentLevel = levelContainer.get(0);
-      lmm = new LearnModeModel(currentLevel.getAnimal(), currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY());
+      lmm = new LearnModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY());
 
       mapView = new MapView(lmm);
       codeView = new CodeView();
@@ -92,16 +92,16 @@ public class LearnModeGUI extends javax.swing.JPanel {
     * Initialize each level of the Learn Mode.
     */
    public void initLevels() {
-      LearnLevels level1 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),1);
-      LearnLevels level2 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 328, 524, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),2);
-      LearnLevels level3 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 200, 588, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),3);
-      LearnLevels level4 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 264, 460, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),4);
-      LearnLevels level5 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),5);
-      LearnLevels level6 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),6);
-      LearnLevels level7 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),7);
-      LearnLevels level8 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),8);
-      LearnLevels level9 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),9);
-      LearnLevels level10 = new LearnLevels(new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))), 8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),10);
+      LearnLevels level1 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),1);
+      LearnLevels level2 = new LearnLevels(328, 524, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),2);
+      LearnLevels level3 = new LearnLevels(200, 588, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),3);
+      LearnLevels level4 = new LearnLevels(264, 460, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),4);
+      LearnLevels level5 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),5);
+      LearnLevels level6 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),6);
+      LearnLevels level7 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),7);
+      LearnLevels level8 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),8);
+      LearnLevels level9 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),9);
+      LearnLevels level10 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),10);
 
       levelContainer = new ArrayList<>();
       levelContainer.add(level1);
@@ -130,7 +130,6 @@ public class LearnModeGUI extends javax.swing.JPanel {
     * Initialize new Learn Mode level.
     */
    public void initNewLevel() {
-      lmm.setAnimal(currentLevel.getAnimal());
       lmm.setStartX(currentLevel.getStartX());
       lmm.setStartY(currentLevel.getStartY());
       lmm.setFinishX(currentLevel.getFinishX());
@@ -171,6 +170,10 @@ public class LearnModeGUI extends javax.swing.JPanel {
     */
    public int getLevel() {
       return currentLevel.getLevel();
+   }
+   
+   public void setAnimal(Animal animal) {
+       lmm.setAnimal(animal);
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables

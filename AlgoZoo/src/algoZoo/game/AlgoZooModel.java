@@ -20,8 +20,8 @@ public class AlgoZooModel extends AlgoZoo {
    boolean hasWon;
 
    //constructors
-   public AlgoZooModel(Animal animal, int startX, int startY, int finishX, int finishY) {
-      super(animal, startX, startY, finishX, finishY);
+   public AlgoZooModel(int startX, int startY, int finishX, int finishY) {
+      super(startX, startY, finishX, finishY);
       views = new ArrayList<IAlgoZooView>();
       gameOver = false;
       hasWon = false;
@@ -159,6 +159,10 @@ public class AlgoZooModel extends AlgoZoo {
     */
    public boolean isGameOver() {
       return gameOver;
+   }
+
+   public void setGameOver(boolean gameOver) {
+       this.gameOver = gameOver;
    }
 
    /**

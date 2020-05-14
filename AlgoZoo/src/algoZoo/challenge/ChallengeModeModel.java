@@ -21,8 +21,8 @@ public class ChallengeModeModel extends AlgoZooModel {
    int usedTime;
 
    // constructors
-   public ChallengeModeModel(Animal animal, int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime) {
-      super(animal, startX, startY, finishX, finishY);
+   public ChallengeModeModel(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime) {
+      super(startX, startY, finishX, finishY);
       this.minRequiredMovements = minRequiredMovements;
       this.minRequiredTime = minRequiredTime;
       noOfMovements = 0;
@@ -97,6 +97,7 @@ public class ChallengeModeModel extends AlgoZooModel {
    @Override
    public void play() {
       super.play();
-      computeEfficiency();
+      if(hasWon())
+          computeEfficiency();
    }
 }

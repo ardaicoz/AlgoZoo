@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author dogaersoy
  */
-public class SelectionController extends javax.swing.JPanel {
+public class SelectionController extends javax.swing.JPanel implements IAlgoZooView {
 
    // properties
    AlgoZooModel azm;
@@ -214,4 +214,12 @@ public class SelectionController extends javax.swing.JPanel {
     private javax.swing.JButton rightButton;
     private javax.swing.JButton upButton;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateView(AlgoZooModel azm) {
+        if(azm.isGameOver())
+            for (JButton b : buttons) {
+         b.setEnabled(false);
+      }
+    }
 }
