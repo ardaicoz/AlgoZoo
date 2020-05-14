@@ -50,6 +50,10 @@ public class MenuScreen extends javax.swing.JFrame {
         challengeButton = new javax.swing.JButton();
         testButton = new javax.swing.JButton();
         infoButton = new javax.swing.JButton();
+        bee = new javax.swing.JLabel();
+        butterfly = new javax.swing.JLabel();
+        previous = new javax.swing.JButton();
+        next = new javax.swing.JButton();
         background2 = new javax.swing.JLabel();
         learnModeLevelScreen = new algoZoo.learn.LearnModeLevelsGUI();
         testModeLevelScreen = new algoZoo.test.TestModeLevelsGUI();
@@ -90,7 +94,7 @@ public class MenuScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(1310, 10, 73, 23);
+        jButton1.setBounds(1310, 10, 71, 21);
 
         welcomeScreen.setPreferredSize(new java.awt.Dimension(1400, 800));
         welcomeScreen.setLayout(null);
@@ -211,6 +215,38 @@ public class MenuScreen extends javax.swing.JFrame {
         modeScreen.add(infoButton);
         infoButton.setBounds(1340, 752, 50, 42);
 
+        bee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))); // NOI18N
+        bee.setText("jLabel1");
+        bee.setPreferredSize(new java.awt.Dimension(48, 40));
+        modeScreen.add(bee);
+        bee.setBounds(1150, 430, 48, 40);
+
+        butterfly.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/2.png"))); // NOI18N
+        butterfly.setText("jLabel2");
+        butterfly.setMaximumSize(new java.awt.Dimension(95, 95));
+        butterfly.setMinimumSize(new java.awt.Dimension(95, 95));
+        butterfly.setPreferredSize(new java.awt.Dimension(95, 95));
+        modeScreen.add(butterfly);
+        butterfly.setBounds(1130, 400, 95, 95);
+
+        previous.setText("previous");
+        previous.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                previousActionPerformed(evt);
+            }
+        });
+        modeScreen.add(previous);
+        previous.setBounds(1020, 450, 71, 21);
+
+        next.setText("next");
+        next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextActionPerformed(evt);
+            }
+        });
+        modeScreen.add(next);
+        next.setBounds(1260, 450, 71, 21);
+
         background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Mode_Screen_Background.png"))); // NOI18N
         modeScreen.add(background2);
         background2.setBounds(0, 0, 1400, 800);
@@ -241,7 +277,6 @@ public class MenuScreen extends javax.swing.JFrame {
         challengeModeGUI.setPreferredSize(new java.awt.Dimension(1400, 800));
         getContentPane().add(challengeModeGUI);
         challengeModeGUI.setBounds(0, 0, 1400, 800);
-
         getContentPane().add(testModeGUI);
         testModeGUI.setBounds(0, 0, 1400, 800);
 
@@ -311,6 +346,7 @@ public class MenuScreen extends javax.swing.JFrame {
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
       welcomeScreen.setVisible(false);
       modeScreen.setVisible(true);
+      butterfly.setVisible(false);
       updateReturnButton();
    }//GEN-LAST:event_playButtonActionPerformed
 
@@ -429,6 +465,48 @@ public class MenuScreen extends javax.swing.JFrame {
       System.exit(0);
    }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void previousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousActionPerformed
+      if(bee.isVisible()) {
+            bee.setVisible(false);
+            butterfly.setVisible(true);
+            Animal animal;
+            animal = new Animal("Butterfly", new ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/2.png")));
+            challengeModeGUI.setAnimal(animal);
+            learnModeGUI.setAnimal(animal);
+            testModeGUI.setAnimal(animal);
+        }
+        else {
+            butterfly.setVisible(false);
+            bee.setVisible(true);
+            Animal animal;
+            animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png")));
+            challengeModeGUI.setAnimal(animal);
+            learnModeGUI.setAnimal(animal);
+            testModeGUI.setAnimal(animal);
+        }
+    }//GEN-LAST:event_previousActionPerformed
+
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+       if(bee.isVisible()) {
+            bee.setVisible(false);
+            butterfly.setVisible(true);
+            Animal animal;
+            animal = new Animal("Butterfly", new ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/2.png")));
+            challengeModeGUI.setAnimal(animal);
+            learnModeGUI.setAnimal(animal);
+            testModeGUI.setAnimal(animal);
+        }
+        else {
+            butterfly.setVisible(false);
+            bee.setVisible(true);
+            Animal animal;
+            animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png")));
+            challengeModeGUI.setAnimal(animal);
+            learnModeGUI.setAnimal(animal);
+            testModeGUI.setAnimal(animal);
+        }
+    }//GEN-LAST:event_nextActionPerformed
+
    /**
     * @param args the command line arguments
     */
@@ -469,6 +547,8 @@ public class MenuScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JLabel background2;
+    private javax.swing.JLabel bee;
+    private javax.swing.JLabel butterfly;
     private javax.swing.JButton challengeButton;
     private algoZoo.challenge.ChallengeModeGUI challengeModeGUI;
     private algoZoo.challenge.ChallengeModeLevelsGUI challengeModeLevelScreen;
@@ -479,7 +559,9 @@ public class MenuScreen extends javax.swing.JFrame {
     private algoZoo.learn.LearnModeGUI learnModeGUI;
     private algoZoo.learn.LearnModeLevelsGUI learnModeLevelScreen;
     private javax.swing.JPanel modeScreen;
+    private javax.swing.JButton next;
     private javax.swing.JButton playButton;
+    private javax.swing.JButton previous;
     private javax.swing.JButton returnButton;
     private javax.swing.JButton testButton;
     private algoZoo.test.TestModeGUI testModeGUI;

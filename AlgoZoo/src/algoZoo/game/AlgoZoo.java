@@ -120,6 +120,7 @@ public class AlgoZoo {
     */
    public void setAnimal(Animal animal) {
       this.animal = animal;
+      System.out.println(animal.getName());
    }
    
    /**

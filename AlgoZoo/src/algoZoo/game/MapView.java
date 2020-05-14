@@ -95,6 +95,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
     */
    @Override
    public void updateView(AlgoZooModel azm) {
+      animal.setIcon(azm.getAnimal().getIcon());
       timer.start();
    }
 
