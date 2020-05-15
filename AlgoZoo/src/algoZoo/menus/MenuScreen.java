@@ -55,6 +55,7 @@ public class MenuScreen extends javax.swing.JFrame {
         previous = new javax.swing.JButton();
         next = new javax.swing.JButton();
         background2 = new javax.swing.JLabel();
+        infoScreen1 = new algoZoo.game.InfoScreen();
         learnModeLevelScreen = new algoZoo.learn.LearnModeLevelsGUI();
         testModeLevelScreen = new algoZoo.test.TestModeLevelsGUI();
         challengeModeLevelScreen = new algoZoo.challenge.ChallengeModeLevelsGUI();
@@ -63,6 +64,8 @@ public class MenuScreen extends javax.swing.JFrame {
         testModeGUI = new algoZoo.test.TestModeGUI();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1400, 800));
+        setMinimumSize(new java.awt.Dimension(1400, 800));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1400, 800));
         getContentPane().setLayout(null);
@@ -94,7 +97,7 @@ public class MenuScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(1310, 10, 71, 21);
+        jButton1.setBounds(1310, 10, 73, 23);
 
         welcomeScreen.setPreferredSize(new java.awt.Dimension(1400, 800));
         welcomeScreen.setLayout(null);
@@ -212,6 +215,11 @@ public class MenuScreen extends javax.swing.JFrame {
         infoButton.setBorder(null);
         infoButton.setContentAreaFilled(false);
         infoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        infoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoButtonActionPerformed(evt);
+            }
+        });
         modeScreen.add(infoButton);
         infoButton.setBounds(1340, 752, 50, 42);
 
@@ -236,7 +244,7 @@ public class MenuScreen extends javax.swing.JFrame {
             }
         });
         modeScreen.add(previous);
-        previous.setBounds(1020, 450, 71, 21);
+        previous.setBounds(1020, 450, 73, 23);
 
         next.setText("next");
         next.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +253,7 @@ public class MenuScreen extends javax.swing.JFrame {
             }
         });
         modeScreen.add(next);
-        next.setBounds(1260, 450, 71, 21);
+        next.setBounds(1260, 450, 71, 23);
 
         background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Mode_Screen_Background.png"))); // NOI18N
         modeScreen.add(background2);
@@ -253,6 +261,8 @@ public class MenuScreen extends javax.swing.JFrame {
 
         getContentPane().add(modeScreen);
         modeScreen.setBounds(0, 0, 1400, 800);
+        getContentPane().add(infoScreen1);
+        infoScreen1.setBounds(0, 0, 1400, 800);
         getContentPane().add(learnModeLevelScreen);
         learnModeLevelScreen.setBounds(0, 0, 1400, 800);
         getContentPane().add(testModeLevelScreen);
@@ -293,6 +303,7 @@ public class MenuScreen extends javax.swing.JFrame {
       learnModeGUI.setVisible(false);
       challengeModeGUI.setVisible(false);
       testModeGUI.setVisible(false);
+      infoScreen1.setVisible(false);
    }
 
    private void updateReturnButton() {
@@ -416,7 +427,11 @@ public class MenuScreen extends javax.swing.JFrame {
       if (modeScreen.isVisible()) {
          modeScreen.setVisible(false);
          welcomeScreen.setVisible(true);
-      } else if (learnModeLevelScreen.isVisible() || testModeLevelScreen.isVisible() || challengeModeLevelScreen.isVisible()) {
+      }else if(infoScreen1.isVisible()){
+     infoScreen1.setVisible(false);
+      modeScreen.setVisible(true);
+      }
+      else if (learnModeLevelScreen.isVisible() || testModeLevelScreen.isVisible() || challengeModeLevelScreen.isVisible()) {
          learnModeLevelScreen.setVisible(false);
          testModeLevelScreen.setVisible(false);
          challengeModeLevelScreen.setVisible(false);
@@ -507,6 +522,12 @@ public class MenuScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_nextActionPerformed
 
+    private void infoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoButtonActionPerformed
+        modeScreen.setVisible(false);
+        infoScreen1.setVisible(true);           
+        updateReturnButton();
+    }//GEN-LAST:event_infoButtonActionPerformed
+
    /**
     * @param args the command line arguments
     */
@@ -554,6 +575,7 @@ public class MenuScreen extends javax.swing.JFrame {
     private algoZoo.challenge.ChallengeModeLevelsGUI challengeModeLevelScreen;
     private javax.swing.JButton exitButton;
     private javax.swing.JButton infoButton;
+    private algoZoo.game.InfoScreen infoScreen1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton learnButton;
     private algoZoo.learn.LearnModeGUI learnModeGUI;
