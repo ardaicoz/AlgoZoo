@@ -261,7 +261,7 @@
         <Component class="javax.swing.JLabel" name="bee">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/algoZoo/Icons/Animals/bee.png"/>
+              <Image iconType="3" name="/algoZoo/Icons/Animals/Bee_Right.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -277,7 +277,7 @@
         <Component class="javax.swing.JLabel" name="butterfly">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/algoZoo/Icons/Levels/Challenge Mode/2.png"/>
+              <Image iconType="3" name="/algoZoo/Icons/Animals/Butterfly_Right.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -292,7 +292,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1130" y="400" width="95" height="95"/>
+              <AbsoluteConstraints x="1150" y="430" width="48" height="40"/>
             </Constraint>
           </Constraints>
         </Component>

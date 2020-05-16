@@ -5,9 +5,9 @@
  */
 package algoZoo.challenge;
 
+import algoZoo.game.LevelButton;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 /**
  *
@@ -16,7 +16,7 @@ import javax.swing.JButton;
 public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
 
    // properties
-   ArrayList<JButton> buttons;
+   ArrayList<LevelButton> buttons;
 
    // constructor
    /**
@@ -33,7 +33,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
       jButton8.setEnabled(false);
       jButton9.setEnabled(false);
       jButton10.setEnabled(false);
-      buttons = new ArrayList<JButton>();
+      buttons = new ArrayList<LevelButton>();
       addButtons();
    }
 
@@ -91,11 +91,11 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
       buttons.add(jButton10);
    }
 
-   public JButton getJButton(int levelNo) {
+   public LevelButton getJButton(int levelNo) {
       return buttons.get(levelNo - 1);
    }
 
-   public void setJButtonIcon(JButton jb, ImageIcon i) {
+   public void setJButtonIcon(LevelButton jb, ImageIcon i) {
       jb.setIcon(i);
    }
    
@@ -202,7 +202,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
         add(jButton10);
         jButton10.setBounds(1055, 550, 95, 95);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(48, 40));
         add(jLabel1);
