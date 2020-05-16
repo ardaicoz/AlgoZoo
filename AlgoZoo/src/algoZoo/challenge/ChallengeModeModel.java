@@ -80,7 +80,7 @@ public class ChallengeModeModel extends AlgoZooModel {
          if (usedTime < minRequiredTime / 2) {
             efficiency++;
          }
-         if (getMovementPattern().size() == minRequiredMovements) {
+         if (noOfMovements == minRequiredMovements) {
             efficiency++;
          }
       }
