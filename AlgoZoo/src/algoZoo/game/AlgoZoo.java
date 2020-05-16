@@ -27,7 +27,7 @@ public class AlgoZoo {
    //constructors
    public AlgoZoo(int startX, int startY, int finishX, int finishY) {
       movementPattern = new ArrayList<Character>();
-      animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png")));
+      animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
       this.startX = startX;
       this.startY = startY;
       this.currentX = this.startX;
