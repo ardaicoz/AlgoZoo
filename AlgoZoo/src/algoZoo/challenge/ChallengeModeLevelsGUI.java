@@ -202,7 +202,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
         add(jButton10);
         jButton10.setBounds(1055, 550, 95, 95);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/bee.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setPreferredSize(new java.awt.Dimension(48, 40));
         add(jLabel1);
