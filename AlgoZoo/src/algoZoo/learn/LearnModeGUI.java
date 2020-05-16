@@ -11,6 +11,7 @@ import algoZoo.game.MapView;
 import algoZoo.game.SelectionController;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 /**
  *
@@ -45,14 +46,34 @@ public class LearnModeGUI extends javax.swing.JPanel {
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
+      jButton1 = new javax.swing.JButton();
       background = new javax.swing.JLabel();
 
       setLayout(null);
+
+      jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
+      jButton1.setBorder(null);
+      jButton1.setContentAreaFilled(false);
+      jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jButton1.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton1ActionPerformed(evt);
+         }
+      });
+      add(jButton1);
+      jButton1.setBounds(1005, 335, 80, 70);
 
       background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
       add(background);
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
+
+   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      getLearnModeModel().play();
+      for (JButton b : selectionController.getButtons()) {
+         b.setEnabled(false);
+      }
+   }//GEN-LAST:event_jButton1ActionPerformed
 
    // methods
    /**
@@ -178,5 +199,6 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel background;
+   private javax.swing.JButton jButton1;
    // End of variables declaration//GEN-END:variables
 }

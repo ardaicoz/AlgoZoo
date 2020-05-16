@@ -35,7 +35,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
-      setBackground(new java.awt.Color(51, 204, 255));
+      setOpaque(false);
       setLayout(null);
    }// </editor-fold>//GEN-END:initComponents
 
