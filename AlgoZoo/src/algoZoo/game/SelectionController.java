@@ -5,6 +5,8 @@
  */
 package algoZoo.game;
 
+import algoZoo.challenge.ChallengeModeModel;
+import algoZoo.learn.LearnModeModel;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -136,6 +138,12 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     */
     private void upButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upButtonActionPerformed
        azm.addMovementPattern('w');
+       if ( azm instanceof ChallengeModeModel) {
+          ((ChallengeModeModel)azm).increaseNoOfMovements();
+       }
+       else {
+          ((LearnModeModel)azm).increaseNoOfMovements();
+       }
     }//GEN-LAST:event_upButtonActionPerformed
 
    /**
@@ -144,6 +152,12 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     */
     private void downButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downButtonActionPerformed
        azm.addMovementPattern('s');
+       if ( azm instanceof ChallengeModeModel) {
+          ((ChallengeModeModel)azm).increaseNoOfMovements();
+       }
+       else {
+          ((LearnModeModel)azm).increaseNoOfMovements();
+       }
     }//GEN-LAST:event_downButtonActionPerformed
 
    /**
@@ -152,6 +166,12 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     */
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
        azm.addMovementPattern('d');
+       if ( azm instanceof ChallengeModeModel) {
+          ((ChallengeModeModel)azm).increaseNoOfMovements();
+       }
+       else {
+          ((LearnModeModel)azm).increaseNoOfMovements();
+       }
     }//GEN-LAST:event_rightButtonActionPerformed
 
    /**
@@ -160,6 +180,12 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     */
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
        azm.addMovementPattern('a');
+       if ( azm instanceof ChallengeModeModel) {
+          ((ChallengeModeModel)azm).increaseNoOfMovements();
+       }
+       else {
+          ((LearnModeModel)azm).increaseNoOfMovements();
+       }
     }//GEN-LAST:event_leftButtonActionPerformed
 
    /**
@@ -170,6 +196,12 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
        azm.initNewGame();
        for (JButton b : buttons) {
           b.setEnabled(true);
+       }
+       if ( azm instanceof ChallengeModeModel) {
+          ((ChallengeModeModel)azm).setNoOfMovements(0);
+       }
+       else {
+          ((LearnModeModel)azm).setNoOfMovements(0);
        }
     }//GEN-LAST:event_resetButtonActionPerformed
 

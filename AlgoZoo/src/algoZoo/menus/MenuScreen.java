@@ -223,35 +223,57 @@ public class MenuScreen extends javax.swing.JFrame {
       modeScreen.add(infoButton);
       infoButton.setBounds(1340, 752, 50, 42);
 
-      bee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png"))); // NOI18N
+      bee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Exhibition.png"))); // NOI18N
       bee.setPreferredSize(new java.awt.Dimension(48, 40));
       modeScreen.add(bee);
-      bee.setBounds(1150, 430, 48, 40);
+      bee.setBounds(1163, 451, 100, 100);
 
-      butterfly.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png"))); // NOI18N
+      butterfly.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Exhibition.png"))); // NOI18N
       butterfly.setMaximumSize(new java.awt.Dimension(95, 95));
       butterfly.setMinimumSize(new java.awt.Dimension(95, 95));
       butterfly.setPreferredSize(new java.awt.Dimension(95, 95));
       modeScreen.add(butterfly);
-      butterfly.setBounds(1130, 400, 95, 95);
+      butterfly.setBounds(1163, 451, 100, 100);
 
-      previous.setText("previous");
+      previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Previous_Change_Button.png"))); // NOI18N
+      previous.setBorder(null);
+      previous.setContentAreaFilled(false);
+      previous.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      previous.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            previousMouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            previousMouseExited(evt);
+         }
+      });
       previous.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             previousActionPerformed(evt);
          }
       });
       modeScreen.add(previous);
-      previous.setBounds(1020, 450, 79, 32);
+      previous.setBounds(1090, 472, 36, 60);
 
-      next.setText("next");
+      next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Next_Change_Button.png"))); // NOI18N
+      next.setBorder(null);
+      next.setContentAreaFilled(false);
+      next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      next.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            nextMouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            nextMouseExited(evt);
+         }
+      });
       next.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             nextActionPerformed(evt);
          }
       });
       modeScreen.add(next);
-      next.setBounds(1260, 450, 71, 32);
+      next.setBounds(1300, 472, 36, 60);
 
       background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Mode_Screen_Background.png"))); // NOI18N
       modeScreen.add(background2);
@@ -391,6 +413,9 @@ public class MenuScreen extends javax.swing.JFrame {
       modeScreen.setVisible(false);
       learnModeLevelScreen.setVisible(true);
       updateReturnButton();
+      if (bee.isVisible()) {
+         
+      }
    }//GEN-LAST:event_learnButtonActionPerformed
 
    private void challengeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_challengeButtonMouseEntered
@@ -451,7 +476,7 @@ public class MenuScreen extends javax.swing.JFrame {
                challengeModeLevelScreen.setJButtonIcon(challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (challengeModeGUI.getLevel() + 1) + ".png")));
                challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1).setEnabled(true);
             }
-            challengeModeLevelScreen.setEfficiencyStarts(challengeModeGUI.getEfficiency());
+            challengeModeLevelScreen.setEfficiencyStars(challengeModeLevelScreen.getJLabel(challengeModeGUI.getLevel()), challengeModeGUI.getEfficiency());
          }
       } else if (testModeGUI.isVisible()) {
          testModeGUI.setVisible(false);
@@ -483,7 +508,7 @@ public class MenuScreen extends javax.swing.JFrame {
             bee.setVisible(false);
             butterfly.setVisible(true);
             Animal animal;
-            animal = new Animal("Butterfly", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
+            animal = new Animal("Butterfly", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));
             challengeModeGUI.setAnimal(animal);
             learnModeGUI.setAnimal(animal);
             testModeGUI.setAnimal(animal);
@@ -492,7 +517,7 @@ public class MenuScreen extends javax.swing.JFrame {
             butterfly.setVisible(false);
             bee.setVisible(true);
             Animal animal;
-            animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));
+            animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
             challengeModeGUI.setAnimal(animal);
             learnModeGUI.setAnimal(animal);
             testModeGUI.setAnimal(animal);
@@ -525,6 +550,22 @@ public class MenuScreen extends javax.swing.JFrame {
         infoScreen1.setVisible(true);           
         updateReturnButton();
     }//GEN-LAST:event_infoButtonActionPerformed
+
+   private void nextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextMouseEntered
+      next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Next_Change_Button_Clicked.png")));
+   }//GEN-LAST:event_nextMouseEntered
+
+   private void nextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextMouseExited
+      next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Next_Change_Button.png")));
+   }//GEN-LAST:event_nextMouseExited
+
+   private void previousMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_previousMouseEntered
+      previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Previous_Change_Button_Clicked.png")));
+   }//GEN-LAST:event_previousMouseEntered
+
+   private void previousMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_previousMouseExited
+      previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Previous_Change_Button.png")));
+   }//GEN-LAST:event_previousMouseExited
 
    /**
     * @param args the command line arguments

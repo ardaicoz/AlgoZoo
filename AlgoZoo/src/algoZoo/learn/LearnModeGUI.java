@@ -27,6 +27,10 @@ public class LearnModeGUI extends javax.swing.JPanel {
    SelectionController selectionController;
    LearnLevels currentLevel;
    ArrayList<LearnLevels> levelContainer;
+   final int TILE_WIDTH = 64;
+   final int TILE_HEIGHT = 64;
+   final int SPACE_WIDTH= 8;
+   final int SPACE_HEIGHT = 12;
 
    // constructor
    /**
@@ -113,9 +117,9 @@ public class LearnModeGUI extends javax.swing.JPanel {
     * Initialize each level of the Learn Mode.
     */
    public void initLevels() {
-      LearnLevels level1 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),1);
-      LearnLevels level2 = new LearnLevels(328, 524, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),2);
-      LearnLevels level3 = new LearnLevels(200, 588, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),3);
+      LearnLevels level1 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),1);
+      LearnLevels level2 = new LearnLevels((TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, (TILE_WIDTH * 4) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level2.png")),2);
+      LearnLevels level3 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 6) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level3.png")),3);
       LearnLevels level4 = new LearnLevels(264, 460, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),4);
       LearnLevels level5 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),5);
       LearnLevels level6 = new LearnLevels(8, 12, 72, 76, new ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png")),6);
