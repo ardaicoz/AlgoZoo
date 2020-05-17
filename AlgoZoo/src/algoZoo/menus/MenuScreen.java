@@ -28,6 +28,7 @@ public class MenuScreen extends javax.swing.JFrame {
       updateReturnButton();
       addActionListeners();
 
+
    }
 
    /**
@@ -40,7 +41,7 @@ public class MenuScreen extends javax.swing.JFrame {
    private void initComponents() {
 
       returnButton = new javax.swing.JButton();
-      jButton1 = new javax.swing.JButton();
+      quickExitButton = new javax.swing.JButton();
       welcomeScreen = new javax.swing.JPanel();
       playButton = new javax.swing.JButton();
       exitButton = new javax.swing.JButton();
@@ -90,14 +91,25 @@ public class MenuScreen extends javax.swing.JFrame {
       getContentPane().add(returnButton);
       returnButton.setBounds(10, 730, 90, 65);
 
-      jButton1.setText("jButton1");
-      jButton1.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton1ActionPerformed(evt);
+      quickExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Quick_Exit_Button.png"))); // NOI18N
+      quickExitButton.setBorder(null);
+      quickExitButton.setContentAreaFilled(false);
+      quickExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      quickExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            quickExitButtonMouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            quickExitButtonMouseExited(evt);
          }
       });
-      getContentPane().add(jButton1);
-      jButton1.setBounds(1310, 10, 77, 32);
+      quickExitButton.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            quickExitButtonActionPerformed(evt);
+         }
+      });
+      getContentPane().add(quickExitButton);
+      quickExitButton.setBounds(1340, 10, 50, 50);
 
       welcomeScreen.setPreferredSize(new java.awt.Dimension(1400, 800));
       welcomeScreen.setLayout(null);
@@ -281,6 +293,8 @@ public class MenuScreen extends javax.swing.JFrame {
 
       getContentPane().add(modeScreen);
       modeScreen.setBounds(0, 0, 1400, 800);
+
+      infoScreen1.setOpaque(false);
       getContentPane().add(infoScreen1);
       infoScreen1.setBounds(0, 0, 1400, 800);
       getContentPane().add(learnModeLevelScreen);
@@ -324,6 +338,8 @@ public class MenuScreen extends javax.swing.JFrame {
       challengeModeGUI.setVisible(false);
       testModeGUI.setVisible(false);
       infoScreen1.setVisible(false);
+      quickExitButton.setVisible(false);
+      
    }
 
    private void updateReturnButton() {
@@ -343,6 +359,7 @@ public class MenuScreen extends javax.swing.JFrame {
                learnModeGUI.setCurrentLevel(((LevelButton) e.getSource()).getLevelNo());
                learnModeGUI.setVisible(true);
                learnModeGUI.initNewGame();
+               quickExitButton.setVisible(false);
             }
          });
 
@@ -357,6 +374,7 @@ public class MenuScreen extends javax.swing.JFrame {
                challengeModeGUI.setVisible(true);
                challengeModeGUI.initNewGame();
                challengeModeGUI.startTimer();
+               quickExitButton.setVisible(false);
             }
          });
       }
@@ -369,6 +387,7 @@ public class MenuScreen extends javax.swing.JFrame {
                 testModeGUI.setCurrentLevel(((LevelButton) e.getSource()).getLevelNo());
                 testModeGUI.setVisible(true);
                 testModeGUI.initNewGame();
+                quickExitButton.setVisible(false);
             }
         });
       }
@@ -378,6 +397,7 @@ public class MenuScreen extends javax.swing.JFrame {
       welcomeScreen.setVisible(false);
       modeScreen.setVisible(true);
       butterfly.setVisible(false);
+      quickExitButton.setVisible(true);
       updateReturnButton();
    }//GEN-LAST:event_playButtonActionPerformed
 
@@ -413,9 +433,6 @@ public class MenuScreen extends javax.swing.JFrame {
       modeScreen.setVisible(false);
       learnModeLevelScreen.setVisible(true);
       updateReturnButton();
-      if (bee.isVisible()) {
-         
-      }
    }//GEN-LAST:event_learnButtonActionPerformed
 
    private void challengeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_challengeButtonMouseEntered
@@ -450,6 +467,7 @@ public class MenuScreen extends javax.swing.JFrame {
       if (modeScreen.isVisible()) {
          modeScreen.setVisible(false);
          welcomeScreen.setVisible(true);
+         quickExitButton.setVisible(false);
       }else if(infoScreen1.isVisible()){
      infoScreen1.setVisible(false);
       modeScreen.setVisible(true);
@@ -462,6 +480,7 @@ public class MenuScreen extends javax.swing.JFrame {
       } else if (learnModeGUI.isVisible()) {
          learnModeGUI.setVisible(false);
          learnModeLevelScreen.setVisible(true);
+         quickExitButton.setVisible(true);
          if (learnModeGUI.getModel().hasWon()) {
             if (learnModeGUI.getLevel() != 10) {
                learnModeLevelScreen.setJButtonIcon(learnModeLevelScreen.getJButton(learnModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/" + (learnModeGUI.getLevel() + 1) + ".png")));
@@ -471,6 +490,7 @@ public class MenuScreen extends javax.swing.JFrame {
       } else if (challengeModeGUI.isVisible()) {
          challengeModeGUI.setVisible(false);
          challengeModeLevelScreen.setVisible(true);
+         quickExitButton.setVisible(true);
          if (challengeModeGUI.getModel().hasWon()) {
             if (challengeModeGUI.getLevel() != 10) {
                challengeModeLevelScreen.setJButtonIcon(challengeModeLevelScreen.getJButton(challengeModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (challengeModeGUI.getLevel() + 1) + ".png")));
@@ -482,6 +502,7 @@ public class MenuScreen extends javax.swing.JFrame {
       } else if (testModeGUI.isVisible()) {
          testModeGUI.setVisible(false);
          testModeLevelScreen.setVisible(true);
+         quickExitButton.setVisible(true);
          if ( testModeGUI.getModel().hasWon() ) {
              if ( testModeGUI.getLevel() != 10 ) {
                testModeLevelScreen.setJButtonIcon(testModeLevelScreen.getJButton(testModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/" + (testModeGUI.getLevel() + 1) + ".png")));
@@ -500,9 +521,9 @@ public class MenuScreen extends javax.swing.JFrame {
       returnButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Return_Button.png")));
    }//GEN-LAST:event_returnButtonMouseExited
 
-   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+   private void quickExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quickExitButtonActionPerformed
       System.exit(0);
-   }//GEN-LAST:event_jButton1ActionPerformed
+   }//GEN-LAST:event_quickExitButtonActionPerformed
 
     private void previousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousActionPerformed
       if(bee.isVisible()) {
@@ -568,6 +589,14 @@ public class MenuScreen extends javax.swing.JFrame {
       previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Previous_Change_Button.png")));
    }//GEN-LAST:event_previousMouseExited
 
+   private void quickExitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quickExitButtonMouseEntered
+      quickExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Quick_Exit_Button_Clicked.png")));
+   }//GEN-LAST:event_quickExitButtonMouseEntered
+
+   private void quickExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quickExitButtonMouseExited
+      quickExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Quick_Exit_Button.png")));
+   }//GEN-LAST:event_quickExitButtonMouseExited
+
    /**
     * @param args the command line arguments
     */
@@ -616,7 +645,6 @@ public class MenuScreen extends javax.swing.JFrame {
    private javax.swing.JButton exitButton;
    private javax.swing.JButton infoButton;
    private algoZoo.game.InfoScreen infoScreen1;
-   private javax.swing.JButton jButton1;
    private javax.swing.JButton learnButton;
    private algoZoo.learn.LearnModeGUI learnModeGUI;
    private algoZoo.learn.LearnModeLevelsGUI learnModeLevelScreen;
@@ -624,6 +652,7 @@ public class MenuScreen extends javax.swing.JFrame {
    private javax.swing.JButton next;
    private javax.swing.JButton playButton;
    private javax.swing.JButton previous;
+   private javax.swing.JButton quickExitButton;
    private javax.swing.JButton returnButton;
    private javax.swing.JButton testButton;
    private algoZoo.test.TestModeGUI testModeGUI;

@@ -16,13 +16,14 @@ import javax.swing.ImageIcon;
  */
 public class AlgoZooModel extends AlgoZoo {
    //properties
+   boolean                        gameOver;
+   boolean                        hasWon;
    public ArrayList<IAlgoZooView> views;
-   boolean gameOver;
-   boolean hasWon;
 
    //constructors
    public AlgoZooModel(int startX, int startY, int finishX, int finishY) {
       super(startX, startY, finishX, finishY);
+      //initialize all properties
       views = new ArrayList<IAlgoZooView>();
       gameOver = false;
       hasWon = false;
@@ -125,24 +126,6 @@ public class AlgoZooModel extends AlgoZoo {
     * moves the animal according to the movement algorithm
     */
    public void play() {
-      /*
-      Iterator itr = movementPattern.iterator();
-
-      while (itr.hasNext()) {
-         if ((char)itr.next() == 'w') {
-            goUp();
-         }
-         else if ((char)itr.next() == 'a') {
-            goLeft();
-         }
-         else if ((char)itr.next() == 's') {
-            goDown();
-         }
-         else if ((char)itr.next() == 'd') {
-            goRight();
-         }
-      }
-      */
       for ( int i = 0; i < movementPattern.size(); i++) {
          if ( movementPattern.get(i).equals('w')) { goUp(); }
          else if ( movementPattern.get(i).equals('a')) { goLeft(); }
@@ -163,6 +146,10 @@ public class AlgoZooModel extends AlgoZoo {
       return gameOver;
    }
 
+   /**
+    * sets the winning status
+    * @param gameOver 
+    */
    public void setGameOver(boolean gameOver) {
        this.gameOver = gameOver;
    }
@@ -174,5 +161,4 @@ public class AlgoZooModel extends AlgoZoo {
    public boolean hasWon() {
       return hasWon;
    }
-
 }

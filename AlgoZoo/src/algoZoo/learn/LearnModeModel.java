@@ -8,8 +8,8 @@ package algoZoo.learn;
 import algoZoo.game.*;
 
 /**
- *
- * @author Ayberk, Görkem
+ * This is a model class for learn mode
+ * @author Doğa, Esra, Ayberk, Görkem
  * @version 1.0
  */
 public class LearnModeModel extends AlgoZooModel {

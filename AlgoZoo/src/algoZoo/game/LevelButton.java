@@ -8,8 +8,9 @@ package algoZoo.game;
 import javax.swing.JButton;
 
 /**
- *
- * @author A.T.A
+ * This class extends JButton class and adds a levelNo property to create level-specific buttons 
+ * @author Alp
+ * @version 1.0
  */
 public class LevelButton extends JButton {
 
@@ -22,11 +23,10 @@ public class LevelButton extends JButton {
    }
 
    /**
-    *
-    * @return
+    * Returns levelNo
+    * @return levelNo
     */
    public int getLevelNo() {
       return levelNo;
    }
-
 }
