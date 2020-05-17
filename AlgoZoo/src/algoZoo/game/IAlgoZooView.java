@@ -6,9 +6,10 @@
 package algoZoo.game;
 
 /**
- *
+ * Interface for view classes of the game
  * @author Esra, Doğa
+ * @version 1.0
  */
 public interface IAlgoZooView {
-    void updateView(AlgoZooModel azm);
+    void updateView(AlgoZooModel azm); //method for updating the view classes
 }
