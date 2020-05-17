@@ -37,4 +37,8 @@ public class Animal {
    public ImageIcon getIcon() {
       return icon;
    }
+   
+   public void setIcon(ImageIcon icon){
+      this.icon = icon;      
+   }
 }

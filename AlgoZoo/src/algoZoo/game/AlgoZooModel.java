@@ -7,6 +7,7 @@ package algoZoo.game;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import javax.swing.ImageIcon;
 
 /**
  * This class is for basic functional structure of the game
@@ -53,7 +54,7 @@ public class AlgoZooModel extends AlgoZoo {
     */
    @Override
    public void goRight() {
-      super.goRight();
+      super.goRight();      
       update();
 
    }
@@ -63,7 +64,7 @@ public class AlgoZooModel extends AlgoZoo {
     */
    @Override
    public void goLeft() {
-      super.goLeft();
+      super.goLeft();      
       update();
 
    }
@@ -90,6 +91,7 @@ public class AlgoZooModel extends AlgoZoo {
     */
    public void initNewGame() {
       resetMovementPattern();
+      animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
       currentX = startX;
       currentY = startY;
       gameOver = false;

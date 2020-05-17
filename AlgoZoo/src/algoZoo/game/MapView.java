@@ -7,6 +7,7 @@ package algoZoo.game;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
@@ -56,7 +57,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       add(animal);
       animal.setBounds(0, 0, 48, 40);
 
-      mapBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Maps/Level1.png"))); // NOI18N
+      mapBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png"))); // NOI18N
       add(mapBackground);
       mapBackground.setBounds(0, 0, 640, 640);
    }// </editor-fold>//GEN-END:initComponents
@@ -79,6 +80,13 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
     * 
     */
    public void goRightView() {
+      if ( azm.getAnimal().getName().equals("Bee")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
+      }
+      else if ( azm.getAnimal().getName().equals("Butterfly")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));            
+      }
+      
       animal.setBounds(animal.getX() + 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
@@ -86,6 +94,13 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
     * 
     */
    public void goLeftView() {
+       if ( azm.getAnimal().getName().equals("Bee")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Left.png")));         
+      }
+      else if ( azm.getAnimal().getName().equals("Butterfly")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Left.png")));            
+      }
+      
       animal.setBounds(animal.getX() - 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 

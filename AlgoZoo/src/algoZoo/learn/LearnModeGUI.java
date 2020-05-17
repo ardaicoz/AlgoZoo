@@ -117,16 +117,16 @@ public class LearnModeGUI extends javax.swing.JPanel {
     * Initialize each level of the Learn Mode.
     */
    public void initLevels() {
-      LearnLevels level1 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")),1);
+      LearnLevels level1 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, (TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")),1);
       LearnLevels level2 = new LearnLevels((TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, (TILE_WIDTH * 4) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")),2);
-      LearnLevels level3 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 6) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")),3);
-      LearnLevels level4 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")),4);
-      LearnLevels level5 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")),5);
-      LearnLevels level6 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")),6);
-      LearnLevels level7 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")),7);
-      LearnLevels level8 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")),8);
-      LearnLevels level9 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")),9);
-      LearnLevels level10 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 5) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")),10);
+      LearnLevels level3 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 6) + SPACE_HEIGHT, (TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")),3);
+      LearnLevels level4 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 3) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")),4);
+      LearnLevels level5 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 8) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")),5);
+      LearnLevels level6 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 7) + SPACE_WIDTH, (TILE_HEIGHT * 6) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")),6);
+      LearnLevels level7 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 8) + SPACE_WIDTH, (TILE_HEIGHT * 3) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")),7);
+      LearnLevels level8 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 7) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")),8);
+      LearnLevels level9 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 7) + SPACE_WIDTH, (TILE_HEIGHT * 7) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")),9);
+      LearnLevels level10 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 7) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")),10);
 
       levelContainer = new ArrayList<>();
       levelContainer.add(level1);
