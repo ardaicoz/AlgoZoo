@@ -92,7 +92,13 @@ public class AlgoZooModel extends AlgoZoo {
     */
    public void initNewGame() {
       resetMovementPattern();
-      animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
+      if ( animal.getName().equals("Bee")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
+      }
+      else if ( animal.getName().equals("Butterfly")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));               
+      }
+      
       currentX = startX;
       currentY = startY;
       gameOver = false;
