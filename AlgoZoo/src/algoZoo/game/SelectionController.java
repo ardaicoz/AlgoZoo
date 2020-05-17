@@ -9,23 +9,21 @@ import algoZoo.challenge.ChallengeModeModel;
 import algoZoo.learn.LearnModeModel;
 import java.util.ArrayList;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 /**
- *
- * @author dogaersoy
+ * This class is for creating the movement options the user can choose from
+ * @author Doğa
+ * @version 1.0
  */
 public class SelectionController extends javax.swing.JPanel implements IAlgoZooView {
 
    // properties
-   AlgoZooModel azm;
+   AlgoZooModel       azm;
    ArrayList<JButton> buttons;
 
    // constructors
-   /**
-    * Creates new form SelectionController
-    */
    public SelectionController(AlgoZooModel azm) {
+      //initialize all the components and properties
       this.azm = azm;
       buttons = new ArrayList<>();
       initComponents();
@@ -123,17 +121,19 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       );
    }// </editor-fold>//GEN-END:initComponents
 
+   /**
+    * Adds the movement buttons to the selection panel
+    */
    private void addAllButtons() {
       buttons.add(downButton);
       buttons.add(leftButton);
       buttons.add(rightButton);
       buttons.add(upButton);
       buttons.add(resetButton);
-
    }
 
    /**
-    *
+    * Adds the necessary movement to the model's movementPattern ArrayList
     * @param evt
     */
     private void upButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upButtonActionPerformed
@@ -147,7 +147,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }//GEN-LAST:event_upButtonActionPerformed
 
    /**
-    *
+    * Adds the necessary movement to the model's movementPattern ArrayList
     * @param evt
     */
     private void downButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downButtonActionPerformed
@@ -161,7 +161,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }//GEN-LAST:event_downButtonActionPerformed
 
    /**
-    *
+    * Adds the necessary movement to the model's movementPattern ArrayList
     * @param evt
     */
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
@@ -175,7 +175,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }//GEN-LAST:event_rightButtonActionPerformed
 
    /**
-    *
+    * Adds the necessary movement to the model's movementPattern ArrayList
     * @param evt
     */
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
@@ -189,7 +189,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }//GEN-LAST:event_leftButtonActionPerformed
 
    /**
-    *
+    * Resets the model's movementPattern ArrayList
     * @param evt
     */
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
@@ -207,7 +207,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
 
   
    /**
-    *
+    * Resets the panel for a new game
     */
    public void resetSelectionController() {
       for (JButton b : buttons) {
@@ -215,6 +215,10 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       }
    }
    
+   /**
+    * Overrides the updateView method to disable all the buttons when the game is over 
+    * @param azm 
+    */
     @Override
     public void updateView(AlgoZooModel azm) {
         if(azm.isGameOver())
@@ -223,7 +227,11 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       }
     }
 
-   public ArrayList<JButton> getButtons() {
+    /**
+     * Returns the ArrayList of all the buttons on the selection panel
+     * @return buttons
+     */
+    public ArrayList<JButton> getButtons() {
       return buttons;
    }
    

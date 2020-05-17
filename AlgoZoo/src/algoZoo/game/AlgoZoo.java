@@ -15,17 +15,18 @@ import javax.swing.ImageIcon;
  */
 public class AlgoZoo {
    //properties
-   Animal animal;
+   int                  startX;
+   int                  startY;
+   int                  currentX;
+   int                  currentY;
+   int                  finishX;
+   int                  finishY;
+   Animal               animal;
    ArrayList<Character> movementPattern;
-   int startX;
-   int startY;
-   int currentX;
-   int currentY;
-   int finishX;
-   int finishY;
 
    //constructors
    public AlgoZoo(int startX, int startY, int finishX, int finishY) {
+       //initialize all properties
       movementPattern = new ArrayList<Character>();
       animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
       this.startX = startX;
@@ -208,5 +209,4 @@ public class AlgoZoo {
    public void setCurrentY(int currentY) {
       this.currentY = currentY;
    }
-
 }

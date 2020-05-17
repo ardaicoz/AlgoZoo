@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author esra, Kerem
+ * @author Doğa ,Esra, Kerem
  */
 public class TestModeModel extends AlgoZooModel{
     //properties
