@@ -85,6 +85,12 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              if(listA.get(i) == 's'){
              list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
              }      
+             if(listA.get(i) == 'f'){
+             list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             }   
+         }
+         for(int i = listA.size() ; i < 10; i++ ){
+             list1.get(i).setIcon(null);
          }
          for(int i = 0; i < listB.size(); i++ ){
              if(listB.get(i) == 'w'){
@@ -99,6 +105,12 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              if(listB.get(i) == 's'){
              list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
              }      
+             if(listB.get(i) == 'f'){
+             list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             }   
+         }
+         for(int i = listB.size() ; i < 10; i++ ){
+             list2.get(i).setIcon(null);
          }
          for(int i = 0; i < listC.size(); i++ ){
              if(listC.get(i) == 'w'){
@@ -112,8 +124,15 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              }
              if(listC.get(i) == 's'){
              list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
-             }      
+             }    
+             if(listC.get(i) == 'f'){
+             list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             }   
          }
+         for(int i = listC.size() ; i < 10; i++ ){
+             list3.get(i).setIcon(null);
+         }
+         
          
      }
 
@@ -370,7 +389,20 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
    private void CMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CMouseExited
       C.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/C_Button.png")));
    }//GEN-LAST:event_CMouseExited
+     public void setList1(ArrayList<Character> list1){
+        listA = list1;
+        labelInitialize();
+    }
     
+    public void setList2(ArrayList<Character> list2){
+        listB = list2;
+        labelInitialize();
+    }
+    
+    public void setList3(ArrayList<Character> list3){
+        listC = list3;
+        labelInitialize();
+    }
     /**
      * A method to make all options clickable.
      */
