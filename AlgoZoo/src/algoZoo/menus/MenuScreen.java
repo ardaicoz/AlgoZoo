@@ -478,6 +478,7 @@ public class MenuScreen extends javax.swing.JFrame {
             }
             challengeModeLevelScreen.setEfficiencyStars(challengeModeLevelScreen.getJLabel(challengeModeGUI.getLevel()), challengeModeGUI.getEfficiency());
          }
+         challengeModeGUI.stopTimer();
       } else if (testModeGUI.isVisible()) {
          testModeGUI.setVisible(false);
          testModeLevelScreen.setVisible(true);

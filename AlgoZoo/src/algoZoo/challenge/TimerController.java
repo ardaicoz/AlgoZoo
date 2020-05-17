@@ -6,8 +6,9 @@
 package algoZoo.challenge;
 
 import java.awt.Color;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
 
 /**
  *
@@ -17,7 +18,6 @@ public class TimerController extends javax.swing.JPanel {
    //properties
 
    Timer timer;
-   TimerTask task;
    int second;
    int minute;
    ChallengeModeModel cmm;
@@ -37,38 +37,15 @@ public class TimerController extends javax.swing.JPanel {
       second = cmm.getMinRequiredTime() % 60;
       minute = cmm.getMinRequiredTime() / 60;
       remainingTime.setText(minute + ":" + second);
-      timer = new java.util.Timer();
-      task = new TimerTask() {
-         @Override
-         public void run() {
-            if (cmm.isGameOver()) {
-               timer.cancel();
-            } 
-            else {
-               remainingTime.setText(minute + ":" + second);
-               second--;
-               if (second < 0) {
-                  second = 59;
-                  minute--;
-               }
-               if (minute < 0) {
-                  timer.cancel();
-                  cmm.setGameOver(true);
-                  cmm.update();
-               }
-               cmm.increaseUsedTime();
-            }
-         }
-      };
-      //timer.scheduleAtFixedRate(task, 0, 1000);
+      timer = new javax.swing.Timer(1000, new TimerListener());
    }
 
    public void stopTimer() {
-      timer.cancel();
+      timer.stop();
    }
 
    public void startTimer() {
-      timer.scheduleAtFixedRate(task, 0, 1000);
+      timer.start();
    }
 
    /**
@@ -98,6 +75,31 @@ public class TimerController extends javax.swing.JPanel {
       jLabel1.setBounds(0, 0, 128, 50);
    }// </editor-fold>//GEN-END:initComponents
 
+   //inner class
+   public class TimerListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (cmm.isGameOver()) {
+               timer.stop();
+            } 
+            else {
+               remainingTime.setText(minute + ":" + second);
+               second--;
+               if (second < 0) {
+                  second = 59;
+                  minute--;
+               }
+               if (minute < 0) {
+                  timer.stop();
+                  cmm.setGameOver(true);
+                  cmm.update();
+               }
+               cmm.increaseUsedTime();
+            }
+        }
+       
+   }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel jLabel1;

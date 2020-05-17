@@ -176,6 +176,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    public int getEfficiency() {
        return cmm.getEfficiency();
    }
+   
+   public void stopTimer() {
+       timer.stopTimer();
+   }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel background;

@@ -76,9 +76,10 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    public void setEfficiencyStars(JLabel stars, int efficiency) {
        if(efficiency == 3)
            stars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/Three_Stars.png")));
-       else if(efficiency == 2) 
+       else if(efficiency == 2 && stars.getIcon() == new ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/Three_Stars.png"))) 
            stars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/Two_Stars.png")));
-       else if(efficiency == 1)
+       else if(efficiency == 1 && stars.getIcon() == new ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/Three_Stars.png"))
+               && stars.getIcon() == new ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/Two_Stars.png")))
            stars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/One_Star.png")));
    }
 
