@@ -212,6 +212,11 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** We added and updated the ChallengeLevels class. We tried to create a more efficient code by forming a loop for adding each levelButton actionPerformed() methods in the MenuScreen class. Therefore, we created a LevelButton class by sub-classing JButton. We added a levelNo property to this class so that each levelButton will be special to the specific level. We created an algorithm for enabling level buttons only when the previous level completed successfully in the returnButtonActionPerformed() method.
 
 
+### Meeting ~ (16.05.2020, 10.5 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:** 
 
 
 
