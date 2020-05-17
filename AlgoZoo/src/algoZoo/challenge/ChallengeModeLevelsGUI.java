@@ -254,4 +254,5 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    private javax.swing.JLabel stars8;
    private javax.swing.JLabel stars9;
    // End of variables declaration//GEN-END:variables
+
 }
