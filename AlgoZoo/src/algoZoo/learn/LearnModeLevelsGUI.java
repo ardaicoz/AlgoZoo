@@ -146,6 +146,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton2.setBorder(null);
       jButton2.setContentAreaFilled(false);
       jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton2);
       jButton2.setBounds(455, 350, 95, 95);
 
@@ -153,6 +154,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton3.setBorder(null);
       jButton3.setContentAreaFilled(false);
       jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton3.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton3);
       jButton3.setBounds(655, 350, 95, 95);
 
@@ -160,6 +162,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton4.setBorder(null);
       jButton4.setContentAreaFilled(false);
       jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton4.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton4);
       jButton4.setBounds(855, 350, 95, 95);
 
@@ -167,6 +170,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton5.setBorder(null);
       jButton5.setContentAreaFilled(false);
       jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton5.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton5);
       jButton5.setBounds(1055, 350, 95, 95);
 
@@ -174,6 +178,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton6.setBorder(null);
       jButton6.setContentAreaFilled(false);
       jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton6.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton6);
       jButton6.setBounds(255, 550, 95, 95);
 
@@ -181,6 +186,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton7.setBorder(null);
       jButton7.setContentAreaFilled(false);
       jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton7.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton7);
       jButton7.setBounds(455, 550, 95, 95);
 
@@ -188,6 +194,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton8.setBorder(null);
       jButton8.setContentAreaFilled(false);
       jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton8.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton8);
       jButton8.setBounds(655, 550, 95, 95);
 
@@ -195,6 +202,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton9.setBorder(null);
       jButton9.setContentAreaFilled(false);
       jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton9.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton9);
       jButton9.setBounds(855, 550, 95, 95);
 
@@ -202,6 +210,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       jButton10.setBorder(null);
       jButton10.setContentAreaFilled(false);
       jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      jButton10.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/Lock.png"))); // NOI18N
       add(jButton10);
       jButton10.setBounds(1055, 550, 95, 95);
 
