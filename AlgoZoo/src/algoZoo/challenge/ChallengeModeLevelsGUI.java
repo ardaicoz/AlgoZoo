@@ -64,10 +64,6 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
       buttons.add(levelEight);
       buttons.add(levelNine);
       buttons.add(levelTen);
-      //set the unplayed levels' buttons disabled
-      for ( int i = 1; i < buttons.size(); i++) {
-         buttons.get(i).setEnabled(false);
-      }
    }
 
    /**

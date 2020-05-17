@@ -143,7 +143,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Inıtializes new level by getting information from the currentLevel property
+    * Initializes new level by getting information from the currentLevel property
     */
    public void initNewLevel() {
       cmm.setStartX(currentLevel.getStartX());
@@ -171,6 +171,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       cmm.initNewGame();
       timer.resetTimer();
       selectionController.resetSelectionController();
+      playButton.setEnabled(true);
    }
 
    /**
