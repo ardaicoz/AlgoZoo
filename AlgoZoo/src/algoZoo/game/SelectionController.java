@@ -44,6 +44,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       rightButton = new javax.swing.JButton();
       leftButton = new javax.swing.JButton();
       resetButton = new javax.swing.JButton();
+      jButton1 = new javax.swing.JButton();
 
       setOpaque(false);
 
@@ -90,6 +91,15 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
          }
       });
 
+      jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png"))); // NOI18N
+      jButton1.setBorder(null);
+      jButton1.setContentAreaFilled(false);
+      jButton1.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton1ActionPerformed(evt);
+         }
+      });
+
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
       this.setLayout(layout);
       layout.setHorizontalGroup(
@@ -101,7 +111,10 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
                .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(leftButton)
                .addComponent(downButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(upButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(upButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addGroup(layout.createSequentialGroup()
+                  .addComponent(jButton1)
+                  .addGap(12, 12, 12)))
             .addContainerGap(74, Short.MAX_VALUE))
       );
       layout.setVerticalGroup(
@@ -115,9 +128,11 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             .addComponent(downButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
             .addComponent(leftButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(34, 34, 34)
-            .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(118, Short.MAX_VALUE))
+            .addGap(36, 36, 36)
+            .addComponent(jButton1)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+            .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(22, 22, 22))
       );
    }// </editor-fold>//GEN-END:initComponents
 
@@ -205,6 +220,16 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
        }
     }//GEN-LAST:event_resetButtonActionPerformed
 
+   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      azm.addMovementPattern('f');
+      if ( azm instanceof ChallengeModeModel) {
+          ((ChallengeModeModel)azm).increaseNoOfMovements();
+       }
+       else {
+          ((LearnModeModel)azm).increaseNoOfMovements();
+       }
+   }//GEN-LAST:event_jButton1ActionPerformed
+
   
    /**
     * Resets the panel for a new game
@@ -237,6 +262,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JButton downButton;
+   private javax.swing.JButton jButton1;
    private javax.swing.JButton leftButton;
    private javax.swing.JButton resetButton;
    private javax.swing.JButton rightButton;
