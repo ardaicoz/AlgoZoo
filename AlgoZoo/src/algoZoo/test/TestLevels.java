@@ -11,8 +11,9 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
- *
+ * It creates level objects for the test mode
  * @author Kerem
+ * @version 1.0
  */
 public class TestLevels {
    // properties
@@ -119,15 +120,29 @@ public class TestLevels {
    public ArrayList<Character> getList3() {
       return list3;
    }
-
+   
+    /**
+    * Get method for the level number
+    *
+    * @return the level number
+    */
    public int getLevel() {
       return level;
    }
-
+   
+    /**
+    * Get method for the flowers in the level
+    *
+    * @return ArrayList of all flowers in the level
+    */
    public ArrayList<Flower> getFlowers() {
       return flowers;
    }
-
+ 
+   /**
+    * Set method for the flowers in the level
+    * @param flowers to be set as flowers of the level
+    */
    public void setFlowers(ArrayList<Flower> flowers) {
       this.flowers = (ArrayList<Flower>) flowers.clone();
    }
