@@ -122,7 +122,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
 
         repeat.setBackground(new java.awt.Color(0, 0, 0));
         repeat.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18)); // NOI18N
-        repeat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        repeat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
         repeat.setOpaque(false);
 
         javax.swing.GroupLayout forViewLayout = new javax.swing.GroupLayout(forView);
@@ -193,6 +193,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       buttons.add(rightButton);
       buttons.add(upButton);
       buttons.add(resetButton);
+      buttons.add(jButton1);
    }
 
    /**
@@ -321,6 +322,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     private void forButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forButtonActionPerformed
         if(forButton.isSelected()) {
             forPattern.clear();
+            forView.updateView(azm);
         }
         else {
             for(int i = 0; i < Integer.parseInt((String)repeat.getSelectedItem()); i++) {
@@ -339,6 +341,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       for (JButton b : buttons) {
          b.setEnabled(true);
       }
+      forButton.setEnabled(true);
       forButton.setSelected(false);
       forPattern.clear();
       forView.updateView(azm);
@@ -351,10 +354,12 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     */
     @Override
     public void updateView(AlgoZooModel azm) {
-        if(azm.isGameOver())
+        if(azm.isGameOver()) {
             for (JButton b : buttons) {
-         b.setEnabled(false);
-      }
+                b.setEnabled(false);
+            }
+            forButton.setEnabled(false);
+        }
     }
 
     /**
@@ -364,6 +369,14 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     public ArrayList<JButton> getButtons() {
       return buttons;
    }
+    
+    /**
+     * Returns forButton
+     * @return forButton
+     */
+    public javax.swing.JToggleButton getForButton() {
+        return forButton;
+    }
     
     /**
      * Returns forView class

@@ -45,6 +45,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     private void initComponents() {
 
         playButton = new javax.swing.JButton();
+        retryButton = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setLayout(null);
@@ -61,6 +62,15 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
         add(playButton);
         playButton.setBounds(1005, 335, 80, 70);
 
+        retryButton.setText("RETRY");
+        retryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retryButtonActionPerformed(evt);
+            }
+        });
+        add(retryButton);
+        retryButton.setBounds(0, 0, 83, 29);
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
         add(background);
         background.setBounds(0, 0, 1400, 800);
@@ -71,8 +81,17 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       for (JButton b : selectionController.getButtons()) {
          b.setEnabled(false);
       }
+      selectionController.getForButton().setEnabled(false);
       playButton.setEnabled(false); //disables all the buttons so that level cannot be played again
+      if ( cmm.getMovementPattern().isEmpty()) {
+          mapView.endMessage();
+      }
    }//GEN-LAST:event_playButtonActionPerformed
+
+    private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
+        initNewGame();
+        initNewLevel();
+    }//GEN-LAST:event_retryButtonActionPerformed
 
    /**
     * Method for initializing custom made components
@@ -175,6 +194,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     */
    public void initNewGame() {
       cmm.initNewGame();
+      mapView.resetMap();
       timer.resetTimer();
       selectionController.resetSelectionController();
       playButton.setEnabled(true);
@@ -218,5 +238,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JButton playButton;
+    private javax.swing.JButton retryButton;
     // End of variables declaration//GEN-END:variables
 }

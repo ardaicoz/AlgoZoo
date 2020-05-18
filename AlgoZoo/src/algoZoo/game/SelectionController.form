@@ -181,7 +181,6 @@
             <StringItem index="4" value="5"/>
           </StringArray>
         </Property>
-        <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
