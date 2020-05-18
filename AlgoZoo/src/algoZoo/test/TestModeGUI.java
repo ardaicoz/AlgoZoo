@@ -41,7 +41,7 @@ public class TestModeGUI extends javax.swing.JPanel {
    private void initMyComponents() {
       initLevels();
       currentLevel = levelContainer.get(0);
-      tmm = new TestModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY());
+      tmm = new TestModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY(), currentLevel.getFlowers());
       options = new TestSelectionButtonsController(tmm, currentLevel.getList1(), currentLevel.getList2(), currentLevel.getList3());
       map = new MapView(tmm);
       add(map);
@@ -124,17 +124,12 @@ public class TestModeGUI extends javax.swing.JPanel {
       options.setList3(currentLevel.getList3());
    }
 
-   /**
-    * Get method to get current level.
-    *
-    * @return
-    */
-   public int getLevel() {
-      return currentLevel.getLevel();
-   }
-
    public void setAnimal(Animal animal) {
       tmm.setAnimal(animal);
+   }
+   
+   public int getLevel(){
+      return currentLevel.getLevel();
    }
      
     /**

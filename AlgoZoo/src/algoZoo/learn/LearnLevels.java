@@ -6,6 +6,8 @@
 package algoZoo.learn;
 
 import algoZoo.game.Animal;
+import algoZoo.game.Flower;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -17,22 +19,30 @@ import javax.swing.ImageIcon;
 public class LearnLevels {
 
    // properties
+   final int TILE_WIDTH = 64;
+   final int TILE_HEIGHT = 64;
+   final int SPACE_WIDTH= 8;
+   final int SPACE_HEIGHT = 12;
    int startX;
    int startY;
    int finishX;
-   int finishY;
-   ImageIcon mapBackground;
+   int finishY;  
    int level;
+   ImageIcon mapBackground;  
+   ArrayList<Flower> flowers;
 
    // constructor    
    public LearnLevels(int startX, int startY, int finishX, int finishY, ImageIcon mapBackground, int level) {
-      this.startX = startX;
-      this.startY = startY;
-      this.finishX = finishX;
-      this.finishY = finishY;
-      this.mapBackground = mapBackground;
+      this.startX = (TILE_WIDTH * (startX - 1)) + SPACE_WIDTH;
+      this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;
+      this.finishX = (TILE_WIDTH * (finishX - 1)) + SPACE_WIDTH;
+      this.finishY = (TILE_HEIGHT * (finishY - 1)) + SPACE_HEIGHT;
+      this.mapBackground = mapBackground;  
       this.level = level;
+      flowers = new ArrayList<>();
    }
+
+   
 
    // methods
    /*
@@ -57,8 +67,18 @@ public class LearnLevels {
    public int getFinishY() {
       return finishY;
    }
-
+   
    public int getLevel() {
       return level;
+   }  
+   
+   public ArrayList<Flower> getFlowers() {
+      return flowers;
+   } 
+
+   public void setFlowers(ArrayList<Flower> flowers) {
+      this.flowers = (ArrayList<Flower>)flowers.clone();
    }
+   
+   
 }

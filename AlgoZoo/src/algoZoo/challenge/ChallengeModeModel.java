@@ -6,6 +6,7 @@
 package algoZoo.challenge;
 
 import algoZoo.game.*;
+import java.util.ArrayList;
 
 /**
  * This is a model class for challenge mode
@@ -21,8 +22,8 @@ public class ChallengeModeModel extends AlgoZooModel {
    int usedTime;
 
    // constructors
-   public ChallengeModeModel(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime) {
-      super(startX, startY, finishX, finishY);
+   public ChallengeModeModel(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ArrayList<Flower> flowers) {
+      super(startX, startY, finishX, finishY, flowers);
       this.minRequiredMovements = minRequiredMovements;
       this.minRequiredTime = minRequiredTime;
       noOfMovements = 0;

@@ -7,6 +7,7 @@ package algoZoo.learn;
 
 import algoZoo.game.Animal;
 import algoZoo.game.CodeView;
+import algoZoo.game.Flower;
 import algoZoo.game.MapView;
 import algoZoo.game.SelectionController;
 import java.util.ArrayList;
@@ -27,10 +28,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    SelectionController selectionController;
    LearnLevels currentLevel;
    ArrayList<LearnLevels> levelContainer;
-   final int TILE_WIDTH = 64;
-   final int TILE_HEIGHT = 64;
-   final int SPACE_WIDTH= 8;
-   final int SPACE_HEIGHT = 12;
+   
 
    // constructor
    /**
@@ -88,7 +86,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
       initLevels();
       currentLevel = levelContainer.get(0);
-      lmm = new LearnModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY());
+      lmm = new LearnModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY(), currentLevel.getFlowers());
 
       mapView = new MapView(lmm);
       codeView = new CodeView();
@@ -117,16 +115,32 @@ public class LearnModeGUI extends javax.swing.JPanel {
     * Initialize each level of the Learn Mode.
     */
    public void initLevels() {
-      LearnLevels level1 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, (TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")),1);
-      LearnLevels level2 = new LearnLevels((TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, (TILE_WIDTH * 4) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")),2);
-      LearnLevels level3 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 6) + SPACE_HEIGHT, (TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")),3);
-      LearnLevels level4 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 6) + SPACE_WIDTH, (TILE_HEIGHT * 3) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")),4);
-      LearnLevels level5 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 8) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")),5);
-      LearnLevels level6 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 7) + SPACE_WIDTH, (TILE_HEIGHT * 6) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")),6);
-      LearnLevels level7 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 8) + SPACE_WIDTH, (TILE_HEIGHT * 3) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")),7);
-      LearnLevels level8 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 7) + SPACE_WIDTH, (TILE_HEIGHT * 5) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")),8);
-      LearnLevels level9 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 7) + SPACE_WIDTH, (TILE_HEIGHT * 7) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")),9);
-      LearnLevels level10 = new LearnLevels((TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 4) + SPACE_HEIGHT, (TILE_WIDTH * 3) + SPACE_WIDTH, (TILE_HEIGHT * 7) + SPACE_HEIGHT, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")),10);
+      LearnLevels level1 = new LearnLevels(4, 6, 7, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")), 1);
+      LearnLevels level2 = new LearnLevels(7, 6, 5, 5, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")), 2);
+      LearnLevels level3 = new LearnLevels(4, 7, 7, 5, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")), 3);
+      LearnLevels level4 = new LearnLevels(4, 5, 7, 4, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")), 4);
+      LearnLevels level5 = new LearnLevels(4, 5, 4, 9, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")), 5);
+      LearnLevels level6 = new LearnLevels(4, 5, 8, 7, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")), 6);
+      LearnLevels level7 = new LearnLevels(4, 5, 9, 4, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")), 7);
+      LearnLevels level8 = new LearnLevels(4, 5, 8, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")), 8);
+      LearnLevels level9 = new LearnLevels(4, 5, 8, 8, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")), 9);
+      LearnLevels level10 = new LearnLevels(4, 5, 4, 8, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")), 10);
+      
+      // Set flowers
+      ArrayList<Flower> flowerContainer = new ArrayList<>();
+      level1.setFlowers(flowerContainer);
+      
+      
+      level2.setFlowers(flowerContainer);
+      
+      flowerContainer.add(new Flower(6, 7));
+      level3.setFlowers(flowerContainer);
+      
+             
+      
+      
+      
+      
 
       levelContainer = new ArrayList<>();
       levelContainer.add(level1);
@@ -159,6 +173,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
       lmm.setStartY(currentLevel.getStartY());
       lmm.setFinishX(currentLevel.getFinishX());
       lmm.setFinishY(currentLevel.getFinishY());
+      lmm.setFlowers(currentLevel.getFlowers());
       lmm.setNoOfMovements(0);
       mapView.getMapBackground().setIcon(currentLevel.getMapBackground());
    }
@@ -188,14 +203,15 @@ public class LearnModeGUI extends javax.swing.JPanel {
    public LearnModeModel getModel() {
       return lmm;
    }
+   
+   public int getLevel() {
+      return currentLevel.getLevel();
+   }
 
    /**
     *
     * @return
     */
-   public int getLevel() {
-      return currentLevel.getLevel();
-   }
    
    public void setAnimal(Animal animal) {
        lmm.setAnimal(animal);

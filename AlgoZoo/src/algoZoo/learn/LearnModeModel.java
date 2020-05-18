@@ -6,6 +6,7 @@
 package algoZoo.learn;
 
 import algoZoo.game.*;
+import java.util.ArrayList;
 
 /**
  * This is a model class for learn mode
@@ -17,9 +18,10 @@ public class LearnModeModel extends AlgoZooModel {
    int noOfMovements;
 
    // constructors
-   public LearnModeModel(int startX, int startY, int finishX, int finishY) {
-      super(startX, startY, finishX, finishY);
+   public LearnModeModel(int startX, int startY, int finishX, int finishY, ArrayList<Flower> flowers) {
+      super(startX, startY, finishX, finishY, flowers);
       noOfMovements = 0;
+      
    }
 
    // methods
@@ -40,6 +42,8 @@ public class LearnModeModel extends AlgoZooModel {
    public void setNoOfMovements(int noOfMovements) {
       this.noOfMovements = noOfMovements;
    }
+   
+   
 
    /**
     * Increases the number of movements in every movement made.
