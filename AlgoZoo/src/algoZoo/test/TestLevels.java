@@ -11,12 +11,17 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
- *
+ * It creates level objects for the test mode
  * @author Kerem
+ * @version 1.0
  */
 public class TestLevels {
    // properties
-
+   
+   final int TILE_WIDTH = 64;
+   final int TILE_HEIGHT = 64;
+   final int SPACE_WIDTH = 8;
+   final int SPACE_HEIGHT = 12;
    int startX;
    int startY;
    int finishX;
@@ -30,10 +35,10 @@ public class TestLevels {
 
    // constructor    
    public TestLevels(int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground, int level) {
-      this.startX = startX;
-      this.startY = startY;
-      this.finishX = finishX;
-      this.finishY = finishY;
+      this.startX = (TILE_WIDTH * (startX - 1)) + SPACE_WIDTH;
+      this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;
+      this.finishX = (TILE_WIDTH * (finishX - 1)) + SPACE_WIDTH;
+      this.finishY = (TILE_HEIGHT * (finishY - 1)) + SPACE_HEIGHT;
       this.mapBackground = mapBackground;
       this.list1 = list1;
       this.list2 = list2;
@@ -115,16 +120,30 @@ public class TestLevels {
    public ArrayList<Character> getList3() {
       return list3;
    }
-
+   
+    /**
+    * Get method for the level number
+    *
+    * @return the level number
+    */
    public int getLevel() {
       return level;
    }
-
+   
+    /**
+    * Get method for the flowers in the level
+    *
+    * @return ArrayList of all flowers in the level
+    */
    public ArrayList<Flower> getFlowers() {
       return flowers;
    }
-
+ 
+   /**
+    * Set method for the flowers in the level
+    * @param flowers to be set as flowers of the level
+    */
    public void setFlowers(ArrayList<Flower> flowers) {
-      this.flowers = flowers;
+      this.flowers = (ArrayList<Flower>) flowers.clone();
    }
 }

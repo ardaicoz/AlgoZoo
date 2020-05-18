@@ -8,8 +8,9 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- *
+ * It creates the levels screen of the test  mode
  * @author Ayberk
+ * @version 1.0
  */
 public class TestModeLevelsGUI extends javax.swing.JPanel {
     //properties

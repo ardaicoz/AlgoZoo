@@ -9,8 +9,9 @@ import algoZoo.game.*;
 import java.util.ArrayList;
 
 /**
- *
- * @author Doğa ,Esra, Kerem
+ * This is a model class for the test mode
+ * @author Doğa ,Esra, Kerem,
+ * @version 1.0
  */
 public class TestModeModel extends AlgoZooModel{
     //properties
@@ -22,7 +23,7 @@ public class TestModeModel extends AlgoZooModel{
     
     //methods
     /**
-     * A method to initialise current level.
+     * A method to initialize current level.
      */
     @Override
     public void initNewGame() {
