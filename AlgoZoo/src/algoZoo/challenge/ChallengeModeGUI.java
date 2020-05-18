@@ -104,6 +104,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       cmm.addView(mapView);
       cmm.addView(codeView);
       cmm.addView(selectionController);
+      cmm.addView(selectionController.getForView());
    }
 
    /**

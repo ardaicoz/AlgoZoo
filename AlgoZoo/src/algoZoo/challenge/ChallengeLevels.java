@@ -16,14 +16,14 @@ import javax.swing.ImageIcon;
  */
 public class ChallengeLevels {
    // properties
-   int       startX;
-   int       startY;
-   int       finishX;
-   int       finishY;
-   int       minRequiredMovements;
-   int       minRequiredTime; 
-   int level;
-   ImageIcon mapBackground;
+   int               startX;
+   int               startY;
+   int               finishX;
+   int               finishY;
+   int               minRequiredMovements;
+   int               minRequiredTime; 
+   int               level;
+   ImageIcon         mapBackground;
    ArrayList<Flower> flowers;
 
    // constructor    

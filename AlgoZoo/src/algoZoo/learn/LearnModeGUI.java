@@ -105,6 +105,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
       // initialize game
       lmm.addView(mapView);
       lmm.addView(codeView);
+      lmm.addView(selectionController.getForView());
 
       if (lmm.hasWon()) {
          System.out.println("won");
