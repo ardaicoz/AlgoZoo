@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 
 /**
  * This class is for basic functional structure of the game
- * @author Esra, Doğa, Alp
+ * @author Esra, Doğa, Alp, Ayberk, Görkem
  * @version 1.0
  */
 public class AlgoZooModel extends AlgoZoo {
@@ -19,10 +19,11 @@ public class AlgoZooModel extends AlgoZoo {
    boolean                        gameOver;
    boolean                        hasWon;
    public ArrayList<IAlgoZooView> views;
+   
 
    //constructors
-   public AlgoZooModel(int startX, int startY, int finishX, int finishY) {
-      super(startX, startY, finishX, finishY);
+   public AlgoZooModel(int startX, int startY, int finishX, int finishY, ArrayList<Flower> flowers) {
+      super(startX, startY, finishX, finishY, flowers);
       //initialize all properties
       views = new ArrayList<IAlgoZooView>();
       gameOver = false;
@@ -137,13 +138,31 @@ public class AlgoZooModel extends AlgoZoo {
          else if ( movementPattern.get(i).equals('a')) { goLeft(); }
          else if ( movementPattern.get(i).equals('s')) { goDown(); }
          else if ( movementPattern.get(i).equals('d')) { goRight(); }
+         else if ( movementPattern.get(i).equals('f')) {
+            for( int j = 0; j < flowers.size(); j++) {
+               if( flowers.get(j).getX() == this.getCurrentX() && flowers.get(j).getY() == this.getCurrentY()) {
+                  flowers.get(j).setPollenGathered(true);                 
+               }               
+            }
+         }
       }
       gameOver = true;
-      if (getCurrentX() == getFinishX() && getCurrentY() == getFinishY()) {
+      if (getCurrentX() == getFinishX() && getCurrentY() == getFinishY() && allPollensGathered()) {
+        //System.out.println("HasWon");         
          hasWon = true;
       }
    }
 
+   public boolean allPollensGathered() {
+      boolean allGathered = true;      
+      for( int i = 0; i < flowers.size(); i++) {        
+         if( flowers.get(i).getPollenGathered() == false) {
+            allGathered = false;
+         }             
+      }      
+      return allGathered;                                       
+   }
+   
    /**
     * checks if the game is over
     * @return true if the game is over, otherwise false

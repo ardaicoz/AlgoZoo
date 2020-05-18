@@ -9,7 +9,7 @@ import java.util.*;
 import javax.swing.*;
 /**
  *
- * @author User
+ * @author Ayberk, Arda, Kerem
  */
 public class TestSelectionButtonsController extends javax.swing.JPanel {
 

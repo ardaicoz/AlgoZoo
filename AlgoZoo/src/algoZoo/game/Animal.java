@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Esra, Doğa, Kerem, Arda
+ * @author Esra, Doğa, Kerem, Arda, Görkem
  */
 public class Animal {
    //properties

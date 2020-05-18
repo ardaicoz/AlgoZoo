@@ -81,7 +81,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       // initialize components  
       initLevels();
       currentLevel = levelContainer.get(0);
-      cmm = new ChallengeModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY(), currentLevel.getMinRequiredMovements(), currentLevel.getMinRequiredTime());
+      cmm = new ChallengeModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY(), currentLevel.getMinRequiredMovements(), currentLevel.getMinRequiredTime(), currentLevel.getFlowers());
       mapView = new MapView(cmm);
       codeView = new CodeView();
       selectionController = new SelectionController(cmm);
@@ -181,14 +181,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    public ChallengeModeModel getModel() {
       return cmm;
    }
-
-   /**
-    * Returns the level number of currentLevel property
-    * @return currentLevel.getLevel()
-    */
-   public int getLevel() {
-      return currentLevel.getLevel();
-   }
    
    /**
     * Sets the animal according to the parametre
@@ -204,6 +196,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     */
    public int getEfficiency() {
        return cmm.getEfficiency();
+   }
+   
+   public int getLevel() {
+      return currentLevel.getLevel();
    }
    
    /**

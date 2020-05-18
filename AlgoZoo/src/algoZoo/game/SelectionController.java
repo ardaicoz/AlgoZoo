@@ -12,7 +12,7 @@ import javax.swing.JButton;
 
 /**
  * This class is for creating the movement options the user can choose from
- * @author Doğa
+ * @author Doğa, Ayberk
  * @version 1.0
  */
 public class SelectionController extends javax.swing.JPanel implements IAlgoZooView {

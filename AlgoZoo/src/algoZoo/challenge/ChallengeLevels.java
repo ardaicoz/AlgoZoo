@@ -5,6 +5,8 @@
  */
 package algoZoo.challenge;
 
+import algoZoo.game.Flower;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -19,9 +21,10 @@ public class ChallengeLevels {
    int       finishX;
    int       finishY;
    int       minRequiredMovements;
-   int       minRequiredTime;
-   int       level;
+   int       minRequiredTime; 
+   int level;
    ImageIcon mapBackground;
+   ArrayList<Flower> flowers;
 
    // constructor    
    public ChallengeLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ImageIcon mapBackground, int level) {
@@ -32,7 +35,8 @@ public class ChallengeLevels {
       this.minRequiredMovements = minRequiredMovements;
       this.minRequiredTime = minRequiredTime;
       this.mapBackground = mapBackground;
-      this.level = level;
+      this.level = level;     
+      flowers = new ArrayList<>();
    }
 
    // methods
@@ -91,12 +95,17 @@ public class ChallengeLevels {
    public int getMinRequiredTime() {
       return minRequiredTime;
    }
-
-   /**
-    * returns the current level
-    * @return  level
-    */
+   
    public int getLevel() {
       return level;
+   }   
+   
+   public ArrayList<Flower> getFlowers() {
+      return flowers;
+   } 
+   
+
+   public void setFlowers(ArrayList<Flower> flowers) {
+      this.flowers = flowers;
    }
 }

@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 /**
  * This class focuses on keeping track of the current status of the game
- * @author Esra, Doğa, Alp
+ * @author Esra, Doğa, Alp, Ayberk, Görkem
  * @version 1.0
  */
 public class AlgoZoo {
@@ -22,10 +22,11 @@ public class AlgoZoo {
    int                  finishX;
    int                  finishY;
    Animal               animal;
+   ArrayList<Flower> flowers;
    ArrayList<Character> movementPattern;
 
    //constructors
-   public AlgoZoo(int startX, int startY, int finishX, int finishY) {
+   public AlgoZoo(int startX, int startY, int finishX, int finishY, ArrayList<Flower> flowers) {
        //initialize all properties
       movementPattern = new ArrayList<Character>();      
       animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
@@ -35,6 +36,7 @@ public class AlgoZoo {
       this.currentY = this.startY;
       this.finishX = finishX;
       this.finishY = finishY;
+      this.flowers = flowers;      
    }
    
    //methods
@@ -69,6 +71,15 @@ public class AlgoZoo {
    public void setFinishY(int finishY) {
       this.finishY = finishY;
    }
+
+   
+   public ArrayList<Flower> getFlowers() {
+      return flowers;
+   }
+   
+   public void setFlowers(ArrayList<Flower> flowers) {      
+      this.flowers = flowers;      
+   }    
    
    /**
     * sets the animal's location 64 pixels up

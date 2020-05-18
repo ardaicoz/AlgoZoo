@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
 
 /**
  *
- * @author User
+ * @author Ayberk, Kerem, Arda
  */
 public class InfoScreen extends javax.swing.JPanel {
 

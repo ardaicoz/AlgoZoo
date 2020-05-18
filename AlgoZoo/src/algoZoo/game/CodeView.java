@@ -125,6 +125,19 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                }
                updated++;
             }
+            else if (azm.getMovementPattern().get(i).equals('f')) {
+               jlabels.add(new JLabel());
+               add(jlabels.get(jlabels.size() - 1));
+               jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
+               if ( jlabels.size() >= 2) {
+                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 48, 60);
+               }
+               else {
+                  jlabels.get(jlabels.size() - 1).setBounds(50,20,48,60);
+               }
+               updated++;
+               
+            }
             
          }
       }
