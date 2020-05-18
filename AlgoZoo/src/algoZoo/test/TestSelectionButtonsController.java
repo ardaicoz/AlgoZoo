@@ -86,7 +86,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
              }      
              if(listA.get(i) == 'f'){
-             list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
              }   
          }
          for(int i = listA.size() ; i < 10; i++ ){
@@ -106,7 +106,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
              }      
              if(listB.get(i) == 'f'){
-             list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
              }   
          }
          for(int i = listB.size() ; i < 10; i++ ){
@@ -126,7 +126,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
              }    
              if(listC.get(i) == 'f'){
-             list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
              }   
          }
          for(int i = listC.size() ; i < 10; i++ ){

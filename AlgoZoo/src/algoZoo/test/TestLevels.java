@@ -16,7 +16,11 @@ import javax.swing.ImageIcon;
  */
 public class TestLevels {
    // properties
-
+   
+   final int TILE_WIDTH = 64;
+   final int TILE_HEIGHT = 64;
+   final int SPACE_WIDTH = 8;
+   final int SPACE_HEIGHT = 12;
    int startX;
    int startY;
    int finishX;
@@ -30,10 +34,10 @@ public class TestLevels {
 
    // constructor    
    public TestLevels(int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground, int level) {
-      this.startX = startX;
-      this.startY = startY;
-      this.finishX = finishX;
-      this.finishY = finishY;
+      this.startX = (TILE_WIDTH * (startX - 1)) + SPACE_WIDTH;
+      this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;
+      this.finishX = (TILE_WIDTH * (finishX - 1)) + SPACE_WIDTH;
+      this.finishY = (TILE_HEIGHT * (finishY - 1)) + SPACE_HEIGHT;
       this.mapBackground = mapBackground;
       this.list1 = list1;
       this.list2 = list2;
@@ -125,6 +129,6 @@ public class TestLevels {
    }
 
    public void setFlowers(ArrayList<Flower> flowers) {
-      this.flowers = flowers;
+      this.flowers = (ArrayList<Flower>) flowers.clone();
    }
 }
