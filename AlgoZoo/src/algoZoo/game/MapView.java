@@ -131,7 +131,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    
    public void endMessage() {
        animal.setVisible(false);
-       if (azm.hasWon()) {
+       if (azm.getCurrentX() == azm.getFinishX() && azm.getCurrentY() == azm.getFinishY() && azm.allPollensGathered()) {
            mapBackground.setIcon( new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Left.png")));
        }
        else {
