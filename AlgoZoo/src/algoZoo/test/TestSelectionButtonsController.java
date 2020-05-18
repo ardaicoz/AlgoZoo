@@ -317,10 +317,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
      * @param evt is the action, performed by the user
      */
     private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
-       
-        tmm.getMovementPattern().add('n');
-        tmm.getMovementPattern().add('n');
-        tmm.getMovementPattern().add('n');
+
         A.setEnabled(false);
         B.setEnabled(false);
         C.setEnabled(false);
@@ -336,9 +333,6 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
      */
     private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
 
-        tmm.getMovementPattern().add('n');
-        tmm.getMovementPattern().add('n');
-        tmm.getMovementPattern().add('n');
         A.setEnabled(false);
         B.setEnabled(false);
         C.setEnabled(false);
@@ -353,10 +347,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
      * @param evt is the action, performed by the user
      */
     private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
- 
-        tmm.getMovementPattern().add('n');
-        tmm.getMovementPattern().add('n');
-        tmm.getMovementPattern().add('n');
+
         A.setEnabled(false);
         B.setEnabled(false);
         C.setEnabled(false);

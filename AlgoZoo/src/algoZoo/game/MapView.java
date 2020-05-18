@@ -14,7 +14,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Ayberk, Görkem
+ * @author Ayberk, Görkem, Kerem
  */
 public class MapView extends javax.swing.JPanel implements IAlgoZooView {
 
@@ -111,7 +111,12 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    @Override
    public void updateView(AlgoZooModel azm) {
       animal.setIcon(azm.getAnimal().getIcon());
+      if (!azm.getMovementPattern().isEmpty()){
       timer.start();
+      }
+      else{
+            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT); 
+      }
    }
 
    public JLabel getMapBackground() {
@@ -153,7 +158,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
                      goRightView();
                   }
                }
-            } else {
+           } else {
                index = 0;
                counter = 0;
                timer.stop();
