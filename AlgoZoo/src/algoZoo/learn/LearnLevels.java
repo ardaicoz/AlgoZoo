@@ -5,7 +5,6 @@
  */
 package algoZoo.learn;
 
-import algoZoo.game.Animal;
 import algoZoo.game.Flower;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -21,14 +20,14 @@ public class LearnLevels {
    // properties
    final int TILE_WIDTH = 64;
    final int TILE_HEIGHT = 64;
-   final int SPACE_WIDTH= 8;
+   final int SPACE_WIDTH = 8;
    final int SPACE_HEIGHT = 12;
    int startX;
    int startY;
    int finishX;
-   int finishY;  
+   int finishY;
    int level;
-   ImageIcon mapBackground;  
+   ImageIcon mapBackground;
    ArrayList<Flower> flowers;
 
    // constructor    
@@ -37,48 +36,80 @@ public class LearnLevels {
       this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;
       this.finishX = (TILE_WIDTH * (finishX - 1)) + SPACE_WIDTH;
       this.finishY = (TILE_HEIGHT * (finishY - 1)) + SPACE_HEIGHT;
-      this.mapBackground = mapBackground;  
+      this.mapBackground = mapBackground;
       this.level = level;
       flowers = new ArrayList<>();
    }
 
-   
-
    // methods
-   /*
-   
-   */
-   public ImageIcon getMapBackground() {
-      return mapBackground;
-   }
-
+   /**
+    * returns the start X location of the animal in a particular level
+    *
+    * @return startX
+    */
    public int getStartX() {
       return startX;
    }
 
+   /**
+    * returns the start Y location of the animal in a particular level
+    *
+    * @return startY
+    */
    public int getStartY() {
       return startY;
    }
 
+   /**
+    * returns the final X location of the animal in a particular level
+    *
+    * @return finishX
+    */
    public int getFinishX() {
       return finishX;
    }
 
+   /**
+    * returns the final Y location of the animal in a particular level
+    *
+    * @return finishY
+    */
    public int getFinishY() {
       return finishY;
    }
-   
+
+   /**
+    * returns the specific background of level
+    *
+    * @return mapBackground
+    */
+   public ImageIcon getMapBackground() {
+      return mapBackground;
+   }
+
+   /**
+    * returns the level number
+    *
+    * @return level
+    */
    public int getLevel() {
       return level;
-   }  
-   
+   }
+
+   /**
+    * returns the ArrayList that contain Flower objects.
+    * @return flowers
+    */
    public ArrayList<Flower> getFlowers() {
       return flowers;
-   } 
-
-   public void setFlowers(ArrayList<Flower> flowers) {
-      this.flowers = (ArrayList<Flower>)flowers.clone();
    }
-   
-   
+
+   /**
+    * 
+    * @param flowers 
+    */
+   public void setFlowers(ArrayList<Flower> flowers) {
+      this.flowers = (ArrayList<Flower>) flowers.clone();
+   }
+
 }

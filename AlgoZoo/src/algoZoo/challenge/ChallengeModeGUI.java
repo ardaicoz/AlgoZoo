@@ -82,6 +82,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       initLevels();
       currentLevel = levelContainer.get(0);
       cmm = new ChallengeModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY(), currentLevel.getMinRequiredMovements(), currentLevel.getMinRequiredTime(), currentLevel.getFlowers());
+      
       mapView = new MapView(cmm);
       codeView = new CodeView();
       selectionController = new SelectionController(cmm);
@@ -111,17 +112,21 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     * Initialize all the levels for Challenge Mode with setting required properties
     */
    public void initLevels() {
-      ChallengeLevels level1 = new ChallengeLevels(8, 12, 72, 76, 2, 10, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")), 1);
-      ChallengeLevels level2 = new ChallengeLevels(136, 76, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")), 2);
-      ChallengeLevels level3 = new ChallengeLevels(8, 12, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")), 3);
-      ChallengeLevels level4 = new ChallengeLevels(8, 12, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")), 4);
-      ChallengeLevels level5 = new ChallengeLevels(8, 12, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")), 5);
-      ChallengeLevels level6 = new ChallengeLevels(8, 12, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")), 6);
-      ChallengeLevels level7 = new ChallengeLevels(8, 12, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")), 7);
-      ChallengeLevels level8 = new ChallengeLevels(8, 12, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")), 8);
-      ChallengeLevels level9 = new ChallengeLevels(8, 12, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")), 9);
-      ChallengeLevels level10 = new ChallengeLevels(8, 12, 72, 76, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")), 10);
+      ChallengeLevels level1 = new ChallengeLevels(6, 8, 3, 5, 2, 10, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level1.png")), 1);
+      ChallengeLevels level2 = new ChallengeLevels(6, 9, 5, 6, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level2.png")), 2);
+      ChallengeLevels level3 = new ChallengeLevels(4, 7, 6, 6, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level3.png")), 3);
+      ChallengeLevels level4 = new ChallengeLevels(6, 6, 8, 5, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level4.png")), 4);
+      ChallengeLevels level5 = new ChallengeLevels(2, 9, 8, 9, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level5.png")), 5);
+      ChallengeLevels level6 = new ChallengeLevels(4, 7, 8, 7, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level6.png")), 6);
+      ChallengeLevels level7 = new ChallengeLevels(8, 7, 2, 4, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level7.png")), 7);
+      ChallengeLevels level8 = new ChallengeLevels(4, 7, 4, 3, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level8.png")), 8);
+      ChallengeLevels level9 = new ChallengeLevels(5, 9, 7, 5, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level9.png")), 9);
+      ChallengeLevels level10 = new ChallengeLevels(1, 1, 2, 2, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level1.png")), 10);
 
+      // Set flowers
+      ArrayList<Flower> flowerContainer = new ArrayList<>();
+      //level1.setFlowers(flowerContainer); 
+      
       //add all the levels to an ArrayList
       levelContainer = new ArrayList<>();
       levelContainer.add(level1);
