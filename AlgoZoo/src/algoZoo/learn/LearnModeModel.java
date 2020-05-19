@@ -16,11 +16,13 @@ import java.util.ArrayList;
 public class LearnModeModel extends AlgoZooModel {
    // properties
    int noOfMovements;
+   int minRequiredMovements;
 
    // constructors
-   public LearnModeModel(int startX, int startY, int finishX, int finishY, ArrayList<Flower> flowers) {
+   public LearnModeModel(int startX, int startY, int finishX, int finishY, int minRequiredMovements, ArrayList<Flower> flowers) {
       super(startX, startY, finishX, finishY, flowers);
       noOfMovements = 0;
+      this.minRequiredMovements = minRequiredMovements;
       
    }
 
@@ -42,9 +44,15 @@ public class LearnModeModel extends AlgoZooModel {
    public void setNoOfMovements(int noOfMovements) {
       this.noOfMovements = noOfMovements;
    }
-   
-   
 
+   public int getMinRequiredMovements() {
+      return minRequiredMovements;
+   }
+
+   public void setMinRequiredMovements(int minRequiredMovements) {
+      this.minRequiredMovements = minRequiredMovements;
+   }
+   
    /**
     * Increases the number of movements in every movement made.
     */

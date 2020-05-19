@@ -27,17 +27,19 @@ public class LearnLevels implements Serializable{
    int startY;
    int finishX;
    int finishY;
+   int minRequiredMovements;
    int level;
    ImageIcon mapBackground;
    ArrayList<Flower> flowers;
    boolean accomplished;
 
-   // constructor    
-   public LearnLevels(int startX, int startY, int finishX, int finishY, ImageIcon mapBackground, int level, boolean accomplished) {
+   // constructor  
+   public LearnLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, ImageIcon mapBackground, int level, boolean accomplished) {
       this.startX = (TILE_WIDTH * (startX - 1)) + SPACE_WIDTH;
       this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;
       this.finishX = (TILE_WIDTH * (finishX - 1)) + SPACE_WIDTH;
       this.finishY = (TILE_HEIGHT * (finishY - 1)) + SPACE_HEIGHT;
+      this.minRequiredMovements = minRequiredMovements;
       this.mapBackground = mapBackground;
       this.level = level;
       this.accomplished = accomplished;
@@ -79,6 +81,14 @@ public class LearnLevels implements Serializable{
     */
    public int getFinishY() {
       return finishY;
+   }
+
+   public int getMinRequiredMovements() {
+      return minRequiredMovements;
+   }
+
+   public void setMinRequiredMovements(int minRequiredMovements) {
+      this.minRequiredMovements = minRequiredMovements;
    }
 
    /**

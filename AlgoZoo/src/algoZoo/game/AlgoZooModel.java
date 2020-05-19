@@ -96,8 +96,14 @@ public class AlgoZooModel extends AlgoZoo {
       if ( animal.getName().equals("Bee")){
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
       }
-      else if ( animal.getName().equals("Butterfly")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));               
+      else if ( animal.getName().equals("Bee2")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));               
+      }
+      else if ( animal.getName().equals("Bee3")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));               
+      }
+      else if ( animal.getName().equals("Bee4")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));               
       }
       
       currentX = startX;

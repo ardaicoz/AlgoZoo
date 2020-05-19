@@ -51,7 +51,7 @@ public class TestModeGUI extends javax.swing.JPanel {
       add(map);
       map.setBounds(50, 50, 640, 640);
       add(options);
-      options.setBounds(700, 0, 700, 800);
+      options.setBounds(700, 50, 700, 800);
       initNewLevel();
       tmm.addView(map);
       map.getMapBackground().setIcon(currentLevel.getMapBackground());
@@ -163,6 +163,10 @@ public class TestModeGUI extends javax.swing.JPanel {
    public int getLevel(){
       return currentLevel.getLevel();
    }
+   
+   public boolean isBeeMoving() {
+       return map.isBeeMoving();
+   }
      
     /**
      * This method is called from within the constructor to initialize the form.
@@ -195,8 +199,23 @@ public class TestModeGUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
-        initNewGame();
-        initNewLevel();
+      tmm.resetMovementPattern();
+      if ( tmm.getAnimal().getName().equals("Bee")){
+         tmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
+      }
+      else if ( tmm.getAnimal().getName().equals("Butterfly")){
+         tmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));               
+      }
+      tmm.setCurrentX(tmm.getStartX());
+      tmm.setCurrentY(tmm.getStartY());
+      tmm.setGameOver(false);
+      tmm.update();
+      map.resetMap();
+      options.resetSelectionController();
+      options.setList1(currentLevel.getList1());
+      options.setList2(currentLevel.getList2());
+      options.setList3(currentLevel.getList3());
+      initNewLevel();
     }//GEN-LAST:event_retryButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
