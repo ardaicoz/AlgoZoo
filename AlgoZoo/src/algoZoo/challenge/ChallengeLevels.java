@@ -133,8 +133,12 @@ public class ChallengeLevels implements Serializable{
       return flowers;
    }
 
+   /**
+    * 
+    * @param flowers 
+    */
    public void setFlowers(ArrayList<Flower> flowers) {
-      this.flowers = flowers;
+      this.flowers = (ArrayList<Flower>) flowers.clone();
    }
    
    public boolean isAccomplished() {
