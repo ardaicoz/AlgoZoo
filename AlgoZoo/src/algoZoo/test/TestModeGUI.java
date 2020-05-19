@@ -42,10 +42,8 @@ public class TestModeGUI extends javax.swing.JPanel {
     * Method to play sound when buttons clicked.
     * @param soundName 
     */
-   public void playSound() 
-   {
-        String filePath = "src/algoZoo/Sounds/sound2.wav";
-        
+   public void playSound(String filePath) 
+   {     
         try 
         {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
@@ -244,7 +242,7 @@ public class TestModeGUI extends javax.swing.JPanel {
         initNewLevel();
       }
       
-      playSound();
+      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_retryButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
