@@ -18,6 +18,7 @@ import java.io.Serializable;
  * @author gorke
  */
 public class SaveGame {
+
    public static final String fileName = "/LearnModeSave.sav";
    public static final String root = "/SaveFile";
 
@@ -52,8 +53,7 @@ public class SaveGame {
             // create an ObjectInputStream from the FileInputStream
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            //create the object itself from the stream
-            //Kontrol etmem gerek Sebebini anlamadım
+            //create the object itself from the stream            
             loadedObject = (LearnLevelsContainer) ois.readObject();
             ois.close();
          } catch (ClassNotFoundException | IOException e) {
@@ -113,5 +113,5 @@ public class SaveGame {
       // the isFile method rerturns true only if valid file is located in the directory folder specified.
       // It will not return true if the directory itself is named after the filename.
    }
-   
+
 }

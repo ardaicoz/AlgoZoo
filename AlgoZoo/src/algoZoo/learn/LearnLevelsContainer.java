@@ -14,14 +14,20 @@ import java.util.ArrayList;
  */
 public class LearnLevelsContainer implements Serializable {
    // properties
-   ArrayList<LearnLevels> levelContainer = new ArrayList<>();
+   ArrayList<LearnLevels> levelContainer;
    
-   public LearnLevelsContainer(ArrayList<LearnLevels> levelContainer){
-      this.levelContainer = levelContainer;   
+   public LearnLevelsContainer(){
+      levelContainer = new ArrayList<>();
    }
 
+   public void add(LearnLevels level){
+      levelContainer.add(level);
+   }
    public ArrayList<LearnLevels> getLevelContainer() {
       return levelContainer;
+   }
+   public LearnLevels get(int number){
+      return levelContainer.get(number);
    }
    
    

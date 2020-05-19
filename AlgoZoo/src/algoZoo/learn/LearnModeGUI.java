@@ -26,8 +26,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    CodeView codeView;
    LearnModeModel lmm;
    SelectionController selectionController;
-   LearnLevels currentLevel;
-   ArrayList<LearnLevels> levelContainer;
+   LearnLevels currentLevel;  
    LearnLevelsContainer  learnLevelsContainer;
    
 
@@ -122,7 +121,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
       // initialize components  
 
       initLevels();
-      currentLevel = levelContainer.get(0);
+      currentLevel = learnLevelsContainer.get(0);
       lmm = new LearnModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY(), currentLevel.getMinRequiredMovements(), currentLevel.getFlowers());
 
       mapView = new MapView(lmm);
@@ -156,43 +155,71 @@ public class LearnModeGUI extends javax.swing.JPanel {
       LearnLevels level1 = new LearnLevels(4, 6, 7, 6, 3, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")), 1, true);
       LearnLevels level2 = new LearnLevels(7, 6, 5, 5, 3, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")), 2, false);
       LearnLevels level3 = new LearnLevels(4, 7, 7, 5, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")), 3, false);
-      LearnLevels level4 = new LearnLevels(4, 5, 7, 4, 1, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")), 4, false);
-      LearnLevels level5 = new LearnLevels(4, 5, 4, 9, 1, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")), 5,false);
-      LearnLevels level6 = new LearnLevels(4, 5, 8, 7, 1, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")), 6, false);
-      LearnLevels level7 = new LearnLevels(4, 5, 9, 4, 1, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")), 7, false);
-      LearnLevels level8 = new LearnLevels(4, 5, 8, 6, 1, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")), 8, false);
-      LearnLevels level9 = new LearnLevels(4, 5, 8, 8, 1, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")), 9, false);
-      LearnLevels level10 = new LearnLevels(4, 5, 4, 8, 1, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")), 10, false);
+      LearnLevels level4 = new LearnLevels(4, 5, 7, 4, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")), 4, false);
+      LearnLevels level5 = new LearnLevels(7, 7, 4, 9, 7, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")), 5,false);
+      LearnLevels level6 = new LearnLevels(4, 7, 8, 7, 7, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")), 6, false);
+      LearnLevels level7 = new LearnLevels(7, 8, 8, 7, 11, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")), 7, false);
+      LearnLevels level8 = new LearnLevels(5, 7, 8, 6, 10, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")), 8, false);
+      LearnLevels level9 = new LearnLevels(4, 8, 8, 8, 11, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")), 9, false);
+      LearnLevels level10 = new LearnLevels(8, 5, 4, 8, 11, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")), 10, false);
 
       
-      // Set flowers
+      // Set flowers according to LearnMode Levels
       ArrayList<Flower> flowerContainer = new ArrayList<>();
-      level1.setFlowers(flowerContainer);
-      
-      
+      //Level1
+      level1.setFlowers(flowerContainer);      
+      //Level2
       level2.setFlowers(flowerContainer);
-      
+      //Level3
       flowerContainer.add(new Flower(6, 7));
-      level3.setFlowers(flowerContainer);     
-      
-      
-      
+      level3.setFlowers(flowerContainer);   
+      //Level4
+      flowerContainer.add(new Flower(6,5));
+      flowerContainer.add(new Flower(6, 5));
+      level4.setFlowers(flowerContainer);
+      //Level5
+      flowerContainer.add(new Flower(6, 8));
+      flowerContainer.add(new Flower(5, 9));
+      level5.setFlowers(flowerContainer);
+      //Level6
+      flowerContainer.add(new Flower(5, 7));
+      flowerContainer.add(new Flower(6, 7));      
+      level6.setFlowers(flowerContainer);
+      //Level7
+      flowerContainer.add(new Flower(8, 5));
+      flowerContainer.add(new Flower(7, 6));
+      flowerContainer.add(new Flower(6, 7));
+      level7.setFlowers(flowerContainer);      
+      //Level8
+      flowerContainer.add(new Flower(6, 8));
+      flowerContainer.add(new Flower(7, 8));
+      level8.setFlowers(flowerContainer);
+      //Level9
+      flowerContainer.add(new Flower(5, 7));
+      flowerContainer.add(new Flower(6, 8));
+      flowerContainer.add(new Flower(7, 9));
+      level9.setFlowers(flowerContainer);
+      //Level10      
+      flowerContainer.add(new Flower(7, 6));
+      flowerContainer.add(new Flower(8, 6));
+      flowerContainer.add(new Flower(6, 8));
+      flowerContainer.add(new Flower(5, 8));
+      level10.setFlowers(flowerContainer);    
       
 
-      levelContainer = new ArrayList<>();
-      levelContainer.add(level1);
-      levelContainer.add(level2);
-      levelContainer.add(level3);
-      levelContainer.add(level4);
-      levelContainer.add(level5);
-      levelContainer.add(level6);
-      levelContainer.add(level7);
-      levelContainer.add(level8);
-      levelContainer.add(level9);
-      levelContainer.add(level10);
+      learnLevelsContainer = new LearnLevelsContainer();     
+      learnLevelsContainer.add(level1);
+      learnLevelsContainer.add(level2);
+      learnLevelsContainer.add(level3);
+      learnLevelsContainer.add(level4);
+      learnLevelsContainer.add(level5);
+      learnLevelsContainer.add(level6);
+      learnLevelsContainer.add(level7);
+      learnLevelsContainer.add(level8);
+      learnLevelsContainer.add(level9);
+      learnLevelsContainer.add(level10);      
       
-      learnLevelsContainer = new LearnLevelsContainer(levelContainer);
-      SaveGame.save(learnLevelsContainer);
+      //SaveGame.save(learnLevelsContainer);
       
       
 
@@ -218,12 +245,12 @@ public class LearnModeGUI extends javax.swing.JPanel {
     * @param level level number.
     */
    public void setCurrentLevel(int level) {
-      currentLevel = levelContainer.get(level - 1);
+      currentLevel = learnLevelsContainer.get(level - 1);
       initNewLevel();
    }
    
    public void saveLearnLevel(int level) {
-      levelContainer.get(level - 1).setAccomplished(true);
+      learnLevelsContainer.get(level - 1).setAccomplished(true);
       SaveGame.save(learnLevelsContainer);        
    }
 
