@@ -50,10 +50,8 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     * Method to play sound when buttons clicked.
     * @param soundName 
     */
-   public void playSound() 
-   {
-        String filePath = "src/algoZoo/Sounds/sound2.wav";
-        
+   public void playSound(String filePath) 
+   {     
         try 
         {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
@@ -353,7 +351,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         }
         tmm.play();
         
-        playSound();
+        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_BActionPerformed
 
     /**
@@ -370,7 +368,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         }
         tmm.play();
         
-        playSound();
+        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_AActionPerformed
 
     /**
@@ -387,7 +385,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         }
         tmm.play();
         
-        playSound();
+        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_CActionPerformed
 
    private void AMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AMouseEntered

@@ -50,10 +50,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     * Method to play sound when buttons clicked.
     * @param soundName 
     */
-   public void playSound() 
-   {
-        String filePath = "src/algoZoo/Sounds/sound2.wav";
-        
+   public void playSound(String filePath) 
+   {     
         try 
         {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
@@ -223,7 +221,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
           }
        }
        
-       playSound();
+       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_upButtonActionPerformed
 
    /**
@@ -245,7 +243,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
           }
        }
        
-       playSound();
+       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_downButtonActionPerformed
 
    /**
@@ -267,7 +265,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
           }
       }
       
-      playSound();
+      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_rightButtonActionPerformed
 
    /**
@@ -289,7 +287,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
           }
       }
       
-      playSound();
+      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_leftButtonActionPerformed
 
    /**
@@ -318,7 +316,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             }
        }
        
-       playSound();
+       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_resetButtonActionPerformed
 
    private void flowerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flowerButtonActionPerformed
@@ -336,7 +334,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
           }
       }
       
-      playSound();
+      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
    }//GEN-LAST:event_flowerButtonActionPerformed
 
     private void forButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forButtonActionPerformed
@@ -350,7 +348,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             forView.updateView(azm);
         }
         
-        playSound();
+        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_forButtonActionPerformed
 
   

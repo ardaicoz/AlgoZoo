@@ -43,22 +43,23 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    //methods
    /**
     * Method to play sound when buttons clicked.
-    *
-    * @param soundName
+    * @param soundName 
     */
-   public void playSound() {
-      String filePath = "src/algoZoo/Sounds/sound2.wav";
-
-      try {
-         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath));
-         Clip clip = AudioSystem.getClip();
-         clip.open(audioInputStream);
-         clip.start();
-      } catch (Exception ex) {
-         System.out.println("Error with playing sound.");
-         ex.printStackTrace();
-      }
-   }
+   public void playSound(String filePath) 
+   {     
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }  
 
    /**
     * This method is called from within the constructor to initialize the form.
@@ -116,7 +117,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
          mapView.endMessage();
       }
 
-      playSound();
+      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
    }//GEN-LAST:event_playButtonActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
@@ -144,7 +145,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
           timer.startTimer();
        }
 
-       playSound();
+       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_retryButtonActionPerformed
 
    /**
