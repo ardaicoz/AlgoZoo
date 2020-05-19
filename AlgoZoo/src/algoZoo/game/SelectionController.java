@@ -301,16 +301,14 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    }//GEN-LAST:event_flowerButtonActionPerformed
 
     private void forButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forButtonActionPerformed
-        if(forButton.isSelected()) {
-            forPattern.clear();
-            forView.updateView(azm);
-        }
-        else {
+        if(!forButton.isSelected()) {
             for(int i = 0; i < Integer.parseInt((String)repeat.getSelectedItem()); i++) {
                 for(int j = 0; j < forPattern.size(); j++) {
                     azm.addMovementPattern(forPattern.get(j));
                 }
             }
+            forPattern.clear();
+            forView.updateView(azm);
         }
     }//GEN-LAST:event_forButtonActionPerformed
 

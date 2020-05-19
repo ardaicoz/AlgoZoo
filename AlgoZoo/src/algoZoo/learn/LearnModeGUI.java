@@ -97,20 +97,23 @@ public class LearnModeGUI extends javax.swing.JPanel {
    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
-        lmm.resetMovementPattern();
-      if ( lmm.getAnimal().getName().equals("Bee")){
-         lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
-      }
-      else if ( lmm.getAnimal().getName().equals("Butterfly")){
-         lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));               
-      }
-      lmm.setCurrentX(lmm.getStartX());
-      lmm.setCurrentY(lmm.getStartY());
-      lmm.setGameOver(false);
-      lmm.update();
-      mapView.resetMap();
-      selectionController.resetSelectionController();
-      initNewLevel();
+        if(isBeeMoving()) { }
+        else {
+            lmm.resetMovementPattern();
+            if ( lmm.getAnimal().getName().equals("Bee")){
+                lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
+            }
+            else if ( lmm.getAnimal().getName().equals("Butterfly")){
+                lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));               
+            }
+            lmm.setCurrentX(lmm.getStartX());
+            lmm.setCurrentY(lmm.getStartY());
+            lmm.setGameOver(false);
+            lmm.update();
+            mapView.resetMap();
+            selectionController.resetSelectionController();
+            initNewLevel();
+        }
     }//GEN-LAST:event_retryButtonActionPerformed
 
    // methods

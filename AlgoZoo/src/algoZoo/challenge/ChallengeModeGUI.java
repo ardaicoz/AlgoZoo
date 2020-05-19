@@ -89,22 +89,26 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }//GEN-LAST:event_playButtonActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
-     cmm.resetMovementPattern();
-     if ( cmm.getAnimal().getName().equals("Bee")){
-        cmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
-      }
-     else if ( cmm.getAnimal().getName().equals("Butterfly")){
-         cmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));               
-      }
-      cmm.setCurrentX(cmm.getStartX());
-      cmm.setCurrentY(cmm.getStartY());
-      cmm.setGameOver(false);
-      cmm.update();
-      mapView.resetMap();
-      timer.resetTimer();
-      selectionController.resetSelectionController();
-      playButton.setEnabled(true);
-      initNewLevel();
+     if(isBeeMoving()) { }
+     else {
+         cmm.resetMovementPattern();
+         if ( cmm.getAnimal().getName().equals("Bee")){
+            cmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
+          }
+         else if ( cmm.getAnimal().getName().equals("Butterfly")){
+             cmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));               
+         }
+         cmm.setCurrentX(cmm.getStartX());
+         cmm.setCurrentY(cmm.getStartY());
+         cmm.setGameOver(false);
+         cmm.update();
+         mapView.resetMap();
+         timer.resetTimer();
+         selectionController.resetSelectionController();
+         playButton.setEnabled(true);
+         initNewLevel();
+         timer.startTimer();
+     }
     }//GEN-LAST:event_retryButtonActionPerformed
 
    /**
