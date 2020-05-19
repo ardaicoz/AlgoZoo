@@ -51,7 +51,7 @@ public class TestModeGUI extends javax.swing.JPanel {
       add(map);
       map.setBounds(50, 50, 640, 640);
       add(options);
-      options.setBounds(700, 0, 700, 800);
+      options.setBounds(700, 50, 700, 800);
       initNewLevel();
       tmm.addView(map);
       map.getMapBackground().setIcon(currentLevel.getMapBackground());
@@ -162,6 +162,10 @@ public class TestModeGUI extends javax.swing.JPanel {
     */
    public int getLevel(){
       return currentLevel.getLevel();
+   }
+   
+   public boolean isBeeMoving() {
+       return map.isBeeMoving();
    }
      
     /**

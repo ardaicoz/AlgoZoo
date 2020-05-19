@@ -154,6 +154,10 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
        animal.setVisible(true);
    }
    
+   public boolean isBeeMoving() {
+       return timer.isRunning();
+   }
+   
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
