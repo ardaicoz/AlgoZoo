@@ -251,7 +251,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    
    public void saveLearnLevel(int level) {
       learnLevelsContainer.get(level - 1).setAccomplished(true);
-      SaveGame.save(learnLevelsContainer);        
+      LearnLevelsSave.save(learnLevelsContainer);        
    }
 
    /**

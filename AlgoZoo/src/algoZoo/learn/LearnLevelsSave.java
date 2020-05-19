@@ -17,7 +17,7 @@ import java.io.Serializable;
  *
  * @author gorke
  */
-public class SaveGame {
+public class LearnLevelsSave {
 
    public static final String fileName = "/LearnModeSave.sav";
    public static final String root = "/SaveFile";

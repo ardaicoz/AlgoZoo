@@ -23,8 +23,8 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    TimerController            timer;
    ChallengeLevels            currentLevel;
    ChallengeModeModel         cmm; 
-   SelectionController        selectionController;
-   ArrayList<ChallengeLevels> levelContainer;
+   SelectionController        selectionController;  
+   ChallengeLevelsContainer  challengeLevelsContainer;
 
    /**
     * Creates new form ChallengeModeGUI
@@ -113,7 +113,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    private void initMyComponents() {
       // initialize components  
       initLevels();
-      currentLevel = levelContainer.get(0);
+      currentLevel = challengeLevelsContainer.get(0);
       cmm = new ChallengeModeModel(currentLevel.getStartX(), currentLevel.getStartY(), currentLevel.getFinishX(), currentLevel.getFinishY(), currentLevel.getMinRequiredMovements(), currentLevel.getMinRequiredTime(), currentLevel.getFlowers());
       
       mapView = new MapView(cmm);
@@ -145,33 +145,34 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     * Initialize all the levels for Challenge Mode with setting required properties
     */
    public void initLevels() {
-      ChallengeLevels level1 = new ChallengeLevels(6, 8, 3, 5, 2, 10, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level1.png")), 1);
-      ChallengeLevels level2 = new ChallengeLevels(6, 9, 5, 6, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level2.png")), 2);
-      ChallengeLevels level3 = new ChallengeLevels(4, 7, 6, 6, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level3.png")), 3);
-      ChallengeLevels level4 = new ChallengeLevels(6, 6, 8, 5, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level4.png")), 4);
-      ChallengeLevels level5 = new ChallengeLevels(2, 9, 8, 9, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level5.png")), 5);
-      ChallengeLevels level6 = new ChallengeLevels(4, 7, 8, 7, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level6.png")), 6);
-      ChallengeLevels level7 = new ChallengeLevels(8, 7, 2, 4, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level7.png")), 7);
-      ChallengeLevels level8 = new ChallengeLevels(4, 7, 4, 3, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level8.png")), 8);
-      ChallengeLevels level9 = new ChallengeLevels(5, 9, 7, 5, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level9.png")), 9);
-      ChallengeLevels level10 = new ChallengeLevels(1, 1, 2, 2, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level1.png")), 10);
+      ChallengeLevels level1 = new ChallengeLevels(6, 8, 3, 5, 2, 10, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level1.png")), 1, true);
+      ChallengeLevels level2 = new ChallengeLevels(6, 9, 5, 6, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level2.png")), 2, false);
+      ChallengeLevels level3 = new ChallengeLevels(4, 7, 6, 6, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level3.png")), 3, false);
+      ChallengeLevels level4 = new ChallengeLevels(6, 6, 8, 5, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level4.png")), 4, false);
+      ChallengeLevels level5 = new ChallengeLevels(2, 9, 8, 9, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level5.png")), 5, false);
+      ChallengeLevels level6 = new ChallengeLevels(4, 7, 8, 7, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level6.png")), 6, false);
+      ChallengeLevels level7 = new ChallengeLevels(8, 7, 2, 4, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level7.png")), 7, false);
+      ChallengeLevels level8 = new ChallengeLevels(4, 7, 4, 3, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level8.png")), 8, false);
+      ChallengeLevels level9 = new ChallengeLevels(5, 9, 7, 5, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level9.png")), 9, false);
+      ChallengeLevels level10 = new ChallengeLevels(1, 1, 2, 2, 10, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level1.png")), 10, false);
 
       // Set flowers
       ArrayList<Flower> flowerContainer = new ArrayList<>();
       //level1.setFlowers(flowerContainer); 
       
       //add all the levels to an ArrayList
-      levelContainer = new ArrayList<>();
-      levelContainer.add(level1);
-      levelContainer.add(level2);
-      levelContainer.add(level3);
-      levelContainer.add(level4);
-      levelContainer.add(level5);
-      levelContainer.add(level6);
-      levelContainer.add(level7);
-      levelContainer.add(level8);
-      levelContainer.add(level9);
-      levelContainer.add(level10);
+      challengeLevelsContainer = new ChallengeLevelsContainer();
+      challengeLevelsContainer.add(level1);
+      challengeLevelsContainer.add(level2);
+      challengeLevelsContainer.add(level3);
+      challengeLevelsContainer.add(level4);
+      challengeLevelsContainer.add(level5);
+      challengeLevelsContainer.add(level6);
+      challengeLevelsContainer.add(level7);
+      challengeLevelsContainer.add(level8);
+      challengeLevelsContainer.add(level9);
+      challengeLevelsContainer.add(level10);
+      ChallengeLevelsSave.save(challengeLevelsContainer);
    }
 
    /**
@@ -199,7 +200,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     * @param level level number.
     */
    public void setCurrentLevel(int level) {
-      currentLevel = levelContainer.get(level - 1);
+      currentLevel = challengeLevelsContainer.get(level - 1);
       initNewLevel();
    }
 
