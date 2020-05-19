@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package algoZoo.test;
-import algoZoo.game.Animal;
 import java.util.*;
 import javax.swing.*;
+
 /**
- *
+ * This is the selection controller class for the test mode
  * @author Ayberk, Arda, Kerem
+ * @version 1.0
  */
+
 public class TestSelectionButtonsController extends javax.swing.JPanel {
 
     //properties
@@ -20,7 +22,10 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     private ArrayList<Character> listC;
 
     //constructors
+
     public TestSelectionButtonsController(TestModeModel tmm, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3) {
+        
+        //initializes all the components of the test mode selections
         this.tmm = tmm;
         tmm.initNewGame();
         listA = list1;
@@ -31,8 +36,9 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     }
     
      //methods
+    
     /**
-     * A method to initialise all JLabels.
+     * A method to initialize all JLabels according to movement patterns.
      */
      public void labelInitialize()
      {
@@ -72,6 +78,8 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
          list3.add(jLabel28);
          list3.add(jLabel29);
          list3.add(jLabel30);
+         
+         //changes the labels below option A
          for(int i = 0; i < listA.size(); i++ ){
              if(listA.get(i) == 'w'){
              list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Up_Button.png")));
@@ -86,12 +94,14 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
              }      
              if(listA.get(i) == 'f'){
-             list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             list1.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
              }   
          }
          for(int i = listA.size() ; i < 10; i++ ){
              list1.get(i).setIcon(null);
          }
+         
+         //changes the labels below option B
          for(int i = 0; i < listB.size(); i++ ){
              if(listB.get(i) == 'w'){
              list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Up_Button.png")));
@@ -106,12 +116,14 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
              }      
              if(listB.get(i) == 'f'){
-             list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             list2.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
              }   
          }
          for(int i = listB.size() ; i < 10; i++ ){
              list2.get(i).setIcon(null);
          }
+         
+         //changes the labels below option C
          for(int i = 0; i < listC.size(); i++ ){
              if(listC.get(i) == 'w'){
              list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Up_Button.png")));
@@ -126,7 +138,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
              list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
              }    
              if(listC.get(i) == 'f'){
-             list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+             list3.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
              }   
          }
          for(int i = listC.size() ; i < 10; i++ ){
@@ -380,16 +392,32 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
    private void CMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CMouseExited
       C.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/C_Button.png")));
    }//GEN-LAST:event_CMouseExited
-     public void setList1(ArrayList<Character> list1){
+   
+   /**
+    * set method for the pattern below the option A
+    *
+    * @param list1 list to be set as the pattern below option A
+    */
+   public void setList1(ArrayList<Character> list1){
         listA = list1;
         labelInitialize();
     }
     
+   /**
+    * set method for the pattern below the option B
+    *
+    * @param list2 list to be set as the pattern below option B
+    */
     public void setList2(ArrayList<Character> list2){
         listB = list2;
         labelInitialize();
     }
     
+    /**
+    * set method for the pattern below the option C
+    *
+    * @param list3 list to be set as the pattern below option C
+    */
     public void setList3(ArrayList<Character> list3){
         listC = list3;
         labelInitialize();

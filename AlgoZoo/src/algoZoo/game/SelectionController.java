@@ -171,6 +171,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       forView.setBounds(60, 397, 80, 340);
    }// </editor-fold>//GEN-END:initComponents
 
+
    /**
     * Adds the movement buttons to the selection panel
     */
@@ -180,6 +181,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       buttons.add(rightButton);
       buttons.add(upButton);
       buttons.add(resetButton);
+      buttons.add(jButton1);
    }
 
    /**
@@ -308,6 +310,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     private void forButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forButtonActionPerformed
         if(forButton.isSelected()) {
             forPattern.clear();
+            forView.updateView(azm);
         }
         else {
             for(int i = 0; i < Integer.parseInt((String)repeat.getSelectedItem()); i++) {
@@ -326,6 +329,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       for (JButton b : buttons) {
          b.setEnabled(true);
       }
+      forButton.setEnabled(true);
       forButton.setSelected(false);
       forPattern.clear();
       forView.updateView(azm);
@@ -338,10 +342,12 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     */
     @Override
     public void updateView(AlgoZooModel azm) {
-        if(azm.isGameOver())
+        if(azm.isGameOver()) {
             for (JButton b : buttons) {
-         b.setEnabled(false);
-      }
+                b.setEnabled(false);
+            }
+            forButton.setEnabled(false);
+        }
     }
 
     /**
@@ -351,6 +357,14 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     public ArrayList<JButton> getButtons() {
       return buttons;
    }
+    
+    /**
+     * Returns forButton
+     * @return forButton
+     */
+    public javax.swing.JToggleButton getForButton() {
+        return forButton;
+    }
     
     /**
      * Returns forView class
