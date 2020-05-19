@@ -230,9 +230,22 @@ Below is a record of our project group meetings. This page will be submitted tog
 
 ### Meeting ~ (18.05.2020, 4 hours)
 
+**Present:** Kerem, Arda
+
+**Discussion:**  We discussed how to create an end game panel indicating the result. We implemented the major changes about the level and GUI classes. We changed the TestLevels and TestModeGUI classes in order to make it more effective. We examined how to add flowers to the TestModeSelectionController, and completed related changes in this class. We thought about the final patterns of the test mode levels and changed the level constructors in TestModeGUI class accordingly.
+
+
+### Meeting ~ (18.05.2020, 4 hours)
+
 **Present:** Ayberk, Görkem
 
 **Discussion:**  Minor changes to maps were made.  Some researchs on this subject has been done and tried. However, we failed. Some bugs in the code have been fixed. Researchs on how to add sound to the buttons in the game was done. Button sizes were adjusted. The CodeView class has been rewritten according to the changes.
 
 **ToDo:** Save-load üzerine çalışılacak araştırma yapılacak. Programın daha hızlı çalışması için yapılması gerekenler araştırılacak. Tespit edilen hatalar düzeltilecek.
 
+
+### Meeting ~ (19.05.2020, 3 hours)
+
+**Present:** Kerem, Arda
+
+**Discussion:**  Some last changes about TestModeSelectionController class are thought and tried to adjust the locations of the direction icons in the middle of the options. We discussed this process and made some necessary changes accordingly.
