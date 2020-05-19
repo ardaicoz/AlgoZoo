@@ -132,7 +132,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       add(selectionController);
       selectionController.setBounds(1200, 0, 200, 800);
       add(timer);
-      timer.setBounds(306, 720, 150, 70);
+      timer.setBounds(306, 720, 128, 50);
 
       // add required views 
       cmm.addView(mapView);

@@ -5,6 +5,8 @@
  */
 package algoZoo.game;
 
+import algoZoo.challenge.ChallengeModeModel;
+import algoZoo.learn.LearnModeModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.*;
@@ -17,10 +19,12 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
    // properties
    ArrayList<JLabel> jlabels;
    int updated;
+   JLabel movementsView;
    
    // constructor
    public CodeView() {
       initComponents();
+      initMovementsView();
       jlabels = new ArrayList<>();
       updated = 0;
    }
@@ -38,42 +42,46 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
       setOpaque(false);
       setLayout(null);
    }// </editor-fold>//GEN-END:initComponents
-
+   
+   public void initMovementsView() {
+      movementsView = new JLabel();
+      movementsView.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+      movementsView.setForeground(new java.awt.Color(231, 231, 231));
+      movementsView.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+      movementsView.setMaximumSize(new java.awt.Dimension(50, 15));
+      movementsView.setMinimumSize(new java.awt.Dimension(50, 15));
+      movementsView.setPreferredSize(new java.awt.Dimension(50, 15));
+      add(movementsView);
+      movementsView.setBounds(160, 0, 40, 20);
+   }
+   
    @Override
    /**
     * 
     */
    public void updateView(AlgoZooModel azm) {
-      /*
-      Iterator itr = azm.getMovementPattern().iterator();
-
-      while (itr.hasNext()) {
-         if ((char) itr.next() == 'w') {
-            jlabels.add(new JLabel());
-            //jlabels.get(jlabels.size() - 1).setIcon(icon);
-            //jlabels.get(jlabels.size() - 1).setBounds(x,y,100,50);
-         } 
-         else if ((char) itr.next() == 'a') {
-            jlabels.add(new JLabel());
-            //jlabels.get(jlabels.size() - 1).setIcon(icon);
-            //jlabels.get(jlabels.size() - 1).setBounds(x,y,100,50);
-         } 
-         else if ((char) itr.next() == 's') {
-            jlabels.add(new JLabel());
-            //jlabels.get(jlabels.size() - 1).setIcon(icon);
-            //jlabels.get(jlabels.size() - 1).setBounds(x,y,100,50);
-         } 
-         else if ((char) itr.next() == 'd') {
-            jlabels.add(new JLabel());
-            //jlabels.get(jlabels.size() - 1).setIcon(icon);
-            //jlabels.get(jlabels.size() - 1).setBounds(x,y,100,50);
+      if ( azm instanceof ChallengeModeModel) {
+         if ( ((ChallengeModeModel) azm).getMinRequiredMovements() < azm.getMovementPattern().size()) {
+            movementsView.setForeground(new java.awt.Color(177, 0, 0));
          }
-      }*/
+         
+         movementsView.setText(azm.getMovementPattern().size() + "/" + ((ChallengeModeModel) azm).getMinRequiredMovements());
+      }
+      else if ( azm instanceof LearnModeModel) {
+         if ( ((LearnModeModel) azm).getMinRequiredMovements() < azm.getMovementPattern().size()) {
+            movementsView.setForeground(new java.awt.Color(177, 0, 0));
+         }
+         
+         movementsView.setText(azm.getMovementPattern().size() + "/" + ((LearnModeModel) azm).getMinRequiredMovements());
+      }
       if ( azm.getMovementPattern().isEmpty()) {
+         for ( int i = 0; i < jlabels.size(); i++) {
+            this.remove(jlabels.get(i));
+         }
          jlabels.removeAll(jlabels);
-         this.removeAll();
          this.repaint();
          updated = 0;
+         movementsView.setForeground(new java.awt.Color(231, 231, 231));
       }
       else {
          for ( int i = updated; i < azm.getMovementPattern().size(); i++) {
