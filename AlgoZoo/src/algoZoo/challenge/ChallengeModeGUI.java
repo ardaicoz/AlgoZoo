@@ -6,7 +6,11 @@
 package algoZoo.challenge;
 
 import algoZoo.game.*;
+import java.io.File;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -34,6 +38,29 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       initMyComponents();
       initComponents();
    }
+   
+   //methods
+   /**
+    * Method to play sound when buttons clicked.
+    * @param soundName 
+    */
+   public void playSound() 
+   {
+        String filePath = "src/algoZoo/Sounds/sound2.wav";
+        
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }  
 
    /**
     * This method is called from within the constructor to initialize the form.
@@ -86,6 +113,8 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       if ( cmm.getMovementPattern().isEmpty()) {
           mapView.endMessage();
       }
+      
+      playSound();
    }//GEN-LAST:event_playButtonActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
@@ -109,6 +138,8 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
          initNewLevel();
          timer.startTimer();
      }
+     
+     playSound();
     }//GEN-LAST:event_retryButtonActionPerformed
 
    /**

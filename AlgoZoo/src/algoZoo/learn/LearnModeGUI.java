@@ -10,7 +10,11 @@ import algoZoo.game.CodeView;
 import algoZoo.game.Flower;
 import algoZoo.game.MapView;
 import algoZoo.game.SelectionController;
+import java.io.File;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -37,7 +41,30 @@ public class LearnModeGUI extends javax.swing.JPanel {
       initMyComponents();
       initComponents();
    }
-
+   
+   //methods
+   /**
+    * Method to play sound when buttons clicked.
+    * @param soundName 
+    */
+   public void playSound() 
+   {
+        String filePath = "src/algoZoo/Sounds/sound2.wav";
+        
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }
+   
    /**
     * This method is called from within the constructor to initialize the form.
     * WARNING: Do NOT modify this code. The content of this method is always
@@ -92,7 +119,8 @@ public class LearnModeGUI extends javax.swing.JPanel {
       if (lmm.hasWon()) {
          saveLearnLevel(currentLevel.getLevel());
       }
-
+    
+      playSound();
    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
@@ -119,6 +147,8 @@ public class LearnModeGUI extends javax.swing.JPanel {
             selectionController.resetSelectionController();
             initNewLevel();
         }
+        
+        playSound();
     }//GEN-LAST:event_retryButtonActionPerformed
 
    // methods

@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package algoZoo.test;
+import java.io.File;
 import java.util.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 /**
@@ -36,6 +40,27 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     }
     
      //methods
+    /**
+    * Method to play sound when buttons clicked.
+    * @param soundName 
+    */
+   public void playSound() 
+   {
+        String filePath = "src/algoZoo/Sounds/sound2.wav";
+        
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }  
     
     /**
      * A method to initialize all JLabels according to movement patterns.
@@ -337,6 +362,8 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
            tmm.addMovementPattern(i); 
         }
         tmm.play();
+        
+        playSound();
     }//GEN-LAST:event_BActionPerformed
 
     /**
@@ -352,6 +379,8 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
            tmm.addMovementPattern(i); 
         }
         tmm.play();
+        
+        playSound();
     }//GEN-LAST:event_AActionPerformed
 
     /**
@@ -366,7 +395,9 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         for(char i: listC){
            tmm.addMovementPattern(i); 
         }
-        tmm.play(); 
+        tmm.play();
+        
+        playSound();
     }//GEN-LAST:event_CActionPerformed
 
    private void AMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AMouseEntered

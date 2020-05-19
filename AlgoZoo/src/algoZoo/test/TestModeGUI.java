@@ -6,7 +6,11 @@
 package algoZoo.test;
 
 import algoZoo.game.*;
+import java.io.File;
 import java.util.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 /**
@@ -34,6 +38,27 @@ public class TestModeGUI extends javax.swing.JPanel {
    }
    
    //methods
+   /**
+    * Method to play sound when buttons clicked.
+    * @param soundName 
+    */
+   public void playSound() 
+   {
+        String filePath = "src/algoZoo/Sounds/sound2.wav";
+        
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }  
    
    /**
     * A method to initialize all components of the GUI.
@@ -219,6 +244,8 @@ public class TestModeGUI extends javax.swing.JPanel {
         options.setList3(currentLevel.getList3());
         initNewLevel();
       }
+      
+      playSound();
     }//GEN-LAST:event_retryButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
