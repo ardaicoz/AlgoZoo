@@ -26,9 +26,8 @@ public class LearnModeGUI extends javax.swing.JPanel {
    CodeView codeView;
    LearnModeModel lmm;
    SelectionController selectionController;
-   LearnLevels currentLevel;  
-   LearnLevelsContainer  learnLevelsContainer;
-   
+   LearnLevels currentLevel;
+   LearnLevelsContainer learnLevelsContainer;
 
    // constructor
    /**
@@ -87,30 +86,36 @@ public class LearnModeGUI extends javax.swing.JPanel {
          b.setEnabled(false);
       }
       selectionController.getForButton().setEnabled(false);
-      if ( lmm.getMovementPattern().isEmpty()) {
-          mapView.endMessage();
+      if (lmm.getMovementPattern().isEmpty()) {
+         mapView.endMessage();
       }
-      if ( lmm.hasWon()) {
+      if (lmm.hasWon()) {
          saveLearnLevel(currentLevel.getLevel() + 1);
       }
-      
+
    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
-        lmm.resetMovementPattern();
-      if ( lmm.getAnimal().getName().equals("Bee")){
-         lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
-      }
-      else if ( lmm.getAnimal().getName().equals("Butterfly")){
-         lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));               
-      }
-      lmm.setCurrentX(lmm.getStartX());
-      lmm.setCurrentY(lmm.getStartY());
-      lmm.setGameOver(false);
-      lmm.update();
-      mapView.resetMap();
-      selectionController.resetSelectionController();
-      initNewLevel();
+       lmm.resetMovementPattern();
+       if (lmm.getAnimal().getName().equals("Bee")) {
+          lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
+       } 
+       else if (lmm.getAnimal().getName().equals("Bee2")) {
+          lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
+       }
+       else if (lmm.getAnimal().getName().equals("Bee3")) {
+          lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
+       }
+       else if (lmm.getAnimal().getName().equals("Bee4")) {
+          lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
+       }
+       lmm.setCurrentX(lmm.getStartX());
+       lmm.setCurrentY(lmm.getStartY());
+       lmm.setGameOver(false);
+       lmm.update();
+       mapView.resetMap();
+       selectionController.resetSelectionController();
+       initNewLevel();
     }//GEN-LAST:event_retryButtonActionPerformed
 
    // methods
@@ -156,25 +161,24 @@ public class LearnModeGUI extends javax.swing.JPanel {
       LearnLevels level2 = new LearnLevels(7, 6, 5, 5, 3, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")), 2, false);
       LearnLevels level3 = new LearnLevels(4, 7, 7, 5, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")), 3, false);
       LearnLevels level4 = new LearnLevels(4, 5, 7, 4, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")), 4, false);
-      LearnLevels level5 = new LearnLevels(7, 7, 4, 9, 7, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")), 5,false);
+      LearnLevels level5 = new LearnLevels(7, 7, 4, 9, 7, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")), 5, false);
       LearnLevels level6 = new LearnLevels(4, 7, 8, 7, 7, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")), 6, false);
       LearnLevels level7 = new LearnLevels(7, 8, 8, 7, 11, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")), 7, false);
       LearnLevels level8 = new LearnLevels(5, 7, 8, 6, 10, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")), 8, false);
       LearnLevels level9 = new LearnLevels(4, 8, 8, 8, 11, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")), 9, false);
       LearnLevels level10 = new LearnLevels(8, 5, 4, 8, 11, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")), 10, false);
 
-      
       // Set flowers according to LearnMode Levels
       ArrayList<Flower> flowerContainer = new ArrayList<>();
       //Level1
-      level1.setFlowers(flowerContainer);      
+      level1.setFlowers(flowerContainer);
       //Level2
       level2.setFlowers(flowerContainer);
       //Level3
       flowerContainer.add(new Flower(6, 7));
-      level3.setFlowers(flowerContainer);   
+      level3.setFlowers(flowerContainer);
       //Level4
-      flowerContainer.add(new Flower(6,5));
+      flowerContainer.add(new Flower(6, 5));
       flowerContainer.add(new Flower(6, 5));
       level4.setFlowers(flowerContainer);
       //Level5
@@ -183,13 +187,13 @@ public class LearnModeGUI extends javax.swing.JPanel {
       level5.setFlowers(flowerContainer);
       //Level6
       flowerContainer.add(new Flower(5, 7));
-      flowerContainer.add(new Flower(6, 7));      
+      flowerContainer.add(new Flower(6, 7));
       level6.setFlowers(flowerContainer);
       //Level7
       flowerContainer.add(new Flower(8, 5));
       flowerContainer.add(new Flower(7, 6));
       flowerContainer.add(new Flower(6, 7));
-      level7.setFlowers(flowerContainer);      
+      level7.setFlowers(flowerContainer);
       //Level8
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(7, 8));
@@ -204,10 +208,9 @@ public class LearnModeGUI extends javax.swing.JPanel {
       flowerContainer.add(new Flower(8, 6));
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(5, 8));
-      level10.setFlowers(flowerContainer);    
-      
+      level10.setFlowers(flowerContainer);
 
-      learnLevelsContainer = new LearnLevelsContainer();     
+      learnLevelsContainer = new LearnLevelsContainer();
       learnLevelsContainer.add(level1);
       learnLevelsContainer.add(level2);
       learnLevelsContainer.add(level3);
@@ -217,12 +220,9 @@ public class LearnModeGUI extends javax.swing.JPanel {
       learnLevelsContainer.add(level7);
       learnLevelsContainer.add(level8);
       learnLevelsContainer.add(level9);
-      learnLevelsContainer.add(level10);      
-      
-      //SaveGame.save(learnLevelsContainer);
-      
-      
+      learnLevelsContainer.add(level10);
 
+      //SaveGame.save(learnLevelsContainer);
    }
 
    /**
@@ -248,16 +248,16 @@ public class LearnModeGUI extends javax.swing.JPanel {
       currentLevel = learnLevelsContainer.get(level - 1);
       initNewLevel();
    }
-   
+
    public void saveLearnLevel(int level) {
       learnLevelsContainer.get(level - 1).setAccomplished(true);
-      LearnLevelsSave.save(learnLevelsContainer);        
+      LearnLevelsSave.save(learnLevelsContainer);
    }
 
    /**
     * Initializes the new game.
     */
-   public void initNewGame() {     
+   public void initNewGame() {
       lmm.initNewGame();
       mapView.resetMap();
       selectionController.resetSelectionController();
@@ -271,7 +271,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    public LearnModeModel getModel() {
       return lmm;
    }
-   
+
    public int getLevel() {
       return currentLevel.getLevel();
    }
@@ -280,13 +280,12 @@ public class LearnModeGUI extends javax.swing.JPanel {
     *
     * @return
     */
-   
    public void setAnimal(Animal animal) {
-       lmm.setAnimal(animal);
+      lmm.setAnimal(animal);
    }
-   
+
    public boolean isBeeMoving() {
-       return mapView.isBeeMoving();
+      return mapView.isBeeMoving();
    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
