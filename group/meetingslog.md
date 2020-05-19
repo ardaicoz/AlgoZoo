@@ -212,6 +212,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** We added and updated the ChallengeLevels class. We tried to create a more efficient code by forming a loop for adding each levelButton actionPerformed() methods in the MenuScreen class. Therefore, we created a LevelButton class by sub-classing JButton. We added a levelNo property to this class so that each levelButton will be special to the specific level. We created an algorithm for enabling level buttons only when the previous level completed successfully in the returnButtonActionPerformed() method.
 
 
+### Meeting ~ (14.05.2020, 6 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We fixed the bugs in AlgoZoo class to prevent the changes in the location of the animal if the user tries to cross the border of the map. We talked about how to demonstrate the efficiency stars in the challenge mode and implemented the code. We created the animal selection part in the mode screen. 
+
+
 ### Meeting ~ (16.05.2020, 9 hours)
 
 **Present:** Ayberk, Görkem
@@ -219,6 +226,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** Visual improvements have been made to the map of the levels by using the TileMap. New levels added to 3 different modes separataly. The GUI design of the game has been updated. The levels in the modes have been adjusted to the level of difficulty. The causes of minor errors in the codes were discussed, identified, and fixed. New buttons were added to the option of the TestMode. The counter that appeared on the Challenge Mode Screen was designed. The image of the character is updated when the left button is pressed.
 
 **ToDo:** Some minor improvements on game mechanics will be made. Problems encountered in mapview class will be fixed. Some design improvements will be made. 
+
+
+### Meeting ~ (17.05.2020, 2 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We added the necessary comments and javadoc comments to the classes in game and challenge packages. We fixed the bugs in TimerController class. 
 
 
 ### Meeting ~ (17.05.2020, 6 hours)
@@ -233,6 +247,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Present:** Kerem, Arda
 
 **Discussion:**  We discussed how to create an end game panel indicating the result. We implemented the major changes about the level and GUI classes. We changed the TestLevels and TestModeGUI classes in order to make it more effective. We examined how to add flowers to the TestModeSelectionController, and completed related changes in this class. We thought about the final patterns of the test mode levels and changed the level constructors in TestModeGUI class accordingly.
+
+
+### Meeting ~ (18.05.2020, 5 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We added the for loop function to the SelectionController class and designed its JComboBox to make it more appealing. We added the endMessage() method to the MapView class to inform the users when they lose or pass the levels. We also added the retryButton to each mode for users to be able to restart the levels when they lose.
 
 
 ### Meeting ~ (18.05.2020, 4 hours)
