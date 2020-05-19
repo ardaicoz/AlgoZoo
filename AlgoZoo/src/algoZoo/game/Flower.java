@@ -5,11 +5,13 @@
  */
 package algoZoo.game;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Görkem, Ayberk
  */
-public class Flower {
+public class Flower implements Serializable{
 
    // properties
    final int TILE_WIDTH = 64;

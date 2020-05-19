@@ -28,6 +28,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    SelectionController selectionController;
    LearnLevels currentLevel;
    ArrayList<LearnLevels> levelContainer;
+   LearnLevelsContainer  learnLevelsContainer;
    
 
    // constructor
@@ -89,6 +90,10 @@ public class LearnModeGUI extends javax.swing.JPanel {
       if ( lmm.getMovementPattern().isEmpty()) {
           mapView.endMessage();
       }
+      if ( lmm.hasWon()) {
+         saveLearnLevel(currentLevel.getLevel() + 1);
+      }
+      
    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
@@ -135,16 +140,16 @@ public class LearnModeGUI extends javax.swing.JPanel {
     * Initialize each level of the Learn Mode.
     */
    public void initLevels() {
-      LearnLevels level1 = new LearnLevels(4, 6, 7, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")), 1);
-      LearnLevels level2 = new LearnLevels(7, 6, 5, 5, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")), 2);
-      LearnLevels level3 = new LearnLevels(4, 7, 7, 5, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")), 3);
-      LearnLevels level4 = new LearnLevels(4, 5, 7, 4, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")), 4);
-      LearnLevels level5 = new LearnLevels(4, 5, 4, 9, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")), 5);
-      LearnLevels level6 = new LearnLevels(4, 5, 8, 7, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")), 6);
-      LearnLevels level7 = new LearnLevels(4, 5, 9, 4, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")), 7);
-      LearnLevels level8 = new LearnLevels(4, 5, 8, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")), 8);
-      LearnLevels level9 = new LearnLevels(4, 5, 8, 8, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")), 9);
-      LearnLevels level10 = new LearnLevels(4, 5, 4, 8, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")), 10);
+      LearnLevels level1 = new LearnLevels(4, 6, 7, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")), 1, true);
+      LearnLevels level2 = new LearnLevels(7, 6, 5, 5, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")), 2, false);
+      LearnLevels level3 = new LearnLevels(4, 7, 7, 5, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level3.png")), 3, false);
+      LearnLevels level4 = new LearnLevels(4, 5, 7, 4, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level4.png")), 4, false);
+      LearnLevels level5 = new LearnLevels(4, 5, 4, 9, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level5.png")), 5, false);
+      LearnLevels level6 = new LearnLevels(4, 5, 8, 7, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level6.png")), 6, false);
+      LearnLevels level7 = new LearnLevels(4, 5, 9, 4, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level7.png")), 7, false);
+      LearnLevels level8 = new LearnLevels(4, 5, 8, 6, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level8.png")), 8, false);
+      LearnLevels level9 = new LearnLevels(4, 5, 8, 8, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level9.png")), 9, false);
+      LearnLevels level10 = new LearnLevels(4, 5, 4, 8, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level10.png")), 10, false);
       
       // Set flowers
       ArrayList<Flower> flowerContainer = new ArrayList<>();
@@ -154,9 +159,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
       level2.setFlowers(flowerContainer);
       
       flowerContainer.add(new Flower(6, 7));
-      level3.setFlowers(flowerContainer);
-      
-             
+      level3.setFlowers(flowerContainer);     
       
       
       
@@ -173,6 +176,11 @@ public class LearnModeGUI extends javax.swing.JPanel {
       levelContainer.add(level8);
       levelContainer.add(level9);
       levelContainer.add(level10);
+      
+      learnLevelsContainer = new LearnLevelsContainer(levelContainer);
+      SaveGame.save(learnLevelsContainer);
+      
+      
 
    }
 
@@ -207,11 +215,16 @@ public class LearnModeGUI extends javax.swing.JPanel {
       currentLevel = levelContainer.get(level - 1);
       initNewLevel();
    }
+   
+   public void saveLearnLevel(int level) {
+      levelContainer.get(level - 1).setAccomplished(true);
+      SaveGame.save(learnLevelsContainer);        
+   }
 
    /**
     * Initializes the new game.
     */
-   public void initNewGame() {
+   public void initNewGame() {     
       lmm.initNewGame();
       mapView.resetMap();
       selectionController.resetSelectionController();
