@@ -248,6 +248,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    public void stopTimer() {
        timer.stopTimer();
    }
+   
+   public boolean isBeeMoving() {
+       return mapView.isBeeMoving();
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;

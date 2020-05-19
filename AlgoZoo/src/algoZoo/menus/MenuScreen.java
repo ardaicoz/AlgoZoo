@@ -464,7 +464,9 @@ public class MenuScreen extends javax.swing.JFrame {
    }//GEN-LAST:event_testButtonActionPerformed
 
    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-      if (modeScreen.isVisible()) {
+      if(challengeModeGUI.isBeeMoving() || learnModeGUI.isBeeMoving() || testModeGUI.isBeeMoving()) {}
+      else {
+       if (modeScreen.isVisible()) {
          modeScreen.setVisible(false);
          welcomeScreen.setVisible(true);
          quickExitButton.setVisible(false);
@@ -511,6 +513,7 @@ public class MenuScreen extends javax.swing.JFrame {
          }
       }
       updateReturnButton();
+      }
    }//GEN-LAST:event_returnButtonActionPerformed
 
    private void returnButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnButtonMouseEntered

@@ -249,6 +249,10 @@ public class LearnModeGUI extends javax.swing.JPanel {
    public void setAnimal(Animal animal) {
        lmm.setAnimal(animal);
    }
+   
+   public boolean isBeeMoving() {
+       return mapView.isBeeMoving();
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
