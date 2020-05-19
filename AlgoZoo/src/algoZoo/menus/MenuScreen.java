@@ -9,16 +9,18 @@ import algoZoo.game.Animal;
 import algoZoo.game.LevelButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.ImageIcon;
-import java.util.*;
-import javax.swing.JButton;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  *
  * @author Ayberk
  */
 public class MenuScreen extends javax.swing.JFrame {
-
+    
    /**
     * Creates new form WelcomeScreen
     */
@@ -375,6 +377,7 @@ public class MenuScreen extends javax.swing.JFrame {
                learnModeGUI.setVisible(true);
                learnModeGUI.initNewGame();
                quickExitButton.setVisible(false);
+               playSound();
             }
          });
 
@@ -390,6 +393,7 @@ public class MenuScreen extends javax.swing.JFrame {
                challengeModeGUI.initNewGame();
                challengeModeGUI.startTimer();
                quickExitButton.setVisible(false);
+               playSound();
             }
          });
       }
@@ -403,10 +407,33 @@ public class MenuScreen extends javax.swing.JFrame {
                testModeGUI.setVisible(true);
                testModeGUI.initNewGame();
                quickExitButton.setVisible(false);
+               playSound();
             }
          });
       }
    }
+   
+   /**
+    * Method to play sound when buttons clicked.
+    * @param soundName 
+    */
+   public void playSound() 
+   {
+        String filePath = "src/algoZoo/Sounds/sound2.wav";
+        
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }  
 
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
       welcomeScreen.setVisible(false);
@@ -416,6 +443,7 @@ public class MenuScreen extends javax.swing.JFrame {
       bee4.setVisible(false);
       quickExitButton.setVisible(true);
       updateReturnButton();
+      playSound();
    }//GEN-LAST:event_playButtonActionPerformed
 
    private void playButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playButtonMouseEntered
@@ -427,7 +455,8 @@ public class MenuScreen extends javax.swing.JFrame {
    }//GEN-LAST:event_playButtonMouseExited
 
    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-      System.exit(0);
+       System.exit(0);
+       playSound();
    }//GEN-LAST:event_exitButtonActionPerformed
 
    private void exitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseEntered
@@ -450,6 +479,7 @@ public class MenuScreen extends javax.swing.JFrame {
       modeScreen.setVisible(false);
       learnModeLevelScreen.setVisible(true);
       updateReturnButton();
+      playSound();
    }//GEN-LAST:event_learnButtonActionPerformed
 
    private void challengeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_challengeButtonMouseEntered
@@ -464,6 +494,7 @@ public class MenuScreen extends javax.swing.JFrame {
       modeScreen.setVisible(false);
       challengeModeLevelScreen.setVisible(true);
       updateReturnButton();
+      playSound();
    }//GEN-LAST:event_challengeButtonActionPerformed
 
    private void testButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_testButtonMouseEntered
@@ -478,10 +509,11 @@ public class MenuScreen extends javax.swing.JFrame {
       modeScreen.setVisible(false);
       testModeLevelScreen.setVisible(true);
       updateReturnButton();
+      playSound();
    }//GEN-LAST:event_testButtonActionPerformed
 
    private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-      if(challengeModeGUI.isBeeMoving() || learnModeGUI.isBeeMoving() || testModeGUI.isBeeMoving()) {}
+    if(challengeModeGUI.isBeeMoving() || learnModeGUI.isBeeMoving() || testModeGUI.isBeeMoving()) {}
       else {
        if (modeScreen.isVisible()) {
          modeScreen.setVisible(false);
@@ -530,6 +562,8 @@ public class MenuScreen extends javax.swing.JFrame {
       }
       updateReturnButton();
       }
+    
+    playSound();
    }//GEN-LAST:event_returnButtonActionPerformed
 
    private void returnButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnButtonMouseEntered
@@ -542,6 +576,7 @@ public class MenuScreen extends javax.swing.JFrame {
 
    private void quickExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quickExitButtonActionPerformed
       System.exit(0);
+      playSound();
    }//GEN-LAST:event_quickExitButtonActionPerformed
 
     private void previousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousActionPerformed
@@ -581,6 +616,8 @@ public class MenuScreen extends javax.swing.JFrame {
           learnModeGUI.setAnimal(animal);
           testModeGUI.setAnimal(animal);
        }
+       
+       playSound();
     }//GEN-LAST:event_previousActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
@@ -620,12 +657,15 @@ public class MenuScreen extends javax.swing.JFrame {
           learnModeGUI.setAnimal(animal);
           testModeGUI.setAnimal(animal);
        }
+       
+       playSound();
     }//GEN-LAST:event_nextActionPerformed
 
     private void infoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoButtonActionPerformed
        modeScreen.setVisible(false);
        infoScreen1.setVisible(true);
        updateReturnButton();
+       playSound();
     }//GEN-LAST:event_infoButtonActionPerformed
 
    private void nextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextMouseEntered

@@ -212,12 +212,27 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** We added and updated the ChallengeLevels class. We tried to create a more efficient code by forming a loop for adding each levelButton actionPerformed() methods in the MenuScreen class. Therefore, we created a LevelButton class by sub-classing JButton. We added a levelNo property to this class so that each levelButton will be special to the specific level. We created an algorithm for enabling level buttons only when the previous level completed successfully in the returnButtonActionPerformed() method.
 
 
-### Meeting ~ (16.05.2020, 10.5 hours)
+### Meeting ~ (16.05.2020, 9 hours)
 
 **Present:** Ayberk, Görkem
 
-**Discussion:** 
+**Discussion:** Visual improvements have been made to the map of the levels by using the TileMap. New levels added to 3 different modes separataly. The GUI design of the game has been updated. The levels in the modes have been adjusted to the level of difficulty. The causes of minor errors in the codes were discussed, identified, and fixed. New buttons were added to the option of the TestMode. The counter that appeared on the Challenge Mode Screen was designed. The image of the character is updated when the left button is pressed.
+
+**ToDo:** Some minor improvements on game mechanics will be made. Problems encountered in mapview class will be fixed. Some design improvements will be made. 
 
 
+### Meeting ~ (17.05.2020, 6 hours)
 
+**Present:** Ayberk, Görkem
+
+**Discussion:**  Map designs continued to be improved. Modlarıın arka planı güncellendi. Visual improvements made on the game screen to provide a better gaming experience. In addition, new characters added to the game. Therefore, there are four different character in the game. In order to inform the players of the game for the first time, information screen explaining how the game is played has been added. To be useful, a new exit button was designed and integrated into the game.The errors detected in the previous meeting were fixed.
+
+
+### Meeting ~ (18.05.2020, 4 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:**  Minor changes to maps were made.  Some researchs on this subject has been done and tried. However, we failed. Some bugs in the code have been fixed. Researchs on how to add sound to the buttons in the game was done. Button sizes were adjusted. The CodeView class has been rewritten according to the changes.
+
+**ToDo:** Save-load üzerine çalışılacak araştırma yapılacak. Programın daha hızlı çalışması için yapılması gerekenler araştırılacak. Tespit edilen hatalar düzeltilecek.
 

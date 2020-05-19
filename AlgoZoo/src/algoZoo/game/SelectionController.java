@@ -9,7 +9,11 @@ import algoZoo.challenge.ChallengeModeModel;
 import algoZoo.learn.LearnModeModel;
 import java.awt.Color;
 import java.awt.Component;
+import java.io.File;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -40,6 +44,29 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       addAllButtons(); 
       clrComboBox();
    }
+   
+   //methods
+   /**
+    * Method to play sound when buttons clicked.
+    * @param soundName 
+    */
+   public void playSound() 
+   {
+        String filePath = "src/algoZoo/Sounds/sound2.wav";
+        
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }  
 
    /**
     * This method is called from within the constructor to initialize the form.
@@ -195,6 +222,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             ((LearnModeModel)azm).increaseNoOfMovements();
           }
        }
+       
+       playSound();
     }//GEN-LAST:event_upButtonActionPerformed
 
    /**
@@ -215,6 +244,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             ((LearnModeModel)azm).increaseNoOfMovements();
           }
        }
+       
+       playSound();
     }//GEN-LAST:event_downButtonActionPerformed
 
    /**
@@ -235,6 +266,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             ((LearnModeModel)azm).increaseNoOfMovements();
           }
       }
+      
+      playSound();
     }//GEN-LAST:event_rightButtonActionPerformed
 
    /**
@@ -255,6 +288,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             ((LearnModeModel)azm).increaseNoOfMovements();
           }
       }
+      
+      playSound();
     }//GEN-LAST:event_leftButtonActionPerformed
 
    /**
@@ -282,6 +317,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
                ((LearnModeModel)azm).setNoOfMovements(0);
             }
        }
+       
+       playSound();
     }//GEN-LAST:event_resetButtonActionPerformed
 
    private void flowerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flowerButtonActionPerformed
@@ -298,6 +335,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             ((LearnModeModel)azm).increaseNoOfMovements();
           }
       }
+      
+      playSound();
    }//GEN-LAST:event_flowerButtonActionPerformed
 
     private void forButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forButtonActionPerformed
@@ -310,6 +349,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             forPattern.clear();
             forView.updateView(azm);
         }
+        
+        playSound();
     }//GEN-LAST:event_forButtonActionPerformed
 
   
