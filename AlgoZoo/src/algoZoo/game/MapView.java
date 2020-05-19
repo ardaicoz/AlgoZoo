@@ -49,10 +49,13 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
+      endScreen = new javax.swing.JLabel();
       animal = new javax.swing.JLabel();
       mapBackground = new javax.swing.JLabel();
 
       setLayout(null);
+      add(endScreen);
+      endScreen.setBounds(71, 100, 498, 439);
       add(animal);
       animal.setBounds(0, 0, 48, 40);
 
@@ -62,74 +65,67 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    }// </editor-fold>//GEN-END:initComponents
 
    /**
-    * 
+    *
     */
    public void goUpView() {
       animal.setBounds(animal.getX(), animal.getY() - 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
    /**
-    * 
+    *
     */
    public void goDownView() {
       animal.setBounds(animal.getX(), animal.getY() + 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
    /**
-    * 
+    *
     */
    public void goRightView() {
-      if ( azm.getAnimal().getName().equals("Bee")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
+      if (azm.getAnimal().getName().equals("Bee")) {
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
+      } else if (azm.getAnimal().getName().equals("Bee2")) {
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
+      } else if (azm.getAnimal().getName().equals("Bee3")) {
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
+      } else if (azm.getAnimal().getName().equals("Bee4")) {
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
       }
-      else if ( azm.getAnimal().getName().equals("Bee2")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));            
-      }
-      else if ( azm.getAnimal().getName().equals("Bee3")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));            
-      }
-      else if ( azm.getAnimal().getName().equals("Bee4")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));            
-      }
-      
+
       animal.setBounds(animal.getX() + 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
    /**
-    * 
+    *
     */
    public void goLeftView() {
-       if ( azm.getAnimal().getName().equals("Bee")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Left.png")));         
+      if (azm.getAnimal().getName().equals("Bee")) {
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Left.png")));
+      } else if (azm.getAnimal().getName().equals("Bee2")) {
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Left.png")));
+      } else if (azm.getAnimal().getName().equals("Bee3")) {
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Left.png")));
+      } else if (azm.getAnimal().getName().equals("Bee4")) {
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Left.png")));
       }
-      else if ( azm.getAnimal().getName().equals("Bee2")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Left.png")));            
-      }
-      else if ( azm.getAnimal().getName().equals("Bee3")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Left.png")));            
-      }
-      else if ( azm.getAnimal().getName().equals("Bee4")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Left.png")));            
-      }
-      
+
       animal.setBounds(animal.getX() - 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
    /**
-    * 
-    * @param azm 
+    *
+    * @param azm
     */
    @Override
    public void updateView(AlgoZooModel azm) {
       animal.setIcon(azm.getAnimal().getIcon());
-      if (!azm.getMovementPattern().isEmpty()){
-      timer.start();
+      if (!azm.getMovementPattern().isEmpty()) {
+         timer.start();
+      } else {
+         animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
       }
-      else{
-            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT); 
-      }
-      if ( azm instanceof ChallengeModeModel) {
-         if (((ChallengeModeModel)azm).isGameOver()) {
+      if (azm instanceof ChallengeModeModel) {
+         if (((ChallengeModeModel) azm).isGameOver()) {
             endMessage();
          }
       }
@@ -138,30 +134,31 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    public JLabel getMapBackground() {
       return mapBackground;
    }
-   
+
    public void endMessage() {
-       animal.setVisible(false);
-       if (azm.getCurrentX() == azm.getFinishX() && azm.getCurrentY() == azm.getFinishY() && azm.allPollensGathered()) {
-           mapBackground.setIcon( new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Left.png")));
-       }
-       else {
-           mapBackground.setIcon( new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));
-       }
-           
+      if (azm.getCurrentX() == azm.getFinishX() && azm.getCurrentY() == azm.getFinishY() && azm.allPollensGathered()) {
+         endScreen.setVisible(true);
+         endScreen.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Won_Screen.png")));
+      } else {
+         endScreen.setVisible(true);
+         endScreen.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Lost_Screen.png")));
+      }
+
    }
-   
+
    public void resetMap() {
-       animal.setVisible(true);
+      animal.setVisible(true);
+      endScreen.setVisible(false);
    }
-   
+
    public boolean isBeeMoving() {
-       return timer.isRunning();
+      return timer.isRunning();
    }
-   
 
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel animal;
+   private javax.swing.JLabel endScreen;
    private javax.swing.JLabel mapBackground;
    // End of variables declaration//GEN-END:variables
 
@@ -195,7 +192,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
                      goRightView();
                   }
                }
-           } else {
+            } else {
                index = 0;
                counter = 0;
                timer.stop();

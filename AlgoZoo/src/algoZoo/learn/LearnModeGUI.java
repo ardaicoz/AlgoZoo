@@ -69,40 +69,44 @@ public class LearnModeGUI extends javax.swing.JPanel {
     */
    @SuppressWarnings("unchecked")
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+   private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        retryButton = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+      jButton1 = new javax.swing.JButton();
+      retryButton = new javax.swing.JButton();
+      background = new javax.swing.JLabel();
 
-        setLayout(null);
+      setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1);
-        jButton1.setBounds(1005, 335, 80, 70);
+      jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
+      jButton1.setBorder(null);
+      jButton1.setContentAreaFilled(false);
+      jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jButton1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
+      jButton1.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton1ActionPerformed(evt);
+         }
+      });
+      add(jButton1);
+      jButton1.setBounds(1005, 335, 80, 70);
 
-        retryButton.setText("RETRY");
-        retryButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                retryButtonActionPerformed(evt);
-            }
-        });
-        add(retryButton);
-        retryButton.setBounds(0, 0, 83, 29);
+      retryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Retry_Button.png"))); // NOI18N
+      retryButton.setBorder(null);
+      retryButton.setContentAreaFilled(false);
+      retryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      retryButton.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            retryButtonActionPerformed(evt);
+         }
+      });
+      add(retryButton);
+      retryButton.setBounds(0, 0, 40, 40);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
-        add(background);
-        background.setBounds(0, 0, 1400, 800);
-    }// </editor-fold>//GEN-END:initComponents
+      background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
+      add(background);
+      background.setBounds(0, 0, 1400, 800);
+   }// </editor-fold>//GEN-END:initComponents
 
    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       getModel().play();
@@ -312,9 +316,9 @@ public class LearnModeGUI extends javax.swing.JPanel {
       return mapView.isBeeMoving();
    }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton retryButton;
-    // End of variables declaration//GEN-END:variables
+   // Variables declaration - do not modify//GEN-BEGIN:variables
+   private javax.swing.JLabel background;
+   private javax.swing.JButton jButton1;
+   private javax.swing.JButton retryButton;
+   // End of variables declaration//GEN-END:variables
 }
