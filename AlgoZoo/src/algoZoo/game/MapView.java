@@ -36,8 +36,6 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       timer = new Timer(10, new TimerListener());
 
       animal.setIcon(azm.getAnimal().getIcon());
-      //Levellara göre mapBackground setlenmeli.
-
    }
 
    // methods
@@ -83,8 +81,14 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       if ( azm.getAnimal().getName().equals("Bee")){
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
       }
-      else if ( azm.getAnimal().getName().equals("Butterfly")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));            
+      else if ( azm.getAnimal().getName().equals("Bee2")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));            
+      }
+      else if ( azm.getAnimal().getName().equals("Bee3")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));            
+      }
+      else if ( azm.getAnimal().getName().equals("Bee4")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));            
       }
       
       animal.setBounds(animal.getX() + 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
@@ -97,8 +101,14 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
        if ( azm.getAnimal().getName().equals("Bee")){
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Left.png")));         
       }
-      else if ( azm.getAnimal().getName().equals("Butterfly")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Left.png")));            
+      else if ( azm.getAnimal().getName().equals("Bee2")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Left.png")));            
+      }
+      else if ( azm.getAnimal().getName().equals("Bee3")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Left.png")));            
+      }
+      else if ( azm.getAnimal().getName().equals("Bee4")){
+         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Left.png")));            
       }
       
       animal.setBounds(animal.getX() - 1, animal.getY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);

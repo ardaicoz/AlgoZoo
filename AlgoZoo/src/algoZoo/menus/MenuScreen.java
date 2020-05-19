@@ -28,7 +28,6 @@ public class MenuScreen extends javax.swing.JFrame {
       updateReturnButton();
       addActionListeners();
 
-
    }
 
    /**
@@ -52,7 +51,9 @@ public class MenuScreen extends javax.swing.JFrame {
       testButton = new javax.swing.JButton();
       infoButton = new javax.swing.JButton();
       bee = new javax.swing.JLabel();
-      butterfly = new javax.swing.JLabel();
+      bee2 = new javax.swing.JLabel();
+      bee3 = new javax.swing.JLabel();
+      bee4 = new javax.swing.JLabel();
       previous = new javax.swing.JButton();
       next = new javax.swing.JButton();
       background2 = new javax.swing.JLabel();
@@ -240,12 +241,26 @@ public class MenuScreen extends javax.swing.JFrame {
       modeScreen.add(bee);
       bee.setBounds(1163, 451, 100, 100);
 
-      butterfly.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Exhibition.png"))); // NOI18N
-      butterfly.setMaximumSize(new java.awt.Dimension(95, 95));
-      butterfly.setMinimumSize(new java.awt.Dimension(95, 95));
-      butterfly.setPreferredSize(new java.awt.Dimension(95, 95));
-      modeScreen.add(butterfly);
-      butterfly.setBounds(1163, 451, 100, 100);
+      bee2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Exhibition.png"))); // NOI18N
+      bee2.setMaximumSize(new java.awt.Dimension(95, 95));
+      bee2.setMinimumSize(new java.awt.Dimension(95, 95));
+      bee2.setPreferredSize(new java.awt.Dimension(95, 95));
+      modeScreen.add(bee2);
+      bee2.setBounds(1163, 451, 100, 100);
+
+      bee3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Exhibition.png"))); // NOI18N
+      bee3.setMaximumSize(new java.awt.Dimension(95, 95));
+      bee3.setMinimumSize(new java.awt.Dimension(95, 95));
+      bee3.setPreferredSize(new java.awt.Dimension(95, 95));
+      modeScreen.add(bee3);
+      bee3.setBounds(1163, 451, 100, 100);
+
+      bee4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Exhibition.png"))); // NOI18N
+      bee4.setMaximumSize(new java.awt.Dimension(95, 95));
+      bee4.setMinimumSize(new java.awt.Dimension(95, 95));
+      bee4.setPreferredSize(new java.awt.Dimension(95, 95));
+      modeScreen.add(bee4);
+      bee4.setBounds(1163, 451, 100, 100);
 
       previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Previous_Change_Button.png"))); // NOI18N
       previous.setBorder(null);
@@ -339,7 +354,7 @@ public class MenuScreen extends javax.swing.JFrame {
       testModeGUI.setVisible(false);
       infoScreen1.setVisible(false);
       quickExitButton.setVisible(false);
-      
+
    }
 
    private void updateReturnButton() {
@@ -380,23 +395,25 @@ public class MenuScreen extends javax.swing.JFrame {
       }
 
       for (int i = 1; i <= 10; i++) {
-        testModeLevelScreen.getJButton(i).addActionListener(new ActionListener() {
+         testModeLevelScreen.getJButton(i).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                testModeLevelScreen.setVisible(false);
-                testModeGUI.setCurrentLevel(((LevelButton) e.getSource()).getLevelNo());
-                testModeGUI.setVisible(true);
-                testModeGUI.initNewGame();
-                quickExitButton.setVisible(false);
+               testModeLevelScreen.setVisible(false);
+               testModeGUI.setCurrentLevel(((LevelButton) e.getSource()).getLevelNo());
+               testModeGUI.setVisible(true);
+               testModeGUI.initNewGame();
+               quickExitButton.setVisible(false);
             }
-        });
+         });
       }
    }
 
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
       welcomeScreen.setVisible(false);
       modeScreen.setVisible(true);
-      butterfly.setVisible(false);
+      bee2.setVisible(false);
+      bee3.setVisible(false);
+      bee4.setVisible(false);
       quickExitButton.setVisible(true);
       updateReturnButton();
    }//GEN-LAST:event_playButtonActionPerformed
@@ -468,11 +485,10 @@ public class MenuScreen extends javax.swing.JFrame {
          modeScreen.setVisible(false);
          welcomeScreen.setVisible(true);
          quickExitButton.setVisible(false);
-      }else if(infoScreen1.isVisible()){
-     infoScreen1.setVisible(false);
-      modeScreen.setVisible(true);
-      }
-      else if (learnModeLevelScreen.isVisible() || testModeLevelScreen.isVisible() || challengeModeLevelScreen.isVisible()) {
+      } else if (infoScreen1.isVisible()) {
+         infoScreen1.setVisible(false);
+         modeScreen.setVisible(true);
+      } else if (learnModeLevelScreen.isVisible() || testModeLevelScreen.isVisible() || challengeModeLevelScreen.isVisible()) {
          learnModeLevelScreen.setVisible(false);
          testModeLevelScreen.setVisible(false);
          challengeModeLevelScreen.setVisible(false);
@@ -503,10 +519,10 @@ public class MenuScreen extends javax.swing.JFrame {
          testModeGUI.setVisible(false);
          testModeLevelScreen.setVisible(true);
          quickExitButton.setVisible(true);
-         if ( testModeGUI.getModel().hasWon() ) {
-             if ( testModeGUI.getLevel() != 10 ) {
+         if (testModeGUI.getModel().hasWon()) {
+            if (testModeGUI.getLevel() != 10) {
                testModeLevelScreen.setJButtonIcon(testModeLevelScreen.getJButton(testModeGUI.getLevel() + 1), new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/" + (testModeGUI.getLevel() + 1) + ".png")));
-               testModeLevelScreen.getJButton( testModeGUI.getLevel() + 1 ).setEnabled( true );
+               testModeLevelScreen.getJButton(testModeGUI.getLevel() + 1).setEnabled(true);
             }
          }
       }
@@ -526,51 +542,87 @@ public class MenuScreen extends javax.swing.JFrame {
    }//GEN-LAST:event_quickExitButtonActionPerformed
 
     private void previousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousActionPerformed
-      if(bee.isVisible()) {
-            bee.setVisible(false);
-            butterfly.setVisible(true);
-            Animal animal;
-            animal = new Animal("Butterfly", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));
-            challengeModeGUI.setAnimal(animal);
-            learnModeGUI.setAnimal(animal);
-            testModeGUI.setAnimal(animal);
-        }
-        else {
-            butterfly.setVisible(false);
-            bee.setVisible(true);
-            Animal animal;
-            animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
-            challengeModeGUI.setAnimal(animal);
-            learnModeGUI.setAnimal(animal);
-            testModeGUI.setAnimal(animal);
-        }
+       if (bee.isVisible()) {
+          bee.setVisible(false);
+          bee4.setVisible(true);
+          Animal animal;
+          animal = new Animal("Bee4", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
+          challengeModeGUI.setAnimal(animal);
+          learnModeGUI.setAnimal(animal);
+          testModeGUI.setAnimal(animal);
+       } 
+       else if (bee2.isVisible()) {
+          bee2.setVisible(false);
+          bee.setVisible(true);
+          Animal animal;
+          animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
+          challengeModeGUI.setAnimal(animal);
+          learnModeGUI.setAnimal(animal);
+          testModeGUI.setAnimal(animal);
+       }
+       else if (bee3.isVisible()) {
+          bee3.setVisible(false);
+          bee2.setVisible(true);
+          Animal animal;
+          animal = new Animal("Bee2", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
+          challengeModeGUI.setAnimal(animal);
+          learnModeGUI.setAnimal(animal);
+          testModeGUI.setAnimal(animal);
+       }
+       else if (bee4.isVisible()) {
+          bee4.setVisible(false);
+          bee3.setVisible(true);
+          Animal animal;
+          animal = new Animal("Bee3", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
+          challengeModeGUI.setAnimal(animal);
+          learnModeGUI.setAnimal(animal);
+          testModeGUI.setAnimal(animal);
+       }
     }//GEN-LAST:event_previousActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
-       if(bee.isVisible()) {
-            bee.setVisible(false);
-            butterfly.setVisible(true);
-            Animal animal;
-            animal = new Animal("Butterfly", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Butterfly_Right.png")));
-            challengeModeGUI.setAnimal(animal);
-            learnModeGUI.setAnimal(animal);
-            testModeGUI.setAnimal(animal);
-        }
-        else {
-            butterfly.setVisible(false);
-            bee.setVisible(true);
-            Animal animal;
-            animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
-            challengeModeGUI.setAnimal(animal);
-            learnModeGUI.setAnimal(animal);
-            testModeGUI.setAnimal(animal);
-        }
+       if (bee.isVisible()) {
+          bee.setVisible(false);
+          bee2.setVisible(true);
+          Animal animal;
+          animal = new Animal("Bee2", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
+          challengeModeGUI.setAnimal(animal);
+          learnModeGUI.setAnimal(animal);
+          testModeGUI.setAnimal(animal);
+       }
+       else if (bee2.isVisible()) {
+          bee2.setVisible(false);
+          bee3.setVisible(true);
+          Animal animal;
+          animal = new Animal("Bee3", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
+          challengeModeGUI.setAnimal(animal);
+          learnModeGUI.setAnimal(animal);
+          testModeGUI.setAnimal(animal);
+       }
+       else if (bee3.isVisible()) {
+          bee3.setVisible(false);
+          bee4.setVisible(true);
+          Animal animal;
+          animal = new Animal("Bee4", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
+          challengeModeGUI.setAnimal(animal);
+          learnModeGUI.setAnimal(animal);
+          testModeGUI.setAnimal(animal);
+       }
+       else if (bee4.isVisible()) {
+          bee4.setVisible(false);
+          bee.setVisible(true);
+          Animal animal;
+          animal = new Animal("Bee", new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
+          challengeModeGUI.setAnimal(animal);
+          learnModeGUI.setAnimal(animal);
+          testModeGUI.setAnimal(animal);
+       }
     }//GEN-LAST:event_nextActionPerformed
 
     private void infoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoButtonActionPerformed
-        modeScreen.setVisible(false);
-        infoScreen1.setVisible(true);           
-        updateReturnButton();
+       modeScreen.setVisible(false);
+       infoScreen1.setVisible(true);
+       updateReturnButton();
     }//GEN-LAST:event_infoButtonActionPerformed
 
    private void nextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextMouseEntered
@@ -638,7 +690,9 @@ public class MenuScreen extends javax.swing.JFrame {
    private javax.swing.JLabel background;
    private javax.swing.JLabel background2;
    private javax.swing.JLabel bee;
-   private javax.swing.JLabel butterfly;
+   private javax.swing.JLabel bee2;
+   private javax.swing.JLabel bee3;
+   private javax.swing.JLabel bee4;
    private javax.swing.JButton challengeButton;
    private algoZoo.challenge.ChallengeModeGUI challengeModeGUI;
    private algoZoo.challenge.ChallengeModeLevelsGUI challengeModeLevelScreen;

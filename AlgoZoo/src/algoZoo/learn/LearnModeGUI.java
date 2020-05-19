@@ -57,6 +57,15 @@ public class LearnModeGUI extends javax.swing.JPanel {
       jButton1.setBorder(null);
       jButton1.setContentAreaFilled(false);
       jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jButton1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
+      jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            jButton1MouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            jButton1MouseExited(evt);
+         }
+      });
       jButton1.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             jButton1ActionPerformed(evt);
@@ -75,7 +84,16 @@ public class LearnModeGUI extends javax.swing.JPanel {
       for (JButton b : selectionController.getButtons()) {
          b.setEnabled(false);
       }
+      jButton1.setEnabled(false);
    }//GEN-LAST:event_jButton1ActionPerformed
+
+   private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+      jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button_Clicked.png")));
+   }//GEN-LAST:event_jButton1MouseEntered
+
+   private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+      jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png")));
+   }//GEN-LAST:event_jButton1MouseExited
 
    // methods
    /**
@@ -195,6 +213,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    public void initNewGame() {
       lmm.initNewGame();
       selectionController.resetSelectionController();
+      jButton1.setEnabled(true);
    }
 
    /**

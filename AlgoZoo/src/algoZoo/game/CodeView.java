@@ -82,10 +82,10 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                add(jlabels.get(jlabels.size() - 1));
                jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Up_Button.png")));
                if ( jlabels.size() >= 2) {
-                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 50, 70);
+                  jlabels.get(jlabels.size() -1).setBounds(82, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 36, 50);
                }
                else {
-                  jlabels.get(jlabels.size() - 1).setBounds(50,20,50,70);
+                  jlabels.get(jlabels.size() - 1).setBounds(82,20,36,50);
                }
                updated++;
             }
@@ -94,10 +94,10 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                add(jlabels.get(jlabels.size() - 1));
                jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Left_Button.png")));
                if ( jlabels.size() >= 2) {
-                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 70, 50);
+                  jlabels.get(jlabels.size() -1).setBounds(75, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 50, 36);
                }
                else {
-                  jlabels.get(jlabels.size() - 1).setBounds(50,20,70,50);
+                  jlabels.get(jlabels.size() - 1).setBounds(75,20,50,36);
                }
                updated++;
             }
@@ -106,10 +106,10 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                add(jlabels.get(jlabels.size() - 1));
                jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
                if ( jlabels.size() >= 2) {
-                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 50, 70);
+                  jlabels.get(jlabels.size() -1).setBounds(82, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 36, 50);
                }
                else {
-                  jlabels.get(jlabels.size() - 1).setBounds(50,20,50,70);
+                  jlabels.get(jlabels.size() - 1).setBounds(82,20,36,50);
                }
                updated++;
             }
@@ -118,10 +118,10 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                add(jlabels.get(jlabels.size() - 1));
                jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Right_Button.png")));
                if ( jlabels.size() >= 2) {
-                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 70, 50);
+                  jlabels.get(jlabels.size() -1).setBounds(75, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 50, 36);
                }
                else {
-                  jlabels.get(jlabels.size() - 1).setBounds(50,20,70,50);
+                  jlabels.get(jlabels.size() - 1).setBounds(75,20,50,36);
                }
                updated++;
             }
@@ -130,10 +130,10 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                add(jlabels.get(jlabels.size() - 1));
                jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
                if ( jlabels.size() >= 2) {
-                  jlabels.get(jlabels.size() -1).setBounds(50, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 20, 48, 60);
+                  jlabels.get(jlabels.size() -1).setBounds(76, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 48, 60);
                }
                else {
-                  jlabels.get(jlabels.size() - 1).setBounds(50,20,48,60);
+                  jlabels.get(jlabels.size() - 1).setBounds(76,20,48,60);
                }
                updated++;
                
