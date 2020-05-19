@@ -41,30 +41,27 @@ public class LearnModeGUI extends javax.swing.JPanel {
       initMyComponents();
       initComponents();
    }
-   
+
    //methods
    /**
     * Method to play sound when buttons clicked.
-    * @param soundName 
+    *
+    * @param soundName
     */
-   public void playSound() 
-   {
-        String filePath = "src/algoZoo/Sounds/sound2.wav";
-        
-        try 
-        {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
-            Clip clip = AudioSystem.getClip( );
-            clip.open(audioInputStream);
-            clip.start( );
-        }
-        catch(Exception ex)
-        {
-            System.out.println("Error with playing sound.");
-            ex.printStackTrace( );
-        }
+   public void playSound() {
+      String filePath = "src/algoZoo/Sounds/sound2.wav";
+
+      try {
+         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath));
+         Clip clip = AudioSystem.getClip();
+         clip.open(audioInputStream);
+         clip.start();
+      } catch (Exception ex) {
+         System.out.println("Error with playing sound.");
+         ex.printStackTrace();
+      }
    }
-   
+
    /**
     * This method is called from within the constructor to initialize the form.
     * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,36 +116,33 @@ public class LearnModeGUI extends javax.swing.JPanel {
       if (lmm.hasWon()) {
          saveLearnLevel(currentLevel.getLevel());
       }
-    
+
       playSound();
    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
-        if(isBeeMoving()) { }
-        else {
-            lmm.resetMovementPattern();
-            if ( lmm.getAnimal().getName().equals("Bee")){
-                lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
-            }
-            else if (lmm.getAnimal().getName().equals("Bee2")) {
-				lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
-			}
-			else if (lmm.getAnimal().getName().equals("Bee3")) {
-				lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
-			}
-			else if (lmm.getAnimal().getName().equals("Bee4")) {
-				lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
-			}
-            lmm.setCurrentX(lmm.getStartX());
-            lmm.setCurrentY(lmm.getStartY());
-            lmm.setGameOver(false);
-            lmm.update();
-            mapView.resetMap();
-            selectionController.resetSelectionController();
-            initNewLevel();
-        }
-        
-        playSound();
+       if (isBeeMoving()) {
+       } else {
+          lmm.resetMovementPattern();
+          if (lmm.getAnimal().getName().equals("Bee")) {
+             lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
+          } else if (lmm.getAnimal().getName().equals("Bee2")) {
+             lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
+          } else if (lmm.getAnimal().getName().equals("Bee3")) {
+             lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
+          } else if (lmm.getAnimal().getName().equals("Bee4")) {
+             lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
+          }
+          lmm.setCurrentX(lmm.getStartX());
+          lmm.setCurrentY(lmm.getStartY());
+          lmm.setGameOver(false);
+          lmm.update();
+          mapView.resetMap();
+          selectionController.resetSelectionController();
+          initNewLevel();
+       }
+
+       playSound();
     }//GEN-LAST:event_retryButtonActionPerformed
 
    // methods
@@ -181,9 +175,6 @@ public class LearnModeGUI extends javax.swing.JPanel {
       lmm.addView(codeView);
       lmm.addView(selectionController.getForView());
 
-      if (lmm.hasWon()) {
-         System.out.println("won");
-      }
    }
 
    /**
