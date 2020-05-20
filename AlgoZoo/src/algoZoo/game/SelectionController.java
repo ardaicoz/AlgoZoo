@@ -339,6 +339,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
 
     private void forButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forButtonActionPerformed
         if(!forButton.isSelected()) {
+            forButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/For_Button.png")));
             for(int i = 0; i < Integer.parseInt((String)repeat.getSelectedItem()); i++) {
                 for(int j = 0; j < forPattern.size(); j++) {
                     azm.addMovementPattern(forPattern.get(j));
@@ -346,6 +347,9 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             }
             forPattern.clear();
             forView.updateView(azm);
+        }
+        else {
+            forButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/For_Button_Clicked.png")));
         }
         
         playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
