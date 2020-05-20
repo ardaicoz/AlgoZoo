@@ -93,6 +93,7 @@ public class AlgoZooModel extends AlgoZoo {
     */
    public void initNewGame() {
       resetMovementPattern();
+      //set anlimal
       if ( animal.getName().equals("Bee")){
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
       }
@@ -132,13 +133,13 @@ public class AlgoZooModel extends AlgoZoo {
     */
    public void addView(IAlgoZooView view) {
       this.views.add(view);
-      //view.updateView(this);
    }
    
    /**
     * moves the animal according to the movement algorithm
     */
    public void play() {
+       //play the user's algorithm
       for ( int i = 0; i < movementPattern.size(); i++) {
          if ( movementPattern.get(i).equals('w')) { goUp(); }
          else if ( movementPattern.get(i).equals('a')) { goLeft(); }
@@ -152,15 +153,20 @@ public class AlgoZooModel extends AlgoZoo {
             }
          }
       }
-      gameOver = true;
-      if (getCurrentX() == getFinishX() && getCurrentY() == getFinishY() && allPollensGathered()) {
-        //System.out.println("HasWon");         
+      gameOver = true; //set gameOver true
+      //check if the game is won
+      if (getCurrentX() == getFinishX() && getCurrentY() == getFinishY() && allPollensGathered()) {       
          hasWon = true;
       }
    }
 
+   /**
+    * Checks if the user gathered all the pollens in the level
+    * @return allGathered
+    */
    public boolean allPollensGathered() {
       boolean allGathered = true;      
+      //check all flowers
       for( int i = 0; i < flowers.size(); i++) {        
          if( flowers.get(i).getPollenGathered() == false) {
             allGathered = false;

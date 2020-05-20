@@ -11,18 +11,20 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 /**
- *
+ * This class is for demonstrating the user's algorithm on a panel
  * @author Ayberk, Görkem
+ * @version 1.0
  */
 public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
    // properties
+   int               updated;
+   int               length;
+   JLabel            movementsView;   
    ArrayList<JLabel> jlabels;
-   int updated;
-   JLabel movementsView;
-   int length;
    
    // constructor
    public CodeView() {
+       //init all components
       initComponents();
       initMovementsView();
       jlabels = new ArrayList<>();
@@ -44,6 +46,9 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
         setLayout(null);
     }// </editor-fold>//GEN-END:initComponents
    
+    /**
+     * Displays the minReqMovements property and the noOfMovements properties of the model class
+     */
    public void initMovementsView() {
       movementsView = new JLabel();
       movementsView.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -56,15 +61,20 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
       movementsView.setBounds(160, 0, 40, 20);
    }
    
+   /**
+    * Returns length property
+    * @return length
+    */
    public int getLength() {
        return length;
    }
    
    @Override
    /**
-    * 
+    * Overrides updateView method of IAlgoZooView interface to demonstrate the user's algorithm
     */
    public void updateView(AlgoZooModel azm) {
+      //if the model class is an instance of ChallengeModeModel
       if ( azm instanceof ChallengeModeModel) {
          if ( ((ChallengeModeModel) azm).getMinRequiredMovements() < azm.getMovementPattern().size()) {
             movementsView.setForeground(new java.awt.Color(177, 0, 0));
@@ -72,6 +82,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
          
          movementsView.setText(azm.getMovementPattern().size() + "/" + ((ChallengeModeModel) azm).getMinRequiredMovements());
       }
+      //if the model class is an instance of LearnModeModel
       else if ( azm instanceof LearnModeModel) {
          if ( ((LearnModeModel) azm).getMinRequiredMovements() < azm.getMovementPattern().size()) {
             movementsView.setForeground(new java.awt.Color(177, 0, 0));
@@ -79,6 +90,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
          
          movementsView.setText(azm.getMovementPattern().size() + "/" + ((LearnModeModel) azm).getMinRequiredMovements());
       }
+      //check if the movementPattern ArrayList of the model is empty
       if ( azm.getMovementPattern().isEmpty()) {
          for ( int i = 0; i < jlabels.size(); i++) {
             this.remove(jlabels.get(i));
@@ -91,6 +103,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
       }
       else {
          for ( int i = updated; i < azm.getMovementPattern().size(); i++) {
+            //if next movement is "up"
             if ( azm.getMovementPattern().get(i).equals('w')) {
                jlabels.add(new JLabel());
                add(jlabels.get(jlabels.size() - 1));
@@ -105,6 +118,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                }
                updated++;
             }
+            //if next movement is "left"
             else if ( azm.getMovementPattern().get(i).equals('a')) {
                jlabels.add(new JLabel());
                add(jlabels.get(jlabels.size() - 1));
@@ -119,6 +133,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                }
                updated++;
             }
+            //if next movement is "down"
             else if ( azm.getMovementPattern().get(i).equals('s')) {
                jlabels.add(new JLabel());
                add(jlabels.get(jlabels.size() - 1));
@@ -133,6 +148,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                }
                updated++;
             }
+            //if next movement is "right"
             else if ( azm.getMovementPattern().get(i).equals('d')) {
                jlabels.add(new JLabel());
                add(jlabels.get(jlabels.size() - 1));
@@ -147,6 +163,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                }
                updated++;
             }
+            //if next movement is "gather pollens"
             else if (azm.getMovementPattern().get(i).equals('f')) {
                jlabels.add(new JLabel());
                add(jlabels.get(jlabels.size() - 1));

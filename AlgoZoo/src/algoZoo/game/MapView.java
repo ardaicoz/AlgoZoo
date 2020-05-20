@@ -14,7 +14,6 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -173,7 +172,6 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    }
 
    public void resetMap() {
-      animal.setVisible(true);
       endScreen.setVisible(false);
    }
 

@@ -22,7 +22,7 @@ public class AlgoZoo {
    int                  finishX;
    int                  finishY;
    Animal               animal;
-   ArrayList<Flower> flowers;
+   ArrayList<Flower>    flowers;
    ArrayList<Character> movementPattern;
 
    //constructors
@@ -72,11 +72,18 @@ public class AlgoZoo {
       this.finishY = finishY;
    }
 
-   
+   /**
+    * returns the flowers ArrayList
+    * @return flowers
+    */
    public ArrayList<Flower> getFlowers() {
       return flowers;
    }
    
+   /**
+    * sets the flowers ArrayList
+    * @param flowers
+    */
    public void setFlowers(ArrayList<Flower> flowers) {      
       this.flowers = flowers;      
    }    
