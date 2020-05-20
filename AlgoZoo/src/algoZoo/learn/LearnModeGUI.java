@@ -386,6 +386,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
       lmm.initNewGame();
       mapView.resetMap();
       selectionController.resetSelectionController();
+      playButton.setEnabled(true);
       codeView.setLocation(845, 0);
       for ( int i = 0; i < lmm.getFlowers().size(); i++) {
          lmm.getFlowers().get(i).setPollenGathered(false);
