@@ -38,7 +38,15 @@ public class TimerController extends javax.swing.JPanel {
       cmm.setUsedTime(0);
       second = cmm.getMinRequiredTime() % 60;
       minute = cmm.getMinRequiredTime() / 60;
-      remainingTime.setText(minute + ":" + second);
+      if(second > 9) 
+          remainingTime.setText(minute + ":" + second);
+      else
+          remainingTime.setText(minute + ":0" + second);
+      second--;
+      if (second < 0) {
+          second = 59;
+          minute--;
+      }
       timer = new javax.swing.Timer(1000, new TimerListener());
    }
 
@@ -54,6 +62,10 @@ public class TimerController extends javax.swing.JPanel {
     */
    public void startTimer() {
       timer.start();
+   }
+   
+   public boolean isRunning() {
+       return timer.isRunning();
    }
 
    /**
@@ -95,7 +107,10 @@ public class TimerController extends javax.swing.JPanel {
                timer.stop();
             } 
             else {
-               remainingTime.setText(minute + ":" + second);
+               if(second > 9) 
+                   remainingTime.setText(minute + ":" + second);
+               else
+                   remainingTime.setText(minute + ":0" + second);
                second--;
                //if the minute is over
                if (second < 0) {

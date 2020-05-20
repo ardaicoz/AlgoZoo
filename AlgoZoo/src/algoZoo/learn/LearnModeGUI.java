@@ -40,6 +40,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    public LearnModeGUI() {
       initMyComponents();
       initComponents();
+      addScroll();
    }
 
    //methods
@@ -70,60 +71,83 @@ public class LearnModeGUI extends javax.swing.JPanel {
     */
    @SuppressWarnings("unchecked")
 
-   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-   private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-      jButton1 = new javax.swing.JButton();
-      retryButton = new javax.swing.JButton();
-      background = new javax.swing.JLabel();
+        playButton = new javax.swing.JButton();
+        retryButton = new javax.swing.JButton();
+        scrollUp = new javax.swing.JButton();
+        scrollDown = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
-      setLayout(null);
+        setLayout(null);
 
-      jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
-      jButton1.setBorder(null);
-      jButton1.setContentAreaFilled(false);
-      jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      jButton1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
-      jButton1.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton1ActionPerformed(evt);
-         }
-      });
-      add(jButton1);
-      jButton1.setBounds(1005, 335, 80, 70);
+        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
+        playButton.setBorder(null);
+        playButton.setContentAreaFilled(false);
+        playButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        playButton.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
+        playButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playButtonActionPerformed(evt);
+            }
+        });
+        add(playButton);
+        playButton.setBounds(1005, 335, 80, 70);
 
-      retryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Retry_Button.png"))); // NOI18N
-      retryButton.setBorder(null);
-      retryButton.setContentAreaFilled(false);
-      retryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      retryButton.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            retryButtonActionPerformed(evt);
-         }
-      });
-      add(retryButton);
-      retryButton.setBounds(0, 0, 40, 40);
+        retryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Retry_Button.png"))); // NOI18N
+        retryButton.setBorder(null);
+        retryButton.setContentAreaFilled(false);
+        retryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        retryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retryButtonActionPerformed(evt);
+            }
+        });
+        add(retryButton);
+        retryButton.setBounds(0, 0, 40, 40);
 
-      background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
-      add(background);
-      background.setBounds(0, 0, 1400, 800);
-   }// </editor-fold>//GEN-END:initComponents
+        scrollUp.setText("scroll up");
+        scrollUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scrollUpActionPerformed(evt);
+            }
+        });
+        add(scrollUp);
+        scrollUp.setBounds(1070, 20, 71, 21);
 
-   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      getModel().play();
-      for (JButton b : selectionController.getButtons()) {
-         b.setEnabled(false);
-      }
-      selectionController.getForButton().setEnabled(false);
-      if (lmm.getMovementPattern().isEmpty()) {
-         mapView.endMessage();
-      }
-      if (lmm.hasWon()) {
-         saveLearnLevel(currentLevel.getLevel());
+        scrollDown.setText("scroll down");
+        scrollDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scrollDownActionPerformed(evt);
+            }
+        });
+        add(scrollDown);
+        scrollDown.setBounds(1060, 750, 85, 21);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
+        add(background);
+        background.setBounds(0, 0, 1400, 800);
+    }// </editor-fold>//GEN-END:initComponents
+
+   private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
+      if(lmm.getMovementPattern().isEmpty() || lmm.isGameOver()) { }
+      else {
+        getModel().play();
+        for (JButton b : selectionController.getButtons()) {
+           b.setEnabled(false);
+        }
+        selectionController.getForButton().setEnabled(false);
+        if (lmm.getMovementPattern().isEmpty()) {
+           mapView.endMessage();
+        }
+        if (lmm.hasWon()) {
+           saveLearnLevel(currentLevel.getLevel());
+        }
       }
 
       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
-   }//GEN-LAST:event_jButton1ActionPerformed
+   }//GEN-LAST:event_playButtonActionPerformed
 
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
        if (isBeeMoving()) {
@@ -145,10 +169,33 @@ public class LearnModeGUI extends javax.swing.JPanel {
           mapView.resetMap();
           selectionController.resetSelectionController();
           initNewLevel();
+          codeView.setLocation(845, 0);
        }
 
        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_retryButtonActionPerformed
+
+    private void scrollDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrollDownActionPerformed
+        int x = codeView.getX();
+        int y = codeView.getY();
+        int h = codeView.getHeight();
+                
+        if(y == 800 - h || codeView.getLength() < 800 || (codeView.getLength() - 800 + 10) < -y) { }
+        else {
+            codeView.setLocation(x, y - 50);
+        }
+    }//GEN-LAST:event_scrollDownActionPerformed
+
+    private void scrollUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrollUpActionPerformed
+        int x = codeView.getX();
+        int y = codeView.getY();
+        int h = codeView.getHeight();
+        
+        if(y == 0) { }
+        else {
+            codeView.setLocation(x, y + 50);
+        }
+    }//GEN-LAST:event_scrollUpActionPerformed
 
    // methods
    /**
@@ -171,7 +218,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
       add(mapView);
       mapView.setBounds(50, 50, 640, 640);
       add(codeView);
-      codeView.setBounds(845, 50, 200, 640);
+      codeView.setBounds(845, 0, 200, 2000);
       add(selectionController);
       selectionController.setBounds(1200, 0, 200, 800);
 
@@ -261,6 +308,38 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
       //SaveGame.save(learnLevelsContainer);
    }
+   
+   public void addScroll() {
+       codeView.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
+                int a = evt.getWheelRotation();
+                
+                int x = codeView.getX();
+                int y = codeView.getY();
+                int h = codeView.getHeight();
+                int b = 0;
+                
+                if(a > 0) {
+                    if(y == 800 - h || codeView.getLength() < 800 || (codeView.getLength() - 800 + 10) < -y) {
+                        a = 0;
+                    }
+                    else {
+                        b -= 50;
+                        codeView.setLocation(x, y + b);
+                    }
+                }
+                if(a < 0) {
+                    if(y == 0) {
+                        a = 0;
+                    }
+                    else {
+                        b += 50;
+                        codeView.setLocation(x, y + b);
+                    }
+                }
+            }
+        });
+   }
 
    /**
     * Initialize new Learn Mode level.
@@ -298,7 +377,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
       lmm.initNewGame();
       mapView.resetMap();
       selectionController.resetSelectionController();
-      jButton1.setEnabled(true);
+      codeView.setLocation(845, 0);
       for ( int i = 0; i < lmm.getFlowers().size(); i++) {
          lmm.getFlowers().get(i).setPollenGathered(false);
       }
@@ -328,9 +407,11 @@ public class LearnModeGUI extends javax.swing.JPanel {
       return mapView.isBeeMoving();
    }
 
-   // Variables declaration - do not modify//GEN-BEGIN:variables
-   private javax.swing.JLabel background;
-   private javax.swing.JButton jButton1;
-   private javax.swing.JButton retryButton;
-   // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
+    private javax.swing.JButton playButton;
+    private javax.swing.JButton retryButton;
+    private javax.swing.JButton scrollDown;
+    private javax.swing.JButton scrollUp;
+    // End of variables declaration//GEN-END:variables
 }
