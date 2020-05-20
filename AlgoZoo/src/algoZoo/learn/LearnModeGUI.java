@@ -253,38 +253,46 @@ public class LearnModeGUI extends javax.swing.JPanel {
       //Level3
       flowerContainer.add(new Flower(6, 7));
       level3.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
       //Level4
       flowerContainer.add(new Flower(6, 5));
       flowerContainer.add(new Flower(6, 5));
       level4.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
       //Level5
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(5, 9));
       level5.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
       //Level6
       flowerContainer.add(new Flower(5, 7));
       flowerContainer.add(new Flower(6, 7));
       level6.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
       //Level7
       flowerContainer.add(new Flower(8, 5));
       flowerContainer.add(new Flower(7, 6));
       flowerContainer.add(new Flower(6, 7));
       level7.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
       //Level8
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(7, 8));
       level8.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
       //Level9
       flowerContainer.add(new Flower(5, 7));
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(7, 9));
       level9.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
       //Level10      
       flowerContainer.add(new Flower(7, 5));
       flowerContainer.add(new Flower(8, 6));
       flowerContainer.add(new Flower(7, 7));
       flowerContainer.add(new Flower(8, 8));
       level10.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       learnLevelsContainer = new LearnLevelsContainer();
       learnLevelsContainer.add(level1);
@@ -369,8 +377,10 @@ public class LearnModeGUI extends javax.swing.JPanel {
       lmm.initNewGame();
       mapView.resetMap();
       selectionController.resetSelectionController();
-      playButton.setEnabled(true);
       codeView.setLocation(845, 0);
+      for ( int i = 0; i < lmm.getFlowers().size(); i++) {
+         lmm.getFlowers().get(i).setPollenGathered(false);
+      }
    }
 
    /**

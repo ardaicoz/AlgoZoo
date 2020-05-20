@@ -252,22 +252,26 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       flowerContainer.add(new Flower(5, 7));
       flowerContainer.add(new Flower(4, 6));
       level1.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level2
       flowerContainer.add(new Flower(6, 7));
       flowerContainer.add(new Flower(7, 8));
       flowerContainer.add(new Flower(7, 6));
       level2.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level3
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(8, 7));
       level3.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level4
       flowerContainer.add(new Flower(6, 5));
       flowerContainer.add(new Flower(8, 7));
       level4.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level5
       flowerContainer.add(new Flower(3, 8));
@@ -275,12 +279,14 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(7, 9));
       level5.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level6
       flowerContainer.add(new Flower(5, 8));
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(7, 8));
       level6.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level7
       flowerContainer.add(new Flower(2, 6));
@@ -288,6 +294,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       flowerContainer.add(new Flower(6, 6));
       flowerContainer.add(new Flower(7, 7));
       level7.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level8
       flowerContainer.add(new Flower(4, 4));
@@ -295,6 +302,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       flowerContainer.add(new Flower(4, 6));
       flowerContainer.add(new Flower(4, 7));
       level8.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level9
       flowerContainer.add(new Flower(3, 7));
@@ -302,6 +310,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       flowerContainer.add(new Flower(4, 6));
       flowerContainer.add(new Flower(5, 5));
       level9.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level10      
       flowerContainer.add(new Flower(8, 3));
@@ -311,6 +320,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       flowerContainer.add(new Flower(6, 7));
       flowerContainer.add(new Flower(5, 8));
       level10.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //add all the levels to an ArrayList
       challengeLevelsContainer = new ChallengeLevelsContainer();
@@ -401,6 +411,9 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       selectionController.resetSelectionController();
       playButton.setEnabled(true);
       codeView.setLocation(845, 0);
+      for ( int i = 0; i < cmm.getFlowers().size(); i++) {
+         cmm.getFlowers().get(i).setPollenGathered(false);
+      }
    }
 
    /**
