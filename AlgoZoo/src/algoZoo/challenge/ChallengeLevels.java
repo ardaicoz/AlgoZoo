@@ -6,7 +6,6 @@
 package algoZoo.challenge;
 
 import algoZoo.game.Flower;
-import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -16,7 +15,7 @@ import javax.swing.ImageIcon;
  * @author Doğa, Alp, Esra
  * @version 1.0
  */
-public class ChallengeLevels implements Serializable{
+public class ChallengeLevels {
 
    // properties
    final int TILE_WIDTH = 64;
@@ -32,10 +31,9 @@ public class ChallengeLevels implements Serializable{
    int level;
    ImageIcon mapBackground;
    ArrayList<Flower> flowers;
-   boolean accomplished;
 
    // constructor    
-   public ChallengeLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ImageIcon mapBackground, int level, boolean accomplished) {
+   public ChallengeLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ImageIcon mapBackground, int level) {
       this.startX = (TILE_WIDTH * (startX - 1)) + SPACE_WIDTH;
       this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;
       this.finishX = (TILE_WIDTH * (finishX - 1)) + SPACE_WIDTH;
@@ -44,14 +42,10 @@ public class ChallengeLevels implements Serializable{
       this.minRequiredTime = minRequiredTime;
       this.mapBackground = mapBackground;
       this.level = level;
-      this.accomplished = accomplished;
       flowers = new ArrayList<>();
    }
 
    // methods 
-
-   
-
    /**
     * returns the start X location of the animal in a particular level
     *
@@ -134,18 +128,11 @@ public class ChallengeLevels implements Serializable{
    }
 
    /**
-    * 
-    * @param flowers 
+    *
+    * @param flowers
     */
    public void setFlowers(ArrayList<Flower> flowers) {
       this.flowers = (ArrayList<Flower>) flowers.clone();
    }
-   
-   public boolean isAccomplished() {
-      return accomplished;
-   }
 
-   public void setAccomplished(boolean accomplished) {
-      this.accomplished = accomplished;
-   }
 }

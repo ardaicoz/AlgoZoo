@@ -5,14 +5,13 @@
  */
 package algoZoo.game;
 
-import java.io.Serializable;
 
 /**
  * Flower class to represent flowers with a boolean pollenGathered property
  * @author Görkem, Ayberk
  * @version 1.0
  */
-public class Flower implements Serializable{
+public class Flower {
 
    // properties
    final int TILE_WIDTH = 64;

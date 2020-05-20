@@ -6,7 +6,6 @@
 package algoZoo.learn;
 
 import algoZoo.game.Flower;
-import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -16,7 +15,7 @@ import javax.swing.ImageIcon;
  * @author Görkem, Ayberk
  * @version 1.0
  */
-public class LearnLevels implements Serializable{
+public class LearnLevels  {
 
    // properties
    final int TILE_WIDTH = 64;
@@ -31,18 +30,17 @@ public class LearnLevels implements Serializable{
    int level;
    ImageIcon mapBackground;
    ArrayList<Flower> flowers;
-   boolean accomplished;
+
 
    // constructor  
-   public LearnLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, ImageIcon mapBackground, int level, boolean accomplished) {
+   public LearnLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, ImageIcon mapBackground, int level) {
       this.startX = (TILE_WIDTH * (startX - 1)) + SPACE_WIDTH;
       this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;
       this.finishX = (TILE_WIDTH * (finishX - 1)) + SPACE_WIDTH;
       this.finishY = (TILE_HEIGHT * (finishY - 1)) + SPACE_HEIGHT;
       this.minRequiredMovements = minRequiredMovements;
       this.mapBackground = mapBackground;
-      this.level = level;
-      this.accomplished = accomplished;
+      this.level = level;     
       flowers = new ArrayList<>();
    }
 
@@ -109,13 +107,6 @@ public class LearnLevels implements Serializable{
       return level;
    }
 
-   public void setAccomplished(boolean accomplished) {
-      this.accomplished = accomplished;
-   }
-
-   public boolean isAccomplished() {
-      return accomplished;
-   }   
    
 
    /**
