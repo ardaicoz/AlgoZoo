@@ -87,16 +87,65 @@ public class TestModeGUI extends javax.swing.JPanel {
     * A method to initialize every level of the test mode.
     */
    public void initLevels() {
-      TestLevels level1 = new TestLevels(4, 5, 8, 4, new ArrayList<Character>(Arrays.asList('d', 'd', 'w', 'd', 'd')), new ArrayList<Character>(Arrays.asList('s', 'a', 's', 'd', 'd')), new ArrayList<Character>(Arrays.asList('s', 'd', 'd', 'w', 'a')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level1.png")), 1);
-      TestLevels level2 = new TestLevels(6, 8, 3, 5, new ArrayList<Character>(Arrays.asList('s', 's', 'd', 's', 'd', 'w')), new ArrayList<Character>(Arrays.asList('w', 'a', 'w', 'a', 'w', 'a')), new ArrayList<Character>(Arrays.asList('a', 's', 'd', 'w', 'w', 'a')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level2.png")), 2);
-      TestLevels level3 = new TestLevels(4, 6, 8, 5, new ArrayList<Character>(Arrays.asList('s', 'd', 'd', 'w', 'w', 'd', 'd')), new ArrayList<Character>(Arrays.asList('d', 'd', 'a', 's', 's', 's', 'w')), new ArrayList<Character>(Arrays.asList('a', 'a', 's', 's', 's', 'd', 'w')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level3.png")), 3);
-      TestLevels level4 = new TestLevels(4, 5, 7, 7, new ArrayList<Character>(Arrays.asList('s', 'd', 'f', 'd', 'f', 's', 'd')), new ArrayList<Character>(Arrays.asList('a', 'a', 's', 'f', 's', 's', 'd')), new ArrayList<Character>(Arrays.asList('w', 'w', 'f', 'd', 'd', 'f', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level4.png")), 4);
-      TestLevels level5 = new TestLevels(6, 4, 3, 7, new ArrayList<Character>(Arrays.asList('a', 's', 'f', 'd', 'd', 's', 'f', 'w', 'a', 'a')), new ArrayList<Character>(Arrays.asList('d', 'd', 'f', 'f', 's', 's', 'd', 'w', 'd', 's')), new ArrayList<Character>(Arrays.asList('s', 's', 's', 'f', 's', 'a', 'a', 'f', 'a', 'w')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level5.png")), 5);
-      TestLevels level6 = new TestLevels(6, 5, 2, 7, new ArrayList<Character>(Arrays.asList('a', 's', 'f', 's', 's', 'a', 'f', 'a', 'w', 'a')), new ArrayList<Character>(Arrays.asList('a', 's', 'w', 'f', 'd', 'd', 'a', 's', 'd', 's')), new ArrayList<Character>(Arrays.asList('f', 'w', 'a', 'a', 'a', 'a', 'a', 'a', 'w', 'f')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level6.png")), 6);
-      TestLevels level7 = new TestLevels(6, 10, 4, 5, new ArrayList<Character>(Arrays.asList('s', 'w', 's', 'f', 'f', 'd', 'w', 's', 'a', 'w')), new ArrayList<Character>(Arrays.asList('d', 'w', 'd', 'd', 'd', 'd', 'w', 'f', 'w', 'a')), new ArrayList<Character>(Arrays.asList('w', 'w', 'f', 'a', 'w', 'f', 'a', 'w', 'f', 'w')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level7.png")), 7);
-      TestLevels level8 = new TestLevels(5, 2, 7, 5, new ArrayList<Character>(Arrays.asList('w', 'w', 'f', 'w', 's', 'd', 'a', 'd', 'f', 's')), new ArrayList<Character>(Arrays.asList('a', 'a', 'd', 'f', 'w', 'w', 'a', 's', 's', 'f')), new ArrayList<Character>(Arrays.asList('a', 's', 'f', 'd', 's', 'f', 's', 'd', 'f', 'd')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level8.png")), 8);
-      TestLevels level9 = new TestLevels(8, 6, 5, 5, new ArrayList<Character>(Arrays.asList('w', 'd', 'd', 's', 'w', 's', 's', 'a', 's', 'f')), new ArrayList<Character>(Arrays.asList('s', 's', 'a', 'a', 'f', 'w', 'w', 'f', 'a', 'w')), new ArrayList<Character>(Arrays.asList('d', 'w', 's', 'a', 's', 'a', 'w', 'w', 'f', 'a')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level9.png")), 9);
-      TestLevels level10 = new TestLevels(6, 5, 3, 9, new ArrayList<Character>(Arrays.asList('s', 's', 'f', 'a', 's', 'f', 's', 'a', 'f', 'a')), new ArrayList<Character>(Arrays.asList('f', 'w', 'w', 'w', 'f', 'd', 'd', 'a', 's', 's')), new ArrayList<Character>(Arrays.asList('w', 'a', 'a', 'f', 'a', 'w', 'd', 'w', 'a', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level10.png")), 10);
+      TestLevels level1 = new TestLevels(4, 5, 8, 4, new ArrayList<Character>(Arrays.asList('d', 'd', 'w', 'd', 'd')), new ArrayList<Character>(Arrays.asList('w', 'w', 'd', 'd', 'd')), new ArrayList<Character>(Arrays.asList('d', 'd', 'd', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level1.png")), 1);
+      TestLevels level2 = new TestLevels(6, 8, 3, 5, new ArrayList<Character>(Arrays.asList('w', 'w', 'w', 'a', 'a', 's')), new ArrayList<Character>(Arrays.asList('w', 'a', 'w', 'a', 'w', 'a')), new ArrayList<Character>(Arrays.asList('a', 'w', 'w', 'a', 'w', 'd')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level2.png")), 2);
+      TestLevels level3 = new TestLevels(4, 6, 8, 5, new ArrayList<Character>(Arrays.asList('s', 'd', 'd', 'w', 'w', 'd', 'd')), new ArrayList<Character>(Arrays.asList('d', 'd', 'd', 'w', 'a', 'w', 'd')), new ArrayList<Character>(Arrays.asList('s', 's', 'd', 'd', 'w', 'd', 'd')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level3.png")), 3);
+      TestLevels level4 = new TestLevels(4, 5, 7, 7, new ArrayList<Character>(Arrays.asList('s', 'd', 'f', 'd', 'f', 's', 'd')), new ArrayList<Character>(Arrays.asList('d', 's', 'f', 's', 'f', 'd', 's')), new ArrayList<Character>(Arrays.asList('s', 'd', 'f', 'd', 'f', 'd', 'd')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level4.png")), 4);
+      TestLevels level5 = new TestLevels(6, 4, 3, 7, new ArrayList<Character>(Arrays.asList('s', 's', 's', 'f', 's', 'a', 'a', 'f', 'a', 's')), new ArrayList<Character>(Arrays.asList('s', 's', 's', 'f', 'a', 'a', 's', 'f', 'a', 'a')), new ArrayList<Character>(Arrays.asList('s', 's', 's', 'f', 's', 'a', 'a', 'f', 'a', 'w')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level5.png")), 5);
+      TestLevels level6 = new TestLevels(6, 5, 2, 7, new ArrayList<Character>(Arrays.asList('a', 's', 'f', 's', 's', 'a', 'f', 'a', 'w', 'a')), new ArrayList<Character>(Arrays.asList('a', 's', 'f', 's', 's', 'a', 'f', 's', 'd', 's')), new ArrayList<Character>(Arrays.asList('a', 's', 'f', 's', 's', 'a', 'f', 'a', 'w', 'd')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level6.png")), 6);
+      TestLevels level7 = new TestLevels(6, 10, 4, 5, new ArrayList<Character>(Arrays.asList('w', 'w', 'f', 'a', 'w', 'f', 'a', 'w', 'f', 'd')), new ArrayList<Character>(Arrays.asList('w', 'w', 'f', 'a', 'w', 'f', 'a', 's', 'f', 'w')), new ArrayList<Character>(Arrays.asList('w', 'w', 'f', 'a', 'w', 'f', 'a', 'w', 'f', 'w')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level7.png")), 7);
+      TestLevels level8 = new TestLevels(5, 2, 7, 5, new ArrayList<Character>(Arrays.asList('a', 's', 'f', 'd', 's', 'f', 'a', 'w', 'f', 's')), new ArrayList<Character>(Arrays.asList('a', 's', 'f', 'd', 's', 'f', 's', 'd', 'f', 'w')), new ArrayList<Character>(Arrays.asList('a', 's', 'f', 'd', 's', 'f', 's', 'd', 'f', 'd')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level8.png")), 8);
+      TestLevels level9 = new TestLevels(8, 6, 5, 5, new ArrayList<Character>(Arrays.asList('s', 's', 'a', 'a', 'f', 'w', 'w', 'f', 's', 'd')), new ArrayList<Character>(Arrays.asList('s', 's', 'a', 'a', 'f', 'w', 'w', 'f', 'a', 'w')), new ArrayList<Character>(Arrays.asList('s', 's', 'a', 'a', 'f', 'w', 'a', 'f', 'd', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level9.png")), 9);
+      TestLevels level10 = new TestLevels(6, 5, 3, 9, new ArrayList<Character>(Arrays.asList('s', 's', 'f', 'a', 's', 'f', 's', 'a', 'f', 'a')), new ArrayList<Character>(Arrays.asList('s', 's', 'f', 'a', 's', 'f', 's', 'a', 'f', 'w')), new ArrayList<Character>(Arrays.asList('s', 's', 'f', 'a', 's', 'f', 's', 'a', 'f', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level10.png")), 10);
+      
+      // Set flowers
+      ArrayList<Flower> flowerContainer = new ArrayList<>();
+      //Level1
+      level1.setFlowers(flowerContainer);
+      
+      //Level2
+      level2.setFlowers(flowerContainer);
+      
+      //Level3
+      level3.setFlowers(flowerContainer);
+      
+      //Level4
+      flowerContainer.add(new Flower(5, 6));
+      flowerContainer.add(new Flower(6, 6));
+      level4.setFlowers(flowerContainer);
+
+      //Level5
+      flowerContainer.add(new Flower(4, 8));
+      flowerContainer.add(new Flower(6, 7));
+      level5.setFlowers(flowerContainer);
+
+      //Level6
+      flowerContainer.add(new Flower(5, 6));
+      flowerContainer.add(new Flower(4, 8));
+      level6.setFlowers(flowerContainer);
+
+      //Level7
+      flowerContainer.add(new Flower(4, 6));
+      flowerContainer.add(new Flower(5, 7));
+      flowerContainer.add(new Flower(6, 8));
+      level7.setFlowers(flowerContainer);
+
+      //Level8
+      flowerContainer.add(new Flower(4, 3));
+      flowerContainer.add(new Flower(5, 4));
+      flowerContainer.add(new Flower(6, 5));
+      level8.setFlowers(flowerContainer);
+
+      //Level9
+      flowerContainer.add(new Flower(6, 6));
+      flowerContainer.add(new Flower(6, 8));
+      level9.setFlowers(flowerContainer);
+
+      //Level10      
+      flowerContainer.add(new Flower(4, 9));
+      flowerContainer.add(new Flower(5, 8));
+      flowerContainer.add(new Flower(6, 7));
+      level10.setFlowers(flowerContainer);
       
       //creates an ArrayList for all levels and adds all levels to it
       levelContainer = new ArrayList<>();
@@ -110,19 +159,6 @@ public class TestModeGUI extends javax.swing.JPanel {
       levelContainer.add(level8);
       levelContainer.add(level9);
       levelContainer.add(level10); 
-      
-      //set flowers for all levels
-      ArrayList<Flower> flowerContainer = new ArrayList<>();
-      level1.setFlowers(flowerContainer);
-      level2.setFlowers(flowerContainer);
-      level3.setFlowers(flowerContainer);
-      flowerContainer.add(new Flower(7, 6));
-      flowerContainer.add(new Flower(6, 6));
-      level4.setFlowers(flowerContainer);
-      flowerContainer = new ArrayList<>();
-      flowerContainer.add(new Flower(6, 7));
-      flowerContainer.add(new Flower(4, 8));
-      level5.setFlowers(flowerContainer);
       
    }
 
@@ -143,6 +179,7 @@ public class TestModeGUI extends javax.swing.JPanel {
       tmm.setStartY(currentLevel.getStartY());
       tmm.setFinishX(currentLevel.getFinishX());
       tmm.setFinishY(currentLevel.getFinishY());
+      tmm.setFlowers(currentLevel.getFlowers());
       map.getMapBackground().setIcon(currentLevel.getMapBackground());
    }
 

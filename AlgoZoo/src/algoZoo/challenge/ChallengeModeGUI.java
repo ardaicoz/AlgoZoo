@@ -308,6 +308,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       cmm.setFinishY(currentLevel.getFinishY());
       cmm.setMinRequiredMovements(currentLevel.getMinRequiredMovements());
       cmm.setMinRequiredTime(currentLevel.getMinRequiredTime());
+      cmm.setFlowers(currentLevel.getFlowers());
       mapView.getMapBackground().setIcon(currentLevel.getMapBackground());
    }
 

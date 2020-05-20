@@ -8,6 +8,10 @@ package algoZoo.game;
 import algoZoo.challenge.ChallengeModeModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -40,6 +44,26 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    }
 
    // methods
+   /**
+    * Method to play sound when buttons clicked.
+    * @param soundName 
+    */
+   public void playSound(String filePath) 
+   {     
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }  
+   
    /**
     * This method is called from within the constructor to initialize the form.
     * WARNING: Do NOT modify this code. The content of this method is always
@@ -139,9 +163,11 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       if (azm.getCurrentX() == azm.getFinishX() && azm.getCurrentY() == azm.getFinishY() && azm.allPollensGathered()) {
          endScreen.setVisible(true);
          endScreen.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Won_Screen.png")));
+         playSound( "src/algoZoo/Sounds/YouWon.wav" );
       } else {
          endScreen.setVisible(true);
          endScreen.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Lost_Screen.png")));
+         playSound( "src/algoZoo/Sounds/YouLost.wav" );
       }
 
    }
