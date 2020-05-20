@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
- *
+ * This class represents the map which is being shown on the left in the screen.
  * @author Ayberk, Görkem, Kerem
  */
 public class MapView extends javax.swing.JPanel implements IAlgoZooView {
@@ -89,21 +89,21 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    }// </editor-fold>//GEN-END:initComponents
 
    /**
-    *
+    * This method reflects the movement of the animal to the map when going up.
     */
    public void goUpView() {
       animal.setBounds(animal.getX(), animal.getY() - 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
    /**
-    *
+    * This method reflects the movement of the animal to the map when going down.
     */
    public void goDownView() {
       animal.setBounds(animal.getX(), animal.getY() + 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
    /**
-    *
+    * This method reflects the movement of the animal to the map when going right.
     */
    public void goRightView() {
       if (azm.getAnimal().getName().equals("Bee")) {
@@ -120,7 +120,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    }
 
    /**
-    *
+    * This method reflects the movement of the animal to the map when going left.
     */
    public void goLeftView() {
       if (azm.getAnimal().getName().equals("Bee")) {
@@ -137,7 +137,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    }
 
    /**
-    *
+    * This method updates the current view of the map to apply reflections to the screen.
     * @param azm
     */
    @Override
@@ -154,11 +154,18 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
          }
       }
    }
-
+   
+   /**
+    * This method returns the background image of the map.
+    * @return mapBackground
+    */
    public JLabel getMapBackground() {
       return mapBackground;
    }
-
+   
+   /**
+    * This method shows a message and plays a sound when game is over.
+    */
    public void endMessage() {
       if (azm.getCurrentX() == azm.getFinishX() && azm.getCurrentY() == azm.getFinishY() && azm.allPollensGathered()) {
          endScreen.setVisible(true);
@@ -171,12 +178,19 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       }
 
    }
-
+   
+   /**
+    * A method to reset the map (for replay button)
+    */
    public void resetMap() {
       animal.setVisible(true);
       endScreen.setVisible(false);
    }
-
+   
+   /**
+    * A method to indicate if the bee is moving or not.
+    * @return 
+    */
    public boolean isBeeMoving() {
       return timer.isRunning();
    }

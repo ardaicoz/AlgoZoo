@@ -11,7 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 /**
- *
+ * This class represents the screen when info button is pressed.
  * @author Ayberk, Kerem, Arda
  */
 public class InfoScreen extends javax.swing.JPanel {
