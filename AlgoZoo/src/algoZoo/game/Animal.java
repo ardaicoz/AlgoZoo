@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  */
 public class Animal {
    //properties
-   private String name;
+   private String    name;
    private ImageIcon icon;
    
    //constructors

@@ -11,5 +11,9 @@ package algoZoo.game;
  * @version 1.0
  */
 public interface IAlgoZooView {
-    void updateView(AlgoZooModel azm); //method for updating the view classes
+    /**
+     * method for updating the view classes by getting information from model classes
+     * @param azm 
+     */
+    void updateView(AlgoZooModel azm);
 }
