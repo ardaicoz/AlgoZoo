@@ -113,39 +113,46 @@ public class TestModeGUI extends javax.swing.JPanel {
       flowerContainer.add(new Flower(5, 6));
       flowerContainer.add(new Flower(6, 6));
       level4.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level5
       flowerContainer.add(new Flower(4, 8));
       flowerContainer.add(new Flower(6, 7));
       level5.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level6
       flowerContainer.add(new Flower(5, 6));
       flowerContainer.add(new Flower(4, 8));
       level6.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level7
       flowerContainer.add(new Flower(4, 6));
       flowerContainer.add(new Flower(5, 7));
       flowerContainer.add(new Flower(6, 8));
       level7.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level8
       flowerContainer.add(new Flower(4, 3));
       flowerContainer.add(new Flower(5, 4));
       flowerContainer.add(new Flower(6, 5));
       level8.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level9
       flowerContainer.add(new Flower(6, 6));
       flowerContainer.add(new Flower(6, 8));
       level9.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
 
       //Level10      
       flowerContainer.add(new Flower(4, 9));
       flowerContainer.add(new Flower(5, 8));
       flowerContainer.add(new Flower(6, 7));
       level10.setFlowers(flowerContainer);
+      flowerContainer.removeAll(flowerContainer);
       
       //creates an ArrayList for all levels and adds all levels to it
       levelContainer = new ArrayList<>();
@@ -205,6 +212,9 @@ public class TestModeGUI extends javax.swing.JPanel {
       options.setList2(currentLevel.getList2());
       options.setList3(currentLevel.getList3());
       options.createLabels();
+      for ( int i = 0; i < tmm.getFlowers().size(); i++) {
+         tmm.getFlowers().get(i).setPollenGathered(false);
+      }
    }
    
    /**

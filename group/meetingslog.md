@@ -219,7 +219,7 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** We fixed the bugs in AlgoZoo class to prevent the changes in the location of the animal if the user tries to cross the border of the map. We talked about how to demonstrate the efficiency stars in the challenge mode and implemented the code. We created the animal selection part in the mode screen. 
 
 
-### Meeting ~ (16.05.2020, 9 hours)
+### Meeting ~ (16.05.2020, 10.5 hours)
 
 **Present:** Ayberk, Görkem
 
@@ -239,7 +239,7 @@ Below is a record of our project group meetings. This page will be submitted tog
 
 **Present:** Ayberk, Görkem
 
-**Discussion:**  Map designs continued to be improved. Modlarıın arka planı güncellendi. Visual improvements made on the game screen to provide a better gaming experience. In addition, new characters added to the game. Therefore, there are four different character in the game. In order to inform the players of the game for the first time, information screen explaining how the game is played has been added. To be useful, a new exit button was designed and integrated into the game.The errors detected in the previous meeting were fixed.
+**Discussion:**  Map designs continued to be improved. The background of the modes has been updated. Visual improvements made on the game screen to provide a better gaming experience. In addition, new characters added to the game. Therefore, there are four different character in the game. In order to inform the players of the game for the first time, information screen explaining how the game is played has been added. To be useful, a new exit button was designed and integrated into the game.The errors detected in the previous meeting were fixed.
 
 
 ### Meeting ~ (18.05.2020, 4 hours)
@@ -256,13 +256,13 @@ Below is a record of our project group meetings. This page will be submitted tog
 **Discussion:** We added the for loop function to the SelectionController class and designed its JComboBox to make it more appealing. We added the endMessage() method to the MapView class to inform the users when they lose or pass the levels. We also added the retryButton to each mode for users to be able to restart the levels when they lose.
 
 
-### Meeting ~ (18.05.2020, 4 hours)
+### Meeting ~ (18.05.2020, 8 hours)
 
 **Present:** Ayberk, Görkem
 
 **Discussion:**  Minor changes to maps were made.  Some researchs on this subject has been done and tried. However, we failed. Some bugs in the code have been fixed. Researchs on how to add sound to the buttons in the game was done. Button sizes were adjusted. The CodeView class has been rewritten according to the changes.
 
-**ToDo:** Save-load üzerine çalışılacak araştırma yapılacak. Programın daha hızlı çalışması için yapılması gerekenler araştırılacak. Tespit edilen hatalar düzeltilecek.
+**ToDo:** Research about save-load will be done. Things to do to make the program run faster will be investigated. The detected errors will be corrected.
 
 
 ### Meeting ~ (19.05.2020, 3 hours)

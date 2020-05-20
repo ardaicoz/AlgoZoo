@@ -8,7 +8,6 @@ package algoZoo.game;
 import algoZoo.challenge.ChallengeModeModel;
 import algoZoo.learn.LearnModeModel;
 import java.util.ArrayList;
-import java.util.Iterator;
 import javax.swing.*;
 
 /**
