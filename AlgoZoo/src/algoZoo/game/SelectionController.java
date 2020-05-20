@@ -28,10 +28,10 @@ import javax.swing.ListCellRenderer;
 public class SelectionController extends javax.swing.JPanel implements IAlgoZooView {
 
    // properties
+   ForView              forView;
    AlgoZooModel         azm;
    ArrayList<JButton>   buttons;
    ArrayList<Character> forPattern;
-   ForView forView;
 
    // constructors
    public SelectionController(AlgoZooModel azm) {
@@ -353,6 +353,12 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
             for(int i = 0; i < Integer.parseInt((String)repeat.getSelectedItem()); i++) {
                 for(int j = 0; j < forPattern.size(); j++) {
                     azm.addMovementPattern(forPattern.get(j));
+                    if ( azm instanceof ChallengeModeModel) {
+                        ((ChallengeModeModel)azm).increaseNoOfMovements();
+                    }
+                    else {
+                        ((LearnModeModel)azm).increaseNoOfMovements();
+                    }
                 }
             }
             forPattern.clear();
