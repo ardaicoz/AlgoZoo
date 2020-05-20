@@ -81,18 +81,16 @@ public class MenuScreen extends javax.swing.JFrame {
       next = new javax.swing.JButton();
       background2 = new javax.swing.JLabel();
       infoScreen1 = new algoZoo.game.InfoScreen();
-      learnModeLevelScreen = new algoZoo.learn.LearnModeLevelsGUI();
-      testModeLevelScreen = new algoZoo.test.TestModeLevelsGUI();
-      challengeModeLevelScreen = new algoZoo.challenge.ChallengeModeLevelsGUI();
       learnModeGUI = new algoZoo.learn.LearnModeGUI();
+      learnModeLevelScreen = new algoZoo.learn.LearnModeLevelsGUI();
       challengeModeGUI = new algoZoo.challenge.ChallengeModeGUI();
+      challengeModeLevelScreen = new algoZoo.challenge.ChallengeModeLevelsGUI();
       testModeGUI = new algoZoo.test.TestModeGUI();
+      testModeLevelScreen = new algoZoo.test.TestModeLevelsGUI();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-      setMaximumSize(new java.awt.Dimension(1400, 800));
       setMinimumSize(new java.awt.Dimension(1400, 800));
       setUndecorated(true);
-      setPreferredSize(new java.awt.Dimension(1400, 800));
       getContentPane().setLayout(null);
 
       returnButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Return_Button.png"))); // NOI18N
@@ -251,13 +249,14 @@ public class MenuScreen extends javax.swing.JFrame {
       infoButton.setBorder(null);
       infoButton.setContentAreaFilled(false);
       infoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      infoButton.setFocusPainted(false);
       infoButton.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             infoButtonActionPerformed(evt);
          }
       });
       modeScreen.add(infoButton);
-      infoButton.setBounds(1340, 752, 50, 42);
+      infoButton.setBounds(1330, 740, 60, 50);
 
       bee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Exhibition.png"))); // NOI18N
       bee.setPreferredSize(new java.awt.Dimension(48, 40));
@@ -331,36 +330,20 @@ public class MenuScreen extends javax.swing.JFrame {
 
       getContentPane().add(modeScreen);
       modeScreen.setBounds(0, 0, 1400, 800);
-
-      infoScreen1.setOpaque(false);
       getContentPane().add(infoScreen1);
       infoScreen1.setBounds(0, 0, 1400, 800);
-      getContentPane().add(learnModeLevelScreen);
-      learnModeLevelScreen.setBounds(0, 0, 1400, 800);
-      getContentPane().add(testModeLevelScreen);
-      testModeLevelScreen.setBounds(0, 0, 1400, 800);
-
-      javax.swing.GroupLayout challengeModeLevelScreenLayout = new javax.swing.GroupLayout(challengeModeLevelScreen);
-      challengeModeLevelScreen.setLayout(challengeModeLevelScreenLayout);
-      challengeModeLevelScreenLayout.setHorizontalGroup(
-         challengeModeLevelScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 1400, Short.MAX_VALUE)
-      );
-      challengeModeLevelScreenLayout.setVerticalGroup(
-         challengeModeLevelScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 800, Short.MAX_VALUE)
-      );
-
-      getContentPane().add(challengeModeLevelScreen);
-      challengeModeLevelScreen.setBounds(0, 0, 1400, 800);
       getContentPane().add(learnModeGUI);
       learnModeGUI.setBounds(0, 0, 1400, 800);
-
-      challengeModeGUI.setPreferredSize(new java.awt.Dimension(1400, 800));
+      getContentPane().add(learnModeLevelScreen);
+      learnModeLevelScreen.setBounds(0, 0, 1400, 800);
       getContentPane().add(challengeModeGUI);
       challengeModeGUI.setBounds(0, 0, 1400, 800);
+      getContentPane().add(challengeModeLevelScreen);
+      challengeModeLevelScreen.setBounds(0, 0, 1400, 800);
       getContentPane().add(testModeGUI);
       testModeGUI.setBounds(0, 0, 1400, 800);
+      getContentPane().add(testModeLevelScreen);
+      testModeLevelScreen.setBounds(0, 0, 1400, 800);
 
       pack();
       setLocationRelativeTo(null);

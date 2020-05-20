@@ -23,7 +23,7 @@ public class LevelButton extends JButton {
    }
 
    /**
-    * Returns levelNo
+    * Returns levelNo.
     * @return levelNo
     */
    public int getLevelNo() {
