@@ -71,64 +71,71 @@ public class LearnModeGUI extends javax.swing.JPanel {
     */
    @SuppressWarnings("unchecked")
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+   private void initComponents() {
 
-        playButton = new javax.swing.JButton();
-        retryButton = new javax.swing.JButton();
-        scrollUp = new javax.swing.JButton();
-        scrollDown = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+      playButton = new javax.swing.JButton();
+      retryButton = new javax.swing.JButton();
+      scrollUp = new javax.swing.JButton();
+      scrollDown = new javax.swing.JButton();
+      background = new javax.swing.JLabel();
 
-        setLayout(null);
+      setLayout(null);
 
-        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
-        playButton.setBorder(null);
-        playButton.setContentAreaFilled(false);
-        playButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        playButton.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
-        playButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playButtonActionPerformed(evt);
-            }
-        });
-        add(playButton);
-        playButton.setBounds(1005, 335, 80, 70);
+      playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
+      playButton.setBorder(null);
+      playButton.setContentAreaFilled(false);
+      playButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      playButton.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button.png"))); // NOI18N
+      playButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Play_Game_Button_Clicked.png"))); // NOI18N
+      playButton.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            playButtonActionPerformed(evt);
+         }
+      });
+      add(playButton);
+      playButton.setBounds(1005, 335, 80, 70);
 
-        retryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Retry_Button.png"))); // NOI18N
-        retryButton.setBorder(null);
-        retryButton.setContentAreaFilled(false);
-        retryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        retryButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                retryButtonActionPerformed(evt);
-            }
-        });
-        add(retryButton);
-        retryButton.setBounds(0, 0, 40, 40);
+      retryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Retry_Button.png"))); // NOI18N
+      retryButton.setBorder(null);
+      retryButton.setContentAreaFilled(false);
+      retryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      retryButton.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            retryButtonActionPerformed(evt);
+         }
+      });
+      add(retryButton);
+      retryButton.setBounds(0, 0, 40, 40);
 
-        scrollUp.setText("scroll up");
-        scrollUp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scrollUpActionPerformed(evt);
-            }
-        });
-        add(scrollUp);
-        scrollUp.setBounds(1070, 20, 71, 21);
+      scrollUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Scroll_Up_Button.png"))); // NOI18N
+      scrollUp.setBorder(null);
+      scrollUp.setContentAreaFilled(false);
+      scrollUp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      scrollUp.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            scrollUpActionPerformed(evt);
+         }
+      });
+      add(scrollUp);
+      scrollUp.setBounds(1050, 720, 54, 30);
 
-        scrollDown.setText("scroll down");
-        scrollDown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scrollDownActionPerformed(evt);
-            }
-        });
-        add(scrollDown);
-        scrollDown.setBounds(1060, 750, 85, 21);
+      scrollDown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Scroll_Down_Button.png"))); // NOI18N
+      scrollDown.setBorder(null);
+      scrollDown.setContentAreaFilled(false);
+      scrollDown.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      scrollDown.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            scrollDownActionPerformed(evt);
+         }
+      });
+      add(scrollDown);
+      scrollDown.setBounds(1050, 760, 54, 30);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
-        add(background);
-        background.setBounds(0, 0, 1400, 800);
-    }// </editor-fold>//GEN-END:initComponents
+      background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/In_Game_Background.png"))); // NOI18N
+      add(background);
+      background.setBounds(0, 0, 1400, 800);
+   }// </editor-fold>//GEN-END:initComponents
 
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
       if(lmm.getMovementPattern().isEmpty() || lmm.isGameOver()) { }
@@ -137,6 +144,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
         for (JButton b : selectionController.getButtons()) {
            b.setEnabled(false);
         }
+        playButton.setEnabled(false);
         selectionController.getForButton().setEnabled(false);
         if (lmm.getMovementPattern().isEmpty()) {
            mapView.endMessage();
@@ -168,6 +176,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
           lmm.update();
           mapView.resetMap();
           selectionController.resetSelectionController();
+          playButton.setEnabled(true);
           initNewLevel();
           codeView.setLocation(845, 0);
        }
@@ -407,11 +416,11 @@ public class LearnModeGUI extends javax.swing.JPanel {
       return mapView.isBeeMoving();
    }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel background;
-    private javax.swing.JButton playButton;
-    private javax.swing.JButton retryButton;
-    private javax.swing.JButton scrollDown;
-    private javax.swing.JButton scrollUp;
-    // End of variables declaration//GEN-END:variables
+   // Variables declaration - do not modify//GEN-BEGIN:variables
+   private javax.swing.JLabel background;
+   private javax.swing.JButton playButton;
+   private javax.swing.JButton retryButton;
+   private javax.swing.JButton scrollDown;
+   private javax.swing.JButton scrollUp;
+   // End of variables declaration//GEN-END:variables
 }

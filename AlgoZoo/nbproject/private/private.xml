@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/test/TestLevels.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/menus/MenuScreen.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/challenge/ChallengeModeGUI.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/test/TestModeGUI.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/challenge/ChallengeLevels.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/test/TestModeLevelsGUI.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/test/TestSelectionButtonsController.java</file>
+            <file>file:/C:/Users/mm/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/challenge/ChallengeModeGUI.java</file>
+            <file>file:/C:/Users/mm/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/menus/MenuScreen.java</file>
+            <file>file:/C:/Users/mm/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/learn/LearnModeGUI.java</file>
+            <file>file:/C:/Users/mm/Documents/GitHub/AlgoZoo/AlgoZoo/src/algoZoo/game/InfoScreen.java</file>
         </group>
     </open-files>
 </project-private>
