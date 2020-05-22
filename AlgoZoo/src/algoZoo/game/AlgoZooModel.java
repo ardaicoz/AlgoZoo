@@ -157,6 +157,7 @@ public class AlgoZooModel extends AlgoZoo {
       if (getCurrentX() == getFinishX() && getCurrentY() == getFinishY() && allPollensGathered()) {       
          hasWon = true;
       }
+      update();
    }
 
    /**

@@ -141,16 +141,20 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    @Override
    public void updateView(AlgoZooModel azm) {
       animal.setIcon(azm.getAnimal().getIcon());
-      if (!azm.getMovementPattern().isEmpty()) {
-         timer.start();
-      } else {
-         animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
-      }
       if (azm instanceof ChallengeModeModel) {
          if (((ChallengeModeModel) azm).isGameOver()) {
             endMessage();
          }
+         else if (!azm.getMovementPattern().isEmpty())
+             timer.start();
       }
+      else if (!azm.getMovementPattern().isEmpty()) {
+         timer.start();
+      } 
+      else {
+         animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+      }
+      
    }
    
    /**
@@ -174,7 +178,6 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
          endScreen.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Lost_Screen.png")));
          playSound( "src/algoZoo/Sounds/YouLost.wav" );
       }
-
    }
    
    /**
