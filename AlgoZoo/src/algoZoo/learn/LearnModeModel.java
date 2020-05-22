@@ -30,7 +30,10 @@ public class LearnModeModel extends AlgoZooModel {
    }
 
    // methods
-   
+   /**
+    * Overrides the addMovementPattern( char c) method and increases the number of movements.
+    * @param c 
+    */
    @Override
    public void addMovementPattern(char c) {
       super.addMovementPattern(c);
