@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.game;
 
 import algoZoo.challenge.ChallengeModeModel;
@@ -33,6 +28,10 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    final int SQUARE = WIDTH / NUMBER_OF_SQUARE;
 
    // constructors
+   /**
+    * Creates map view with regards to Algo Zoo Model
+    * @param azm Algo Zoo Model.
+    */
    public MapView(AlgoZooModel azm) {
       this.azm = azm;
       initComponents();
@@ -45,7 +44,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    // methods
    /**
     * Method to play sound when buttons clicked.
-    * @param soundName 
+    * @param soundName The path of the sound file.
     */
    public void playSound(String filePath) 
    {     

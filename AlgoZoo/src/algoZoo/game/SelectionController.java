@@ -5,8 +5,6 @@
  */
 package algoZoo.game;
 
-import algoZoo.challenge.ChallengeModeModel;
-import algoZoo.learn.LearnModeModel;
 import java.awt.Color;
 import java.awt.Component;
 import java.io.File;
@@ -22,14 +20,15 @@ import javax.swing.ListCellRenderer;
 
 /**
  * This class is for creating the movement options the user can choose from
+ *
  * @author Doğa, Ayberk, Esra
  * @version 1.0
  */
 public class SelectionController extends javax.swing.JPanel implements IAlgoZooView {
 
    // properties
-   AlgoZooModel         azm;
-   ArrayList<JButton>   buttons;
+   AlgoZooModel azm;
+   ArrayList<JButton> buttons;
    ArrayList<Character> forPattern;
    ForView forView;
 
@@ -41,30 +40,27 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       forPattern = new ArrayList<Character>();
       initComponents();
       addForView();
-      addAllButtons(); 
+      addAllButtons();
       clrComboBox();
    }
-   
+
    //methods
    /**
     * Method to play sound when buttons clicked.
-    * @param soundName 
+    *
+    * @param soundName
     */
-   public void playSound(String filePath) 
-   {     
-        try 
-        {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
-            Clip clip = AudioSystem.getClip( );
-            clip.open(audioInputStream);
-            clip.start( );
-        }
-        catch(Exception ex)
-        {
-            System.out.println("Error with playing sound.");
-            ex.printStackTrace( );
-        }
-   }  
+   public void playSound(String filePath) {
+      try {
+         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath));
+         Clip clip = AudioSystem.getClip();
+         clip.open(audioInputStream);
+         clip.start();
+      } catch (Exception ex) {
+         System.out.println("Error with playing sound.");
+         ex.printStackTrace();
+      }
+   }
 
    /**
     * This method is called from within the constructor to initialize the form.
@@ -183,7 +179,6 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       repeat.setBounds(105, 352, 70, 35);
    }// </editor-fold>//GEN-END:initComponents
 
-
    /**
     * Adds the movement buttons to the selection panel
     */
@@ -195,177 +190,136 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       buttons.add(resetButton);
       buttons.add(flowerButton);
    }
-   
+
    /**
-    * This method is used to show for algorithm where the controllers are located.
+    * This method is used to show for algorithm where the controllers are
+    * located.
     */
    private void addForView() {
-       forView = new ForView();
-       add(forView);
-       forView.setBounds(60, 400, 120, 310);
+      forView = new ForView();
+      add(forView);
+      forView.setBounds(60, 400, 120, 310);
    }
 
    /**
     * Adds the necessary movement to the model's movementPattern ArrayList
+    *
     * @param evt
     */
     private void upButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upButtonActionPerformed
-       if(forButton.isSelected()) {
-           forPattern.add('w');
-           forView.updateView(azm);
-       }
-       else {
+       if (forButton.isSelected()) {
+          forPattern.add('w');
+          forView.updateView(azm);
+       } else {
           azm.addMovementPattern('w');
-          if ( azm instanceof ChallengeModeModel) {
-            ((ChallengeModeModel)azm).increaseNoOfMovements();
-          }
-          else {
-            ((LearnModeModel)azm).increaseNoOfMovements();
-          }
        }
-       
-       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
+
+       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
     }//GEN-LAST:event_upButtonActionPerformed
 
    /**
     * Adds the necessary movement to the model's movementPattern ArrayList
+    *
     * @param evt
     */
     private void downButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downButtonActionPerformed
-       if(forButton.isSelected()) {
-           forPattern.add('s');
-           forView.updateView(azm);
-       }
-       else {
+       if (forButton.isSelected()) {
+          forPattern.add('s');
+          forView.updateView(azm);
+       } else {
           azm.addMovementPattern('s');
-          if ( azm instanceof ChallengeModeModel) {
-            ((ChallengeModeModel)azm).increaseNoOfMovements();
-          }
-          else {
-            ((LearnModeModel)azm).increaseNoOfMovements();
-          }
        }
-       
-       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
+
+       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
     }//GEN-LAST:event_downButtonActionPerformed
 
    /**
     * Adds the necessary movement to the model's movementPattern ArrayList
+    *
     * @param evt
     */
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
-      if(forButton.isSelected()) {
-           forPattern.add('d');
-           forView.updateView(azm);
-       }
-       else {
+       if (forButton.isSelected()) {
+          forPattern.add('d');
+          forView.updateView(azm);
+       } else {
           azm.addMovementPattern('d');
-          if ( azm instanceof ChallengeModeModel) {
-            ((ChallengeModeModel)azm).increaseNoOfMovements();
-          }
-          else {
-            ((LearnModeModel)azm).increaseNoOfMovements();
-          }
-      }
-      
-      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
+       }
+       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
     }//GEN-LAST:event_rightButtonActionPerformed
 
    /**
     * Adds the necessary movement to the model's movementPattern ArrayList
+    *
     * @param evt
     */
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
-      if(forButton.isSelected()) {
-           forPattern.add('a');
-           forView.updateView(azm);
+       if (forButton.isSelected()) {
+          forPattern.add('a');
+          forView.updateView(azm);
+       } else {
+          azm.addMovementPattern('a');          
        }
-       else {
-          azm.addMovementPattern('a');
-          if ( azm instanceof ChallengeModeModel) {
-            ((ChallengeModeModel)azm).increaseNoOfMovements();
-          }
-          else {
-            ((LearnModeModel)azm).increaseNoOfMovements();
-          }
-      }
-      
-      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
+       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
     }//GEN-LAST:event_leftButtonActionPerformed
 
    /**
     * Resets the model's movementPattern ArrayList
+    *
     * @param evt
     */
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
-       if(forButton.isSelected()) {
-            forPattern.clear();
-            forView.updateView(azm);
-            repeat.setSelectedIndex(0);
+       if (forButton.isSelected()) {
+          forPattern.clear();
+          forView.updateView(azm);
+          repeat.setSelectedIndex(0);
+       } else {
+          azm.initNewGame();
+          forPattern.clear();
+          forView.updateView(azm);
+          repeat.setSelectedIndex(0);
+          for (JButton b : buttons) {
+             b.setEnabled(true);
+          }         
        }
-       else {
-            azm.initNewGame();
-            forPattern.clear();
-            forView.updateView(azm);
-            repeat.setSelectedIndex(0);
-            for (JButton b : buttons) {
-               b.setEnabled(true);
-            }
-            if ( azm instanceof ChallengeModeModel) {
-               ((ChallengeModeModel)azm).setNoOfMovements(0);
-            }
-            else {
-               ((LearnModeModel)azm).setNoOfMovements(0);
-            }
-       }
-       
-       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
+       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
     }//GEN-LAST:event_resetButtonActionPerformed
-    /**
-     * ActionPerformed method for flowers.
-     * @param evt 
-     */
+   /**
+    * ActionPerformed method for flowers.
+    *
+    * @param evt
+    */
    private void flowerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flowerButtonActionPerformed
-      if(forButton.isSelected()) {
-           forPattern.add('f');
-           forView.updateView(azm);
+      if (forButton.isSelected()) {
+         forPattern.add('f');
+         forView.updateView(azm);
+      } else {
+         azm.addMovementPattern('f');         
       }
-      else {
-         azm.addMovementPattern('f');
-         if ( azm instanceof ChallengeModeModel) {
-            ((ChallengeModeModel)azm).increaseNoOfMovements();
-          }
-          else {
-            ((LearnModeModel)azm).increaseNoOfMovements();
-          }
-      }
-      
-      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
+      playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
    }//GEN-LAST:event_flowerButtonActionPerformed
-   
+
    /**
     * ActionPerformed method for for algorithm.
-    * @param evt 
+    *
+    * @param evt
     */
     private void forButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forButtonActionPerformed
-        if(!forButton.isSelected()) {
-            forButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/For_Button.png")));
-            for(int i = 0; i < Integer.parseInt((String)repeat.getSelectedItem()); i++) {
-                for(int j = 0; j < forPattern.size(); j++) {
-                    azm.addMovementPattern(forPattern.get(j));
-                }
-            }
-            forPattern.clear();
-            forView.updateView(azm);
-        }
-        else {
-            forButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/For_Button_Clicked.png")));
-        }
-        
-        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
+       if (!forButton.isSelected()) {
+          forButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/For_Button.png")));
+          for (int i = 0; i < Integer.parseInt((String) repeat.getSelectedItem()); i++) {
+             for (int j = 0; j < forPattern.size(); j++) {
+                azm.addMovementPattern(forPattern.get(j));
+             }
+          }
+          forPattern.clear();
+          forView.updateView(azm);
+       } else {
+          forButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/For_Button_Clicked.png")));
+       }
+       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
     }//GEN-LAST:event_forButtonActionPerformed
 
-  
    /**
     * Resets the panel for a new game.
     */
@@ -379,174 +333,175 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       forView.updateView(azm);
       repeat.setSelectedIndex(0);
    }
-   
-   /**
-    * Overrides the updateView method to disable all the buttons when the game is over.
-    * @param azm 
-    */
-    @Override
-    public void updateView(AlgoZooModel azm) {
-        if(azm.isGameOver()) {
-            for (JButton b : buttons) {
-                b.setEnabled(false);
-            }
-            forButton.setEnabled(false);
-        }
-    }
 
-    /**
-     * Returns the ArrayList of all the buttons on the selection panel.
-     * @return buttons
-     */
-    public ArrayList<JButton> getButtons() {
+   /**
+    * Overrides the updateView method to disable all the buttons when the game
+    * is over.
+    *
+    * @param azm
+    */
+   @Override
+   public void updateView(AlgoZooModel azm) {
+      if (azm.isGameOver()) {
+         for (JButton b : buttons) {
+            b.setEnabled(false);
+         }
+         forButton.setEnabled(false);
+      }
+   }
+
+   /**
+    * Returns the ArrayList of all the buttons on the selection panel.
+    *
+    * @return buttons
+    */
+   public ArrayList<JButton> getButtons() {
       return buttons;
    }
-    
-    /**
-     * Returns forButton
-     * @return forButton
-     */
-    public javax.swing.JToggleButton getForButton() {
-        return forButton;
-    }
-    
-    /**
-     * Returns forView class
-     * @return forView
-     */
-    public IAlgoZooView getForView() {
-        return forView;
-    }
-    
-    /**
-     * This method is for setting the colours in JComboBox.
-     */
-    public void clrComboBox() {
-        try {
-            repeat.setRenderer(new ComboBoxColor<String>());
-            repeat.setBackground(Color.BLACK);      
-        }
-        catch (Exception e) {}
-    }
-    
-    //inner class
-    /**
-     * This is an inner class for demonstrating the for pattern
-     */
-    public class ForView extends javax.swing.JPanel implements IAlgoZooView{
-        ArrayList<JLabel> jlabels;
-        int updated;
-        public ForView() {
-            setOpaque(false);
-            setLayout(null);
-            jlabels = new ArrayList<>();
-            updated = 0;   
-        }
-        
-        /**
-         * Method to update the view in the controllers.
-         * @param azm 
-         */
-        @Override
-        public void updateView(AlgoZooModel azm) {
-            if ( forPattern.isEmpty()) {
-                jlabels.removeAll(jlabels);
-                this.removeAll();
-                this.repaint();
-                updated = 0;
+
+   /**
+    * Returns forButton
+    *
+    * @return forButton
+    */
+   public javax.swing.JToggleButton getForButton() {
+      return forButton;
+   }
+
+   /**
+    * Returns forView class
+    *
+    * @return forView
+    */
+   public IAlgoZooView getForView() {
+      return forView;
+   }
+
+   /**
+    * This method is for setting the colours in JComboBox.
+    */
+   public void clrComboBox() {
+      try {
+         repeat.setRenderer(new ComboBoxColor<String>());
+         repeat.setBackground(Color.BLACK);
+      } catch (Exception e) {
+      }
+   }
+
+   //inner class
+   /**
+    * This is an inner class for demonstrating the for pattern
+    */
+   public class ForView extends javax.swing.JPanel implements IAlgoZooView {
+
+      ArrayList<JLabel> jlabels;
+      int updated;
+
+      public ForView() {
+         setOpaque(false);
+         setLayout(null);
+         jlabels = new ArrayList<>();
+         updated = 0;
+      }
+
+      /**
+       * Method to update the view in the controllers.
+       *
+       * @param azm
+       */
+      @Override
+      public void updateView(AlgoZooModel azm) {
+         if (forPattern.isEmpty()) {
+            jlabels.removeAll(jlabels);
+            this.removeAll();
+            this.repaint();
+            updated = 0;
+         } else {
+            for (int i = updated; i < forPattern.size(); i++) {
+               if (forPattern.get(i).equals('w')) {
+                  jlabels.add(new JLabel());
+                  add(jlabels.get(jlabels.size() - 1));
+                  jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Up_Button.png")));
+                  if (jlabels.size() >= 2) {
+                     jlabels.get(jlabels.size() - 1).setBounds(22, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 36, 50);
+                  } else {
+                     jlabels.get(jlabels.size() - 1).setBounds(22, 20, 36, 50);
+                  }
+                  updated++;
+               } else if (forPattern.get(i).equals('a')) {
+                  jlabels.add(new JLabel());
+                  add(jlabels.get(jlabels.size() - 1));
+                  jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Left_Button.png")));
+                  if (jlabels.size() >= 2) {
+                     jlabels.get(jlabels.size() - 1).setBounds(15, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 50, 36);
+                  } else {
+                     jlabels.get(jlabels.size() - 1).setBounds(15, 20, 50, 36);
+                  }
+                  updated++;
+               } else if (forPattern.get(i).equals('s')) {
+                  jlabels.add(new JLabel());
+                  add(jlabels.get(jlabels.size() - 1));
+                  jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
+                  if (jlabels.size() >= 2) {
+                     jlabels.get(jlabels.size() - 1).setBounds(22, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 36, 50);
+                  } else {
+                     jlabels.get(jlabels.size() - 1).setBounds(22, 20, 36, 50);
+                  }
+                  updated++;
+               } else if (forPattern.get(i).equals('d')) {
+                  jlabels.add(new JLabel());
+                  add(jlabels.get(jlabels.size() - 1));
+                  jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Right_Button.png")));
+                  if (jlabels.size() >= 2) {
+                     jlabels.get(jlabels.size() - 1).setBounds(15, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 50, 36);
+                  } else {
+                     jlabels.get(jlabels.size() - 1).setBounds(15, 20, 50, 36);
+                  }
+                  updated++;
+               } else if (forPattern.get(i).equals('f')) {
+                  jlabels.add(new JLabel());
+                  add(jlabels.get(jlabels.size() - 1));
+                  jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
+                  if (jlabels.size() >= 2) {
+                     jlabels.get(jlabels.size() - 1).setBounds(16, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 48, 60);
+                  } else {
+                     jlabels.get(jlabels.size() - 1).setBounds(16, 20, 48, 60);
+                  }
+                  updated++;
+
+               }
+
             }
-            else {
-                for ( int i = updated; i < forPattern.size(); i++) {
-                   if ( forPattern.get(i).equals('w')) {
-                      jlabels.add(new JLabel());
-                      add(jlabels.get(jlabels.size() - 1));
-                      jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Up_Button.png")));
-                      if ( jlabels.size() >= 2) {
-                         jlabels.get(jlabels.size() -1).setBounds(22, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 36, 50);
-                      }
-                      else {
-                         jlabels.get(jlabels.size() - 1).setBounds(22,20,36,50);
-                      }
-                      updated++;
-                   }
-                   else if ( forPattern.get(i).equals('a')) {
-                      jlabels.add(new JLabel());
-                      add(jlabels.get(jlabels.size() - 1));
-                      jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Left_Button.png")));
-                      if ( jlabels.size() >= 2) {
-                         jlabels.get(jlabels.size() -1).setBounds(15, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 50, 36);
-                      }
-                      else {
-                         jlabels.get(jlabels.size() - 1).setBounds(15,20,50,36);
-                      }
-                      updated++;
-                   }
-                   else if ( forPattern.get(i).equals('s')) {
-                      jlabels.add(new JLabel());
-                      add(jlabels.get(jlabels.size() - 1));
-                      jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
-                      if ( jlabels.size() >= 2) {
-                         jlabels.get(jlabels.size() -1).setBounds(22, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 36, 50);
-                      }
-                      else {
-                         jlabels.get(jlabels.size() - 1).setBounds(22,20,36,50);
-                      }
-                      updated++;
-                   }
-                   else if ( forPattern.get(i).equals('d')) {
-                      jlabels.add(new JLabel());
-                      add(jlabels.get(jlabels.size() - 1));
-                      jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Right_Button.png")));
-                      if ( jlabels.size() >= 2) {
-                         jlabels.get(jlabels.size() -1).setBounds(15, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 50, 36);
-                      }
-                      else {
-                         jlabels.get(jlabels.size() - 1).setBounds(15,20,50,36);
-                      }
-                      updated++;
-                   }
-                   else if (forPattern.get(i).equals('f')) {
-                      jlabels.add(new JLabel());
-                      add(jlabels.get(jlabels.size() - 1));
-                      jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
-                      if ( jlabels.size() >= 2) {
-                         jlabels.get(jlabels.size() -1).setBounds(16, jlabels.get(jlabels.size()-2).getHeight() + jlabels.get(jlabels.size()-2).getY() + 10, 48, 60);
-                      }
-                      else {
-                         jlabels.get(jlabels.size() - 1).setBounds(16,20,48,60);
-                      }
-                      updated++;
+         }
+      }
+   }
 
-                   }
+   //inner class
+   /**
+    * This is an inner class for designing the JComboBox
+    *
+    * @param <String>
+    */
+   public class ComboBoxColor<String> extends javax.swing.JLabel implements ListCellRenderer {
 
-                }
-             }
-        }
-    }
-    
-    //inner class
-    /**
-     * This is an inner class for designing the JComboBox 
-     * @param <String> 
-     */
-    public class ComboBoxColor<String> extends javax.swing.JLabel implements ListCellRenderer {
-        int count = 5;
-        public ComboBoxColor() {
-        setOpaque(true);
-        }
+      int count = 5;
 
-        @Override
-        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-           setText(value.toString());
-           Object text = repeat.getModel().getElementAt(index);
-           setBackground(new Color(55, 55, 55));
-           setForeground(new Color(255, 255, 255));
-           setFont(new java.awt.Font("Calibri", 1, 18));
-           setHorizontalAlignment(CENTER);
-           return this;
-        }
-    }
-   
+      public ComboBoxColor() {
+         setOpaque(true);
+      }
+
+      @Override
+      public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+         setText(value.toString());
+         Object text = repeat.getModel().getElementAt(index);
+         setBackground(new Color(55, 55, 55));
+         setForeground(new Color(255, 255, 255));
+         setFont(new java.awt.Font("Calibri", 1, 18));
+         setHorizontalAlignment(CENTER);
+         return this;
+      }
+   }
+
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JButton downButton;
    private javax.swing.JButton flowerButton;
@@ -558,5 +513,4 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    private javax.swing.JButton upButton;
    // End of variables declaration//GEN-END:variables
 
-   
 }

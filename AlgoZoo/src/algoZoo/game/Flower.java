@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.game;
-
 
 /**
  * Flower class to represent flowers with a boolean pollenGathered property
@@ -12,7 +6,6 @@ package algoZoo.game;
  * @version 1.0
  */
 public class Flower {
-
    // properties
    final int TILE_WIDTH = 64;
    final int TILE_HEIGHT = 64;
@@ -23,6 +16,11 @@ public class Flower {
    private boolean pollenGathered;
 
    // constructor
+   /**
+    * Creates a flower object in the sapecified x and y location.
+    * @param x The location of the flower with respect to x-axis.
+    * @param y The location of the flower with respect to y-axis.
+    */
    public Flower(int x, int y) {
       //set location units
       this.x = (TILE_WIDTH * (x - 1)) + SPACE_WIDTH;
@@ -34,7 +32,7 @@ public class Flower {
    // methods
    /**
     * Returns x which is the x location of the flower
-    * @return x
+    * @return x The x location of the flower.
     */
    public int getX() {
       return x;
@@ -42,7 +40,7 @@ public class Flower {
 
    /**
     * Returns y which is the y location of the flower
-    * @return y
+    * @return y The y location of the flower.
     */
    public int getY() {
       return y;
@@ -50,7 +48,7 @@ public class Flower {
    
    /**
     * Sets pollenGathered property
-    * @param gathered 
+    * @param gathered represent if the pollen was gathered or not.
     */
    public void setPollenGathered(boolean gathered) {
       pollenGathered = gathered;
@@ -58,7 +56,7 @@ public class Flower {
    
    /**
     * Returns pollenGathered property
-    * @return 
+    * @return Returns true if pollen was gathered. Returns false if pollen was not gathered.
     */
    public boolean getPollenGathered(){
       return pollenGathered;

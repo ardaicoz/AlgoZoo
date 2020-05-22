@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.game;
 
 import java.util.ArrayList;
@@ -22,6 +17,14 @@ public class AlgoZooModel extends AlgoZoo {
    
 
    //constructors
+   /**
+    * Creates a Algo Zoo Model in the specified start location, finish location and flower objects.
+    * @param startX Start point of the bee with respect to x-axis.
+    * @param startY Start point of the bee with respect to y-axis.
+    * @param finishX Finish point of the bee with respect to x-axis.
+    * @param finishY Finish point of the bee with respect to y-axis.
+    * @param flowers The ArrayList containing flower objects.
+    */
    public AlgoZooModel(int startX, int startY, int finishX, int finishY, ArrayList<Flower> flowers) {
       super(startX, startY, finishX, finishY, flowers);
       //initialize all properties
@@ -38,7 +41,6 @@ public class AlgoZooModel extends AlgoZoo {
    public void goUp() {
       super.goUp();
       update();
-
    }
 
    /**
@@ -48,7 +50,6 @@ public class AlgoZooModel extends AlgoZoo {
    public void goDown() {
       super.goDown();
       update();
-
    }
 
    /**
@@ -58,7 +59,6 @@ public class AlgoZooModel extends AlgoZoo {
    public void goRight() {
       super.goRight();      
       update();
-
    }
 
    /**
@@ -68,7 +68,6 @@ public class AlgoZooModel extends AlgoZoo {
    public void goLeft() {
       super.goLeft();      
       update();
-
    }
 
    /**

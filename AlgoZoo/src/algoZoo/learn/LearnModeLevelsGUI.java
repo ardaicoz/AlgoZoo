@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.learn;
 
 import java.util.ArrayList;
@@ -10,7 +5,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
- *
+ * The panel that includes all Learn Mode Levels and buttons appears before game starts.
  * @author Ayberk, Görkem
  * @version 1.0
  */
@@ -23,21 +18,31 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
     * Creates new form LearnModeLevelsGUI
     */
    public LearnModeLevelsGUI() {
-      initComponents();
-      jButton2.setEnabled(false);
-      jButton3.setEnabled(false);
-      jButton4.setEnabled(false);
-      jButton5.setEnabled(false);
-      jButton6.setEnabled(false);
-      jButton7.setEnabled(false);
-      jButton8.setEnabled(false);
-      jButton9.setEnabled(false);
-      jButton10.setEnabled(false);
+      initComponents();     
       buttons = new ArrayList<JButton>();
       addButtons();
+      try {
+         LearnLevelsSave.load();
+         for (int i = 0; i < LearnLevelsSave.load().size(); i++) {           
+            if (LearnLevelsSave.load().get(i)) {
+               buttons.get(i).setEnabled(true);
+               buttons.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/" + (i + 1) + ".png")));
+            } else {
+               buttons.get(i).setEnabled(false);
+            }
+         }
+
+      } catch (NullPointerException e) {
+         for (int j = 1; j < buttons.size(); j++) {
+            buttons.get(j).setEnabled(false);
+         }
+      }
    }
    
    // methods   
+   /**
+    * Add all level buttons to ArrayList.
+    */
    public void addButtons() {
       buttons.add(jButton1);
       buttons.add(jButton2);
@@ -52,23 +57,22 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
    }
 
    /**
-    * 
-    * @param levelNo
-    * @return 
+    * Get level button according to level number.
+    * @param levelNo Desired level number.
+    * @return JButton 
     */
    public JButton getJButton(int levelNo) {
       return buttons.get(levelNo - 1);
    }
 
    /**
-    * 
-    * @param jb
-    * @param i 
+    * Set the icon to JButton.
+    * @param jb JButton
+    * @param i ImageIcon
     */
    public void setJButtonIcon(JButton jb, ImageIcon i) {
       jb.setIcon(i);
    }
-
    
    /**
     * This method is called from within the constructor to initialize the form.
