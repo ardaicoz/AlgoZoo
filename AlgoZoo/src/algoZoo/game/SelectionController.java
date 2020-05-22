@@ -28,10 +28,10 @@ import javax.swing.ListCellRenderer;
 public class SelectionController extends javax.swing.JPanel implements IAlgoZooView {
 
    // properties
-   ForView              forView;
-   AlgoZooModel         azm;
-   ArrayList<JButton>   buttons;
-   ArrayList<Character> forPattern;
+   private ForView              forView;
+   private AlgoZooModel         azm;
+   private ArrayList<JButton>   buttons;
+   private ArrayList<Character> forPattern;
 
    // constructors
    public SelectionController(AlgoZooModel azm) {
@@ -47,7 +47,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    
    //methods
    /**
-    * Method to play sound when buttons clicked.
+    * method to play sound when buttons clicked
     * @param soundName 
     */
    public void playSound(String filePath) 
@@ -185,7 +185,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
 
 
    /**
-    * Adds the movement buttons to the selection panel
+    * adds the movement buttons to the selection panel
     */
    private void addAllButtons() {
       buttons.add(downButton);
@@ -197,7 +197,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    }
    
    /**
-    * This method is used to show for algorithm where the controllers are located.
+    * this method is used to show for algorithm where the controllers are located
     */
    private void addForView() {
        forView = new ForView();
@@ -206,7 +206,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    }
 
    /**
-    * Adds the necessary movement to the model's movementPattern ArrayList
+    * adds the necessary movement to the model's movementPattern ArrayList
     * @param evt
     */
     private void upButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upButtonActionPerformed
@@ -228,7 +228,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }//GEN-LAST:event_upButtonActionPerformed
 
    /**
-    * Adds the necessary movement to the model's movementPattern ArrayList
+    * adds the necessary movement to the model's movementPattern ArrayList
     * @param evt
     */
     private void downButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downButtonActionPerformed
@@ -250,7 +250,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }//GEN-LAST:event_downButtonActionPerformed
 
    /**
-    * Adds the necessary movement to the model's movementPattern ArrayList
+    * adds the necessary movement to the model's movementPattern ArrayList
     * @param evt
     */
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
@@ -272,7 +272,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }//GEN-LAST:event_rightButtonActionPerformed
 
    /**
-    * Adds the necessary movement to the model's movementPattern ArrayList
+    * adds the necessary movement to the model's movementPattern ArrayList
     * @param evt
     */
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
@@ -294,7 +294,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }//GEN-LAST:event_leftButtonActionPerformed
 
    /**
-    * Resets the model's movementPattern ArrayList
+    * resets the model's movementPattern ArrayList
     * @param evt
     */
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
@@ -321,8 +321,9 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
        
        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_resetButtonActionPerformed
+    
     /**
-     * ActionPerformed method for flowers.
+     * actionPerformed method for flowers
      * @param evt 
      */
    private void flowerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flowerButtonActionPerformed
@@ -344,7 +345,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    }//GEN-LAST:event_flowerButtonActionPerformed
    
    /**
-    * ActionPerformed method for for algorithm.
+    * actionPerformed method for for algorithm
     * @param evt 
     */
     private void forButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forButtonActionPerformed
@@ -371,9 +372,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
         playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_forButtonActionPerformed
 
-  
    /**
-    * Resets the panel for a new game.
+    * resets the panel for a new game
     */
    public void resetSelectionController() {
       for (JButton b : buttons) {
@@ -387,7 +387,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    }
    
    /**
-    * Overrides the updateView method to disable all the buttons when the game is over.
+    * overrides the updateView method to disable all the buttons when the game is over
     * @param azm 
     */
     @Override
@@ -401,7 +401,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }
 
     /**
-     * Returns the ArrayList of all the buttons on the selection panel.
+     * returns the ArrayList of all the buttons on the selection panel
      * @return buttons
      */
     public ArrayList<JButton> getButtons() {
@@ -409,7 +409,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    }
     
     /**
-     * Returns forButton
+     * returns forButton
      * @return forButton
      */
     public javax.swing.JToggleButton getForButton() {
@@ -417,7 +417,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }
     
     /**
-     * Returns forView class
+     * returns forView class
      * @return forView
      */
     public IAlgoZooView getForView() {
@@ -425,9 +425,9 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     }
     
     /**
-     * This method is for setting the colours in JComboBox.
+     * this method is for setting the colours in JComboBox.
      */
-    public void clrComboBox() {
+    private void clrComboBox() {
         try {
             repeat.setRenderer(new ComboBoxColor<String>());
             repeat.setBackground(Color.BLACK);      
@@ -450,7 +450,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
         }
         
         /**
-         * Method to update the view in the controllers.
+         * method to update the view in the controllers
          * @param azm 
          */
         @Override

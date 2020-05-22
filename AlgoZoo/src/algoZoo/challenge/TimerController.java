@@ -17,10 +17,10 @@ import javax.swing.Timer;
 public class TimerController extends javax.swing.JPanel {
    
    //properties
-   int                second;
-   int                minute;
-   Timer              timer;
-   ChallengeModeModel cmm;
+   private int                second;
+   private int                minute;
+   private Timer              timer;
+   private ChallengeModeModel cmm;
    
    // constructor
    public TimerController(ChallengeModeModel cmm) {
@@ -64,6 +64,10 @@ public class TimerController extends javax.swing.JPanel {
       timer.start();
    }
    
+   /**
+    * checks if the timer is still running
+    * @return true if the timer is still running, otherwise false
+    */
    public boolean isRunning() {
        return timer.isRunning();
    }

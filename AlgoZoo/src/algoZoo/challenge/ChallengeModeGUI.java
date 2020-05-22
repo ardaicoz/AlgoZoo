@@ -23,19 +23,17 @@ import javax.swing.JButton;
 public class ChallengeModeGUI extends javax.swing.JPanel {
 
    // properties
-   MapView mapView;
-   CodeView codeView;
-   TimerController timer;
-   ChallengeLevels currentLevel;
-   ChallengeModeModel cmm;
-   SelectionController selectionController;   
-   ArrayList<ChallengeLevels> levelContainer;
+   private MapView                    mapView;
+   private CodeView                   codeView;
+   private TimerController            timer;
+   private ChallengeLevels            currentLevel;
+   private ChallengeModeModel         cmm;
+   private SelectionController        selectionController;   
+   private ArrayList<ChallengeLevels> levelContainer;
 
-   /**
-    * Creates new form ChallengeModeGUI
-    */
+   // constructor
    public ChallengeModeGUI() {
-      //Initialize all components
+      // initialize all components
       initMyComponents();
       initComponents();
       addScroll();
@@ -43,7 +41,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
    //methods
    /**
-    * Method to play sound when buttons clicked.
+    * method to play sound when buttons clicked.
     * @param soundName 
     */
    public void playSound(String filePath) 
@@ -134,6 +132,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
 
+   /**
+    * actionPerformed method for playButton to move the bee according to the movement algorithm
+    * @param evt 
+    */
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
       if(cmm.getMovementPattern().isEmpty() || cmm.isGameOver() || !timer.isRunning()) { } 
       else {
@@ -151,6 +153,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
    }//GEN-LAST:event_playButtonActionPerformed
 
+   /**
+    * actionPerformed method for retryButton to restart the level
+    * @param evt 
+    */
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
        if (isBeeMoving()) {
        } else {
@@ -181,6 +187,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
     }//GEN-LAST:event_retryButtonActionPerformed
 
+    /**
+     * actionPerformed method for scrollUp
+     * @param evt 
+     */
     private void scrollUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrollUpActionPerformed
         int x = codeView.getX();
         int y = codeView.getY();
@@ -192,6 +202,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_scrollUpActionPerformed
 
+    /**
+     * actionPerformed method for scrollDown
+     * @param evt 
+     */
     private void scrollDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrollDownActionPerformed
         int x = codeView.getX();
         int y = codeView.getY();
@@ -204,7 +218,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_scrollDownActionPerformed
 
    /**
-    * Method for initializing custom made components
+    * method for initializing custom made components
     */
    private void initMyComponents() {
       // initialize components  
@@ -238,7 +252,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Initialize all the levels for Challenge Mode with setting required
+    * initialize all the levels for Challenge Mode with setting required
     * properties
     */
    public void initLevels() {
@@ -253,35 +267,35 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       ChallengeLevels level9 = new ChallengeLevels(5, 9, 7, 5, 14, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level9.png")), 9);
       ChallengeLevels level10 = new ChallengeLevels(8, 1, 3, 7, 21, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level10.png")), 10);
 
-      // Set flowers
+      // set flowers
       ArrayList<Flower> flowerContainer = new ArrayList<>();
 
-      //Level1
+      // Level1
       flowerContainer.add(new Flower(5, 7));
       flowerContainer.add(new Flower(4, 6));
       level1.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level2
+      // Level2
       flowerContainer.add(new Flower(6, 7));
       flowerContainer.add(new Flower(7, 8));
       flowerContainer.add(new Flower(7, 6));
       level2.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level3
+      // Level3
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(8, 7));
       level3.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level4
+      // Level4
       flowerContainer.add(new Flower(6, 5));
       flowerContainer.add(new Flower(8, 7));
       level4.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level5
+      // Level5
       flowerContainer.add(new Flower(3, 8));
       flowerContainer.add(new Flower(4, 7));
       flowerContainer.add(new Flower(6, 8));
@@ -289,14 +303,14 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       level5.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level6
+      // Level6
       flowerContainer.add(new Flower(5, 8));
       flowerContainer.add(new Flower(6, 8));
       flowerContainer.add(new Flower(7, 8));
       level6.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level7
+      // Level7
       flowerContainer.add(new Flower(2, 6));
       flowerContainer.add(new Flower(4, 6));
       flowerContainer.add(new Flower(6, 6));
@@ -304,7 +318,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       level7.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level8
+      // Level8
       flowerContainer.add(new Flower(4, 4));
       flowerContainer.add(new Flower(4, 5));
       flowerContainer.add(new Flower(4, 6));
@@ -312,7 +326,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       level8.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level9
+      // Level9
       flowerContainer.add(new Flower(3, 7));
       flowerContainer.add(new Flower(4, 8));
       flowerContainer.add(new Flower(4, 6));
@@ -320,7 +334,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       level9.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //Level10      
+      // Level10      
       flowerContainer.add(new Flower(8, 3));
       flowerContainer.add(new Flower(7, 4));
       flowerContainer.add(new Flower(8, 5));
@@ -330,7 +344,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       level10.setFlowers(flowerContainer);
       flowerContainer.removeAll(flowerContainer);
 
-      //add all the levels to an ArrayList
+      // add all the levels to an ArrayList
       levelContainer = new ArrayList<>();
       levelContainer.add(level1);
       levelContainer.add(level2);
@@ -344,8 +358,10 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       levelContainer.add(level10);
       
    }
-   
-   public void addScroll() {
+   /**
+    * adds scroll function to CodeView
+    */
+   private void addScroll() {
        codeView.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
                 int a = evt.getWheelRotation();
@@ -378,14 +394,14 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Method for starting the timer
+    * method for starting the timer
     */
    public void startTimer() {
       timer.startTimer();
    }
 
    /**
-    * Initializes new level by getting information from the currentLevel
+    * initializes new level by getting information from the currentLevel
     * property
     */
    public void initNewLevel() {
@@ -400,8 +416,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Determines which level will start.
-    *
+    * determines which level will start.
     * @param level level number.
     */
    public void setCurrentLevel(int level) {
@@ -410,7 +425,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Initializes new game
+    * initializes new game
     */
    public void initNewGame() {
       cmm.initNewGame();
@@ -425,8 +440,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Returns the model class
-    *
+    * returns the model class
     * @return cmm
     */
    public ChallengeModeModel getModel() {
@@ -434,8 +448,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Sets the animal according to the parametre
-    *
+    * sets the animal according to the parametre
     * @param animal
     */
    public void setAnimal(Animal animal) {
@@ -443,25 +456,32 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Returns the efficiency of the current level
-    *
+    * returns the efficiency of the current level
     * @return cmm.getEfficiency()
     */
    public int getEfficiency() {
       return cmm.getEfficiency();
    }
 
+   /**
+    * returns the current level
+    * @return currentLevel.getLevel();
+    */
    public int getLevel() {
       return currentLevel.getLevel();
    }
 
    /**
-    * Method for stopping the timer
+    * method for stopping the timer
     */
    public void stopTimer() {
       timer.stopTimer();
    }
 
+   /**
+    * checks if the bee is moving
+    * @return true if the bee is moving, otherwise false
+    */
    public boolean isBeeMoving() {
       return mapView.isBeeMoving();
    }

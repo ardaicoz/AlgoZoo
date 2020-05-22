@@ -11,15 +11,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
- * Thiss class is for organizing the LevelButtons for Challenge Mode
+ * This class is for organizing the LevelButtons for Challenge Mode
  * @author Ayberk, Doğa, Esra, Alp
  * @version 1.0
  */
 public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
 
    // properties
-   ArrayList<LevelButton> buttons;
-   ArrayList<JLabel>  stars;
+   private ArrayList<JLabel>      stars;
+   private ArrayList<LevelButton> buttons;
 
    // constructor
    public ChallengeModeLevelsGUI() {
@@ -35,9 +35,9 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    
    //methods
    /**
-    * Adds all the efficiency jLabels to ArrayList
+    * adds all the efficiency jLabels to ArrayList
     */
-   public void addStars() {
+   private void addStars() {
       stars.add(stars1);
       stars.add(stars2);
       stars.add(stars3);
@@ -51,9 +51,9 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    }
    
    /**
-    * Adds all the LevelButtons to ArrayList
+    * adds all the LevelButtons to ArrayList
     */
-   public void addButtons() {
+   private void addButtons() {
       buttons.add(jButton1);
       buttons.add(jButton2);
       buttons.add(jButton3);
@@ -71,7 +71,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Returns the efficiency label of the given levelNo
+    * returns the efficiency label of the given levelNo
     * @param levelNo
     * @return stars.get(levelNo - 1)
     */
@@ -80,7 +80,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    }
    
    /**
-    * Returns the LevelButton of the given levelNo
+    * returns the LevelButton of the given levelNo
     * @param levelNo
     * @return buttons.get(levelNo - 1)
     */
@@ -89,7 +89,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Sets the icon of the LevelButton with given ImageIcon
+    * sets the icon of the LevelButton with given ImageIcon
     * @param levelButton
     * @param icon 
     */
@@ -98,7 +98,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    }
    
    /**
-    * Sets the icon of efficiency labels according to the efficiency of played level
+    * sets the icon of efficiency labels according to the efficiency of played level
     * @param stars
     * @param efficiency 
     */

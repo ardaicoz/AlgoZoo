@@ -11,26 +11,25 @@ import javax.swing.ImageIcon;
 
 /**
  * This class is for creating levels for Challenge Mode
- *
  * @author Doğa, Alp, Esra
  * @version 1.0
  */
 public class ChallengeLevels {
 
    // properties
-   final int TILE_WIDTH = 64;
-   final int TILE_HEIGHT = 64;
-   final int SPACE_WIDTH = 8;
-   final int SPACE_HEIGHT = 12;
-   int startX;
-   int startY;
-   int finishX;
-   int finishY;
-   int minRequiredMovements;
-   int minRequiredTime;
-   int level;
-   ImageIcon mapBackground;
-   ArrayList<Flower> flowers;
+   private final int         TILE_WIDTH = 64;
+   private final int         TILE_HEIGHT = 64;
+   private final int         SPACE_WIDTH = 8;
+   private final int         SPACE_HEIGHT = 12;
+   private int               startX;
+   private int               startY;
+   private int               finishX;
+   private int               finishY;
+   private int               minRequiredMovements;
+   private int               minRequiredTime;
+   private int               level;
+   private ImageIcon         mapBackground;
+   private ArrayList<Flower> flowers;
 
    // constructor    
    public ChallengeLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ImageIcon mapBackground, int level) {
@@ -48,7 +47,6 @@ public class ChallengeLevels {
    // methods 
    /**
     * returns the start X location of the animal in a particular level
-    *
     * @return startX
     */
    public int getStartX() {
@@ -57,7 +55,6 @@ public class ChallengeLevels {
 
    /**
     * returns the start Y location of the animal in a particular level
-    *
     * @return startY
     */
    public int getStartY() {
@@ -66,7 +63,6 @@ public class ChallengeLevels {
 
    /**
     * returns the final X location of the animal in a particular level
-    *
     * @return finishX
     */
    public int getFinishX() {
@@ -75,7 +71,6 @@ public class ChallengeLevels {
 
    /**
     * returns the final Y location of the animal in a particular level
-    *
     * @return finishY
     */
    public int getFinishY() {
@@ -84,7 +79,6 @@ public class ChallengeLevels {
 
    /**
     * returns the minimal number of required movements to win a particular level
-    *
     * @return minRequiredMovements
     */
    public int getMinRequiredMovements() {
@@ -93,7 +87,6 @@ public class ChallengeLevels {
 
    /**
     * returns the minimal required time to win a particular level
-    *
     * @return minRequiredTime
     */
    public int getMinRequiredTime() {
@@ -102,7 +95,6 @@ public class ChallengeLevels {
 
    /**
     * returns the level number
-    *
     * @return level
     */
    public int getLevel() {
@@ -111,7 +103,6 @@ public class ChallengeLevels {
 
    /**
     * returns the specific background of level
-    *
     * @return mapBackground
     */
    public ImageIcon getMapBackground() {
@@ -120,7 +111,6 @@ public class ChallengeLevels {
 
    /**
     * returns the ArrayList that contain Flower objects.
-    *
     * @return flowers
     */
    public ArrayList<Flower> getFlowers() {
@@ -128,7 +118,7 @@ public class ChallengeLevels {
    }
 
    /**
-    *
+    * sets the Flower ArrayList
     * @param flowers
     */
    public void setFlowers(ArrayList<Flower> flowers) {
