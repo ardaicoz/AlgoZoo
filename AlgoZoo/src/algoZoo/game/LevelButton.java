@@ -15,7 +15,7 @@ import javax.swing.JButton;
 public class LevelButton extends JButton {
 
    // properties
-   int levelNo;
+   private int levelNo;
 
    // constructor
    public LevelButton(int levelNo) {
@@ -23,7 +23,7 @@ public class LevelButton extends JButton {
    }
 
    /**
-    * Returns levelNo.
+    * returns levelNo
     * @return levelNo
     */
    public int getLevelNo() {
