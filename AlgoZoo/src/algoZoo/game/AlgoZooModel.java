@@ -198,4 +198,13 @@ public class AlgoZooModel extends AlgoZoo {
    public boolean hasWon() {
       return hasWon;
    }
+
+   /**
+    * sets hasWon status
+    * @param hasWon 
+    */
+    public void setHasWon(boolean hasWon) {
+        this.hasWon = hasWon;
+    }
+   
 }

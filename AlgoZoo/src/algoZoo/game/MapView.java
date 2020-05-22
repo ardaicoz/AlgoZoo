@@ -142,9 +142,8 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    public void updateView(AlgoZooModel azm) {
       animal.setIcon(azm.getAnimal().getIcon());
       if (azm instanceof ChallengeModeModel) {
-         if (((ChallengeModeModel) azm).isGameOver()) {
-            endMessage();
-         }
+         if (((ChallengeModeModel) azm).isTimeIsUp()) 
+             endMessage();
          else if (!azm.getMovementPattern().isEmpty())
              timer.start();
       }

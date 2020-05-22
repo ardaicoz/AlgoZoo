@@ -173,7 +173,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
           cmm.setCurrentX(cmm.getStartX());
           cmm.setCurrentY(cmm.getStartY());
           cmm.setGameOver(false);
-          cmm.update();
+          cmm.setTimeIsUp(false);
           mapView.resetMap();
           timer.stopTimer();
           timer.resetTimer();
@@ -182,6 +182,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
           initNewLevel();
           timer.startTimer();
           codeView.setLocation(845, 0);
+          cmm.update();
        }
 
        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
