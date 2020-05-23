@@ -12,6 +12,7 @@ public class ChallengeLevelsSaveContainer implements Serializable {
 
    // properties
    ArrayList<Boolean> levelAccomplished;
+   ArrayList<Integer> levelStars;
 
    // constructor
    /**
@@ -23,6 +24,11 @@ public class ChallengeLevelsSaveContainer implements Serializable {
       levelAccomplished.add(Boolean.TRUE);
       for (int i = 0; i < 9; i++) {
          levelAccomplished.add(Boolean.FALSE);
+      }
+      
+      levelStars = new ArrayList<>();
+      for (int i = 0; i < 10; i++) {
+         levelStars.add(-1);
       }
    }
 
@@ -49,7 +55,7 @@ public class ChallengeLevelsSaveContainer implements Serializable {
     *
     * @return Size of the ArrayList
     */
-   public int size() {
+   public int levelAccomplishedSize() {
       return levelAccomplished.size();
    }
 
@@ -61,5 +67,17 @@ public class ChallengeLevelsSaveContainer implements Serializable {
     */
    public boolean getLevelAccomplished(int index) {
       return levelAccomplished.get(index);
+   }
+   
+   public void setLevelStars(int levelNumber, int stars) {
+      levelStars.set(levelNumber - 1, stars);
+   }
+   
+   public int levelStarsSize() {
+      return levelStars.size();
+   }
+   
+   public int getLevelStars(int index) {
+      return levelStars.get(index);
    }
 }

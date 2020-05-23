@@ -35,13 +35,25 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
       addButtons();    
       addStars();
       try {         
-         for (int i = 0; i < ChallengeLevelsSave.load().size(); i++) {
+         for (int i = 0; i < ChallengeLevelsSave.load().levelAccomplishedSize(); i++) {
             if (ChallengeLevelsSave.load().getLevelAccomplished(i)) {
                buttons.get(i).setEnabled(true);
                buttons.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (i + 1) + ".png")));
                
             } else {
                buttons.get(i).setEnabled(false);
+            }
+         }
+         
+         for(int i = 0; i < ChallengeLevelsSave.load().levelStarsSize(); i++) {
+            if (ChallengeLevelsSave.load().getLevelStars(i) == 3) {
+               stars.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/Three_Stars.png")));
+            }
+            else if (ChallengeLevelsSave.load().getLevelStars(i) == 2) {
+               stars.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/Two_Stars.png")));
+            }
+            else if (ChallengeLevelsSave.load().getLevelStars(i) == 1) {
+               stars.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Stars/One_Star.png")));
             }
          }
       } catch (NullPointerException e) {

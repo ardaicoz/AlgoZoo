@@ -165,10 +165,8 @@ public class ChallengeModeModel extends AlgoZooModel {
          efficiency = 1;
          if (usedTime < minRequiredTime / 2) {
             efficiency++;
-            System.out.println("Number of movement" + noOfMovements);
          }
          if (noOfMovements == minRequiredMovements) {
-
             efficiency++;
          }
       }

@@ -56,7 +56,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
       movementsView.setMinimumSize(new java.awt.Dimension(50, 15));
       movementsView.setPreferredSize(new java.awt.Dimension(50, 15));
       add(movementsView);
-      movementsView.setBounds(160, 0, 40, 20);
+      movementsView.setBounds(150, 0, 50, 20);
    }
    
    /**
