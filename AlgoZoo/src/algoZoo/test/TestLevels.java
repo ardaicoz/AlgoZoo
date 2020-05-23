@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 
 /**
  * It creates level objects for the test mode
- * @author Kerem
+ * @author Kerem, Arda
  * @version 1.0
  */
 public class TestLevels {
@@ -51,7 +51,6 @@ public class TestLevels {
    // methods
    /**
     * Get method for map background.
-    *
     * @return map as ImageIcon
     */
    public ImageIcon getMapBackground() {
@@ -60,7 +59,6 @@ public class TestLevels {
 
    /**
     * Get method for animal's starting x-coordinate.
-    *
     * @return x-coordinate as integer
     */
    public int getStartX() {
@@ -69,7 +67,6 @@ public class TestLevels {
 
    /**
     * Get method for animal's starting y-coordinate.
-    *
     * @return y-coordinate as integer
     */
    public int getStartY() {
@@ -78,7 +75,6 @@ public class TestLevels {
 
    /**
     * Get method for the x-coordinate of animal's destination.
-    *
     * @return x-coordinate as integer
     */
    public int getFinishX() {
@@ -87,7 +83,6 @@ public class TestLevels {
 
    /**
     * Get method for the y-coordinate of animal's destination.
-    *
     * @return y-coordinate as integer
     */
    public int getFinishY() {
@@ -96,7 +91,6 @@ public class TestLevels {
 
    /**
     * Get method to get all elements of the option A.
-    *
     * @return all elements inside a ArrayList
     */
    public ArrayList<Character> getList1() {
@@ -105,7 +99,6 @@ public class TestLevels {
 
    /**
     * Get method to get all elements of the option B.
-    *
     * @return all elements inside a ArrayList
     */
    public ArrayList<Character> getList2() {
@@ -114,7 +107,6 @@ public class TestLevels {
 
    /**
     * Get method to get all elements of the option C.
-    *
     * @return all elements inside a ArrayList
     */
    public ArrayList<Character> getList3() {
@@ -123,7 +115,6 @@ public class TestLevels {
    
     /**
     * Get method for the level number
-    *
     * @return the level number
     */
    public int getLevel() {
@@ -132,7 +123,6 @@ public class TestLevels {
    
     /**
     * Get method for the flowers in the level
-    *
     * @return ArrayList of all flowers in the level
     */
    public ArrayList<Flower> getFlowers() {
