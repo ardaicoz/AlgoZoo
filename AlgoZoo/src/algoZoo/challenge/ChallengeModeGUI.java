@@ -44,7 +44,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     * method to play sound when buttons clicked.
     * @param soundName 
     */
-   public void playSound(String filePath) 
+   private void playSound(String filePath) 
    {     
         try 
         {
