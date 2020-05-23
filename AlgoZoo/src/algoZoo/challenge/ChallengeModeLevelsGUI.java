@@ -36,6 +36,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
             if (ChallengeLevelsSave.load().getLevelAccomplished(i)) {
                buttons.get(i).setEnabled(true);
                buttons.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (i + 1) + ".png")));
+               
             } else {
                buttons.get(i).setEnabled(false);
             }

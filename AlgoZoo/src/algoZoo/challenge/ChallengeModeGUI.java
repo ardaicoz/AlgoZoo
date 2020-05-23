@@ -152,8 +152,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
          if (cmm.hasWon()) {
             if (currentLevel.getLevel() != 10) {
                challengeLevelsSaveContainer.setTrue(currentLevel.getLevel());
-            }
-            challengeLevelsSaveContainer.setStars(currentLevel.getLevel(), getEfficiency());
+            }            
             ChallengeLevelsSave.save(challengeLevelsSaveContainer);
          }
          

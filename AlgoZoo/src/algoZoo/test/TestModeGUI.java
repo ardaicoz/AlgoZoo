@@ -26,6 +26,7 @@ public class TestModeGUI extends javax.swing.JPanel {
    private TestModeModel tmm;
    private TestLevels currentLevel;
    private ArrayList<TestLevels> levelContainer;
+   private TestLevelsSaveContainer testLevelsSaveContainer;
 
    //constructors
    

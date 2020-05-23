@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.challenge;
 
 import java.io.File;
@@ -14,18 +9,28 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
+ * The class created for the creation and editing of the Test Mode's save files.
  *
- * @author gorke
+ * @author Görkem
+ * @version 1.0
  */
-public class ChallengeLevelsSave{
+public class ChallengeLevelsSave {
 
-   public static final String fileName = "/ChallengeModeSave.sav";
-   public static final String root = "/AlgoZooSave";
+   // properties
+   private static final String fileName = "/ChallengeModeSave.sav";
+   private static final String root = "/AlgoZooSave";
 
-   public static void save(Serializable objectToSerialise) {         
+   // methods
+   // methods
+   /**
+    * Saving the objects to the file that has specific location.
+    *
+    * @param objectToSerialise The object that will be serialised
+    */
+   public static void save(Serializable objectToSerialise) {
 
-      try(FileOutputStream fos = new FileOutputStream(createDataFolder() + fileName);) {
-         
+      try (FileOutputStream fos = new FileOutputStream(createDataFolder() + fileName);) {
+
          ObjectOutputStream oos = new ObjectOutputStream(fos);
          oos.writeObject(objectToSerialise);
          // flush (write) the stream
@@ -36,9 +41,14 @@ public class ChallengeLevelsSave{
       } catch (IOException e) {
          e.printStackTrace();
       }
-
    }
 
+   /**
+    * Reading the objects from the file that has specific location.
+    *
+    * @return LearnLevelsSaveContainer The objects that containing boolean
+    * values of the Learn Mode Levels.
+    */
    public static ChallengeLevelsSaveContainer load() {
       // check that the file we want to load exists
       if (checkFileExists()) {
@@ -62,6 +72,10 @@ public class ChallengeLevelsSave{
       return null;
    }
 
+   /**
+    * Creates the data folder according to Operating System
+    * @return String The filepath
+    */
    private static String createDataFolder() {
       String home = System.getProperty("user.home");
       String OS = System.getProperty("os.name").toLowerCase();
@@ -82,19 +96,21 @@ public class ChallengeLevelsSave{
       dir = new File(dir, root);
 
       if (!dir.exists()) {
-         dir.mkdir(); // mkdir means making directory
-         //System.out.println("Creating Directory...");
+         dir.mkdir();         
       }
-
       return dir.getAbsolutePath();
    }
 
+   /**
+    * Deletes the created save file.
+    * @return boolean. Returns true when the file was deleted. Returns false the
+    * file was not deleted.
+    */
    public static boolean deleteSaveFile() {
       // checks the whether the file exists or not
       if (!checkFileExists()) {
          System.err.println("File: " + createDataFolder() + fileName + " does not exist!");
          return new File(createDataFolder()).delete();
-
       }
       File toDelete = new File(createDataFolder() + fileName);
 
@@ -106,10 +122,13 @@ public class ChallengeLevelsSave{
 
    }
 
+   /**
+    * Checks whether the file exists or not
+    * @return boolean. Returns true when the file exists. Returns false the file
+    * does not exists.
+    */
    public static boolean checkFileExists() {
-      return new File(createDataFolder() + fileName).isFile();
-      // the isFile method rerturns true only if valid file is located in the directory folder specified.
-      // It will not return true if the directory itself is named after the filename.
+      return new File(createDataFolder() + fileName).isFile();     
    }
 
 }

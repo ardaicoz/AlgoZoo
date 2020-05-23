@@ -207,15 +207,5 @@ public class ChallengeModeModel extends AlgoZooModel {
       if (hasWon()) {
          computeEfficiency();
       }
-   }
-   
-   /**
-    * overrides the addMovementPattern( char c) method and increases the number of movements
-    * @param c 
-    */
-   @Override
-   public void addMovementPattern( char c) {
-       super.addMovementPattern(c);
-       increaseNoOfMovements();
-   }   
+   } 
 }

@@ -1,22 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.test;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
+ * The class holding the save files of test mode levels
  *
- * @author gorke
+ * @author Görkem
+ * @version 1.0
  */
 public class TestLevelsSaveContainer implements Serializable {
 
    // properties
    ArrayList<Boolean> levelAccomplished;
 
+   // constructor
+   /**
+    * Creates the ArrayList containing the boolean values of the TestModeLevels
+    */
    public TestLevelsSaveContainer() {
       levelAccomplished = new ArrayList<>();
       levelAccomplished.add(Boolean.TRUE);
@@ -24,21 +25,41 @@ public class TestLevelsSaveContainer implements Serializable {
          levelAccomplished.add(Boolean.FALSE);
       }
    }
-   
-    public void setTrue(int levelNumber) {
+
+   /**
+    * Sets true the specific level's boolean value based on the level number.
+    *
+    * @param levelNumber
+    */
+   public void setTrue(int levelNumber) {
       levelAccomplished.set(levelNumber, Boolean.TRUE);
    }
 
+   /**
+    * Sets false the specific level's boolean value based on the level number.
+    *
+    * @param levelNumber
+    */
    public void setFalse(int levelNumber) {
       levelAccomplished.set(levelNumber, Boolean.FALSE);
    }
 
+   /**
+    * Returns the size of the ArrayList
+    *
+    * @return Size of the ArrayList
+    */
    public int size() {
       return levelAccomplished.size();
    }
 
+   /**
+    * Returns the determined elements of the ArrayList based on index number.
+    *
+    * @param i Index number
+    * @return boolean. The elements of the ArrayList.
+    */
    public boolean get(int i) {
       return levelAccomplished.get(i);
    }
-
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.test;
 
 import java.io.File;
@@ -14,31 +9,39 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- *
- * @author gorke
+ * The class created for the creation and editing of the Learn Mode's save files.
+ * @author Görkem
+ * @version 1.0
  */
 public class TestLevelsSave {
 
-   public static final String fileName = "/TestModeSave.sav";
-   public static final String root = "/AlgoZooSave";
+   // properties
+   private static final String fileName = "/TestModeSave.sav";
+   private static final String root = "/AlgoZooSave";
 
-   public static void save(Serializable objectToSerialise) {         
-
-      try(FileOutputStream fos = new FileOutputStream(createDataFolder() + fileName);) {
-         
+   // methods
+   /**
+    * Saving the objects to the file that has specific location.
+    * @param objectToSerialise The object that will be serialised
+    */
+   public static void save(Serializable objectToSerialise) {
+      try (FileOutputStream fos = new FileOutputStream(createDataFolder() + fileName);) {
          ObjectOutputStream oos = new ObjectOutputStream(fos);
          oos.writeObject(objectToSerialise);
          // flush (write) the stream
          oos.flush();
          // close the oos
          oos.close();
-
       } catch (IOException e) {
          e.printStackTrace();
       }
-
    }
 
+   /**
+    * Reading the objects from the file that has specific location.
+    * @return LearnLevelsSaveContainer The objects that containing boolean
+    * values of the Learn Mode Levels.
+    */
    public static TestLevelsSaveContainer load() {
       // check that the file we want to load exists
       if (checkFileExists()) {
@@ -62,6 +65,11 @@ public class TestLevelsSave {
       return null;
    }
 
+   /**
+    * Creates the data folder according to Operating System
+    *
+    * @return String The filepath
+    */
    private static String createDataFolder() {
       String home = System.getProperty("user.home");
       String OS = System.getProperty("os.name").toLowerCase();
@@ -69,9 +77,11 @@ public class TestLevelsSave {
       if (OS.contains("win")) {
          home = System.getenv("appdata");
          //home = home + "/Desktop";
-      } else if (OS.contains("mac")) {
+      } 
+      else if (OS.contains("mac")) {
          home = home + "~/Library/Application Support";
-      } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
+      } 
+      else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
          home = home + "~/.";
       }
 
@@ -82,13 +92,16 @@ public class TestLevelsSave {
       dir = new File(dir, root);
 
       if (!dir.exists()) {
-         dir.mkdir(); // mkdir means making directory
-         //System.out.println("Creating Directory...");
+         dir.mkdir();          
       }
-
       return dir.getAbsolutePath();
    }
 
+   /**
+    * Deletes the created save file.
+    * @return boolean. Returns true when the file was deleted. Returns false the
+    * file was not deleted.
+    */
    public static boolean deleteSaveFile() {
       // checks the whether the file exists or not
       if (!checkFileExists()) {
@@ -103,13 +116,15 @@ public class TestLevelsSave {
       }
       System.err.println("File: " + createDataFolder() + fileName + " is write protected!");
       return false;
-
    }
 
+   /**
+    * Checks whether the file exists or not
+    *
+    * @return boolean. Returns true when the file exists. Returns false the file
+    * does not exists.
+    */
    public static boolean checkFileExists() {
-      return new File(createDataFolder() + fileName).isFile();
-      // the isFile method rerturns true only if valid file is located in the directory folder specified.
-      // It will not return true if the directory itself is named after the filename.
+      return new File(createDataFolder() + fileName).isFile();      
    }
-
 }

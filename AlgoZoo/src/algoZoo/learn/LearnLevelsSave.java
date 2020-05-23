@@ -9,42 +9,50 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- *
- * @author gorke
+ * The class created for the creation and editing of the Learn Mode's save files.
+ * @author Görkem
+ * @version 1.0
  */
 public class LearnLevelsSave {
-
-   public static final String fileName = "/LearnModeSave.sav";
-   public static final String root = "/AlgoZooSave";
-
+   // properties
+   private static final String fileName = "/LearnModeSave.sav";
+   private static final String root = "/AlgoZooSave";
+   
+   // methods
+   /**
+    * Saving the objects to the file that has specific location.
+    * @param objectToSerialise The object that will be serialised
+    */
    public static void save(Serializable objectToSerialise) {
+      // Creating save file.
       try(FileOutputStream fos = new FileOutputStream(createDataFolder() + fileName)) {       
          ObjectOutputStream oos = new ObjectOutputStream(fos);
          oos.writeObject(objectToSerialise);
-         // flush (write) the stream
+         // Flush (write) the stream
          oos.flush();
-         // close the oos
+         // Close the oos
          oos.close();
-
       } catch (IOException e) {
          e.printStackTrace();
       }
-
    }
 
+   /**
+    * Reading the objects from the file that has specific location.
+    * @return LearnLevelsSaveContainer The objects that containing boolean values of the Learn Mode Levels.
+    */
    public static LearnLevelsSaveContainer load() {
-      // check that the file we want to load exists
+      // Checks that the file we want to load exists
       if (checkFileExists()) {
          FileInputStream fis = null;
          LearnLevelsSaveContainer loadedObject = null;
          try {
-
-            // initialize the FileInputStream
+            // Initializes the FileInputStream
             fis = new FileInputStream(createDataFolder() + fileName);
-            // create an ObjectInputStream from the FileInputStream
+            // Creates an ObjectInputStream from the FileInputStream
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            //create the object itself from the stream            
+            // Creates the object itself from the stream            
             loadedObject = (LearnLevelsSaveContainer) ois.readObject();
             ois.close();
          } catch (ClassNotFoundException | IOException e) {
@@ -55,6 +63,10 @@ public class LearnLevelsSave {
       return null;
    }
 
+   /**
+    * Creates the data folder according to Operating System
+    * @return String The filepath
+    */
    private static String createDataFolder() {
       String home = System.getProperty("user.home");
       String OS = System.getProperty("os.name").toLowerCase();
@@ -75,22 +87,23 @@ public class LearnLevelsSave {
       dir = new File(dir, root);
 
       if (!dir.exists()) {
-         dir.mkdir(); // mkdir means making directory
-         //System.out.println("Creating Directory...");
+         dir.mkdir(); 
       }
-
       return dir.getAbsolutePath();
    }
 
+   /**
+    * Deletes the created save file.
+    * @return boolean. Returns true when the file was deleted. Returns false the file was not deleted.
+    */
    public static boolean deleteSaveFile() {
-      // checks the whether the file exists or not
+      // Checks the whether the file exists or not
       if (!checkFileExists()) {
          System.err.println("File: " + createDataFolder() + fileName + " does not exist!");
          return new File(createDataFolder()).delete();
-
       }
+      
       File toDelete = new File(createDataFolder() + fileName);
-
       if (toDelete.canWrite()) {
          return toDelete.delete();
       }
@@ -99,10 +112,11 @@ public class LearnLevelsSave {
 
    }
 
+   /**
+    * Checks whether the file exists or not
+    * @return boolean. Returns true when the file exists. Returns false the file does not exists.
+    */
    public static boolean checkFileExists() {
-      return new File(createDataFolder() + fileName).isFile();
-      // the isFile method rerturns true only if valid file is located in the directory folder specified.
-      // It will not return true if the directory itself is named after the filename.
+      return new File(createDataFolder() + fileName).isFile();      
    }
-
 }
