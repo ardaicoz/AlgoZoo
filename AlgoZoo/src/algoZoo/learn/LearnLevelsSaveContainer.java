@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class LearnLevelsSaveContainer implements Serializable {
 
    // properties   
-   ArrayList<Boolean> levelAccomplished;
+   private ArrayList<Boolean> levelAccomplished;
 
    // constructor
    /**

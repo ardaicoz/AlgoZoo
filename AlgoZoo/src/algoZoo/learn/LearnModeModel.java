@@ -10,8 +10,8 @@ import java.util.ArrayList;
  */
 public class LearnModeModel extends AlgoZooModel {
    // properties
-   int noOfMovements;
-   int minRequiredMovements;
+   private int noOfMovements;
+   private int minRequiredMovements;
 
    // constructor
    /**

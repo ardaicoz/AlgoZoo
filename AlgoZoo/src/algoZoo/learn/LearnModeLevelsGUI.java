@@ -11,7 +11,7 @@ import javax.swing.JButton;
  */
 public class LearnModeLevelsGUI extends javax.swing.JPanel {
    // properties
-   ArrayList<JButton> buttons;
+   private ArrayList<JButton> buttons;
 
    // constructor
    /**
