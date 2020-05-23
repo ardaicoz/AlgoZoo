@@ -10,10 +10,12 @@ import java.util.ArrayList;
 
 /**
  * This is a model class for challenge mode
+ *
  * @author Doğa, Esra, Alp
  * @version 1.0
  */
 public class ChallengeModeModel extends AlgoZooModel {
+
    // properties
    int noOfMovements;
    int minRequiredMovements;
@@ -30,24 +32,31 @@ public class ChallengeModeModel extends AlgoZooModel {
       efficiency = 0;
       usedTime = 0;
    }
-   
+
    // methods
+   public void addMovementPattern(char c) {
+      super.addMovementPattern(c);
+      increaseNoOfMovements();
+   }
+
    /**
     * returns the total number of movements made by the user during a level
+    *
     * @return noOfMovements
     */
    public int getNoOfMovements() {
       return noOfMovements;
    }
-   
+
    /**
     * sets the number of movements
+    *
     * @param noOfMovements
     */
    public void setNoOfMovements(int noOfMovements) {
       this.noOfMovements = noOfMovements;
    }
-   
+
    /**
     * increase the number of movements
     */
@@ -56,7 +65,8 @@ public class ChallengeModeModel extends AlgoZooModel {
    }
 
    /**
-    * returns the minimum number of movements 
+    * returns the minimum number of movements
+    *
     * @return minRequiredMovements
     */
    public int getMinRequiredMovements() {
@@ -65,7 +75,8 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * sets the minimum number of movements
-    * @param minRequiredMovements 
+    *
+    * @param minRequiredMovements
     */
    public void setMinRequiredMovements(int minRequiredMovements) {
       this.minRequiredMovements = minRequiredMovements;
@@ -73,6 +84,7 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * returns the minimum required time to complete the level
+    *
     * @return minRequiredTime
     */
    public int getMinRequiredTime() {
@@ -81,7 +93,8 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * sets the minimum required time to complete the level
-    * @param minRequiredTime 
+    *
+    * @param minRequiredTime
     */
    public void setMinRequiredTime(int minRequiredTime) {
       this.minRequiredTime = minRequiredTime;
@@ -89,6 +102,7 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * returns the efficiency
+    *
     * @return efficiency
     */
    public int getEfficiency() {
@@ -97,7 +111,8 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * sets the used time
-    * @param usedTime 
+    *
+    * @param usedTime
     */
    public void setUsedTime(int usedTime) {
       this.usedTime = usedTime;
@@ -111,25 +126,28 @@ public class ChallengeModeModel extends AlgoZooModel {
    }
 
    /**
-    * computes the efficiency according to used time and number of movements made
+    * computes the efficiency according to used time and number of movements
+    * made
     */
    public void computeEfficiency() {
       if (!hasWon()) {
          efficiency = 0;
-      } 
-      else {
+      } else {
          efficiency = 1;
          if (usedTime < minRequiredTime / 2) {
             efficiency++;
+            System.out.println("Number of movement" + noOfMovements);
          }
          if (noOfMovements == minRequiredMovements) {
+
             efficiency++;
          }
       }
    }
 
    /**
-    * overrides the initNewGame() method and resets the challenge model's properties
+    * overrides the initNewGame() method and resets the challenge model's
+    * properties
     */
    @Override
    public void initNewGame() {
@@ -140,12 +158,14 @@ public class ChallengeModeModel extends AlgoZooModel {
    }
 
    /**
-    * overrides the play() method and computes efficiency if the user wins the game
+    * overrides the play() method and computes efficiency if the user wins the
+    * game
     */
    @Override
    public void play() {
       super.play();
-      if(hasWon())
-          computeEfficiency();
+      if (hasWon()) {
+         computeEfficiency();
+      }
    }
 }

@@ -1,4 +1,9 @@
-package algoZoo.learn;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package algoZoo.test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,13 +17,15 @@ import java.io.Serializable;
  *
  * @author gorke
  */
-public class LearnLevelsSave {
+public class TestLevelsSave {
 
-   public static final String fileName = "/LearnModeSave.sav";
+   public static final String fileName = "/TestModeSave.sav";
    public static final String root = "/AlgoZooSave";
 
-   public static void save(Serializable objectToSerialise) {
-      try(FileOutputStream fos = new FileOutputStream(createDataFolder() + fileName)) {       
+   public static void save(Serializable objectToSerialise) {         
+
+      try(FileOutputStream fos = new FileOutputStream(createDataFolder() + fileName);) {
+         
          ObjectOutputStream oos = new ObjectOutputStream(fos);
          oos.writeObject(objectToSerialise);
          // flush (write) the stream
@@ -32,11 +39,11 @@ public class LearnLevelsSave {
 
    }
 
-   public static LearnLevelsSaveContainer load() {
+   public static TestLevelsSaveContainer load() {
       // check that the file we want to load exists
       if (checkFileExists()) {
          FileInputStream fis = null;
-         LearnLevelsSaveContainer loadedObject = null;
+         TestLevelsSaveContainer loadedObject = null;
          try {
 
             // initialize the FileInputStream
@@ -45,7 +52,7 @@ public class LearnLevelsSave {
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             //create the object itself from the stream            
-            loadedObject = (LearnLevelsSaveContainer) ois.readObject();
+            loadedObject = (TestLevelsSaveContainer) ois.readObject();
             ois.close();
          } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();

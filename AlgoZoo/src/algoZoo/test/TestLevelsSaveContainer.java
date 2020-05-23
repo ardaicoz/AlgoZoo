@@ -3,29 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package algoZoo.learn;
+package algoZoo.test;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
- * @author Görkem
+ * @author gorke
  */
-public class LearnLevelsSaveContainer implements Serializable {
+public class TestLevelsSaveContainer implements Serializable {
 
-   // properties   
-   ArrayList<Boolean> levelAccomplished;   
+   // properties
+   ArrayList<Boolean> levelAccomplished;
 
-   public LearnLevelsSaveContainer() {
-      levelAccomplished = new ArrayList<>();     
+   public TestLevelsSaveContainer() {
+      levelAccomplished = new ArrayList<>();
       levelAccomplished.add(Boolean.TRUE);
-      for( int i = 0 ; i < 9; i++) {
-         levelAccomplished.add(Boolean.FALSE);         
-      }    
+      for (int i = 0; i < 9; i++) {
+         levelAccomplished.add(Boolean.FALSE);
+      }
    }
-
-   public void setTrue(int levelNumber) {
+   
+    public void setTrue(int levelNumber) {
       levelAccomplished.set(levelNumber, Boolean.TRUE);
    }
 

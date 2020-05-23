@@ -14,20 +14,22 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
- * The panel that includes map view, code view and selection controller appears during the game.
+ * The panel that includes map view, code view and selection controller appears
+ * during the game.
+ *
  * @author Ayberk, Görkem
  * @version 1.0
  */
 public class LearnModeGUI extends javax.swing.JPanel {
 
    // properties
-   MapView mapView;
-   CodeView codeView;
-   LearnModeModel lmm;
-   SelectionController selectionController;
-   LearnLevels currentLevel;
-   ArrayList<LearnLevels> levelContainer;
-   LearnLevelsSaveContainer learnLevelsSaveContainer;
+   private MapView mapView;
+   private CodeView codeView;
+   private LearnModeModel lmm;
+   private SelectionController selectionController;
+   private LearnLevels currentLevel;
+   private ArrayList<LearnLevels> levelContainer;
+   private LearnLevelsSaveContainer learnLevelsSaveContainer;
 
    // constructor
    /**
@@ -42,6 +44,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    //methods
    /**
     * Method to play sound when buttons clicked.
+    *
     * @param soundName The path of the sound file.
     */
    public void playSound(String filePath) {
@@ -131,11 +134,13 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Actions that accures after the play button is clicked.
+    *
     * @param Event mouse clicked.
     */
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
       if (lmm.getMovementPattern().isEmpty() || lmm.isGameOver()) {
-      } else {
+      } 
+      else {
          getModel().play();
          for (JButton b : selectionController.getButtons()) {
             b.setEnabled(false);
@@ -145,13 +150,18 @@ public class LearnModeGUI extends javax.swing.JPanel {
          if (lmm.getMovementPattern().isEmpty()) {
             mapView.endMessage();
          }
+         if (lmm.hasWon() && currentLevel.getLevel() != 10) {
+            learnLevelsSaveContainer.setTrue(currentLevel.getLevel());
+            LearnLevelsSave.save(learnLevelsSaveContainer);
+         }
       }
       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
    }//GEN-LAST:event_playButtonActionPerformed
 
    /**
     * Actions that accures after the retry button is clicked.
-    * @param Event mouse clicked. 
+    *
+    * @param Event mouse clicked.
     */
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
        if (isBeeMoving()) {
@@ -179,40 +189,41 @@ public class LearnModeGUI extends javax.swing.JPanel {
        playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
     }//GEN-LAST:event_retryButtonActionPerformed
 
-    /**
-     * Actions that accures after the scrollDown button is clicked.
-     * @param Event mouse clicked.  
-     */
+   /**
+    * Actions that accures after the scrollDown button is clicked.
+    *
+    * @param Event mouse clicked.
+    */
     private void scrollDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrollDownActionPerformed
        int x = codeView.getX();
        int y = codeView.getY();
        int h = codeView.getHeight();
 
        if (y == 800 - h || codeView.getLength() < 800 || (codeView.getLength() - 800 + 10) < -y) {
-       } 
-       else {
+       } else {
           codeView.setLocation(x, y - 50);
        }
     }//GEN-LAST:event_scrollDownActionPerformed
 
-    /**
-     * Actions that accures after the scrollUp button is clicked.
-     * @param Event mouse clicked.  
-     */
+   /**
+    * Actions that accures after the scrollUp button is clicked.
+    *
+    * @param Event mouse clicked.
+    */
     private void scrollUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrollUpActionPerformed
        int x = codeView.getX();
        int y = codeView.getY();
        int h = codeView.getHeight();
 
        if (y == 0) {
-       } 
-       else {
+       } else {
           codeView.setLocation(x, y + 50);
        }
     }//GEN-LAST:event_scrollUpActionPerformed
- 
+
    /**
-    * Initializes the new level and view classes. Sets view componenets' bounds. Adds views to model.
+    * Initializes the new level and view classes. Sets view componenets' bounds.
+    * Adds views to model.
     */
    private void initMyComponents() {
       // initialize components  
@@ -322,8 +333,10 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
       if (LearnLevelsSave.load() == null || !LearnLevelsSave.load().get(1)) {
          learnLevelsSaveContainer = new LearnLevelsSaveContainer();
-         LearnLevelsSave.save(learnLevelsSaveContainer);
-         System.out.println("Yeni LearnLevel yaratıldı.");
+         LearnLevelsSave.save(learnLevelsSaveContainer);         
+      } 
+      else {
+         learnLevelsSaveContainer = LearnLevelsSave.load();
       }
 
    }
@@ -376,13 +389,12 @@ public class LearnModeGUI extends javax.swing.JPanel {
    }
 
    /**
-    * Determines which level will start.
+    * Check if bee is moving.
     *
-    * @param level Level number.
+    * @return Return true if bee is moving. Return false if bee is not moving.
     */
-   public void setCurrentLevel(int level) {
-      currentLevel = levelContainer.get(level - 1);
-      initNewLevel();
+   public boolean isBeeMoving() {
+      return mapView.isBeeMoving();
    }
 
    /**
@@ -401,6 +413,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Get Learn Mode Model
+    *
     * @return Learn Mode Model
     */
    public LearnModeModel getModel() {
@@ -409,27 +422,32 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Get current level number
+    *
     * @return level number
     */
    public int getLevel() {
       return currentLevel.getLevel();
    }
 
-  /**
-   * Set Animal object for Learn Mode Model.
-   * @param animal Animal object
-   */
+   /**
+    * Determines which level will start.
+    *
+    * @param level Level number.
+    */
+   public void setCurrentLevel(int level) {
+      currentLevel = levelContainer.get(level - 1);
+      initNewLevel();
+   }
+
+   /**
+    * Set Animal object for Learn Mode Model.
+    *
+    * @param animal Animal object
+    */
    public void setAnimal(Animal animal) {
       lmm.setAnimal(animal);
    }
 
-   /**
-    * Check if bee is moving.
-    * @return Return true if bee is moving. Return false if bee is not moving.
-    */
-   public boolean isBeeMoving() {
-      return mapView.isBeeMoving();
-   }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel background;

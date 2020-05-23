@@ -12,38 +12,39 @@ import java.util.ArrayList;
  *
  * @author gorke
  */
-public class ChallengeLevelsSaveContainer implements Serializable{
+public class ChallengeLevelsSaveContainer implements Serializable {
+
    // properties
    ArrayList<Boolean> levelAccomplished;
-   
+   ArrayList<Integer> levelStars;
+
    public ChallengeLevelsSaveContainer() {
       levelAccomplished = new ArrayList<>();
+      levelStars = new ArrayList<>();
       levelAccomplished.add(Boolean.TRUE);
-      levelAccomplished.add(Boolean.FALSE);
-      levelAccomplished.add(Boolean.FALSE);
-      levelAccomplished.add(Boolean.FALSE);
-      levelAccomplished.add(Boolean.FALSE);
-      levelAccomplished.add(Boolean.FALSE);
-      levelAccomplished.add(Boolean.FALSE);
-      levelAccomplished.add(Boolean.FALSE);
-      levelAccomplished.add(Boolean.FALSE);
-      levelAccomplished.add(Boolean.FALSE);      
+      for (int i = 0; i < 9; i++) {
+         levelAccomplished.add(Boolean.FALSE);
+      }    
    }
-   
+
    public void setTrue(int levelNumber) {
-      levelAccomplished.set(levelNumber - 1, Boolean.TRUE);      
+      levelAccomplished.set(levelNumber, Boolean.TRUE);
    }
-   
+
    public void setFalse(int levelNumber) {
-      levelAccomplished.set(levelNumber - 1, Boolean.FALSE);
+      levelAccomplished.set(levelNumber, Boolean.FALSE);
    }
-   
+
    public int size() {
       return levelAccomplished.size();
    }
-   
-   public boolean get(int index) {
-      return levelAccomplished.get(index);      
+
+   public boolean getLevelAccomplished(int index) {
+      return levelAccomplished.get(index);
    }
    
+   public void setStars(int levelNumber, int stars){
+      levelStars.set(levelNumber - 1, stars);      
+   }
+
 }

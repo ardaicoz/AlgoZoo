@@ -4,18 +4,21 @@
  * and open the template in the editor.
  */
 package algoZoo.test;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * It creates the levels screen of the test  mode
+ * It creates the levels screen of the test mode
+ *
  * @author Ayberk
  * @version 1.0
  */
 public class TestModeLevelsGUI extends javax.swing.JPanel {
-    //properties
-    ArrayList<JButton> buttons;
-	
+   //properties
+
+   ArrayList<JButton> buttons;
+
    //constructor
    /**
     * Creates new form TestModeLevelsGUI.
@@ -24,9 +27,24 @@ public class TestModeLevelsGUI extends javax.swing.JPanel {
       initComponents();
       buttons = new ArrayList<JButton>();
       addButtons();
+      try {
+         for (int i = 0; i < TestLevelsSave.load().size(); i++) {
+            if (TestLevelsSave.load().get(i)) {
+               buttons.get(i).setEnabled(true);
+               buttons.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/" + (i + 1) + ".png")));
+            } 
+            else {
+               buttons.get(i).setEnabled(false);
+            }
+         }
+      } catch (NullPointerException e) {
+         for (int j = 1; j < buttons.size(); j++) {
+            buttons.get(j).setEnabled(false);
+         }
+      }
    }
 
-    //methods
+   //methods
    /**
     * This method is called from within the constructor to initialize the form.
     * WARNING: Do NOT modify this code. The content of this method is always
@@ -148,23 +166,25 @@ public class TestModeLevelsGUI extends javax.swing.JPanel {
       buttons.add(jButton8);
       buttons.add(jButton9);
       buttons.add(jButton10);
-      
-      for ( int i = 1; i < buttons.size(); i++) {
+
+      for (int i = 1; i < buttons.size(); i++) {
          buttons.get(i).setEnabled(false);
       }
    }
-   
+
    /**
     * Get method for specific Button.
-    * @param levelNo 
+    *
+    * @param levelNo
     * @return button
     */
    public JButton getJButton(int levelNo) {
       return buttons.get(levelNo - 1);
    }
-   
+
    /**
     * A method to set image into a button.
+    *
     * @param jb JButton that an image will be set
     * @param i The image
     */

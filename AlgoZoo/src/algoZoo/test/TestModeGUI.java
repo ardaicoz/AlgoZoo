@@ -25,6 +25,7 @@ public class TestModeGUI extends javax.swing.JPanel {
    TestModeModel tmm;
    TestLevels currentLevel;
    ArrayList<TestLevels> levelContainer;
+   TestLevelsSaveContainer testLevelsSaveContainer;
 
    //constructors
    
@@ -77,10 +78,7 @@ public class TestModeGUI extends javax.swing.JPanel {
       options.setBounds(700, 50, 700, 800);
       initNewLevel();
       tmm.addView(map);
-      map.getMapBackground().setIcon(currentLevel.getMapBackground());
-      if (tmm.hasWon()) {
-         System.out.println("won");
-      }
+      map.getMapBackground().setIcon(currentLevel.getMapBackground());      
    }
 
    /**
@@ -167,6 +165,13 @@ public class TestModeGUI extends javax.swing.JPanel {
       levelContainer.add(level9);
       levelContainer.add(level10); 
       
+      if (TestLevelsSave.load() == null || !TestLevelsSave.load().get(1)) {
+         testLevelsSaveContainer = new TestLevelsSaveContainer();
+         TestLevelsSave.save(testLevelsSaveContainer);         
+      } else {
+         testLevelsSaveContainer = TestLevelsSave.load();
+      }
+      
    }
 
    /**
@@ -188,6 +193,11 @@ public class TestModeGUI extends javax.swing.JPanel {
       tmm.setFinishY(currentLevel.getFinishY());
       tmm.setFlowers(currentLevel.getFlowers());
       map.getMapBackground().setIcon(currentLevel.getMapBackground());
+      if( currentLevel.getLevel() != 10) {
+         testLevelsSaveContainer.setTrue(currentLevel.getLevel() - 1);
+         TestLevelsSave.save(testLevelsSaveContainer);
+      }
+      
    }
 
    /**

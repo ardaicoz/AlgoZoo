@@ -351,7 +351,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         }
         tmm.play();
         
-        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
+        playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );        
     }//GEN-LAST:event_BActionPerformed
 
     /**

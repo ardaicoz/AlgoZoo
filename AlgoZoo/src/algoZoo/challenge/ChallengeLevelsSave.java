@@ -20,7 +20,7 @@ import java.io.Serializable;
 public class ChallengeLevelsSave{
 
    public static final String fileName = "/ChallengeModeSave.sav";
-   public static final String root = "/ChallengeMode";
+   public static final String root = "/AlgoZooSave";
 
    public static void save(Serializable objectToSerialise) {         
 

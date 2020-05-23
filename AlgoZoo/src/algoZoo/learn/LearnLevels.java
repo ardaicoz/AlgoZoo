@@ -11,18 +11,18 @@ import javax.swing.ImageIcon;
  */
 public class LearnLevels {
    // properties
-   final int TILE_WIDTH = 64;
-   final int TILE_HEIGHT = 64;
-   final int SPACE_WIDTH = 8;
-   final int SPACE_HEIGHT = 12;
-   int startX;
-   int startY;
-   int finishX;
-   int finishY;
-   int minRequiredMovements;
-   int level;
-   ImageIcon mapBackground;
-   ArrayList<Flower> flowers;
+   private final int TILE_WIDTH = 64;
+   private final int TILE_HEIGHT = 64;
+   private final int SPACE_WIDTH = 8;
+   private final int SPACE_HEIGHT = 12;
+   private int startX;
+   private int startY;
+   private int finishX;
+   private int finishY;
+   private int minRequiredMovements;
+   private int level;
+   private ImageIcon mapBackground;
+   private ArrayList<Flower> flowers;
 
    // constructor  
    /**

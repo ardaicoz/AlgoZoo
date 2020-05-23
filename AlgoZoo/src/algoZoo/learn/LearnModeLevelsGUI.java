@@ -21,8 +21,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
       initComponents();     
       buttons = new ArrayList<JButton>();
       addButtons();
-      try {
-         LearnLevelsSave.load();
+      try {         
          for (int i = 0; i < LearnLevelsSave.load().size(); i++) {           
             if (LearnLevelsSave.load().get(i)) {
                buttons.get(i).setEnabled(true);
