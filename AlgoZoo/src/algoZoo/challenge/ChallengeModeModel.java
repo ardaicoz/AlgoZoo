@@ -7,6 +7,7 @@ package algoZoo.challenge;
 
 import algoZoo.game.*;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  * This is a model class for challenge mode
@@ -17,11 +18,12 @@ import java.util.ArrayList;
 public class ChallengeModeModel extends AlgoZooModel {
 
    // properties
-   int noOfMovements;
-   int minRequiredMovements;
-   int efficiency;
-   int minRequiredTime;
-   int usedTime;
+   int     noOfMovements;
+   int     minRequiredMovements;
+   int     efficiency;
+   int     minRequiredTime;
+   int     usedTime;
+   boolean timeIsUp;
 
    // constructors
    public ChallengeModeModel(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ArrayList<Flower> flowers) {
@@ -31,6 +33,7 @@ public class ChallengeModeModel extends AlgoZooModel {
       noOfMovements = 0;
       efficiency = 0;
       usedTime = 0;
+      timeIsUp = false;
    }
 
    // methods
@@ -117,6 +120,22 @@ public class ChallengeModeModel extends AlgoZooModel {
    public void setUsedTime(int usedTime) {
       this.usedTime = usedTime;
    }
+   
+   /**
+    * returns timeIsUp condition
+    * @return timeIsUp
+    */
+   public boolean isTimeIsUp() {
+        return timeIsUp;
+    }
+
+   /**
+    * sets timeIsUp condition
+    * @param timeIsUp 
+    */
+   public void setTimeIsUp(boolean timeIsUp) {
+       this.timeIsUp = timeIsUp;
+   }
 
    /**
     * increases the used time
@@ -151,10 +170,31 @@ public class ChallengeModeModel extends AlgoZooModel {
     */
    @Override
    public void initNewGame() {
-      super.initNewGame();
+      resetMovementPattern();
+      //set anlimal
+      if ( getAnimal().getName().equals("Bee")){
+         getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
+      }
+      else if ( getAnimal().getName().equals("Bee2")){
+         getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));               
+      }
+      else if ( getAnimal().getName().equals("Bee3")){
+         getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));               
+      }
+      else if ( getAnimal().getName().equals("Bee4")){
+         getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));               
+      }
+      
+      //initialize new game by resetting properties
+      setCurrentX(getStartX());
+      setCurrentY(getStartY());
+      setGameOver(false);
+      setHasWon(false);
       noOfMovements = 0;
       usedTime = 0;
       efficiency = 0;
+      timeIsUp = false;
+      update();
    }
 
    /**
@@ -168,4 +208,14 @@ public class ChallengeModeModel extends AlgoZooModel {
          computeEfficiency();
       }
    }
+   
+   /**
+    * overrides the addMovementPattern( char c) method and increases the number of movements
+    * @param c 
+    */
+   @Override
+   public void addMovementPattern( char c) {
+       super.addMovementPattern(c);
+       increaseNoOfMovements();
+   }   
 }

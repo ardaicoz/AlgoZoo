@@ -7,17 +7,17 @@ package algoZoo.game;
  */
 public class Flower {
    // properties
-   final int TILE_WIDTH = 64;
-   final int TILE_HEIGHT = 64;
-   final int SPACE_WIDTH= 8;
-   final int SPACE_HEIGHT = 12;
-   private int x;
-   private int y;
+   final int       TILE_WIDTH = 64;
+   final int       TILE_HEIGHT = 64;
+   final int       SPACE_WIDTH= 8;
+   final int       SPACE_HEIGHT = 12;
+   private int     x;
+   private int     y;
    private boolean pollenGathered;
 
    // constructor
    /**
-    * Creates a flower object in the sapecified x and y location.
+    * Creates a flower object in the specified x and y location.
     * @param x The location of the flower with respect to x-axis.
     * @param y The location of the flower with respect to y-axis.
     */

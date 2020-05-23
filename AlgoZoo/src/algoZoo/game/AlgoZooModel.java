@@ -11,9 +11,9 @@ import javax.swing.ImageIcon;
  */
 public class AlgoZooModel extends AlgoZoo {
    //properties
-   boolean                        gameOver;
-   boolean                        hasWon;
-   public ArrayList<IAlgoZooView> views;
+   private boolean                        gameOver;
+   private boolean                        hasWon;
+   private ArrayList<IAlgoZooView>        views;
    
 
    //constructors
@@ -157,6 +157,7 @@ public class AlgoZooModel extends AlgoZoo {
       if (getCurrentX() == getFinishX() && getCurrentY() == getFinishY() && allPollensGathered()) {       
          hasWon = true;
       }
+      update();
    }
 
    /**
@@ -197,4 +198,13 @@ public class AlgoZooModel extends AlgoZoo {
    public boolean hasWon() {
       return hasWon;
    }
+
+   /**
+    * sets hasWon status
+    * @param hasWon 
+    */
+    public void setHasWon(boolean hasWon) {
+        this.hasWon = hasWon;
+    }
+   
 }

@@ -9,15 +9,13 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * It creates the levels screen of the test mode
- *
- * @author Ayberk
+ * It creates the levels screen of the test  mode
+ * @author Ayberk, Arda, Kerem
  * @version 1.0
  */
 public class TestModeLevelsGUI extends javax.swing.JPanel {
-   //properties
-
-   ArrayList<JButton> buttons;
+    //properties
+    private ArrayList<JButton> buttons;
 
    //constructor
    /**

@@ -183,7 +183,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
           cmm.setCurrentX(cmm.getStartX());
           cmm.setCurrentY(cmm.getStartY());
           cmm.setGameOver(false);
-          cmm.update();
+          cmm.setTimeIsUp(false);
           mapView.resetMap();
           timer.stopTimer();
           timer.resetTimer();
@@ -192,6 +192,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
           initNewLevel();
           timer.startTimer();
           codeView.setLocation(845, 0);
+          cmm.update();
        }
 
        playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
@@ -267,7 +268,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
     * initialize all the levels for Challenge Mode with setting required
     * properties
     */
-   public void initLevels() {
+   private void initLevels() {
       ChallengeLevels level1 = new ChallengeLevels(6, 8, 3, 5, 8, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level1.png")), 1);
       ChallengeLevels level2 = new ChallengeLevels(6, 9, 5, 6, 11, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level2.png")), 2);
       ChallengeLevels level3 = new ChallengeLevels(4, 7, 6, 6, 11, 120, new ImageIcon(getClass().getResource("/algoZoo/Maps/ChallengeMode/Level3.png")), 3);

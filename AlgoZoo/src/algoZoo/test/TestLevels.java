@@ -12,26 +12,26 @@ import javax.swing.ImageIcon;
 
 /**
  * It creates level objects for the test mode
- * @author Kerem
+ * @author Kerem, Arda
  * @version 1.0
  */
 public class TestLevels {
    // properties
    
-   final int TILE_WIDTH = 64;
-   final int TILE_HEIGHT = 64;
-   final int SPACE_WIDTH = 8;
-   final int SPACE_HEIGHT = 12;
-   int startX;
-   int startY;
-   int finishX;
-   int finishY;
-   int level;
-   ImageIcon mapBackground;
-   ArrayList<Character> list1;
-   ArrayList<Character> list2;
-   ArrayList<Character> list3;
-   ArrayList<Flower> flowers;
+   private final int TILE_WIDTH = 64;
+   private final int TILE_HEIGHT = 64;
+   private final int SPACE_WIDTH = 8;
+   private final int SPACE_HEIGHT = 12;
+   private int startX;
+   private int startY;
+   private int finishX;
+   private int finishY;
+   private int level;
+   private ImageIcon mapBackground;
+   private ArrayList<Character> list1;
+   private ArrayList<Character> list2;
+   private ArrayList<Character> list3;
+   private ArrayList<Flower> flowers;
 
    // constructor    
    public TestLevels(int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground, int level) {
@@ -51,7 +51,6 @@ public class TestLevels {
    // methods
    /**
     * Get method for map background.
-    *
     * @return map as ImageIcon
     */
    public ImageIcon getMapBackground() {
@@ -60,7 +59,6 @@ public class TestLevels {
 
    /**
     * Get method for animal's starting x-coordinate.
-    *
     * @return x-coordinate as integer
     */
    public int getStartX() {
@@ -69,7 +67,6 @@ public class TestLevels {
 
    /**
     * Get method for animal's starting y-coordinate.
-    *
     * @return y-coordinate as integer
     */
    public int getStartY() {
@@ -78,7 +75,6 @@ public class TestLevels {
 
    /**
     * Get method for the x-coordinate of animal's destination.
-    *
     * @return x-coordinate as integer
     */
    public int getFinishX() {
@@ -87,7 +83,6 @@ public class TestLevels {
 
    /**
     * Get method for the y-coordinate of animal's destination.
-    *
     * @return y-coordinate as integer
     */
    public int getFinishY() {
@@ -96,7 +91,6 @@ public class TestLevels {
 
    /**
     * Get method to get all elements of the option A.
-    *
     * @return all elements inside a ArrayList
     */
    public ArrayList<Character> getList1() {
@@ -105,7 +99,6 @@ public class TestLevels {
 
    /**
     * Get method to get all elements of the option B.
-    *
     * @return all elements inside a ArrayList
     */
    public ArrayList<Character> getList2() {
@@ -114,7 +107,6 @@ public class TestLevels {
 
    /**
     * Get method to get all elements of the option C.
-    *
     * @return all elements inside a ArrayList
     */
    public ArrayList<Character> getList3() {
@@ -123,7 +115,6 @@ public class TestLevels {
    
     /**
     * Get method for the level number
-    *
     * @return the level number
     */
    public int getLevel() {
@@ -132,7 +123,6 @@ public class TestLevels {
    
     /**
     * Get method for the flowers in the level
-    *
     * @return ArrayList of all flowers in the level
     */
    public ArrayList<Flower> getFlowers() {

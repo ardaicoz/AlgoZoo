@@ -12,10 +12,10 @@ import javax.swing.*;
  */
 public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
    // properties
-   int               updated;
-   int               length;
-   JLabel            movementsView;   
-   ArrayList<JLabel> jlabels;
+   private int               updated;
+   private int               length;
+   private JLabel            movementsView;   
+   private ArrayList<JLabel> jlabels;
    
    // constructor
    /**
@@ -47,7 +47,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
     /**
      * Displays the minReqMovements property and the noOfMovements properties of the model class
      */
-   public void initMovementsView() {
+   private void initMovementsView() {
       movementsView = new JLabel();
       movementsView.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
       movementsView.setForeground(new java.awt.Color(231, 231, 231));

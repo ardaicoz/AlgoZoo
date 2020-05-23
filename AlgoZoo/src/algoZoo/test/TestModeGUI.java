@@ -14,18 +14,18 @@ import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 /**
- *
+ * The class which represents the graphical user interface with mapView and three options
  * @author Kerem, Arda
+ * @version 1.0
  */
 public class TestModeGUI extends javax.swing.JPanel {
 
    //properties
-   TestSelectionButtonsController options;
-   MapView map;
-   TestModeModel tmm;
-   TestLevels currentLevel;
-   ArrayList<TestLevels> levelContainer;
-   TestLevelsSaveContainer testLevelsSaveContainer;
+   private TestSelectionButtonsController options;
+   private MapView map;
+   private TestModeModel tmm;
+   private TestLevels currentLevel;
+   private ArrayList<TestLevels> levelContainer;
 
    //constructors
    
@@ -176,7 +176,6 @@ public class TestModeGUI extends javax.swing.JPanel {
 
    /**
     * Get method to get the model of Test mode.
-    *
     * @return the model as TestModeModel class
     */
    public TestModeModel getModel() {
@@ -202,7 +201,6 @@ public class TestModeGUI extends javax.swing.JPanel {
 
    /**
     * Determines which level will start.
-    *
     * @param level level number.
     */
    public void setCurrentLevel(int level) {
@@ -229,7 +227,6 @@ public class TestModeGUI extends javax.swing.JPanel {
    
    /**
     * Sets the animal to be played with
-    *
     * @param animal animal chosen to be played with
     */
    public void setAnimal(Animal animal) {
@@ -238,13 +235,16 @@ public class TestModeGUI extends javax.swing.JPanel {
    
    /**
     * Gets the current level of the test mode
-    *
     * @return the processing level of the test mode
     */
    public int getLevel(){
       return currentLevel.getLevel();
    }
    
+   /**
+    * A method to indicate if the bee is moving or not.
+    * @return a boolean expression about bee's movement
+    */
    public boolean isBeeMoving() {
        return map.isBeeMoving();
    }
@@ -281,7 +281,10 @@ public class TestModeGUI extends javax.swing.JPanel {
       add(background);
       background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
-
+   /**
+    * This method indicates the statements when retry button is pressed.
+    * @param evt 
+    */
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
       if(isBeeMoving()) { }
       else {

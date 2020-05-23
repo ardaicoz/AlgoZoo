@@ -24,9 +24,9 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     private ArrayList<Character> listA;
     private ArrayList<Character> listB;
     private ArrayList<Character> listC;
-    ArrayList<JLabel> list1;
-    ArrayList<JLabel> list2;
-    ArrayList<JLabel> list3;
+    private ArrayList<JLabel> list1;
+    private ArrayList<JLabel> list2;
+    private ArrayList<JLabel> list3;
 
     //constructors
 
@@ -50,8 +50,8 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     * Method to play sound when buttons clicked.
     * @param soundName 
     */
-   public void playSound(String filePath) 
-   {     
+    public void playSound(String filePath) 
+    {     
         try 
         {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
@@ -413,8 +413,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
    }//GEN-LAST:event_CMouseExited
    
    /**
-    * set method for the pattern below the option A
-    *
+    * Set method for the pattern below the option A
     * @param list1 list to be set as the pattern below option A
     */
    public void setList1(ArrayList<Character> list1){
@@ -422,8 +421,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     }
     
    /**
-    * set method for the pattern below the option B
-    *
+    * Set method for the pattern below the option B
     * @param list2 list to be set as the pattern below option B
     */
     public void setList2(ArrayList<Character> list2){
@@ -431,13 +429,13 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     }
     
     /**
-    * set method for the pattern below the option C
-    *
+    * Set method for the pattern below the option C
     * @param list3 list to be set as the pattern below option C
     */
     public void setList3(ArrayList<Character> list3){
         listC = list3;
     }
+    
     /**
      * A method to make all options clickable.
      */
@@ -447,6 +445,9 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
         C.setEnabled(true);
     }
     
+    /**
+     * A method to remove all labels when continuing to the next level.
+     */
     public void removeLabels() {
        for (int i = 0; i < list1.size(); i++) {
           remove(list1.get(i));
