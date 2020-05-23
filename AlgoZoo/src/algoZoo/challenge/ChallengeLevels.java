@@ -17,10 +17,10 @@ import javax.swing.ImageIcon;
 public class ChallengeLevels {
 
    // properties
-   private final int         TILE_WIDTH = 64;
-   private final int         TILE_HEIGHT = 64;
-   private final int         SPACE_WIDTH = 8;
-   private final int         SPACE_HEIGHT = 12;
+   final int                 TILE_WIDTH = 64;
+   final int                 TILE_HEIGHT = 64;
+   final int                 SPACE_WIDTH = 8;
+   final int                 SPACE_HEIGHT = 12;
    private int               startX;
    private int               startY;
    private int               finishX;

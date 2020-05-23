@@ -44,7 +44,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     * method to play sound when buttons clicked
     * @param soundName 
     */
-   public void playSound(String filePath) {
+   private void playSound(String filePath) {
       try {
          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath));
          Clip clip = AudioSystem.getClip();
@@ -369,7 +369,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
    /**
     * This method is for setting the colours in JComboBox.
     */
-   public void clrComboBox() {
+   private void clrComboBox() {
       try {
          repeat.setRenderer(new ComboBoxColor<String>());
          repeat.setBackground(Color.BLACK);

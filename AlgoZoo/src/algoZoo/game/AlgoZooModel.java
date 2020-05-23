@@ -11,9 +11,9 @@ import javax.swing.ImageIcon;
  */
 public class AlgoZooModel extends AlgoZoo {
    //properties
-   boolean                        gameOver;
-   boolean                        hasWon;
-   public ArrayList<IAlgoZooView> views;
+   private boolean                        gameOver;
+   private boolean                        hasWon;
+   private ArrayList<IAlgoZooView>        views;
    
 
    //constructors

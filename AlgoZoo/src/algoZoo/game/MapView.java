@@ -18,15 +18,14 @@ import javax.swing.Timer;
 public class MapView extends javax.swing.JPanel implements IAlgoZooView {
 
    // properties
-   AlgoZooModel azm;
-   Timer timer;
-   final int WIDTH = 640;
-   final int HEIGHT = 640;
-   final int ANIMAL_WIDTH = 48;
-   final int ANIMAL_HEIGHT = 40;
-   final int NUMBER_OF_SQUARE = 10;
-   final int SQUARE = WIDTH / NUMBER_OF_SQUARE;
-
+   final int            WIDTH = 640;
+   final int            HEIGHT = 640;
+   final int            ANIMAL_WIDTH = 48;
+   final int            ANIMAL_HEIGHT = 40;
+   final int            NUMBER_OF_SQUARE = 10;
+   final int            SQUARE = WIDTH / NUMBER_OF_SQUARE;
+   private Timer        timer;
+   private AlgoZooModel azm;
    // constructors
    /**
     * Creates map view with regards to Algo Zoo Model
@@ -46,7 +45,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
     * Method to play sound when buttons clicked.
     * @param soundName The path of the sound file.
     */
-   public void playSound(String filePath) 
+   private void playSound(String filePath) 
    {     
         try 
         {
@@ -89,21 +88,21 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    /**
     * This method reflects the movement of the animal to the map when going up.
     */
-   public void goUpView() {
+   private void goUpView() {
       animal.setBounds(animal.getX(), animal.getY() - 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
    /**
     * This method reflects the movement of the animal to the map when going down.
     */
-   public void goDownView() {
+   private void goDownView() {
       animal.setBounds(animal.getX(), animal.getY() + 1, ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
 
    /**
     * This method reflects the movement of the animal to the map when going right.
     */
-   public void goRightView() {
+   private void goRightView() {
       if (azm.getAnimal().getName().equals("Bee")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
       } else if (azm.getAnimal().getName().equals("Bee2")) {
@@ -120,7 +119,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    /**
     * This method reflects the movement of the animal to the map when going left.
     */
-   public void goLeftView() {
+   private void goLeftView() {
       if (azm.getAnimal().getName().equals("Bee")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Left.png")));
       } else if (azm.getAnimal().getName().equals("Bee2")) {
