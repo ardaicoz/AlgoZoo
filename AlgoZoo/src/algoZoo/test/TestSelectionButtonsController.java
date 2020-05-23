@@ -24,9 +24,9 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     private ArrayList<Character> listA;
     private ArrayList<Character> listB;
     private ArrayList<Character> listC;
-    ArrayList<JLabel> list1;
-    ArrayList<JLabel> list2;
-    ArrayList<JLabel> list3;
+    private ArrayList<JLabel> list1;
+    private ArrayList<JLabel> list2;
+    private ArrayList<JLabel> list3;
 
     //constructors
 

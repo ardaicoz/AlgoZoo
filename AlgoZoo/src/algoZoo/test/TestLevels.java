@@ -18,20 +18,20 @@ import javax.swing.ImageIcon;
 public class TestLevels {
    // properties
    
-   final int TILE_WIDTH = 64;
-   final int TILE_HEIGHT = 64;
-   final int SPACE_WIDTH = 8;
-   final int SPACE_HEIGHT = 12;
-   int startX;
-   int startY;
-   int finishX;
-   int finishY;
-   int level;
-   ImageIcon mapBackground;
-   ArrayList<Character> list1;
-   ArrayList<Character> list2;
-   ArrayList<Character> list3;
-   ArrayList<Flower> flowers;
+   private final int TILE_WIDTH = 64;
+   private final int TILE_HEIGHT = 64;
+   private final int SPACE_WIDTH = 8;
+   private final int SPACE_HEIGHT = 12;
+   private int startX;
+   private int startY;
+   private int finishX;
+   private int finishY;
+   private int level;
+   private ImageIcon mapBackground;
+   private ArrayList<Character> list1;
+   private ArrayList<Character> list2;
+   private ArrayList<Character> list3;
+   private ArrayList<Flower> flowers;
 
    // constructor    
    public TestLevels(int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground, int level) {

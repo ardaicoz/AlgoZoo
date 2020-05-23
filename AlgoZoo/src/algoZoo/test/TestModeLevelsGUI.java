@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class TestModeLevelsGUI extends javax.swing.JPanel {
     //properties
-    ArrayList<JButton> buttons;
+    private ArrayList<JButton> buttons;
 	
    //constructor
    /**

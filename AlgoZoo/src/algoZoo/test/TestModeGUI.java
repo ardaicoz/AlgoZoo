@@ -20,11 +20,11 @@ import javax.swing.*;
 public class TestModeGUI extends javax.swing.JPanel {
 
    //properties
-   TestSelectionButtonsController options;
-   MapView map;
-   TestModeModel tmm;
-   TestLevels currentLevel;
-   ArrayList<TestLevels> levelContainer;
+   private TestSelectionButtonsController options;
+   private MapView map;
+   private TestModeModel tmm;
+   private TestLevels currentLevel;
+   private ArrayList<TestLevels> levelContainer;
 
    //constructors
    
