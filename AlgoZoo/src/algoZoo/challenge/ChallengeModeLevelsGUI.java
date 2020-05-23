@@ -22,6 +22,9 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
    private ArrayList<LevelButton> buttons;
 
    // constructor
+   /**
+    * Creates new form ChallengeModeLevelsGUI
+    */
    public ChallengeModeLevelsGUI() {
        //initialize all components
       initComponents();

@@ -16,8 +16,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 /**
- *
- * @author Ayberk
+ * This class is for creating and controlling welcomeScreen, modeScreen, infoScreen, level screens and GUI panels.
+ * @author Ayberk, Görkem, Doğa, Esra, Alp, Arda, Kerem
+ * @version 1.0
  */
 public class MenuScreen extends javax.swing.JFrame {
     
@@ -37,7 +38,7 @@ public class MenuScreen extends javax.swing.JFrame {
     * Method to play sound when buttons clicked.
     * @param soundName 
     */
-   public void playSound(String filePath) 
+   private void playSound(String filePath) 
    {     
         try 
         {
@@ -417,8 +418,6 @@ public class MenuScreen extends javax.swing.JFrame {
       }
    }
    
-   
-
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
       welcomeScreen.setVisible(false);
       modeScreen.setVisible(true);

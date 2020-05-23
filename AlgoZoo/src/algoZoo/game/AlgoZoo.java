@@ -15,15 +15,15 @@ import javax.swing.ImageIcon;
  */
 public class AlgoZoo {
    //properties
-   int                  startX;
-   int                  startY;
-   int                  currentX;
-   int                  currentY;
-   int                  finishX;
-   int                  finishY;
-   Animal               animal;
-   ArrayList<Flower>    flowers;
-   ArrayList<Character> movementPattern;
+   private int                  startX;
+   private int                  startY;
+   private int                  currentX;
+   private int                  currentY;
+   private int                  finishX;
+   private int                  finishY;
+   private Animal               animal;
+   private ArrayList<Flower>    flowers;
+   private ArrayList<Character> movementPattern;
 
    //constructors
    public AlgoZoo(int startX, int startY, int finishX, int finishY, ArrayList<Flower> flowers) {

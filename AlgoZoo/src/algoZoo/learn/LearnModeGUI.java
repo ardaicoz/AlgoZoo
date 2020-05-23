@@ -23,12 +23,12 @@ import javax.swing.JButton;
 public class LearnModeGUI extends javax.swing.JPanel {
 
    // properties
-   private MapView mapView;
-   private CodeView codeView;
-   private LearnModeModel lmm;
-   private SelectionController selectionController;
-   private LearnLevels currentLevel;
-   private ArrayList<LearnLevels> levelContainer;
+   private MapView                  mapView;
+   private CodeView                 codeView;
+   private LearnModeModel           lmm;
+   private LearnLevels              currentLevel;
+   private SelectionController      selectionController;
+   private ArrayList<LearnLevels>   levelContainer;
    private LearnLevelsSaveContainer learnLevelsSaveContainer;
 
    // constructor
@@ -47,7 +47,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
     *
     * @param soundName The path of the sound file.
     */
-   public void playSound(String filePath) {
+   private void playSound(String filePath) {
       try {
          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath));
          Clip clip = AudioSystem.getClip();
@@ -255,7 +255,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    /**
     * Creates each level of the Learn Mode.
     */
-   public void initLevels() {
+   private void initLevels() {
       // Initialize levels.
       LearnLevels level1 = new LearnLevels(4, 6, 7, 6, 3, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level1.png")), 1);
       LearnLevels level2 = new LearnLevels(7, 6, 5, 5, 3, new ImageIcon(getClass().getResource("/algoZoo/Maps/LearnMode/Level2.png")), 2);
@@ -344,7 +344,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
    /**
     * Moves the codeView pannel accordig to movement of mouse wheel.
     */
-   public void addScroll() {
+   private void addScroll() {
       codeView.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
          public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
             int a = evt.getWheelRotation();

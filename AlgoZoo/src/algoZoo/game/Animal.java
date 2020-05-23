@@ -17,6 +17,11 @@ public class Animal {
    private ImageIcon icon;
    
    //constructors
+   /**
+    * Creates an instance of Animal
+    * @param name Representative name for the animal.
+    * @param icon Representative icon for the animal.
+    */
    public Animal(String name, ImageIcon icon) {
       this.name = name;
       this.icon = icon;

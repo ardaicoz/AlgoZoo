@@ -20,13 +20,13 @@ import javax.swing.*;
 public class TestSelectionButtonsController extends javax.swing.JPanel {
 
     //properties
-    private TestModeModel tmm;
+    private TestModeModel        tmm;
+    private ArrayList<JLabel>    list1;
+    private ArrayList<JLabel>    list2;
+    private ArrayList<JLabel>    list3;
     private ArrayList<Character> listA;
     private ArrayList<Character> listB;
     private ArrayList<Character> listC;
-    private ArrayList<JLabel> list1;
-    private ArrayList<JLabel> list2;
-    private ArrayList<JLabel> list3;
 
     //constructors
 
@@ -50,7 +50,7 @@ public class TestSelectionButtonsController extends javax.swing.JPanel {
     * Method to play sound when buttons clicked.
     * @param soundName 
     */
-    public void playSound(String filePath) 
+    private void playSound(String filePath) 
     {     
         try 
         {

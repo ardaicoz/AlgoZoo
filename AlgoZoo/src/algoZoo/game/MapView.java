@@ -34,7 +34,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    public MapView(AlgoZooModel azm) {
       this.azm = azm;
       initComponents();
-      animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+      animal.setBounds(azm.getStartX(), azm.getStartY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
       timer = new Timer(10, new TimerListener());
 
       animal.setIcon(azm.getAnimal().getIcon());
@@ -150,7 +150,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
          timer.start();
       } 
       else {
-         animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+         animal.setBounds(azm.getStartX(), azm.getStartY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
       }
       
    }
@@ -183,6 +183,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
     */
    public void resetMap() {
       endScreen.setVisible(false);
+      animal.setBounds(azm.getStartX(), azm.getStartY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
    }
    
    /**
@@ -210,7 +211,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       public void actionPerformed(ActionEvent e) {
          if (azm.getMovementPattern().isEmpty()) {
             endMessage();
-            animal.setBounds(azm.startX, azm.startY, ANIMAL_WIDTH, ANIMAL_HEIGHT);
+            animal.setBounds(azm.getStartX(), azm.getStartY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
          } else {
             if (azm.getMovementPattern().size() > index) {
                if (azm.getMovementPattern().get(index).equals('w')) {

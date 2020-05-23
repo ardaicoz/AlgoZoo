@@ -18,6 +18,10 @@ public class LevelButton extends JButton {
    private int levelNo;
 
    // constructor
+   /**
+    * Creates an instance of LevelButton.
+    * @param levelNo Specific levelNo for each level.
+    */
    public LevelButton(int levelNo) {
       this.levelNo = levelNo;
    }

@@ -17,6 +17,14 @@ public class TestModeModel extends AlgoZooModel{
     //properties
     
     //constructors
+    /**
+    * Creates a Learn Mode Model in the specified start location, finish location and flower objects.
+    * @param startX Start point of the bee with respect to x-axis.
+    * @param startY Start point of the bee with respect to y-axis.
+    * @param finishX Finish point of the bee with respect to x-axis.
+    * @param finishY Finish point of the bee with respect to y-axis.
+    * @param flowers The ArrayList containing all flower objects.
+    */
     public TestModeModel(int startX, int startY, int finishX, int finishY, ArrayList<Flower> flowers) {
        super(startX, startY, finishX, finishY, flowers);
     }
@@ -36,7 +44,6 @@ public class TestModeModel extends AlgoZooModel{
      */
     @Override
    public void addMovementPattern(char c) {
-      
       getMovementPattern().add(c);
    }
     

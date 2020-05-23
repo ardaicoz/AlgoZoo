@@ -42,7 +42,7 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
    /**
     * Add all level buttons to ArrayList.
     */
-   public void addButtons() {
+   private void addButtons() {
       buttons.add(jButton1);
       buttons.add(jButton2);
       buttons.add(jButton3);

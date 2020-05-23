@@ -23,6 +23,10 @@ public class TimerController extends javax.swing.JPanel {
    private ChallengeModeModel cmm;
    
    // constructor
+   /**
+    * Creates an instance of the timer countdown.
+    * @param cmm Model class to control.
+    */
    public TimerController(ChallengeModeModel cmm) {
       // initializes all the components
       this.cmm = cmm;

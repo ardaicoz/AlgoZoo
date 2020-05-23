@@ -18,22 +18,34 @@ import javax.swing.ImageIcon;
 public class TestLevels {
    // properties
    
-   private final int TILE_WIDTH = 64;
-   private final int TILE_HEIGHT = 64;
-   private final int SPACE_WIDTH = 8;
-   private final int SPACE_HEIGHT = 12;
-   private int startX;
-   private int startY;
-   private int finishX;
-   private int finishY;
-   private int level;
-   private ImageIcon mapBackground;
+   private final int            TILE_WIDTH = 64;
+   private final int            TILE_HEIGHT = 64;
+   private final int            SPACE_WIDTH = 8;
+   private final int            SPACE_HEIGHT = 12;
+   private int                  startX;
+   private int                  startY;
+   private int                  finishX;
+   private int                  finishY;
+   private int                  level;
+   private ImageIcon            mapBackground;
    private ArrayList<Character> list1;
    private ArrayList<Character> list2;
    private ArrayList<Character> list3;
-   private ArrayList<Flower> flowers;
+   private ArrayList<Flower>    flowers;
 
    // constructor    
+   /**
+    * Creates a level in the specified start location, finish location, minimum required of movements, mapBackground and level.
+    * @param startX Start point of the bee with respect to x-axis.
+    * @param startY Start point of the bee with respect to y-axis.
+    * @param finishX Finish point of the bee with respect to x-axis.
+    * @param finishY Finish point of the bee with respect to y-axis.
+    * @param ArrayList<Character> list1  ArrayList of chars to replace the algorithm for the first option.
+    * @param ArrayList<Character> list2  ArrayList of chars to replace the algorithm for the second option.
+    * @param ArrayList<Character> list3  ArrayList of chars to replace the algorithm for the third option.
+    * @param mapBackground The background of the map whose format is png.
+    * @param level Level number.
+    */
    public TestLevels(int startX, int startY, int finishX, int finishY, ArrayList<Character> list1, ArrayList<Character> list2, ArrayList<Character> list3, ImageIcon mapBackground, int level) {
       this.startX = (TILE_WIDTH * (startX - 1)) + SPACE_WIDTH;
       this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;

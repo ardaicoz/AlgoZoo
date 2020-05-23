@@ -18,14 +18,24 @@ import javax.swing.ImageIcon;
 public class ChallengeModeModel extends AlgoZooModel {
 
    // properties
-   int     noOfMovements;
-   int     minRequiredMovements;
-   int     efficiency;
-   int     minRequiredTime;
-   int     usedTime;
-   boolean timeIsUp;
+   private int     noOfMovements;
+   private int     minRequiredMovements;
+   private int     efficiency;
+   private int     minRequiredTime;
+   private int     usedTime;
+   private boolean timeIsUp;
 
    // constructors
+   /**
+    * Creates a Learn Mode Model in the specified start location, finish location and flower objects.
+    * @param startX Start point of the bee with respect to x-axis.
+    * @param startY Start point of the bee with respect to y-axis.
+    * @param finishX Finish point of the bee with respect to x-axis.
+    * @param finishY Finish point of the bee with respect to y-axis.
+    * @param minRequiredMovements The number of minimum required movements that a player will be recommended.
+    * @param minRequiredTime Amount of time to complete the level.
+    * @param flowers The ArrayList containing all flower objects.
+    */
    public ChallengeModeModel(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ArrayList<Flower> flowers) {
       super(startX, startY, finishX, finishY, flowers);
       this.minRequiredMovements = minRequiredMovements;

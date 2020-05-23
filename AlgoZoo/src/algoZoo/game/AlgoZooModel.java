@@ -93,21 +93,21 @@ public class AlgoZooModel extends AlgoZoo {
    public void initNewGame() {
       resetMovementPattern();
       //set anlimal
-      if ( animal.getName().equals("Bee")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
+      if ( getAnimal().getName().equals("Bee")){
+         getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));         
       }
-      else if ( animal.getName().equals("Bee2")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));               
+      else if ( getAnimal().getName().equals("Bee2")){
+         getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));               
       }
-      else if ( animal.getName().equals("Bee3")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));               
+      else if ( getAnimal().getName().equals("Bee3")){
+         getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));               
       }
-      else if ( animal.getName().equals("Bee4")){
-         animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));               
+      else if ( getAnimal().getName().equals("Bee4")){
+         getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));               
       }
       
-      currentX = startX;
-      currentY = startY;
+      setCurrentX(getStartX());
+      setCurrentY(getStartY());
       gameOver = false;
       hasWon = false;
       update();
@@ -139,15 +139,15 @@ public class AlgoZooModel extends AlgoZoo {
     */
    public void play() {
        //play the user's algorithm
-      for ( int i = 0; i < movementPattern.size(); i++) {
-         if ( movementPattern.get(i).equals('w')) { goUp(); }
-         else if ( movementPattern.get(i).equals('a')) { goLeft(); }
-         else if ( movementPattern.get(i).equals('s')) { goDown(); }
-         else if ( movementPattern.get(i).equals('d')) { goRight(); }
-         else if ( movementPattern.get(i).equals('f')) {
-            for( int j = 0; j < flowers.size(); j++) {
-               if( flowers.get(j).getX() == this.getCurrentX() && flowers.get(j).getY() == this.getCurrentY()) {
-                  flowers.get(j).setPollenGathered(true);                 
+      for ( int i = 0; i < getMovementPattern().size(); i++) {
+         if ( getMovementPattern().get(i).equals('w')) { goUp(); }
+         else if ( getMovementPattern().get(i).equals('a')) { goLeft(); }
+         else if ( getMovementPattern().get(i).equals('s')) { goDown(); }
+         else if ( getMovementPattern().get(i).equals('d')) { goRight(); }
+         else if ( getMovementPattern().get(i).equals('f')) {
+            for( int j = 0; j < getFlowers().size(); j++) {
+               if( getFlowers().get(j).getX() == this.getCurrentX() && getFlowers().get(j).getY() == this.getCurrentY()) {
+                  getFlowers().get(j).setPollenGathered(true);                 
                }               
             }
          }
@@ -167,8 +167,8 @@ public class AlgoZooModel extends AlgoZoo {
    public boolean allPollensGathered() {
       boolean allGathered = true;      
       //check all flowers
-      for( int i = 0; i < flowers.size(); i++) {        
-         if( flowers.get(i).getPollenGathered() == false) {
+      for( int i = 0; i < getFlowers().size(); i++) {        
+         if( getFlowers().get(i).getPollenGathered() == false) {
             allGathered = false;
          }             
       }      

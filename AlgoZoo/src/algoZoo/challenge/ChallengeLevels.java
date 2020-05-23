@@ -17,10 +17,10 @@ import javax.swing.ImageIcon;
 public class ChallengeLevels {
 
    // properties
-   final int                 TILE_WIDTH = 64;
-   final int                 TILE_HEIGHT = 64;
-   final int                 SPACE_WIDTH = 8;
-   final int                 SPACE_HEIGHT = 12;
+   private final int         TILE_WIDTH = 64;
+   private final int         TILE_HEIGHT = 64;
+   private final int         SPACE_WIDTH = 8;
+   private final int         SPACE_HEIGHT = 12;
    private int               startX;
    private int               startY;
    private int               finishX;
@@ -31,7 +31,18 @@ public class ChallengeLevels {
    private ImageIcon         mapBackground;
    private ArrayList<Flower> flowers;
 
-   // constructor    
+   // constructor  
+   /**
+    * Creates a level in the specified start location, finish location, minimum required of movements, mapBackground and level.
+    * @param startX Start point of the bee with respect to x-axis.
+    * @param startY Start point of the bee with respect to y-axis.
+    * @param finishX Finish point of the bee with respect to x-axis.
+    * @param finishY Finish point of the bee with respect to y-axis.
+    * @param minRequiredMovements  The number of minimum required movements that a player will be recommended.
+    * @param minRequiredTime Amount of time to complete the level.
+    * @param mapBackground The background of the map whose format is png.
+    * @param level Level number.
+    */
    public ChallengeLevels(int startX, int startY, int finishX, int finishY, int minRequiredMovements, int minRequiredTime, ImageIcon mapBackground, int level) {
       this.startX = (TILE_WIDTH * (startX - 1)) + SPACE_WIDTH;
       this.startY = (TILE_HEIGHT * (startY - 1)) + SPACE_HEIGHT;

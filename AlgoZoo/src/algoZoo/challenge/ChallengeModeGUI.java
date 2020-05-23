@@ -33,6 +33,9 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    private ChallengeLevelsSaveContainer challengeLevelsSaveContainer;
 
    // constructor
+   /**
+    * Creates new form ChallengeModeGUI
+    */
    public ChallengeModeGUI() {
       // initialize all components
       initMyComponents();

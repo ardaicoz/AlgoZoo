@@ -21,15 +21,14 @@ import javax.swing.*;
 public class TestModeGUI extends javax.swing.JPanel {
 
    //properties
+   private MapView                        map;
+   private TestModeModel                  tmm;
+   private TestLevels                     currentLevel;
+   private ArrayList<TestLevels>          levelContainer;
+   private TestLevelsSaveContainer        testLevelsSaveContainer;
    private TestSelectionButtonsController options;
-   private MapView map;
-   private TestModeModel tmm;
-   private TestLevels currentLevel;
-   private ArrayList<TestLevels> levelContainer;
-   private TestLevelsSaveContainer testLevelsSaveContainer;
 
    //constructors
-   
    /**
     * Creates new form TestModeLevelsGUI
     */
@@ -44,7 +43,7 @@ public class TestModeGUI extends javax.swing.JPanel {
     * Method to play sound when buttons clicked.
     * @param soundName 
     */
-   public void playSound(String filePath) 
+   private void playSound(String filePath) 
    {     
         try 
         {
@@ -85,7 +84,7 @@ public class TestModeGUI extends javax.swing.JPanel {
    /**
     * A method to initialize every level of the test mode.
     */
-   public void initLevels() {
+   private void initLevels() {
       TestLevels level1 = new TestLevels(4, 5, 8, 4, new ArrayList<Character>(Arrays.asList('d', 'd', 'w', 'd', 'd')), new ArrayList<Character>(Arrays.asList('w', 'w', 'd', 'd', 'd')), new ArrayList<Character>(Arrays.asList('d', 'd', 'd', 'w', 's')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level1.png")), 1);
       TestLevels level2 = new TestLevels(6, 8, 3, 5, new ArrayList<Character>(Arrays.asList('w', 'w', 'w', 'a', 'a', 's')), new ArrayList<Character>(Arrays.asList('w', 'a', 'w', 'a', 'w', 'a')), new ArrayList<Character>(Arrays.asList('a', 'w', 'w', 'a', 'w', 'd')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level2.png")), 2);
       TestLevels level3 = new TestLevels(4, 6, 8, 5, new ArrayList<Character>(Arrays.asList('s', 'd', 'd', 'w', 'w', 'd', 'd')), new ArrayList<Character>(Arrays.asList('d', 'd', 'd', 'w', 'a', 'w', 'd')), new ArrayList<Character>(Arrays.asList('s', 's', 'd', 'd', 'w', 'd', 'd')), new ImageIcon(getClass().getResource("/algoZoo/Maps/TestMode/Level3.png")), 3);

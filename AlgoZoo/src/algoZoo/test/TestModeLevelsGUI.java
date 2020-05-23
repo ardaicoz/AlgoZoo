@@ -153,7 +153,7 @@ public class TestModeLevelsGUI extends javax.swing.JPanel {
    /**
     * A method to add all buttons to ArrayList.
     */
-   public void addButtons() {
+   private void addButtons() {
       buttons.add(jButton1);
       buttons.add(jButton2);
       buttons.add(jButton3);
