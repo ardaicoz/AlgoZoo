@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.game;
 import javax.swing.ImageIcon;
 
 /**
  * Animal class to represent animal characters in the game with their icon and name.
- * @author Esra, Doğa, Kerem, Arda, Görkem
+ * @author Esra, Doğa, Kerem, Arda
  * @version 18.05.2020 (final)
  */
 public class Animal {
+   
    //properties
    private String    name;
    private ImageIcon icon;

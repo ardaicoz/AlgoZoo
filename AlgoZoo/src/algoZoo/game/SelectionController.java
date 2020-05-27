@@ -15,7 +15,6 @@ import javax.swing.ListCellRenderer;
 
 /**
  * This class is for creating the movement options the user can choose from
- *
  * @author Doğa, Ayberk, Esra
  * @version 1.0
  */
@@ -202,7 +201,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
        if (forButton.isSelected()) {
           forPattern.add('w');
           forView.updateView(azm);
-       } else {
+       } 
+       else {
           azm.addMovementPattern('w');
        }
 
@@ -217,7 +217,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
        if (forButton.isSelected()) {
           forPattern.add('s');
           forView.updateView(azm);
-       } else {
+       } 
+       else {
           azm.addMovementPattern('s');
        }
 
@@ -232,7 +233,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
        if (forButton.isSelected()) {
           forPattern.add('d');
           forView.updateView(azm);
-       } else {
+       } 
+       else {
           azm.addMovementPattern('d');
        }
        playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
@@ -246,7 +248,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
        if (forButton.isSelected()) {
           forPattern.add('a');
           forView.updateView(azm);
-       } else {
+       } 
+       else {
           azm.addMovementPattern('a');          
        }
        playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
@@ -261,7 +264,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
           forPattern.clear();
           forView.updateView(azm);
           repeat.setSelectedIndex(0);
-       } else {
+       } 
+       else {
           azm.initNewGame();
           forPattern.clear();
           forView.updateView(azm);
@@ -282,7 +286,8 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
       if (forButton.isSelected()) {
          forPattern.add('f');
          forView.updateView(azm);
-      } else {
+      } 
+      else {
          azm.addMovementPattern('f');         
       }
       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
@@ -303,7 +308,7 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
           forPattern.clear();
           forView.updateView(azm);
        } 
-	   else {
+       else {
           forButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/For_Button_Clicked.png")));
        }
        playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
@@ -382,7 +387,6 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
     * This is an inner class for demonstrating the for pattern
     */
    public class ForView extends javax.swing.JPanel implements IAlgoZooView {
-
       ArrayList<JLabel> jlabels;
       int updated;
 
@@ -414,56 +418,56 @@ public class SelectionController extends javax.swing.JPanel implements IAlgoZooV
                   jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Up_Button.png")));
                   if (jlabels.size() >= 2) {
                      jlabels.get(jlabels.size() - 1).setBounds(22, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 36, 50);
-                  } 
-				  else {
+                  } 	
+                  else {
                      jlabels.get(jlabels.size() - 1).setBounds(22, 20, 36, 50);
                   }
                   updated++;
                }
-			   else if (forPattern.get(i).equals('a')) {
+               else if (forPattern.get(i).equals('a')) {
                   jlabels.add(new JLabel());
                   add(jlabels.get(jlabels.size() - 1));
                   jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Left_Button.png")));
                   if (jlabels.size() >= 2) {
                      jlabels.get(jlabels.size() - 1).setBounds(15, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 50, 36);
                   } 
-				  else {
+                  else {
                      jlabels.get(jlabels.size() - 1).setBounds(15, 20, 50, 36);
                   }
                   updated++;
                } 
-			   else if (forPattern.get(i).equals('s')) {
+               else if (forPattern.get(i).equals('s')) {
                   jlabels.add(new JLabel());
                   add(jlabels.get(jlabels.size() - 1));
                   jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Down_Button.png")));
                   if (jlabels.size() >= 2) {
                      jlabels.get(jlabels.size() - 1).setBounds(22, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 36, 50);
                   } 
-				  else {
+                  else {
                      jlabels.get(jlabels.size() - 1).setBounds(22, 20, 36, 50);
                   }
                   updated++;
                } 
-			   else if (forPattern.get(i).equals('d')) {
+               else if (forPattern.get(i).equals('d')) {
                   jlabels.add(new JLabel());
                   add(jlabels.get(jlabels.size() - 1));
                   jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Right_Button.png")));
                   if (jlabels.size() >= 2) {
                      jlabels.get(jlabels.size() - 1).setBounds(15, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 50, 36);
                   } 
-				  else {
+                  else {
                      jlabels.get(jlabels.size() - 1).setBounds(15, 20, 50, 36);
                   }
                   updated++;
                }
-			   else if (forPattern.get(i).equals('f')) {
+               else if (forPattern.get(i).equals('f')) {
                   jlabels.add(new JLabel());
                   add(jlabels.get(jlabels.size() - 1));
                   jlabels.get(jlabels.size() - 1).setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Flower.png")));
                   if (jlabels.size() >= 2) {
                      jlabels.get(jlabels.size() - 1).setBounds(16, jlabels.get(jlabels.size() - 2).getHeight() + jlabels.get(jlabels.size() - 2).getY() + 10, 48, 60);
                   } 
-				  else {
+                  else {
                      jlabels.get(jlabels.size() - 1).setBounds(16, 20, 48, 60);
                   }
                   updated++;

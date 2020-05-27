@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.test;
 
 import algoZoo.game.*;
@@ -19,7 +14,7 @@ import javax.swing.*;
  * @version 1.0
  */
 public class TestModeGUI extends javax.swing.JPanel {
-
+   
    //properties
    private MapView                        map;
    private TestModeModel                  tmm;
@@ -165,13 +160,15 @@ public class TestModeGUI extends javax.swing.JPanel {
       levelContainer.add(level9);
       levelContainer.add(level10); 
       
+      // to create a save file when the game is first opened
       if (TestLevelsSave.load() == null || !TestLevelsSave.load().get(1)) {
          testLevelsSaveContainer = new TestLevelsSaveContainer();
          TestLevelsSave.save(testLevelsSaveContainer);         
-      } else {
+      } 
+      // To be able to read the data in the save file
+      else {
          testLevelsSaveContainer = TestLevelsSave.load();
-      }
-      
+      }      
    }
 
    /**
@@ -195,8 +192,7 @@ public class TestModeGUI extends javax.swing.JPanel {
       if( currentLevel.getLevel() != 10) {
          testLevelsSaveContainer.setTrue(currentLevel.getLevel() - 1);
          TestLevelsSave.save(testLevelsSaveContainer);
-      }
-      
+      }      
    }
 
    /**

@@ -26,7 +26,6 @@ public class LearnLevelsSaveContainer implements Serializable {
 
    /**
     * Sets true the specific level's boolean value based on the level number.
-    *
     * @param levelNumber
     */
    public void setTrue(int levelNumber) {
@@ -35,7 +34,6 @@ public class LearnLevelsSaveContainer implements Serializable {
 
    /**
     * Sets false the specific level's boolean value based on the level number.
-    *
     * @param levelNumber
     */
    public void setFalse(int levelNumber) {
@@ -44,7 +42,6 @@ public class LearnLevelsSaveContainer implements Serializable {
 
    /**
     * Returns the size of the ArrayList
-    *
     * @return Size of the ArrayList
     */
    public int size() {
@@ -53,7 +50,6 @@ public class LearnLevelsSaveContainer implements Serializable {
 
    /**
     * Returns the determined elements of the ArrayList based on index number.
-    *
     * @param i Index number
     * @return boolean. The elements of the ArrayList.
     */

@@ -11,6 +11,7 @@ import javax.swing.*;
  * @version 1.0
  */
 public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
+   
    // properties
    private int               updated;
    private int               length;
@@ -22,7 +23,7 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
     * Creates a panel to demonstrate the algorithm that player created.
     */
    public CodeView() {
-       //init all components
+      //init all components
       initComponents();
       initMovementsView();
       jlabels = new ArrayList<>();
@@ -174,13 +175,10 @@ public class CodeView extends javax.swing.JPanel implements IAlgoZooView {
                   jlabels.get(jlabels.size() - 1).setBounds(76,20,48,60);
                   length += 60;
                }
-               updated++;
-               
-            }
-            
+               updated++;               
+            }            
          }
-      }
-      
+      }      
    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

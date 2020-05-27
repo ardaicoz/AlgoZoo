@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.challenge;
 
 import algoZoo.game.*;
@@ -15,8 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
- * This class is for basic GUI design of Challenge Mode
- *
+ * This class is for basic GUI design of Challenge Mode.
  * @author Doğa, Esra, Alp
  * @version 1.0
  */
@@ -45,8 +39,7 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
    //methods
    /**
-    * method to play sound when buttons clicked.
-    *
+    * Method to play sound when buttons clicked.
     * @param soundName
     */
    public void playSound(String filePath) {
@@ -136,7 +129,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
    /**
     * actionPerformed method for playButton to move the bee according to the
     * movement algorithm
-    *
     * @param evt
     */
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
@@ -153,34 +145,36 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
             mapView.endMessage();
          }
          if (cmm.hasWon()) {
-            if (currentLevel.getLevel() != 10) {
+            if (currentLevel.getLevel() != 10) {               
                challengeLevelsSaveContainer.setTrue(currentLevel.getLevel());
             }
+            // to record achievements
             challengeLevelsSaveContainer.setLevelStars(currentLevel.getLevel(), getEfficiency());
             ChallengeLevelsSave.save(challengeLevelsSaveContainer);
-         }
-         
+         }         
       }
-
       playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
    }//GEN-LAST:event_playButtonActionPerformed
 
    /**
-    * actionPerformed method for retryButton to restart the level
-    *
+    * ActionPerformed method for retryButton to restart the level.
     * @param evt
     */
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
        if (isBeeMoving()) {
-       } else {
+       }
+       else {
           cmm.resetMovementPattern();
           if (cmm.getAnimal().getName().equals("Bee")) {
              cmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
-          } else if (cmm.getAnimal().getName().equals("Bee2")) {
+          } 
+          else if (cmm.getAnimal().getName().equals("Bee2")) {
              cmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
-          } else if (cmm.getAnimal().getName().equals("Bee3")) {
+          }
+          else if (cmm.getAnimal().getName().equals("Bee3")) {
              cmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
-          } else if (cmm.getAnimal().getName().equals("Bee4")) {
+          }
+          else if (cmm.getAnimal().getName().equals("Bee4")) {
              cmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
           }
           cmm.setCurrentX(cmm.getStartX());
@@ -197,13 +191,11 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
           codeView.setLocation(845, 0);
           cmm.update();
        }
-
        playSound("src/algoZoo/Sounds/Click_Sound_Soft.wav");
     }//GEN-LAST:event_retryButtonActionPerformed
 
    /**
-    * actionPerformed method for scrollUp
-    *
+    * ActionPerformed method for scrollUp.
     * @param evt
     */
     private void scrollUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrollUpActionPerformed
@@ -212,7 +204,8 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
        int h = codeView.getHeight();
 
        if (y == 0) {
-       } else {
+       } 
+       else {
           codeView.setLocation(x, y + 50);
        }
     }//GEN-LAST:event_scrollUpActionPerformed
@@ -228,7 +221,8 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
        int h = codeView.getHeight();
 
        if (y == 800 - h || codeView.getLength() < 800 || (codeView.getLength() - 800 + 10) < -y) {
-       } else {
+       } 
+       else {
           codeView.setLocation(x, y - 50);
        }
     }//GEN-LAST:event_scrollDownActionPerformed
@@ -373,10 +367,13 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       levelContainer.add(level9);
       levelContainer.add(level10);
 
+      // to create a save file when the game is first opened
       if (ChallengeLevelsSave.load() == null || !ChallengeLevelsSave.load().getLevelAccomplished(1)) {
          challengeLevelsSaveContainer = new ChallengeLevelsSaveContainer();
          ChallengeLevelsSave.save(challengeLevelsSaveContainer);
-      } else {
+      } 
+      // To be able to read the data in the save file
+      else {
          challengeLevelsSaveContainer = ChallengeLevelsSave.load();
       }
    }
@@ -397,7 +394,8 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
             if (a > 0) {
                if (y == 800 - h || codeView.getLength() < 800 || (codeView.getLength() - 800 + 10) < -y) {
                   a = 0;
-               } else {
+               } 
+               else {
                   b -= 50;
                   codeView.setLocation(x, y + b);
                }
@@ -405,7 +403,8 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
             if (a < 0) {
                if (y == 0) {
                   a = 0;
-               } else {
+               } 
+               else {
                   b += 50;
                   codeView.setLocation(x, y + b);
                }
@@ -438,7 +437,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
    /**
     * determines which level will start.
-    *
     * @param level level number.
     */
    public void setCurrentLevel(int level) {
@@ -463,7 +461,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
    /**
     * returns the model class
-    *
     * @return cmm
     */
    public ChallengeModeModel getModel() {
@@ -472,7 +469,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
    /**
     * sets the animal according to the parametre
-    *
     * @param animal
     */
    public void setAnimal(Animal animal) {
@@ -481,7 +477,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
    /**
     * returns the efficiency of the current level
-    *
     * @return cmm.getEfficiency()
     */
    public int getEfficiency() {
@@ -490,7 +485,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
    /**
     * returns the current level
-    *
     * @return currentLevel.getLevel();
     */
    public int getLevel() {
@@ -506,7 +500,6 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
 
    /**
     * checks if the bee is moving
-    *
     * @return true if the bee is moving, otherwise false
     */
    public boolean isBeeMoving() {

@@ -14,9 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
- * The panel that includes map view, code view and selection controller appears
- * during the game.
- *
+ * This class is for basic GUI design of Learn Mode.
  * @author Ayberk, Görkem
  * @version 1.0
  */
@@ -134,7 +132,6 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Actions that accures after the play button is clicked.
-    *
     * @param Event mouse clicked.
     */
    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
@@ -152,6 +149,7 @@ public class LearnModeGUI extends javax.swing.JPanel {
          }
          if (lmm.hasWon() && currentLevel.getLevel() != 10) {
             learnLevelsSaveContainer.setTrue(currentLevel.getLevel());
+            // to record achievements
             LearnLevelsSave.save(learnLevelsSaveContainer);
          }
       }
@@ -160,20 +158,23 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Actions that accures after the retry button is clicked.
-    *
     * @param Event mouse clicked.
     */
     private void retryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retryButtonActionPerformed
        if (isBeeMoving()) {
-       } else {
+       } 
+       else {
           lmm.resetMovementPattern();
           if (lmm.getAnimal().getName().equals("Bee")) {
              lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
-          } else if (lmm.getAnimal().getName().equals("Bee2")) {
+          } 
+          else if (lmm.getAnimal().getName().equals("Bee2")) {
              lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
-          } else if (lmm.getAnimal().getName().equals("Bee3")) {
+          } 
+          else if (lmm.getAnimal().getName().equals("Bee3")) {
              lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
-          } else if (lmm.getAnimal().getName().equals("Bee4")) {
+          } 
+          else if (lmm.getAnimal().getName().equals("Bee4")) {
              lmm.getAnimal().setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
           }
           lmm.setCurrentX(lmm.getStartX());
@@ -191,7 +192,6 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Actions that accures after the scrollDown button is clicked.
-    *
     * @param Event mouse clicked.
     */
     private void scrollDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrollDownActionPerformed
@@ -200,7 +200,8 @@ public class LearnModeGUI extends javax.swing.JPanel {
        int h = codeView.getHeight();
 
        if (y == 800 - h || codeView.getLength() < 800 || (codeView.getLength() - 800 + 10) < -y) {
-       } else {
+       } 
+       else {
           codeView.setLocation(x, y - 50);
        }
     }//GEN-LAST:event_scrollDownActionPerformed
@@ -216,7 +217,8 @@ public class LearnModeGUI extends javax.swing.JPanel {
        int h = codeView.getHeight();
 
        if (y == 0) {
-       } else {
+       } 
+       else {
           codeView.setLocation(x, y + 50);
        }
     }//GEN-LAST:event_scrollUpActionPerformed
@@ -331,10 +333,12 @@ public class LearnModeGUI extends javax.swing.JPanel {
       levelContainer.add(level9);
       levelContainer.add(level10);
 
+      // to create a save file when the game is first opened
       if (LearnLevelsSave.load() == null || !LearnLevelsSave.load().get(1)) {
          learnLevelsSaveContainer = new LearnLevelsSaveContainer();
          LearnLevelsSave.save(learnLevelsSaveContainer);         
       } 
+      // To be able to read the data in the save file
       else {
          learnLevelsSaveContainer = LearnLevelsSave.load();
       }
@@ -357,7 +361,8 @@ public class LearnModeGUI extends javax.swing.JPanel {
             if (a > 0) {
                if (y == 800 - h || codeView.getLength() < 800 || (codeView.getLength() - 800 + 10) < -y) {
                   a = 0;
-               } else {
+               } 
+               else {
                   b -= 50;
                   codeView.setLocation(x, y + b);
                }
@@ -365,7 +370,8 @@ public class LearnModeGUI extends javax.swing.JPanel {
             if (a < 0) {
                if (y == 0) {
                   a = 0;
-               } else {
+               } 
+               else {
                   b += 50;
                   codeView.setLocation(x, y + b);
                }
@@ -413,7 +419,6 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Get Learn Mode Model
-    *
     * @return Learn Mode Model
     */
    public LearnModeModel getModel() {
@@ -422,7 +427,6 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Get current level number
-    *
     * @return level number
     */
    public int getLevel() {
@@ -431,7 +435,6 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Determines which level will start.
-    *
     * @param level Level number.
     */
    public void setCurrentLevel(int level) {
@@ -441,13 +444,11 @@ public class LearnModeGUI extends javax.swing.JPanel {
 
    /**
     * Set Animal object for Learn Mode Model.
-    *
     * @param animal Animal object
     */
    public void setAnimal(Animal animal) {
       lmm.setAnimal(animal);
    }
-
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JLabel background;

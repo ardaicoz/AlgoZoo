@@ -6,6 +6,7 @@ package algoZoo.game;
  * @version 1.0
  */
 public class Flower {
+   
    // properties
    final int       TILE_WIDTH = 64;
    final int       TILE_HEIGHT = 64;

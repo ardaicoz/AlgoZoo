@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * The class holding the save files of challenge mode levels
+ * The class holding the save files of challenge mode levels.
  * @author Görkem
  * @version 1.0
  */
@@ -16,7 +16,7 @@ public class ChallengeLevelsSaveContainer implements Serializable {
 
    // constructor
    /**
-    * Creates the ArrayList containing the boolean values of the
+    * Creates the ArrayList containing the boolean values of the Challenge Level.
     * ChallengeModeLevels
     */
    public ChallengeLevelsSaveContainer() {
@@ -34,7 +34,6 @@ public class ChallengeLevelsSaveContainer implements Serializable {
 
    /**
     * Sets true the specific level's boolean value based on the level number.
-    *
     * @param levelNumber
     */
    public void setTrue(int levelNumber) {
@@ -43,7 +42,6 @@ public class ChallengeLevelsSaveContainer implements Serializable {
 
    /**
     * Sets false the specific level's boolean value based on the level number.
-    *
     * @param levelNumber
     */
    public void setFalse(int levelNumber) {
@@ -52,7 +50,6 @@ public class ChallengeLevelsSaveContainer implements Serializable {
 
    /**
     * Returns the size of the ArrayList
-    *
     * @return Size of the ArrayList
     */
    public int levelAccomplishedSize() {
@@ -61,7 +58,6 @@ public class ChallengeLevelsSaveContainer implements Serializable {
 
    /**
     * Returns the determined elements of the ArrayList based on index number.
-    *
     * @param i Index number
     * @return boolean. The elements of the ArrayList.
     */
@@ -69,14 +65,28 @@ public class ChallengeLevelsSaveContainer implements Serializable {
       return levelAccomplished.get(index);
    }
    
+   /**
+    * Sets the number of stars to specific level number.
+    * @param levelNumber
+    * @param stars 
+    */
    public void setLevelStars(int levelNumber, int stars) {
       levelStars.set(levelNumber - 1, stars);
    }
    
+   /**
+    * Returns the size of the ArrayList containing the number of stars
+    * @return 
+    */
    public int levelStarsSize() {
       return levelStars.size();
    }
    
+   /**
+    * Returns the ArrayList containing the number of the each levels' stars.
+    * @param index
+    * @return 
+    */
    public int getLevelStars(int index) {
       return levelStars.get(index);
    }

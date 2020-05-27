@@ -5,11 +5,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
- * The panel that includes all Learn Mode Levels and buttons appears before game starts.
+ * This class is for organizing the LevelButtons for Learn Mode
  * @author Ayberk, Görkem
  * @version 1.0
  */
 public class LearnModeLevelsGUI extends javax.swing.JPanel {
+   
    // properties
    private ArrayList<JButton> buttons;
 
@@ -26,11 +27,11 @@ public class LearnModeLevelsGUI extends javax.swing.JPanel {
             if (LearnLevelsSave.load().get(i)) {
                buttons.get(i).setEnabled(true);
                buttons.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/" + (i + 1) + ".png")));
-            } else {
+            } 
+            else {
                buttons.get(i).setEnabled(false);
             }
          }
-
       } catch (NullPointerException e) {
          for (int j = 1; j < buttons.size(); j++) {
             buttons.get(j).setEnabled(false);

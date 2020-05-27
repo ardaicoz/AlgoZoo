@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.challenge;
 
 import algoZoo.game.*;
@@ -54,7 +49,6 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * returns the total number of movements made by the user during a level
-    *
     * @return noOfMovements
     */
    public int getNoOfMovements() {
@@ -63,7 +57,6 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * sets the number of movements
-    *
     * @param noOfMovements
     */
    public void setNoOfMovements(int noOfMovements) {
@@ -79,7 +72,6 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * returns the minimum number of movements
-    *
     * @return minRequiredMovements
     */
    public int getMinRequiredMovements() {
@@ -88,7 +80,6 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * sets the minimum number of movements
-    *
     * @param minRequiredMovements
     */
    public void setMinRequiredMovements(int minRequiredMovements) {
@@ -97,7 +88,6 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * returns the minimum required time to complete the level
-    *
     * @return minRequiredTime
     */
    public int getMinRequiredTime() {
@@ -106,7 +96,6 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * sets the minimum required time to complete the level
-    *
     * @param minRequiredTime
     */
    public void setMinRequiredTime(int minRequiredTime) {
@@ -115,7 +104,6 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * returns the efficiency
-    *
     * @return efficiency
     */
    public int getEfficiency() {
@@ -124,7 +112,6 @@ public class ChallengeModeModel extends AlgoZooModel {
 
    /**
     * sets the used time
-    *
     * @param usedTime
     */
    public void setUsedTime(int usedTime) {
@@ -161,7 +148,8 @@ public class ChallengeModeModel extends AlgoZooModel {
    public void computeEfficiency() {
       if (!hasWon()) {
          efficiency = 0;
-      } else {
+      } 
+      else {
          efficiency = 1;
          if (usedTime < minRequiredTime / 2) {
             efficiency++;

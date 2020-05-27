@@ -71,15 +71,19 @@ public class LearnLevelsSave {
       String home = System.getProperty("user.home");
       String OS = System.getProperty("os.name").toLowerCase();
 
+      // for windows
       if (OS.contains("win")) {
          home = System.getenv("appdata");
          //home = home + "/Desktop";
-      } else if (OS.contains("mac")) {
+      }
+      //for macOS
+      else if (OS.contains("mac")) {
          home = home + "~/Library/Application Support";
-      } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
+      } 
+      // for linux
+      else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
          home = home + "~/.";
       }
-
       // Parent folder
       File dir = new File(home);
 

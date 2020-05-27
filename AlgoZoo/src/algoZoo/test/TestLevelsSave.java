@@ -74,13 +74,16 @@ public class TestLevelsSave {
       String home = System.getProperty("user.home");
       String OS = System.getProperty("os.name").toLowerCase();
 
+      // for Windows
       if (OS.contains("win")) {
          home = System.getenv("appdata");
          //home = home + "/Desktop";
       } 
+      // for macOS
       else if (OS.contains("mac")) {
          home = home + "~/Library/Application Support";
       } 
+      // for Linux
       else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
          home = home + "~/.";
       }

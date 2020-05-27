@@ -10,7 +10,6 @@ import java.io.Serializable;
 
 /**
  * The class created for the creation and editing of the Test Mode's save files.
- *
  * @author Görkem
  * @version 1.0
  */
@@ -21,10 +20,8 @@ public class ChallengeLevelsSave {
    private static final String root = "/AlgoZooSave";
 
    // methods
-   // methods
    /**
     * Saving the objects to the file that has specific location.
-    *
     * @param objectToSerialise The object that will be serialised
     */
    public static void save(Serializable objectToSerialise) {
@@ -45,7 +42,6 @@ public class ChallengeLevelsSave {
 
    /**
     * Reading the objects from the file that has specific location.
-    *
     * @return LearnLevelsSaveContainer The objects that containing boolean
     * values of the Learn Mode Levels.
     */
@@ -73,19 +69,24 @@ public class ChallengeLevelsSave {
    }
 
    /**
-    * Creates the data folder according to Operating System
+    * Creates the data folder according to Operating System.
     * @return String The filepath
     */
    private static String createDataFolder() {
       String home = System.getProperty("user.home");
       String OS = System.getProperty("os.name").toLowerCase();
 
+      // for windows
       if (OS.contains("win")) {
          home = System.getenv("appdata");
          //home = home + "/Desktop";
-      } else if (OS.contains("mac")) {
+      } 
+      // for macOS
+      else if (OS.contains("mac")) {
          home = home + "~/Library/Application Support";
-      } else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
+      } 
+      // for linux
+      else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
          home = home + "~/.";
       }
 
@@ -119,16 +120,14 @@ public class ChallengeLevelsSave {
       }
       System.err.println("File: " + createDataFolder() + fileName + " is write protected!");
       return false;
-
    }
 
    /**
-    * Checks whether the file exists or not
+    * Checks whether the file exists or not.
     * @return boolean. Returns true when the file exists. Returns false the file
     * does not exists.
     */
    public static boolean checkFileExists() {
       return new File(createDataFolder() + fileName).isFile();     
    }
-
 }

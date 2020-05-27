@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
- * It was created to create level objects in Learn Mode.
+ * This class is for creating levels for Learn Mode.
  * @author Görkem, Ayberk
  * @version 1.0
  */
@@ -48,7 +48,7 @@ public class LearnLevels {
 
    // methods
    /**
-    * Gets the start X location of the bee in a particular level
+    * Returns the start X location of the bee in a particular level
     * @return startX Start point of the bee with respect to x-axis.
     */
    public int getStartX() {
@@ -56,7 +56,7 @@ public class LearnLevels {
    }
 
    /**
-    * Gets the start Y location of the bee in a particular level
+    * Returns the start Y location of the bee in a particular level
     * @return startY Start point of the bee with respect to y-axis.
     */
    public int getStartY() {
@@ -64,7 +64,7 @@ public class LearnLevels {
    }
 
    /**
-    * Gets the final X location of the bee in a particular level
+    * Returns the final X location of the bee in a particular level
     * @return finishX Finish point of the bee with respect to x-axis.
     */
    public int getFinishX() {
@@ -72,7 +72,7 @@ public class LearnLevels {
    }
 
    /**
-    * Gets the final Y location of the bee in a particular level
+    * Returns the final Y location of the bee in a particular level
     * @return finishY Finish point of the bee with respect to y-axis.
     */
    public int getFinishY() {
@@ -80,7 +80,7 @@ public class LearnLevels {
    }
 
    /**
-    * Gets the number of minimum required movements that a player is recommended.
+    * Returns the number of minimum required movements that a player is recommended.
     * @return The number of minimum required movement.
     */
    public int getMinRequiredMovements() {
@@ -96,7 +96,7 @@ public class LearnLevels {
    }
 
    /**
-    * Gets the specific background of level whose format is png.
+    * Returns the specific background of level whose format is png.
     * @return mapBackground The background of the map whose format is png.
     */
    public ImageIcon getMapBackground() {
@@ -104,7 +104,7 @@ public class LearnLevels {
    }
 
    /**
-    * Gets the level number
+    * Returns the level number
     * @return level Level number.
     */
    public int getLevel() {
@@ -112,7 +112,7 @@ public class LearnLevels {
    }
 
    /**
-    * Gets the ArrayList that contain Flower objects.
+    * Returns the ArrayList that contain Flower objects.
     * @return flowers the ArrayList that contain Flower objects.
     */
    public ArrayList<Flower> getFlowers() {

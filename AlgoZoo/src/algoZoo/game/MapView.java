@@ -26,6 +26,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    final int            SQUARE = WIDTH / NUMBER_OF_SQUARE;
    private Timer        timer;
    private AlgoZooModel azm;
+   
    // constructors
    /**
     * Creates map view with regards to Algo Zoo Model
@@ -36,7 +37,6 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
       initComponents();
       animal.setBounds(azm.getStartX(), azm.getStartY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
       timer = new Timer(10, new TimerListener());
-
       animal.setIcon(azm.getAnimal().getIcon());
    }
 
@@ -46,7 +46,7 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
     * @param soundName The path of the sound file.
     */
    private void playSound(String filePath) 
-   {     
+   {   
         try 
         {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
@@ -105,11 +105,14 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    private void goRightView() {
       if (azm.getAnimal().getName().equals("Bee")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Right.png")));
-      } else if (azm.getAnimal().getName().equals("Bee2")) {
+      } 
+      else if (azm.getAnimal().getName().equals("Bee2")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Right.png")));
-      } else if (azm.getAnimal().getName().equals("Bee3")) {
+      } 
+      else if (azm.getAnimal().getName().equals("Bee3")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Right.png")));
-      } else if (azm.getAnimal().getName().equals("Bee4")) {
+      } 
+      else if (azm.getAnimal().getName().equals("Bee4")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Right.png")));
       }
 
@@ -122,11 +125,14 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
    private void goLeftView() {
       if (azm.getAnimal().getName().equals("Bee")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee_Left.png")));
-      } else if (azm.getAnimal().getName().equals("Bee2")) {
+      } 
+      else if (azm.getAnimal().getName().equals("Bee2")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee2_Left.png")));
-      } else if (azm.getAnimal().getName().equals("Bee3")) {
+      } 
+      else if (azm.getAnimal().getName().equals("Bee3")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee3_Left.png")));
-      } else if (azm.getAnimal().getName().equals("Bee4")) {
+      } 
+      else if (azm.getAnimal().getName().equals("Bee4")) {
          animal.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Icons/Animals/Bee4_Left.png")));
       }
 
@@ -171,7 +177,8 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
          endScreen.setVisible(true);
          endScreen.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Won_Screen.png")));
          playSound( "src/algoZoo/Sounds/YouWon.wav" );
-      } else {
+      } 
+      else {
          endScreen.setVisible(true);
          endScreen.setIcon(new ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Lost_Screen.png")));
          playSound( "src/algoZoo/Sounds/YouLost.wav" );
@@ -203,7 +210,6 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
 
    // inner class
    public class TimerListener implements ActionListener {
-
       int counter = 0;
       int index = 0;
 
@@ -212,7 +218,8 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
          if (azm.getMovementPattern().isEmpty()) {
             endMessage();
             animal.setBounds(azm.getStartX(), azm.getStartY(), ANIMAL_WIDTH, ANIMAL_HEIGHT);
-         } else {
+         } 
+         else {
             if (azm.getMovementPattern().size() > index) {
                if (azm.getMovementPattern().get(index).equals('w')) {
                   if (animal.getY() > (SQUARE - ANIMAL_HEIGHT) / 2) {
@@ -222,25 +229,26 @@ public class MapView extends javax.swing.JPanel implements IAlgoZooView {
                   if (animal.getX() > (SQUARE - ANIMAL_WIDTH) / 2) {
                      goLeftView();
                   }
-               } else if (azm.getMovementPattern().get(index).equals('s')) {
+               } 
+               else if (azm.getMovementPattern().get(index).equals('s')) {
                   if (animal.getY() < (HEIGHT - SQUARE) + (SQUARE - ANIMAL_HEIGHT) / 2) {
                      goDownView();
                   }
-               } else if (azm.getMovementPattern().get(index).equals('d')) {
+               } 
+               else if (azm.getMovementPattern().get(index).equals('d')) {
                   if (animal.getX() < (WIDTH - SQUARE) + (SQUARE - ANIMAL_WIDTH) / 2) {
                      goRightView();
                   }
                }
-            } else {
+            } 
+            else {
                index = 0;
                counter = 0;
                timer.stop();
                endMessage();
             }
          }
-
          counter++;
-
          if (counter % 64 == 0) {
             index++;
          }

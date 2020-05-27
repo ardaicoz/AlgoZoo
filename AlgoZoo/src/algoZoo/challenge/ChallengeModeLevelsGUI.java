@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoZoo.challenge;
 
 import algoZoo.game.LevelButton;
@@ -40,7 +35,8 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
                buttons.get(i).setEnabled(true);
                buttons.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/" + (i + 1) + ".png")));
                
-            } else {
+            }
+            else {
                buttons.get(i).setEnabled(false);
             }
          }
