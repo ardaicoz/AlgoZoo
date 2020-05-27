@@ -1,0 +1,7 @@
+## Reflections
+	
+	During this project, we practiced how to implement MVC pattern to more detailed projects. We learned how to use Netbeans and share our works through Github. We discovered lots of coding related implementations such as adding sounds to the buttons, passing between different screens, and scrolling the panels. In addition, we improved our group working, report writing skills and learned how the distribute the whole work among ourselves. 
+	We spent approximately 8 weeks to complete the coding process. Due to the fact that we had to meet via zoom, it was hard to arrange meetings and share our ideas efficiently without technical difficulties. Also, we had a hard time implementing MVC pattern to our project as we couldn't fully understand the connections between classes at first. 
+	At the end, we achieved a good working game through the efficient group working processes and we are very proud of it. Next time, we might think of implementing the creative mode, changing this into an Android App or adding online challenges.
+	
+	
