@@ -28,13 +28,14 @@ A desktop game to teach children the basics of algorithm.
 
 Group log ########################################
 
-### Meeting ~ (08.03.2020, 2 hours) 
+### Meeting ~ (08.03.2020, 2 hours)
 
 **Present:** Arda, Alp, Ayberk, Doğa, Esra, Görkem, Kerem  
 
 **Discussion:** We met to complete the requirements stage. We talked about main purposes of our project and discussed how would it be beneficial for the other people. We prepared the Requirements Report by distributing the whole work among ourselves. Ayberk and Kerem shared their ideas about the requirements of the world and demonstrated the purpose of our project while writing the introduction part of the report. Doğa, Görkem and Esra discussed about how would the game will be more interesting with adding some specific features, and meanwhile they wrote the features part of the Requirements Report. In addition, Alp and Arda thought about the logic of the game and wrote the part about how to play our game. At the end we, as the whole group, wrote to conclusion part of Requirements Stage and completed our report.
 
-### Meeting ~ (28.03.2020, 3 hours) 
+
+### Meeting ~ (28.03.2020, 3 hours)
 
 **Present:** Arda, Alp, Ayberk, Doğa, Esra, Görkem, Kerem  
 
@@ -236,6 +237,65 @@ Group log ########################################
 **Discussion:** We added and updated the ChallengeLevels class. We tried to create a more efficient code by forming a loop for adding each levelButton actionPerformed() methods in the MenuScreen class. Therefore, we created a LevelButton class by sub-classing JButton. We added a levelNo property to this class so that each levelButton will be special to the specific level. We created an algorithm for enabling level buttons only when the previous level completed successfully in the returnButtonActionPerformed() method.
 
 
+### Meeting ~ (14.05.2020, 6 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We fixed the bugs in AlgoZoo class to prevent the changes in the location of the animal if the user tries to cross the border of the map. We talked about how to demonstrate the efficiency stars in the challenge mode and implemented the code. We created the animal selection part in the mode screen. 
+
+
+### Meeting ~ (16.05.2020, 10.5 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:** Visual improvements have been made to the map of the levels by using the TileMap. New levels added to 3 different modes separataly. The GUI design of the game has been updated. The levels in the modes have been adjusted to the level of difficulty. The causes of minor errors in the codes were discussed, identified, and fixed. New buttons were added to the option of the TestMode. The counter that appeared on the Challenge Mode Screen was designed. The image of the character is updated when the left button is pressed.
+
+**ToDo:** Some minor improvements on game mechanics will be made. Problems encountered in mapview class will be fixed. Some design improvements will be made. 
+
+
+### Meeting ~ (17.05.2020, 2 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We added the necessary comments and javadoc comments to the classes in game and challenge packages. We fixed the bugs in TimerController class. 
+
+
+### Meeting ~ (17.05.2020, 6 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:**  Map designs continued to be improved. The background of the modes has been updated. Visual improvements made on the game screen to provide a better gaming experience. In addition, new characters added to the game. Therefore, there are four different character in the game. In order to inform the players of the game for the first time, information screen explaining how the game is played has been added. To be useful, a new exit button was designed and integrated into the game.The errors detected in the previous meeting were fixed.
+
+
+### Meeting ~ (18.05.2020, 4 hours)
+
+**Present:** Kerem, Arda
+
+**Discussion:**  We discussed how to create an end game panel indicating the result. We implemented the major changes about the level and GUI classes. We changed the TestLevels and TestModeGUI classes in order to make it more effective. We examined how to add flowers to the TestModeSelectionController, and completed related changes in this class. We thought about the final patterns of the test mode levels and changed the level constructors in TestModeGUI class accordingly.
+
+
+### Meeting ~ (18.05.2020, 5 hours)
+
+**Present:** Esra, Alp, Doğa
+
+**Discussion:** We added the for loop function to the SelectionController class and designed its JComboBox to make it more appealing. We added the endMessage() method to the MapView class to inform the users when they lose or pass the levels. We also added the retryButton to each mode for users to be able to restart the levels when they lose.
+
+
+### Meeting ~ (18.05.2020, 8 hours)
+
+**Present:** Ayberk, Görkem
+
+**Discussion:**  Minor changes to maps were made.  Some researchs on this subject has been done and tried. However, we failed. Some bugs in the code have been fixed. Researchs on how to add sound to the buttons in the game was done. Button sizes were adjusted. The CodeView class has been rewritten according to the changes.
+
+**ToDo:** Research about save-load will be done. Things to do to make the program run faster will be investigated. The detected errors will be corrected.
+
+
+### Meeting ~ (19.05.2020, 3 hours)
+
+**Present:** Kerem, Arda
+
+**Discussion:**  Some last changes about TestModeSelectionController class are thought and tried to adjust the locations of the direction icons in the middle of the options. We discussed this process and made some necessary changes accordingly.
+
 
 Personal Logs ##########################################################
 
@@ -410,25 +470,28 @@ Then, Esra, Doğa and I made some additions and changes to it. We did a two-hour
 
 ### Görkem Ayten:
 ### ~ 23.03.2020 ~
-This week I thought about the design of the project. I also examined the designs of games that are similar to our game on the internet. So new ideas came up in my head. I also started working on the GUI that we started to see this semester.
+This week I thought about the design of the project. I also examined the designs of games that are similar to our game on the internet. A few good examples took my attention. Therefore, new ideas came up in my head. I also started working on the GUI that we started to see this semester.
 
 ### ~ 30.03.2020 ~
-This week I started to think about the design of the levels after our group meeting. Furthermore, since I do not know how to use netbeans swing tool,I started to learn how to use it by doing research on the internet.
+This week I started to think about the design of the levels after our group meeting. Furthermore, since I do not know how to use Netbeans swing tool, I started to learn how to use it by doing research on the internet and watching videos.
 
 ### ~ 06.04.2020 ~
-This week I  thought about how to make a game map where the animals would move. I examined the designs in the sample games on the the Internet.
+This week I thought about how to make a game map where the animals would move. I thought designing the maps of game with Unity. I researched on the use of unity. Moreover, I examined the designs in the sample games on the Internet.
 
 ### ~ 13.04.2020 ~
-This week I created a new GitHub account and joined our GitHub repository. I learned the fundamental of the usage of GitHub. I decided how the views of the maps would be.After that, I thought about using Photoshop by creating the map's view. So, we discussed with Ayberk which program we can use to create maps. We finally decided to use TiledMap. Therefore, I started to learn how to use TiledMap and watch some lectures about it.
+This week I created a new GitHub account and joined our GitHub repository. I learned the fundamental of the usage of GitHub. I decided how the views of the maps would be. After that, I thought about using Photoshop by creating the map's view. I did not get any results from the udemy videos I watched a week ago. So, we discussed with Ayberk which program we can use to create maps. We finally decided to use TiledMap. Therefore, I started to learn how to use TiledMap and watch some videos about it.
 
 ### ~ 20.04.2020 ~
-This week, I continued watching videos and making map designs. I designed some learn map and I got the opinions of Ayberk in about my designs. Moreover, I found new components for my map design. So, I decided to change my design.
+This week, I continued watching videos and making map designs. I designed some Learn Mode’s map and I got the opinions of Ayberk in about my designs. Moreover, I found new components for my map design. So, I decided to change my design.
 
 ### ~ 27.04.2020 ~
-This week after group meeting, we divided into 3 different sub-groups. I and Ayberk started to coding menu dynamics such as (panels, buttons, labels...). We also did research  to resize our project as well. I sent a message to the experts on this subject. In addition, we wrote our problem to the forum in MOODLE page. However, I learned that this is not possible because of the null layout we use.
+This week after group meeting, we divided into 3 different sub-groups. I and Ayberk started to coding menu dynamics such as (panels, buttons, labels...). We also did research to resize our project as well. I sent a message to the experts on this subject. In addition, we wrote our problem to the forum in MOODLE page. However, I learned that this is not possible because of the null layout we use. Moreover, I started to think about the model classes we decided in group work.
 
 ### ~ 04.05.2020 ~
 This week, with the consensus of the group members, we decided to make the game in fixed size. Therefore, I had to resize the map designs I made before. I coded MapView, CodeView and LearnMode's class together with Ayberk. While doing this, we encountered many problems and researched their solutions. We have substantially completed code of these classes.
 
 ### ~ 10.05.2020 ~
-This week, I finished all map designs. I found a more effective way to start the levels by assigning variables in the LearnMode class together with Ayberk. I made adjustments to the code accordingly. Furthermore, I did research on the basic needs of the game such as how to save the level.
+This week, I finished Learn Mode, Challenge Mode and Test Mode’ s map designs. I found a more effective way to start the levels by assigning variables in the LearnMode class together with Ayberk. I made adjustments to the code accordingly. Furthermore, I did research on the basic needs of the game such as how to save the level. I found a lot of resources about java IO on the internet. I tried to integrate what I learned into our own project.
+
+### ~ 17.05.2020 ~
+This week, I started working to complete the deficiencies such as sound after pressing the button and lack of save files we decided to meet with the group. So, I continued working for the game's save files. I wrote 6 different save classes for this and integrated it into the project. After that, I made changes to the code to fix the errors I encountered. Finally our game could be saved without any problems. Me and Ayberk worked on the for loop that located in CodeView class. However, we faced with some problems and did not fix it. I completed all the deficiencies I could complete and made the project ready for delivery. Finally, our project is completed.
