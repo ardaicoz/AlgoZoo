@@ -68,6 +68,7 @@ public class MenuScreen extends javax.swing.JFrame {
       welcomeScreen = new javax.swing.JPanel();
       playButton = new javax.swing.JButton();
       exitButton = new javax.swing.JButton();
+      resetButton = new javax.swing.JButton();
       background = new javax.swing.JLabel();
       modeScreen = new javax.swing.JPanel();
       learnButton = new javax.swing.JButton();
@@ -176,6 +177,15 @@ public class MenuScreen extends javax.swing.JFrame {
       });
       welcomeScreen.add(exitButton);
       exitButton.setBounds(580, 570, 270, 80);
+
+      resetButton.setText("ResetButton");
+      resetButton.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            resetButtonActionPerformed(evt);
+         }
+      });
+      welcomeScreen.add(resetButton);
+      resetButton.setBounds(1200, 30, 100, 32);
 
       background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Welcome_Screen_Background.png"))); // NOI18N
       welcomeScreen.add(background);
@@ -648,7 +658,7 @@ public class MenuScreen extends javax.swing.JFrame {
        modeScreen.setVisible(false);
        infoScreen1.setVisible(true);
        updateReturnButton();
-       playSound( "src/algoZoo/Sounds/Info_Button.wav" );
+       playSound( "src/algoZoo/Sounds/Info_Button.wav" );       
     }//GEN-LAST:event_infoButtonActionPerformed
 
    private void nextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextMouseEntered
@@ -674,6 +684,25 @@ public class MenuScreen extends javax.swing.JFrame {
    private void quickExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quickExitButtonMouseExited
       quickExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Quick_Exit_Button.png")));
    }//GEN-LAST:event_quickExitButtonMouseExited
+
+   private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
+      challengeModeGUI.resetChallengeMode();
+      learnModeGUI.resetLearnMode();
+      testModeGUI.resetTestMode();
+      //For reseting the icons
+      for( int i = 2; i < 11; i++) {
+         challengeModeLevelScreen.getJButton(i).setEnabled(false);
+         learnModeLevelScreen.getJButton(i).setEnabled(false);
+         testModeLevelScreen.getJButton(i).setEnabled(false);
+      }
+      //For reseting stars
+      for( int i = 1; i < 11; i++) {
+         challengeModeLevelScreen.getJLabel(i).setIcon(null);
+      }
+      challengeModeLevelScreen.getJButton(1).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/1.png")));
+      learnModeLevelScreen.getJButton(1).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/1.png")));
+      testModeLevelScreen.getJButton(1).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Test Mode/1.png")));
+   }//GEN-LAST:event_resetButtonActionPerformed
 
    /**
     * @param args the command line arguments
@@ -733,6 +762,7 @@ public class MenuScreen extends javax.swing.JFrame {
    private javax.swing.JButton playButton;
    private javax.swing.JButton previous;
    private javax.swing.JButton quickExitButton;
+   private javax.swing.JButton resetButton;
    private javax.swing.JButton returnButton;
    private javax.swing.JButton testButton;
    private algoZoo.test.TestModeGUI testModeGUI;

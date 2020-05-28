@@ -101,7 +101,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
     * @param levelNo
     * @return stars.get(levelNo - 1)
     */
-   public JLabel getJLabel(int levelNo)  {
+   public JLabel getJLabel(int levelNo) {
       return stars.get(levelNo - 1);
    }
    
@@ -112,7 +112,7 @@ public class ChallengeModeLevelsGUI extends javax.swing.JPanel {
     */
    public LevelButton getJButton(int levelNo) {
       return buttons.get(levelNo - 1);
-   }
+   }  
 
    /**
     * sets the icon of the LevelButton with given ImageIcon

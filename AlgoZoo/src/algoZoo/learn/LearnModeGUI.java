@@ -416,6 +416,14 @@ public class LearnModeGUI extends javax.swing.JPanel {
          lmm.getFlowers().get(i).setPollenGathered(false);
       }
    }
+   
+   /**
+    * Resets the save file.
+    */
+   public void resetLearnMode() {
+      learnLevelsSaveContainer = new LearnLevelsSaveContainer();
+      LearnLevelsSave.save(learnLevelsSaveContainer);      
+   }
 
    /**
     * Get Learn Mode Model
