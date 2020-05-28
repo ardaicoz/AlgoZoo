@@ -459,6 +459,9 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
       }
    }
    
+   /**
+    * Resets the save file.
+    */
    public void resetChallengeMode() {
       challengeLevelsSaveContainer = new ChallengeLevelsSaveContainer();
       ChallengeLevelsSave.save(challengeLevelsSaveContainer);

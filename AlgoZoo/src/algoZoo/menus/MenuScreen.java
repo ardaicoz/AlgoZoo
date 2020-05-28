@@ -689,10 +689,15 @@ public class MenuScreen extends javax.swing.JFrame {
       challengeModeGUI.resetChallengeMode();
       learnModeGUI.resetLearnMode();
       testModeGUI.resetTestMode();
+      //For reseting the icons
       for( int i = 2; i < 11; i++) {
          challengeModeLevelScreen.getJButton(i).setEnabled(false);
          learnModeLevelScreen.getJButton(i).setEnabled(false);
          testModeLevelScreen.getJButton(i).setEnabled(false);
+      }
+      //For reseting stars
+      for( int i = 1; i < 11; i++) {
+         challengeModeLevelScreen.getJLabel(i).setIcon(null);
       }
       challengeModeLevelScreen.getJButton(1).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Challenge Mode/1.png")));
       learnModeLevelScreen.getJButton(1).setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Levels/Learn Mode/1.png")));

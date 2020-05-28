@@ -221,6 +221,9 @@ public class TestModeGUI extends javax.swing.JPanel {
       }
    }
    
+   /**
+    * Resets the save file.
+    */
    public void resetTestMode() {
       testLevelsSaveContainer = new TestLevelsSaveContainer();
       TestLevelsSave.save(testLevelsSaveContainer);  

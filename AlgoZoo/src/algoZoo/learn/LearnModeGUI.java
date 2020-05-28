@@ -417,6 +417,9 @@ public class LearnModeGUI extends javax.swing.JPanel {
       }
    }
    
+   /**
+    * Resets the save file.
+    */
    public void resetLearnMode() {
       learnLevelsSaveContainer = new LearnLevelsSaveContainer();
       LearnLevelsSave.save(learnLevelsSaveContainer);      
