@@ -9,7 +9,7 @@ A desktop game to teach children the basics of algorithm.
 + **Requirements:** completed (08.03.2020)
 + **UI Design:** completed (30.03.2020)
 + **Detailed Design:** completed (13.05.2020)
-+ **Implementation:** not started!
++ **Implementation:** completed (22.05.2020)
 + **Reflections:** not yet!
 
 #### Group Members
@@ -447,6 +447,19 @@ This week, according to our project design, Kerem and I designed the Animal clas
 
 ### ~ 04.05.2020 ~
 This week, I did some more practice with Swing Tool to not face any problems while implementing it to our actual project. With Kerem, we designed and wrote the source code of the GUI for the Test mode. Then, with updating the MenuScreen class accordingly to our updates and fixing some bugs, we created a fully functioning Test mode.
+
+### ~ 11.05.2020 ~
+This week, with Kerem we fixed bugs when user wants to restart a level in test mode and fixed the character to return to its first location when restarted.
+We implemented TestModeGUI according to the TestLevels class by creating parameters which gets appropriate options for every level.
+We wrote the text for "How to Play" button which is located in bottom right corner.
+
+### ~ 18.05.2020 ~ 
+This week I wrote the appropriate parameters for the last five levels of the Test Mode by determining the start and end locations of the character and locations of the flowers.
+Later, with realising the options being not challenging, I updated them to be more difficult.
+With Kerem, we did the appropriate changes for the added Flower icon such as changing the related icons in label, and its related methods like gathering the pollens to TestModeSelectionController, TestLevels and TestModeGUI classes.
+For the video, I discussed about the content of the video with Doğa and Kerem.
+With Kerem, we wrote the missing javadoc comments in Test Mode, fixed the indentation and variable declaration; later I added some javadoc comments for learn and challenge modes.
+With Kerem, we wrote the explanations for Test Mode for Detailed Design Report.
 
 *****************************************************************************
 
