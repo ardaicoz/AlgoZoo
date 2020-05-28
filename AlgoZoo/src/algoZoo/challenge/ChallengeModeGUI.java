@@ -458,6 +458,11 @@ public class ChallengeModeGUI extends javax.swing.JPanel {
          cmm.getFlowers().get(i).setPollenGathered(false);
       }
    }
+   
+   public void resetChallengeMode() {
+      challengeLevelsSaveContainer = new ChallengeLevelsSaveContainer();
+      ChallengeLevelsSave.save(challengeLevelsSaveContainer);
+   }
 
    /**
     * returns the model class

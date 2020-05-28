@@ -221,6 +221,11 @@ public class TestModeGUI extends javax.swing.JPanel {
       }
    }
    
+   public void resetTestMode() {
+      testLevelsSaveContainer = new TestLevelsSaveContainer();
+      TestLevelsSave.save(testLevelsSaveContainer);  
+   }
+   
    /**
     * Sets the animal to be played with
     * @param animal animal chosen to be played with
