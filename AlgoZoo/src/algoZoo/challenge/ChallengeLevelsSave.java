@@ -83,7 +83,7 @@ public class ChallengeLevelsSave {
       } 
       // for macOS
       else if (OS.contains("mac")) {
-         home = home + "~/Library/Application Support";
+         home = home + "/Library/Application Support";
       } 
       // for linux
       else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {

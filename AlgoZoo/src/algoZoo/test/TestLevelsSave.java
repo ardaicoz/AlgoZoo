@@ -81,7 +81,7 @@ public class TestLevelsSave {
       } 
       // for macOS
       else if (OS.contains("mac")) {
-         home = home + "~/Library/Application Support";
+         home = home + "/Library/Application Support";
       } 
       // for Linux
       else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
