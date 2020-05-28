@@ -74,11 +74,12 @@ public class LearnLevelsSave {
       // for windows
       if (OS.contains("win")) {
          home = System.getenv("appdata");
-         //home = home + "/Desktop";
+         //Directory: C:\Users\User_Name\AppData\Roaming\AlgoZooSave
       }
       //for macOS
       else if (OS.contains("mac")) {
          home = home + "/Library/Application Support";
+         //Directory: Users/User_Name/Library/Application Support/AlgoZooSave
       } 
       // for linux
       else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
@@ -113,7 +114,6 @@ public class LearnLevelsSave {
       }
       System.err.println("File: " + createDataFolder() + fileName + " is write protected!");
       return false;
-
    }
 
    /**
