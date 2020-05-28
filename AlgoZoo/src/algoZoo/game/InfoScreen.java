@@ -1,26 +1,17 @@
 package algoZoo.game;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
 /**
  * This class represents the screen when info button is pressed.
  * @author Ayberk, Kerem, Arda
  */
 public class InfoScreen extends javax.swing.JPanel {
 
-    //JScrollPane jScrollPane1;
     /**
      * Creates new form InfoScreen
      */
     public InfoScreen() {
       initComponents();
-      //initMyComponents();
-      //jScrollPane1.getViewport().setOpaque(true);
-      //jScrollPane1.setOpaque(true);
-      
+      infoScreen2.setVisible(false);
     }
 
     /**
@@ -32,49 +23,116 @@ public class InfoScreen extends javax.swing.JPanel {
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
-      jLabel1 = new javax.swing.JLabel();
-      jLabel2 = new javax.swing.JLabel();
+      previous = new javax.swing.JButton();
+      next = new javax.swing.JButton();
+      infoScreen1 = new javax.swing.JLabel();
+      infoScreen2 = new javax.swing.JLabel();
+      background = new javax.swing.JLabel();
 
       setMaximumSize(new java.awt.Dimension(1400, 800));
       setMinimumSize(new java.awt.Dimension(1207, 661));
       setPreferredSize(new java.awt.Dimension(1207, 661));
       setLayout(null);
 
-      jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-      jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Info_Screen.png"))); // NOI18N
-      add(jLabel1);
-      jLabel1.setBounds(100, 75, 1207, 661);
+      previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Previous_Change_Button.png"))); // NOI18N
+      previous.setBorder(null);
+      previous.setContentAreaFilled(false);
+      previous.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      previous.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            previousMouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            previousMouseExited(evt);
+         }
+      });
+      previous.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            previousActionPerformed(evt);
+         }
+      });
+      add(previous);
+      previous.setBounds(1220, 660, 36, 60);
 
-      jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Mode_Screen_Background.png"))); // NOI18N
-      add(jLabel2);
-      jLabel2.setBounds(0, 0, 1400, 800);
+      next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Next_Change_Button.png"))); // NOI18N
+      next.setBorder(null);
+      next.setContentAreaFilled(false);
+      next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      next.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            nextMouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            nextMouseExited(evt);
+         }
+      });
+      next.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            nextActionPerformed(evt);
+         }
+      });
+      add(next);
+      next.setBounds(1260, 660, 36, 60);
+
+      infoScreen1.setForeground(new java.awt.Color(255, 255, 255));
+      infoScreen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/InfoScreen_1.png"))); // NOI18N
+      add(infoScreen1);
+      infoScreen1.setBounds(100, 75, 1207, 661);
+
+      infoScreen2.setForeground(new java.awt.Color(255, 255, 255));
+      infoScreen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/InfoScreen_2.png"))); // NOI18N
+      add(infoScreen2);
+      infoScreen2.setBounds(100, 75, 1207, 661);
+
+      background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Mode_Screen_Background.png"))); // NOI18N
+      add(background);
+      background.setBounds(0, 0, 1400, 800);
    }// </editor-fold>//GEN-END:initComponents
-    /*
-    private void initMyComponents(){
-	JTextArea textArea = new JTextArea();
-        textArea.setEditable(false);
-        
-        jScrollPane1 = new JScrollPane(textArea);
-        try {
-            textArea.read(new InputStreamReader(
-                    getClass().getResourceAsStream("HowToPlay.txt")),
-                null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        jScrollPane1.setVisible(true);
-        jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jScrollPane1.setFocusable(false);
-        jScrollPane1.setMaximumSize(new java.awt.Dimension(755, 610));
-        jScrollPane1.setMinimumSize(new java.awt.Dimension(755, 610));
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(755, 610));
-        jLabel1.add(jScrollPane1);
-        jScrollPane1.setBounds(287, 91, 755, 610);
-    }*/
 
+   private void previousMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_previousMouseEntered
+      previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Previous_Change_Button_Clicked.png")));
+   }//GEN-LAST:event_previousMouseEntered
+
+   private void previousMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_previousMouseExited
+      previous.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Previous_Change_Button.png")));
+   }//GEN-LAST:event_previousMouseExited
+
+   private void previousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousActionPerformed
+      if (infoScreen1.isVisible()) {
+         infoScreen1.setVisible(false);
+         infoScreen2.setVisible(true);
+      }
+      else {
+         infoScreen1.setVisible(true);
+         infoScreen2.setVisible(false);
+      }
+   }//GEN-LAST:event_previousActionPerformed
+
+   private void nextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextMouseEntered
+      next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Next_Change_Button_Clicked.png")));
+   }//GEN-LAST:event_nextMouseEntered
+
+   private void nextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextMouseExited
+      next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Next_Change_Button.png")));
+   }//GEN-LAST:event_nextMouseExited
+
+   private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+      if (infoScreen1.isVisible()) {
+         infoScreen1.setVisible(false);
+         infoScreen2.setVisible(true);
+      }
+      else {
+         infoScreen1.setVisible(true);
+         infoScreen2.setVisible(false);
+      }
+   }//GEN-LAST:event_nextActionPerformed
+    
+   
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private javax.swing.JLabel jLabel1;
-   private javax.swing.JLabel jLabel2;
+   private javax.swing.JLabel background;
+   private javax.swing.JLabel infoScreen1;
+   private javax.swing.JLabel infoScreen2;
+   private javax.swing.JButton next;
+   private javax.swing.JButton previous;
    // End of variables declaration//GEN-END:variables
 }
