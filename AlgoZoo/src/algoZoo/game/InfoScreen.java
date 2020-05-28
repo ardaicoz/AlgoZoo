@@ -1,5 +1,10 @@
 package algoZoo.game;
 
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 /**
  * This class represents the screen when info button is pressed.
  * @author Ayberk, Kerem, Arda
@@ -13,6 +18,27 @@ public class InfoScreen extends javax.swing.JPanel {
       initComponents();
       infoScreen2.setVisible(false);
     }
+    
+    // methods
+    /**
+    * Method to play sound when buttons clicked.
+    * @param soundName 
+    */
+   private void playSound(String filePath) 
+   {     
+        try 
+        {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filePath) );
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace( );
+        }
+   }  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,6 +132,7 @@ public class InfoScreen extends javax.swing.JPanel {
          infoScreen1.setVisible(true);
          infoScreen2.setVisible(false);
       }
+      playSound( "src/algoZoo/Sounds/Info_Button.wav" ); 
    }//GEN-LAST:event_previousActionPerformed
 
    private void nextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextMouseEntered
@@ -125,6 +152,7 @@ public class InfoScreen extends javax.swing.JPanel {
          infoScreen1.setVisible(true);
          infoScreen2.setVisible(false);
       }
+      playSound( "src/algoZoo/Sounds/Info_Button.wav" ); 
    }//GEN-LAST:event_nextActionPerformed
     
    
