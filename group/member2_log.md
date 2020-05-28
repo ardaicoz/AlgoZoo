@@ -32,12 +32,12 @@ After everyone committed the GUI panels, I fixed some of the bugs in the game.
 
 ### ~ 11.05.2020 - 17.05.2020 ~
 I worked on how to create and display levels for Challenge mode with Doğa and Alp. We did the implementation accordingly.
-Doğa and I created the animal selection system for choosing an animal to play with on the mode screen and we developed a system for displaying efficiency stars on ChallengeModeLevelsGUI screen.
-we also found some bugs in the TimerController class and fixed them.
+Alp, Doğa and I created the animal selection system for choosing an animal to play with on the mode screen and we developed a system for displaying efficiency stars on ChallengeModeLevelsGUI screen.
+We also found some bugs in the TimerController class and fixed them.
 
 ### ~ 18.05.2020 - 24.05.2020 ~
 I tried to come up with a system to add for loop feature to the game. For this system, I learned how to use and design JToggleBuutton and JComboBox.
-Doğa and I implemented this system to SelectionController class.
+Alp, Doğa and I implemented this system to SelectionController class.
 I worked on how to display the code in the CodeView class when it is too long to fit the screen. I added scroll function to the game with two buttons and MouseWheel Event.
 I played the game and found some bugs to fix, and fixed them to improve the game.
 I did a code check for the project, turned all the properties to private, added missing javadocs and comments.
