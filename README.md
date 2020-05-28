@@ -14,7 +14,7 @@ AlgoZoo is a desktop game which aims to teach children and students the fundeman
 + **UI Design:** completed (30.03.2020)
 + **Detailed Design:** completed (13.05.2020)
 + **Implementation:** completed (22.05.2020)
-+ **Reflections:** not yet!
++ **Reflections:** completed (28.05.2020)
 
 [Group Meetings Log](group/meetingslog.md)
 #### Group Members

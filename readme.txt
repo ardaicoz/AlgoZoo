@@ -10,7 +10,7 @@ A desktop game to teach children the basics of algorithm.
 + **UI Design:** completed (30.03.2020)
 + **Detailed Design:** completed (13.05.2020)
 + **Implementation:** completed (22.05.2020)
-+ **Reflections:** not yet!
++ **Reflections:** completed (28.05.2020)
 
 #### Group Members
 [Doğa Ece Ersoy     21902487]
