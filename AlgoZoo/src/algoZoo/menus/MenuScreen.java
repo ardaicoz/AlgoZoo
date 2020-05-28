@@ -178,14 +178,17 @@ public class MenuScreen extends javax.swing.JFrame {
       welcomeScreen.add(exitButton);
       exitButton.setBounds(580, 570, 270, 80);
 
-      resetButton.setText("ResetButton");
+      resetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Icons/Buttons/Reset_Game_Button.png"))); // NOI18N
+      resetButton.setBorder(null);
+      resetButton.setContentAreaFilled(false);
+      resetButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
       resetButton.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             resetButtonActionPerformed(evt);
          }
       });
       welcomeScreen.add(resetButton);
-      resetButton.setBounds(1200, 30, 100, 32);
+      resetButton.setBounds(1330, 10, 60, 60);
 
       background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/algoZoo/Backgrounds/Welcome_Screen_Background.png"))); // NOI18N
       welcomeScreen.add(background);
@@ -435,6 +438,7 @@ public class MenuScreen extends javax.swing.JFrame {
       bee3.setVisible(false);
       bee4.setVisible(false);
       quickExitButton.setVisible(true);
+      resetButton.setVisible(false);
       updateReturnButton();
       playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
    }//GEN-LAST:event_playButtonActionPerformed
@@ -512,6 +516,7 @@ public class MenuScreen extends javax.swing.JFrame {
          modeScreen.setVisible(false);
          welcomeScreen.setVisible(true);
          quickExitButton.setVisible(false);
+         resetButton.setVisible(true);
       } else if (infoScreen1.isVisible()) {
          infoScreen1.setVisible(false);
          modeScreen.setVisible(true);
@@ -686,6 +691,7 @@ public class MenuScreen extends javax.swing.JFrame {
    }//GEN-LAST:event_quickExitButtonMouseExited
 
    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
+      playSound( "src/algoZoo/Sounds/Click_Sound_Soft.wav" );
       challengeModeGUI.resetChallengeMode();
       learnModeGUI.resetLearnMode();
       testModeGUI.resetTestMode();
