@@ -27,6 +27,7 @@ Ayberk Yaşa and Görkem Ayten:
 - LearnLevelsSaveContainer
 - ChallengeLevelsSaveContainer
 - TestLevelsSaveContainer
+- All UI designs and tiled maps
 
 Esra Genç, Doğa Ece Ersoy and Alp Tuğrul Ağçalı:
 - ChallangeModeGUI
@@ -53,7 +54,8 @@ Kerem Erdal and Arda İçöz:
 ### Softwares we used
 + Tiled Map Editor 1.3.3
 + Apache Netbeans IDE 11.3
-+ Adobe Creative Cloud Photoshop 2018
++ Netbeans IDE 8.2
++ Adobe Photoshop Creative Cloud 2018
 
 ### Libraries we used
 + java.util
