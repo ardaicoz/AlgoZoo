@@ -77,11 +77,12 @@ public class TestLevelsSave {
       // for Windows
       if (OS.contains("win")) {
          home = System.getenv("appdata");
-         //home = home + "/Desktop";
+         //Directory: C:\Users\User_Name\AppData\Roaming\AlgoZooSave
       } 
       // for macOS
       else if (OS.contains("mac")) {
          home = home + "/Library/Application Support";
+         //Directory: Users/User_Name/Library/Application Support/AlgoZooSave
       } 
       // for Linux
       else if (OS.contains("nix") || OS.contains("nux") || OS.contains("aix")) {
